@@ -4,6 +4,7 @@ using Microsoft.CodeAnalysis.Editing;
 using Microsoft.CodeAnalysis.Formatting;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.Json;
 
@@ -31,6 +32,43 @@ class Program
 		{
 			return Name is null ? "null" : $"\"{Name}\"";
 		}
+
+		public static OperandItem Parse(JsonElement operand)
+		{
+			OperandItem oe = new()
+			{
+				Kind = operand.GetProperty("kind").GetString()!
+			};
+
+			if (operand.TryGetProperty("quantifier", out JsonElement quantifier))
+			{
+				switch (quantifier.GetString())
+				{
+					case "*": oe.Quantifier = "Varying"; break;
+					case "?": oe.Quantifier = "Optional"; break;
+				}
+			}
+			else
+			{
+				oe.Quantifier = "Default";
+			}
+
+			if (operand.TryGetProperty("name", out JsonElement name))
+			{
+				string operandName = name.GetString()!;
+
+				if (operandName.StartsWith('\''))
+				{
+					operandName = operandName.Replace("\'", "");
+				}
+
+				operandName = operandName.Replace("\n", "");
+
+				oe.Name = operandName;
+			}
+
+			return oe;
+		}
 	}
 
 	class InstructionItem
@@ -38,15 +76,8 @@ class Program
 		public required string Name { get; set; }
 		public required int Id { get; set; }
 		public List<OperandItem>? Operands { get; set; }
-	}
 
-	private static void ProcessInstructions(JsonElement instructions,
-		IReadOnlyDictionary<string, bool> knownEnumerands,
-		List<SyntaxNode> nodes)
-	{
-		List<InstructionItem> ins = [];
-
-		foreach (JsonElement instruction in instructions.EnumerateArray())
+		public static InstructionItem Parse(JsonElement instruction)
 		{
 			InstructionItem i = new()
 			{
@@ -56,47 +87,80 @@ class Program
 
 			if (instruction.TryGetProperty("operands", out JsonElement operands))
 			{
-				i.Operands = [];
-				foreach (JsonElement operand in operands.EnumerateArray())
-				{
-					OperandItem oe = new()
-					{
-						Kind = operand.GetProperty("kind").GetString()!
-					};
-
-					if (operand.TryGetProperty("quantifier", out JsonElement quantifier))
-					{
-						switch (quantifier.GetString())
-						{
-							case "*": oe.Quantifier = "Varying"; break;
-							case "?": oe.Quantifier = "Optional"; break;
-						}
-					}
-					else
-					{
-						oe.Quantifier = "Default";
-					}
-
-					if (operand.TryGetProperty("name", out JsonElement name))
-					{
-						string operandName = name.GetString()!;
-
-						if (operandName.StartsWith('\''))
-						{
-							operandName = operandName.Replace("\'", "");
-						}
-
-						operandName = operandName.Replace("\n", "");
-
-						oe.Name = operandName;
-					}
-
-					i.Operands.Add(oe);
-				}
+				i.Operands = operands.EnumerateArray().Select(OperandItem.Parse).ToList();
 			}
 
-			ins.Add(i);
+			return i;
 		}
+	}
+
+	class OperatorKind
+	{
+		public required string Kind { get; init; }
+		public required EnumType Category { get; init; }
+		public required List<OperatorKindEnumerant> Enumerants { get; init; }
+
+		public static OperatorKind? ParseEnum(JsonElement n)
+		{
+			string? category = n.GetProperty("category").GetString();
+			if (category is not "ValueEnum" and not "BitEnum")
+				return null;
+
+			string kind = n.GetProperty("kind").GetString()!;
+
+			EnumType enumType = category is "ValueEnum" ? EnumType.Value : EnumType.Bit;
+
+			List<OperatorKindEnumerant> enumerants = [];
+
+			foreach (JsonElement enumerant in n.GetProperty("enumerants").EnumerateArray())
+			{
+				OperatorKindEnumerant oke = new()
+				{
+					Name = enumerant.GetProperty("enumerant").GetString()!,
+					Value = ParseEnumValue(enumerant.GetProperty("value"))
+				};
+
+				if (char.IsDigit(oke.Name[0]))
+				{
+					oke.Name = kind + oke.Name;
+				}
+
+				if (enumerant.TryGetProperty("parameters", out JsonElement parameters))
+				{
+
+					oke.Parameters = [];
+
+					foreach (JsonElement parameter in parameters.EnumerateArray())
+					{
+						oke.Parameters.Add(parameter.GetProperty("kind").GetString()!);
+					}
+				}
+
+				enumerants.Add(oke);
+			}
+
+			return new OperatorKind
+			{
+				Kind = kind,
+				Category = enumType,
+				Enumerants = enumerants
+			};
+		}
+	}
+
+	class OperatorKindEnumerant
+	{
+		public required string Name { get; set; }
+		public required uint Value { get; set; }
+
+		public List<string>? Parameters { get; set; }
+	}
+
+	private static void ProcessInstructions(JsonElement instructions,
+		IReadOnlyDictionary<string, bool> knownEnumerands,
+		List<SyntaxNode> nodes)
+	{
+		List<InstructionItem> ins = instructions.EnumerateArray().Select(InstructionItem.Parse).ToList();
 
 		StringBuilder sb = new();
 
@@ -161,15 +225,7 @@ class Program
 		sb.AppendLine("}");
 	}
 
-	class OperatorKindEnumerant
-	{
-		public required string Name { get; set; }
-		public required uint Value { get; set; }
-
-		public List<string>? Parameters { get; set; }
-	}
-
-	private static IReadOnlyDictionary<string, bool> ProcessOperandTypes(JsonElement OperandTypes, IList<SyntaxNode> nodes)
+	private static IReadOnlyDictionary<string, bool> ProcessOperandTypes(JsonElement OperandTypes, List<SyntaxNode> nodes)
 	{
 		Dictionary<string, bool> result = [];
 
@@ -199,62 +255,29 @@ class Program
 
 		foreach (JsonElement n in OperandTypes.EnumerateArray())
 		{
-			// We only handle the Enums here, the others are handled 
-			// manually
-			if (n.GetProperty("category").GetString() != "ValueEnum"
-				&& n.GetProperty("category").GetString() != "BitEnum") continue;
+			OperatorKind? ok = OperatorKind.ParseEnum(n);
 
-			string kind = n.GetProperty("kind").GetString()!;
-
-			EnumType enumType = n.GetProperty("category").GetString() == "ValueEnum"
-				? EnumType.Value : EnumType.Bit;
-
-			IList<OperatorKindEnumerant> enumerants = [];
-
-			foreach (JsonElement enumerant in n.GetProperty("enumerants").EnumerateArray())
-			{
-				OperatorKindEnumerant oke = new()
-				{
-					Name = enumerant.GetProperty("enumerant").GetString()!,
-					Value = ParseEnumValue(enumerant.GetProperty("value"))
-				};
-
-				if (char.IsDigit(oke.Name[0]))
-				{
-					oke.Name = kind + oke.Name;
-				}
-
-				if (enumerant.TryGetProperty("parameters", out JsonElement parameters))
-				{
-
-					oke.Parameters = [];
-
-					foreach (JsonElement parameter in parameters.EnumerateArray())
-					{
-						oke.Parameters.Add(parameter.GetProperty("kind").GetString()!);
-					}
-				}
-
-				enumerants.Add(oke);
-			}
+			// We only handle the Enums here, the others are handled manually
+			if (ok is null)
+				continue;
 
 			StringBuilder sb = new();
 
-			if (enumType == EnumType.Bit)
+			if (ok.Category == EnumType.Bit)
 			{
 				sb.AppendLine("[Flags]");
 			}
-			sb.AppendLine($"public enum {kind} : uint");
+			sb.AppendLine($"public enum {ok.Kind} : uint");
 			sb.AppendLine("{");
-			foreach (OperatorKindEnumerant e in enumerants)
+			foreach (OperatorKindEnumerant e in ok.Enumerants)
 			{
 				sb.Append($"{e.Name} = {e.Value},\n");
 			}
 			sb.AppendLine("}");
 
-			sb.AppendLine($"public class {kind}ParameterFactory : ParameterFactory");
+			sb.AppendLine($"public class {ok.Kind}ParameterFactory : ParameterFactory");
 			sb.AppendLine("{");
-			foreach (OperatorKindEnumerant e in enumerants)
+			foreach (OperatorKindEnumerant e in ok.Enumerants)
 			{
 				if (e.Parameters == null) continue;
 				sb.AppendLine($"public class {e.Name}Parameter : Parameter");
@@ -269,16 +292,16 @@ class Program
 					{
 						if (result[p])
 						{
-							sb.AppendLine($"new EnumType<{p},{p}Parameters> (),");
+							sb.AppendLine($"new EnumType<{p},{p}Parameters>(),");
 						}
 						else
 						{
-							sb.AppendLine($"new EnumType<{p}> (),");
+							sb.AppendLine($"new EnumType<{p}>(),");
 						}
 					}
 					else
 					{
-						sb.AppendLine($"new {p} (),");
+						sb.AppendLine($"new {p}(),");
 					}
 				}
 
@@ -286,9 +309,9 @@ class Program
 				sb.AppendLine("}");
 			}
 
-			if (result[kind])
+			if (result[ok.Kind])
 			{
-				OperandTypeCreateParameterMethod(kind, enumerants, sb);
+				OperandTypeCreateParameterMethod(ok.Kind, ok.Enumerants, sb);
 			}
 
 			sb.AppendLine("}");
@@ -344,8 +367,7 @@ class Program
 		SyntaxGenerator generator,
 		Workspace workspace)
 	{
-		JsonDocument doc = JsonDocument.Parse(File.ReadAllText(
-				"spirv.core.grammar.json"));
+		JsonDocument doc = JsonDocument.Parse(File.ReadAllText("spirv.core.grammar.json"));
 
 		List<SyntaxNode> nodes = [];
 
