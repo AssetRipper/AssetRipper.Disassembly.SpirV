@@ -23,16 +23,16 @@ public enum DisassemblyOptions
 	Default = ShowTypes | ShowNames
 }
 
-public class Disassembler
+public static class Disassembler
 {
-	public string Disassemble(Module module)
+	public static string Disassemble(Module module)
 	{
 		return Disassemble(module, DisassemblyOptions.Default);
 	}
 
-	public string Disassemble(Module module, DisassemblyOptions options)
+	public static string Disassemble(Module module, DisassemblyOptions options)
 	{
-		StringBuilder sb = new StringBuilder();
+		StringBuilder sb = new();
 
 		sb.AppendFormat("; SPIR-V\n");
 		sb.AppendFormat("; Version: {0}\n", module.Header.Version);
@@ -182,7 +182,7 @@ public class Disassembler
 		{
 			sb.Append(enumOperandValue.EnumerationType.GetEnumName(key));
 
-			IList<object> value = enumOperandValue.Values[key] as IList<object>;
+			List<object> value = enumOperandValue.Values[key];
 
 			if (value.Count != 0)
 			{

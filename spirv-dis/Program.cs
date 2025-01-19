@@ -21,7 +21,6 @@ class Program
 	static int Run(Options options)
 	{
 		Module module = Module.ReadFrom(System.IO.File.OpenRead(options.InputFile));
-		Disassembler ds = new();
 
 		DisassemblyOptions settings = DisassemblyOptions.None;
 
@@ -35,7 +34,7 @@ class Program
 			settings |= DisassemblyOptions.ShowTypes;
 		}
 
-		Console.Write(ds.Disassemble(module, settings));
+		Console.Write(Disassembler.Disassemble(module, settings));
 
 		return 0;
 	}
