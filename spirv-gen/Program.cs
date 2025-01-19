@@ -92,6 +92,11 @@ class Program
 
 			return i;
 		}
+
+		public static List<InstructionItem> ParseList(JsonElement instructions)
+		{
+			return instructions.EnumerateArray().Select(Parse).ToList();
+		}
 	}
 
 	class OperatorKind
@@ -99,6 +104,8 @@ class Program
 		public required string Kind { get; init; }
 		public required EnumType Category { get; init; }
 		public required List<OperatorKindEnumerant> Enumerants { get; init; }
+
+		public bool HasParameters => Enumerants.Any(e => e.Parameters != null);
 
 		public static OperatorKind ParseEnum(JsonElement n)
 		{
@@ -147,6 +154,24 @@ class Program
 				Enumerants = enumerants
 			};
 		}
+
+		public static List<OperatorKind> ParseList(JsonElement operandTypes)
+		{
+			List<OperatorKind> result = [];
+
+			foreach (JsonElement n in operandTypes.EnumerateArray())
+			{
+				// We only handle the Enums here; the others are handled manually.
+				if (n.GetProperty("category").GetString() is not "ValueEnum" and not "BitEnum")
+					continue;
+
+				OperatorKind ok = ParseEnum(n);
+
+				result.Add(ok);
+			}
+
+			return result;
+		}
 	}
 
 	class OperatorKindEnumerant
@@ -157,15 +182,13 @@ class Program
 		public List<string>? Parameters { get; set; }
 	}
 
-	private static void ProcessInstructions(JsonElement instructions,
-		IReadOnlyDictionary<string, bool> knownEnumerands,
+	private static void ProcessInstructions(IReadOnlyList<InstructionItem> instructions,
+		IReadOnlyDictionary<string, OperatorKind> knownEnumerands,
 		List<SyntaxNode> nodes)
 	{
-		List<InstructionItem> ins = instructions.EnumerateArray().Select(InstructionItem.Parse).ToList();
-
 		StringBuilder sb = new();
 
-		foreach (InstructionItem instruction in ins)
+		foreach (InstructionItem instruction in instructions)
 		{
 			CreateInstructionClass(sb, instruction, knownEnumerands);
 		}
@@ -173,7 +196,7 @@ class Program
 		sb.AppendLine("public static class Instructions {");
 		sb.Append("public static IReadOnlyDictionary<int, Instruction> OpcodeToInstruction { get; } = new Dictionary<int, Instruction>() {");
 
-		foreach (InstructionItem instruction in ins)
+		foreach (InstructionItem instruction in instructions)
 		{
 			sb.AppendLine($"{{ {instruction.Id}, new {instruction.Name}() }},");
 		}
@@ -191,7 +214,7 @@ class Program
 		}
 	}
 
-	private static void CreateInstructionClass(StringBuilder sb, InstructionItem instruction, IReadOnlyDictionary<string, bool> knownEnumerands)
+	private static void CreateInstructionClass(StringBuilder sb, InstructionItem instruction, IReadOnlyDictionary<string, OperatorKind> knownEnumerands)
 	{
 		sb.AppendLine($"public class {instruction.Name} : Instruction");
 		sb.AppendLine("{");
@@ -226,41 +249,10 @@ class Program
 		sb.AppendLine("}");
 	}
 
-	private static IReadOnlyDictionary<string, bool> ProcessOperandTypes(JsonElement OperandTypes, List<SyntaxNode> nodes)
+	private static void ProcessOperandTypes(IReadOnlyDictionary<string, OperatorKind> knownEnumerands, List<SyntaxNode> nodes)
 	{
-		Dictionary<string, bool> result = [];
-
-		// We gather all of the types up-front as we need them in the loop
-		foreach (JsonElement n in OperandTypes.EnumerateArray())
+		foreach (OperatorKind ok in knownEnumerands.Values)
 		{
-			// We only handle the Enums here; the others are handled manually.
-			if (n.GetProperty("category").GetString() is not "ValueEnum" and not "BitEnum")
-				continue;
-
-			string kind = n.GetProperty("kind").GetString()!;
-
-			bool hasParameters = false;
-
-			foreach (JsonElement enumerant in n.GetProperty("enumerants").EnumerateArray())
-			{
-				if (enumerant.TryGetProperty("parameters", out _))
-				{
-					hasParameters = true;
-					break;
-				}
-			}
-
-			result.Add(kind, hasParameters);
-		}
-
-		foreach (JsonElement n in OperandTypes.EnumerateArray())
-		{
-			// We only handle the Enums here; the others are handled manually.
-			if (n.GetProperty("category").GetString() is not "ValueEnum" and not "BitEnum")
-				continue;
-
-			OperatorKind ok = OperatorKind.ParseEnum(n);
-
 			StringBuilder sb = new();
 
 			if (ok.Category == EnumType.Bit)
@@ -288,9 +280,9 @@ class Program
 
 				foreach (string p in e.Parameters)
 				{
-					if (result.ContainsKey(p))
+					if (knownEnumerands.ContainsKey(p))
 					{
-						if (result[p])
+						if (knownEnumerands[p].HasParameters)
 						{
 							sb.AppendLine($"new EnumType<{p},{p}Parameters>(),");
 						}
@@ -309,7 +301,7 @@ class Program
 				sb.AppendLine("}");
 			}
 
-			if (result[ok.Kind])
+			if (knownEnumerands[ok.Kind].HasParameters)
 			{
 				OperandTypeCreateParameterMethod(ok.Kind, ok.Enumerants, sb);
 			}
@@ -322,8 +314,6 @@ class Program
 				nodes.Add(node.NormalizeWhitespace());
 			}
 		}
-
-		return result;
 	}
 
 	private static void OperandTypeCreateParameterMethod(string enumName,
@@ -350,8 +340,11 @@ class Program
 
 		List<SyntaxNode> nodes = [];
 
-		IReadOnlyDictionary<string, bool> knownEnumerands = ProcessOperandTypes(doc.RootElement.GetProperty("operand_kinds"), nodes);
-		ProcessInstructions(doc.RootElement.GetProperty("instructions"), knownEnumerands, nodes);
+		IReadOnlyDictionary<string, OperatorKind> knownEnumerands = OperatorKind.ParseList(doc.RootElement.GetProperty("operand_kinds")).ToDictionary(a => a.Kind, a => a);
+		IReadOnlyList<InstructionItem> instructions = InstructionItem.ParseList(doc.RootElement.GetProperty("instructions"));
+
+		ProcessOperandTypes(knownEnumerands, nodes);
+		ProcessInstructions(instructions, knownEnumerands, nodes);
 
 		SyntaxNode cu = generator.CompilationUnit([
 			generator.NamespaceImportDeclaration("System"),
