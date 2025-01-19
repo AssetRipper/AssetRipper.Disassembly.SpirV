@@ -2,6 +2,7 @@
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Xml;
@@ -34,7 +35,7 @@ class Meta
 		}
 	}
 
-	public SyntaxNode ToSourceFragment()
+	public ClassDeclarationSyntax ToClassDeclaration()
 	{
 		List<MemberDeclarationSyntax> members =
 		[
@@ -98,6 +99,27 @@ class Meta
 			.WithModifiers(SyntaxFactory.TokenList(SyntaxFactory.Token(SyntaxKind.PublicKeyword), SyntaxFactory.Token(SyntaxKind.StaticKeyword)))
 			.WithExpressionBody(SyntaxFactory.ArrowExpressionClause(SyntaxFactory.LiteralExpression(SyntaxKind.NumericLiteralExpression, SyntaxFactory.Literal(value))))
 			.WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken));
+	}
+
+	public CompilationUnitSyntax ToCompilationUnit()
+	{
+		return SyntaxFactory.CompilationUnit()
+			.WithUsings(SyntaxFactory.List([SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System.Collections.Generic"))]))
+			.WithMembers(SyntaxFactory.List<MemberDeclarationSyntax>(
+			[
+				SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
+				ToClassDeclaration(),
+			]));
+	}
+
+	public static Meta Load()
+	{
+		JsonDocument doc = JsonDocument.Parse(File.ReadAllText("spirv.json"));
+
+		XmlDocument xmlDoc = new();
+		xmlDoc.Load("spir-v.xml");
+
+		return new Meta(doc.RootElement.GetProperty("spv").GetProperty("meta"), (XmlElement)xmlDoc.SelectSingleNode("/registry/ids")!);
 	}
 
 	public uint MagicNumber { get; }

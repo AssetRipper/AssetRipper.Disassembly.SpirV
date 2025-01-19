@@ -3,9 +3,9 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Editing;
 using Microsoft.CodeAnalysis.Formatting;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Text.Json;
-using System.Xml;
 
 namespace SpirV;
 
@@ -17,7 +17,7 @@ class Program
 		SyntaxGenerator generator = SyntaxGenerator.GetGenerator(workspace,
 			LanguageNames.CSharp);
 
-		ProcessSpirv(generator, workspace);
+		GenerateCode(Meta.Load().ToCompilationUnit(), workspace, "../../../../SPIRV/SpirV.Meta.cs");
 		ProcessGrammars(generator, workspace);
 	}
 
@@ -323,7 +323,7 @@ class Program
 
 	private static uint ParseEnumValue(JsonElement value)
 	{
-		if (value.ValueKind == System.Text.Json.JsonValueKind.String)
+		if (value.ValueKind == JsonValueKind.String)
 		{
 			string s = value.ToString();
 
@@ -346,7 +346,7 @@ class Program
 		SyntaxGenerator generator,
 		Workspace workspace)
 	{
-		JsonDocument doc = System.Text.Json.JsonDocument.Parse(System.IO.File.ReadAllText(
+		JsonDocument doc = JsonDocument.Parse(File.ReadAllText(
 				"spirv.core.grammar.json"));
 
 		List<SyntaxNode> nodes = [];
@@ -363,39 +363,12 @@ class Program
 		GenerateCode(cu, workspace, "../../../../SPIRV/SpirV.Core.Grammar.cs");
 	}
 
-	private static void ProcessSpirv(SyntaxGenerator generator, Workspace workspace)
+	private static void GenerateCode(SyntaxNode node, Workspace workspace, string path)
 	{
-		JsonDocument doc = System.Text.Json.JsonDocument.Parse(System.IO.File.ReadAllText(
-				"spirv.json"));
+		SyntaxNode formatted = Formatter.Format(node, workspace);
+		string formattedCode = formatted.ToFullString();
+		string code = formattedCode.Replace("    ", "\t");
 
-		XmlDocument xmlDoc = new();
-		xmlDoc.Load("spir-v.xml");
-
-		List<SyntaxNode> nodes = [];
-
-		CreateSpirvMeta(doc.RootElement, xmlDoc, nodes);
-
-		SyntaxNode cu = generator.CompilationUnit([
-			generator.NamespaceImportDeclaration("System.Collections.Generic"),
-			SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
-			..nodes]);
-		GenerateCode(cu, workspace, "../../../../SPIRV/SpirV.Meta.cs");
-	}
-
-	private static void GenerateCode(SyntaxNode node, Workspace workspace,
-		string path)
-	{
-		node = Formatter.Format(node, workspace);
-
-		System.IO.File.WriteAllText(path,
-			node.ToFullString().Replace("    ", "\t"));
-	}
-
-	private static void CreateSpirvMeta(JsonElement jr,
-		XmlDocument doc, List<SyntaxNode> nodes)
-	{
-		Meta meta = new(jr.GetProperty("spv").GetProperty("meta"), (XmlElement)doc.SelectSingleNode("/registry/ids")!);
-
-		nodes.Add(meta.ToSourceFragment());
+		File.WriteAllText(path, code);
 	}
 }
