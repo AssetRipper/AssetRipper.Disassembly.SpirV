@@ -5,45 +5,15 @@ namespace SpirV
 {
     class Meta
     {
-        public static uint MagicNumber
-        {
-            get
-            {
-                return 119734787U;
-            }
-        }
+        public static uint MagicNumber => 119734787U;
 
-        public static uint Version
-        {
-            get
-            {
-                return 66048U;
-            }
-        }
+        public static uint Version => 66048U;
 
-        public static uint Revision
-        {
-            get
-            {
-                return 2U;
-            }
-        }
+        public static uint Revision => 2U;
 
-        public static uint OpCodeMask
-        {
-            get
-            {
-                return 65535U;
-            }
-        }
+        public static uint OpCodeMask => 65535U;
 
-        public static uint WordCountShift
-        {
-            get
-            {
-                return 16U;
-            }
-        }
+        public static uint WordCountShift => 16U;
 
         public class ToolInfo
         {

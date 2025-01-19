@@ -101,17 +101,13 @@ namespace SpirV
 			return n;
 		}
 
-		private SyntaxNode CreateProperty(SyntaxGenerator generator,
-			string name, object value)
+		private static SyntaxNode CreateProperty(SyntaxGenerator generator,
+			string name, uint value)
 		{
-			return generator.PropertyDeclaration(name,
-				generator.TypeExpression(SpecialType.System_UInt32),
-				Accessibility.Public,
-				DeclarationModifiers.Static | DeclarationModifiers.ReadOnly,
-				getAccessorStatements: new SyntaxNode[] {
-					generator.ReturnStatement (
-						generator.LiteralExpression (value))
-					});
+			return SyntaxFactory.PropertyDeclaration(SyntaxFactory.PredefinedType(SyntaxFactory.Token(SyntaxKind.UIntKeyword)), name)
+				.WithModifiers(SyntaxFactory.TokenList(SyntaxFactory.Token(SyntaxKind.PublicKeyword), SyntaxFactory.Token(SyntaxKind.StaticKeyword)))
+				.WithExpressionBody(SyntaxFactory.ArrowExpressionClause(SyntaxFactory.LiteralExpression(SyntaxKind.NumericLiteralExpression, SyntaxFactory.Literal(value))))
+				.WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken));
 		}
 
 		public uint MagicNumber { get; }
