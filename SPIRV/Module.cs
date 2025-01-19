@@ -81,8 +81,8 @@ public class Module
 						System.Diagnostics.Debug.Assert(t != null);
 						System.Diagnostics.Debug.Assert(t is ScalarType);
 
-						object constant = ConvertConstant(
-							instruction.ResultType as ScalarType,
+						object? constant = ConvertConstant(
+							(ScalarType)instruction.ResultType,
 							instruction.Words.Skip(3).ToList());
 						instruction.Operands[2].Value = constant;
 						instruction.Value = constant;
@@ -217,20 +217,20 @@ public class Module
 			case OpTypeVector t:
 				{
 					i.ResultType = new VectorType(
-						objects[i.Words[2]].ResultType as ScalarType,
+						(ScalarType)objects[i.Words[2]].ResultType,
 						(int)i.Words[3]);
 				}
 				break;
 			case OpTypeMatrix t:
 				{
 					i.ResultType = new MatrixType(
-						objects[i.Words[2]].ResultType as VectorType,
+						(VectorType)objects[i.Words[2]].ResultType,
 						(int)i.Words[3]);
 				}
 				break;
 			case OpTypeArray t:
 				{
-					object constant = objects[i.Words[3]].Value;
+					object? constant = objects[i.Words[3]].Value;
 					int size = 0;
 
 					switch (constant)
@@ -251,7 +251,7 @@ public class Module
 			case OpTypeRuntimeArray t:
 				{
 					i.ResultType = new RuntimeArrayType(
-						objects[i.Words[2]].ResultType as Type);
+						objects[i.Words[2]].ResultType);
 				}
 				break;
 			case OpTypeBool t:
@@ -296,7 +296,7 @@ public class Module
 			case OpTypeSampledImage t:
 				{
 					i.ResultType = new SampledImageType(
-						objects[i.Words[2]].ResultType as ImageType
+						(ImageType)objects[i.Words[2]].ResultType
 					);
 				}
 				break;
@@ -354,8 +354,7 @@ public class Module
 		}
 	}
 
-	private static object ConvertConstant(ScalarType type,
-		IReadOnlyList<uint> words)
+	private static object ConvertConstant(ScalarType type, IReadOnlyList<uint> words)
 	{
 		byte[] bytes = new byte[words.Count * 4];
 
@@ -418,9 +417,10 @@ public class Module
 						throw new Exception("Cannot construct floating point literal.");
 					}
 				}
-		}
 
-		return null;
+			default:
+				throw new Exception("Cannot construct constant.");
+		}
 	}
 
 	public ModuleHeader Header { get; }

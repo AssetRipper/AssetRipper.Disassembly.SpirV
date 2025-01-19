@@ -20,30 +20,30 @@ public class ParsedOperand
 
 	public T GetSingleEnumValue<T>() where T : System.Enum
 	{
-		IValueEnumOperandValue? v = Value as IValueEnumOperandValue;
+		IValueEnumOperandValue v = (IValueEnumOperandValue)Value;
 
 		if (v.Value.Count == 0)
 		{
 			// If there's no value at all, the enum is probably something
 			// like ImageFormat. In which case we just return the enum value
-			return (T)(object)v.Key;
+			return (T)v.Key;
 		}
 		else
 		{
 			// This means the enum has a value attached to it, so we return
 			// the attached value
-			return (T)((IValueEnumOperandValue)Value).Value.First();
+			return (T)v.Value.First();
 		}
 	}
 
 	public uint GetId()
 	{
-		return (Value as ObjectReference).Id;
+		return ((ObjectReference)Value).Id;
 	}
 
 	public T GetBitEnumValue<T>() where T : System.Enum
 	{
-		IBitEnumOperandValue? v = Value as IBitEnumOperandValue;
+		IBitEnumOperandValue v = (IBitEnumOperandValue)Value;
 
 		uint result = 0;
 		foreach (uint k in v.Values.Keys)
@@ -98,7 +98,7 @@ public interface IValueEnumOperandValue : IEnumOperandValue
 	List<object> Value { get; }
 }
 
-public class ValueEnumOperandValue<T> : IValueEnumOperandValue where T : System.Enum
+public class ValueEnumOperandValue<T> : IValueEnumOperandValue where T : unmanaged, System.Enum
 {
 	public System.Type EnumerationType { get { return typeof(T); } }
 
@@ -114,7 +114,7 @@ public class ValueEnumOperandValue<T> : IValueEnumOperandValue where T : System.
 	}
 }
 
-public class BitEnumOperandValue<T> : IBitEnumOperandValue where T : System.Enum
+public class BitEnumOperandValue<T> : IBitEnumOperandValue where T : unmanaged, System.Enum
 {
 	public IReadOnlyDictionary<uint, List<object>> Values { get; }
 	public System.Type EnumerationType { get { return typeof(T); } }
@@ -138,7 +138,7 @@ public class ObjectReference
 	}
 
 	public uint Id { get; }
-	public ParsedInstruction Reference { get; private set; }
+	public ParsedInstruction? Reference { get; private set; }
 
 	public override string ToString()
 	{
@@ -148,16 +148,16 @@ public class ObjectReference
 
 public class ParsedInstruction
 {
-	public IList<uint> Words { get; }
+	public IReadOnlyList<uint> Words { get; } = [];
 
 	public Instruction Instruction { get; }
 	public IList<ParsedOperand> Operands { get; } = [];
 
-	public string Name { get; set; }
+	public string? Name { get; set; }
 
-	public object Value { get; set; }
+	public object? Value { get; set; }
 
-	public ParsedInstruction(int opCode, IList<uint> words)
+	public ParsedInstruction(int opCode, IReadOnlyList<uint> words)
 	{
 		Words = words;
 
@@ -179,7 +179,7 @@ public class ParsedInstruction
 
 		List<object> varyingOperandValues = [];
 		int varyingWordStart = 0;
-		Operand varyingOperand = null;
+		Operand? varyingOperand = null;
 
 		for (; currentWord < Words.Count;)
 		{
@@ -215,7 +215,7 @@ public class ParsedInstruction
 		}
 	}
 
-	public Type ResultType { get; set; }
+	public Type ResultType { get; set; } = null!;// Gets set elsewhere
 	public uint ResultId
 	{
 		get

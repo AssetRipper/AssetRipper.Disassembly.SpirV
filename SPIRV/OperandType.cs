@@ -115,7 +115,7 @@ public class LiteralSpecConstantOpInteger : Literal
 
 public class Parameter
 {
-	public virtual IReadOnlyList<OperandType> OperandTypes { get; }
+	public virtual IReadOnlyList<OperandType> OperandTypes => [];
 }
 
 public class ParameterFactory
@@ -123,9 +123,9 @@ public class ParameterFactory
 	public virtual Parameter? CreateParameter(object value) => null;
 }
 
-public class EnumType<T> : EnumType<T, ParameterFactory> where T : System.Enum { };
+public class EnumType<T> : EnumType<T, ParameterFactory> where T : unmanaged, System.Enum { };
 
-public class EnumType<T, U> : OperandType where T : System.Enum where U : ParameterFactory, new()
+public class EnumType<T, U> : OperandType where T : unmanaged, System.Enum where U : ParameterFactory, new()
 {
 	private U parameterFactory_ = new U();
 	public System.Type EnumerationType { get { return typeof(T); } }
@@ -144,7 +144,7 @@ public class EnumType<T, U> : OperandType where T : System.Enum where U : Parame
 				// bit == 0 and words [0] == 0 handles the 0x0 = None cases
 				if ((words[0] & bit) != 0 || (bit == 0 && words[0] == 0))
 				{
-					Parameter p = parameterFactory_.CreateParameter(bit);
+					Parameter? p = parameterFactory_.CreateParameter(bit);
 
 					List<object> resultItems = [];
 
@@ -169,7 +169,7 @@ public class EnumType<T, U> : OperandType where T : System.Enum where U : Parame
 		else
 		{
 			List<object> resultItems = [];
-			Parameter p = parameterFactory_.CreateParameter(words[0]);
+			Parameter? p = parameterFactory_.CreateParameter(words[0]);
 			if (p != null)
 			{
 				for (int j = 0; j < p.OperandTypes.Count; ++j)

@@ -13,7 +13,7 @@ class Options
 	public bool ShowNames { get; set; } = false;
 
 	[Value(0, MetaName = "Input", HelpText = "Binary SPIR-V file to disassemble", Required = true)]
-	public string InputFile { get; set; }
+	public string InputFile { get; set; } = "";
 }
 
 class Program

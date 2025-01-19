@@ -227,12 +227,12 @@ public class StructType : Type
 		}
 	}
 
-	private List<string> memberNames_;
+	private List<string?> memberNames_;
 
 	public IReadOnlyList<Type> MemberTypes { get; }
-	public IReadOnlyList<string> MemberNames { get { return memberNames_; } }
+	public IReadOnlyList<string?> MemberNames { get { return memberNames_; } }
 
-	public void SetMemberName(uint member, string name)
+	public void SetMemberName(uint member, string? name)
 	{
 		memberNames_[(int)member] = name;
 	}
@@ -272,7 +272,7 @@ public class OpaqueType : Type
 public class PointerType : Type
 {
 	public StorageClass StorageClass { get; }
-	public Type Type { get; private set; }
+	public Type? Type { get; private set; }
 
 	public PointerType(StorageClass storageClass, Type type)
 	{
