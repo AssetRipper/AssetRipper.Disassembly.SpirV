@@ -26,6 +26,11 @@ class Program
 		public required string Kind { get; set; }
 		public string? Quantifier { get; set; }
 		public string? Name { get; set; }
+
+		public string GetNameLiteral()
+		{
+			return Name is null ? "null" : $"\"{Name}\"";
+		}
 	}
 
 	class InstructionItem
@@ -146,14 +151,7 @@ class Program
 				{
 					constructorParameter = $"new {operand.Kind}()";
 				}
-				if (operand.Name == null)
-				{
-					sb.AppendLine($"new Operand({constructorParameter}, null, OperandQuantifier.{operand.Quantifier}),");
-				}
-				else
-				{
-					sb.AppendLine($"new Operand({constructorParameter}, \"{operand.Name}\", OperandQuantifier.{operand.Quantifier}),");
-				}
+				sb.AppendLine($"new Operand({constructorParameter}, {operand.GetNameLiteral()}, OperandQuantifier.{operand.Quantifier}),");
 			}
 			sb.AppendLine("] )");
 		}
