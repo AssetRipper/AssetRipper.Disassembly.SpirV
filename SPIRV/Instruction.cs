@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace SpirV
 {
@@ -19,7 +17,7 @@ namespace SpirV
 		public string Name { get; }
 		public OperandType Type { get; }
 		public OperandQuantifier Quantifier { get; }
-		
+
 		public Operand(OperandType kind, string name, OperandQuantifier quantifier)
 		{
 			Name = name;
@@ -37,12 +35,12 @@ namespace SpirV
 			get;
 		}
 
-		public Instruction (string name)
-			: this (name, new List<Operand> ())
+		public Instruction(string name)
+			: this(name, [])
 		{
 		}
 
-		public Instruction (string name, IList<Operand> operands)
+		public Instruction(string name, IList<Operand> operands)
 		{
 			Operands = operands;
 			Name = name;

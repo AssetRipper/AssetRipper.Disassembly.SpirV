@@ -4,35 +4,43 @@ namespace SpirV
 {
 	class Reader
 	{
-		public Reader (System.IO.BinaryReader reader)
+		public Reader(System.IO.BinaryReader reader)
 		{
 			reader_ = reader;
 
-			uint magicNumber = reader_.ReadUInt32 ();
+			uint magicNumber = reader_.ReadUInt32();
 
-			if (magicNumber == SpirV.Meta.MagicNumber) {
+			if (magicNumber == SpirV.Meta.MagicNumber)
+			{
 				littleEndian_ = true;
-			} else if (Reverse (magicNumber) == SpirV.Meta.MagicNumber) {
+			}
+			else if (Reverse(magicNumber) == SpirV.Meta.MagicNumber)
+			{
 				littleEndian_ = false;
-			} else {
-				throw new Exception ("Invalid magic number");
+			}
+			else
+			{
+				throw new Exception("Invalid magic number");
 			}
 		}
 
-		public uint ReadWord ()
+		public uint ReadWord()
 		{
-			if (littleEndian_) {
-				return reader_.ReadUInt32 ();
-			} else {
-				return Reverse (reader_.ReadUInt32 ());
+			if (littleEndian_)
+			{
+				return reader_.ReadUInt32();
+			}
+			else
+			{
+				return Reverse(reader_.ReadUInt32());
 			}
 		}
 
-		private static uint Reverse (uint u)
+		private static uint Reverse(uint u)
 		{
-			return	(u & 0xFFU) << 24 | 
+			return (u & 0xFFU) << 24 |
 					(u & 0xFF00U) << 8 |
-					(u >> 8) & 0xFF00U  | 
+					(u >> 8) & 0xFF00U |
 					(u >> 24);
 		}
 
