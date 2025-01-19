@@ -14,11 +14,11 @@ namespace SpirV
 
 	public class Operand
 	{
-		public string Name { get; }
+		public string? Name { get; }
 		public OperandType Type { get; }
 		public OperandQuantifier Quantifier { get; }
 
-		public Operand(OperandType kind, string name, OperandQuantifier quantifier)
+		public Operand(OperandType kind, string? name, OperandQuantifier quantifier)
 		{
 			Name = name;
 			Type = kind;
@@ -30,17 +30,16 @@ namespace SpirV
 	{
 		public string Name { get; }
 
-		public IList<Operand> Operands
+		public IReadOnlyList<Operand> Operands
 		{
 			get;
 		}
 
-		public Instruction(string name)
-			: this(name, [])
+		public Instruction(string name) : this(name, [])
 		{
 		}
 
-		public Instruction(string name, IList<Operand> operands)
+		public Instruction(string name, IReadOnlyList<Operand> operands)
 		{
 			Operands = operands;
 			Name = name;

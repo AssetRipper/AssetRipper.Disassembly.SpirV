@@ -120,7 +120,7 @@ namespace SpirV
 
 	public class ParameterFactory
 	{
-		public virtual Parameter CreateParameter(object value) => null;
+		public virtual Parameter? CreateParameter(object value) => null;
 	}
 
 	public class EnumType<T> : EnumType<T, ParameterFactory> where T : System.Enum { };

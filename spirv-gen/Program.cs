@@ -26,9 +26,9 @@ namespace SpirV
 			OpCodeMask = meta.GetProperty(nameof(OpCodeMask)).GetUInt32();
 			WordCountShift = meta.GetProperty(nameof(WordCountShift)).GetUInt32();
 
-			foreach (XmlElement toolId in ids.SelectNodes("id"))
+			foreach (XmlElement toolId in ids.SelectNodes("id")!)
 			{
-				ToolInfo ti = new ToolInfo
+				ToolInfo ti = new()
 				{
 					vendor = toolId.GetAttribute("vendor")
 				};
@@ -53,7 +53,7 @@ namespace SpirV
 				CreateProperty("WordCountShift", WordCountShift)
 			];
 
-			StringBuilder sb = new StringBuilder();
+			StringBuilder sb = new();
 
 			sb.Append("public static IReadOnlyDictionary<int, ToolInfo> Tools { get; } = new Dictionary<int, ToolInfo>()\n{");
 
@@ -120,14 +120,14 @@ namespace SpirV
 			public string? name;
 		}
 
-		Dictionary<int, ToolInfo> toolInfos_ = [];
+		readonly Dictionary<int, ToolInfo> toolInfos_ = [];
 	}
 
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			AdhocWorkspace workspace = new AdhocWorkspace();
+			AdhocWorkspace workspace = new();
 			SyntaxGenerator generator = SyntaxGenerator.GetGenerator(workspace,
 				LanguageNames.CSharp);
 
@@ -137,21 +137,21 @@ namespace SpirV
 
 		class OperandItem
 		{
-			public string? Kind;
-			public string? Quantifier;
-			public string? Name;
+			public required string Kind { get; set; }
+			public string? Quantifier { get; set; }
+			public string? Name { get; set; }
 		}
 
 		class InstructionItem
 		{
-			public string? Name;
-			public int Id;
-			public IList<OperandItem> Operands;
+			public required string Name { get; set; }
+			public required int Id { get; set; }
+			public List<OperandItem>? Operands { get; set; }
 		}
 
 		private static void ProcessInstructions(JsonElement instructions,
 			IReadOnlyDictionary<string, bool> knownEnumerands,
-			SyntaxGenerator generator, IList<SyntaxNode> nodes)
+			List<SyntaxNode> nodes)
 		{
 			List<InstructionItem> ins = [];
 
@@ -159,18 +159,18 @@ namespace SpirV
 			{
 				InstructionItem i = new()
 				{
-					Name = instruction.GetProperty("opname").GetString(),
+					Name = instruction.GetProperty("opname").GetString()!,
 					Id = instruction.GetProperty("opcode").GetInt32()
 				};
 
 				if (instruction.TryGetProperty("operands", out JsonElement operands))
 				{
-					i.Operands = new List<OperandItem>();
+					i.Operands = [];
 					foreach (JsonElement operand in operands.EnumerateArray())
 					{
-						OperandItem oe = new OperandItem()
+						OperandItem oe = new()
 						{
-							Kind = operand.GetProperty("kind").GetString()
+							Kind = operand.GetProperty("kind").GetString()!
 						};
 
 						if (operand.TryGetProperty("quantifier", out JsonElement quantifier))
@@ -215,19 +215,15 @@ namespace SpirV
 			}
 
 			sb.AppendLine("public static class Instructions {");
-			sb.Append("private static readonly Dictionary<int, Instruction> instructions_ = new Dictionary<int, Instruction> {");
+			sb.Append("public static IReadOnlyDictionary<int, Instruction> OpcodeToInstruction { get; } = new Dictionary<int, Instruction>() {");
 
 			foreach (InstructionItem instruction in ins)
 			{
 				sb.AppendLine($"{{ {instruction.Id}, new {instruction.Name}() }},");
 			}
 
-			sb.Append("""
-				};
-
-							public static IReadOnlyDictionary<int, Instruction> OpcodeToInstruction { get => instructions_; }
-							}
-				""");
+			sb.AppendLine("};");
+			sb.AppendLine("}");
 
 			string s = sb.ToString();
 
@@ -248,21 +244,21 @@ namespace SpirV
 
 			if (instruction.Operands == null)
 			{
-				sb.AppendLine($" : base(\"{instruction.Name}\")");
+				sb.AppendLine($" : base(nameof({instruction.Name}))");
 			}
 			else
 			{
-				sb.AppendLine($" : base(\"{instruction.Name}\", new List<Operand>() {{");
+				sb.AppendLine($" : base(nameof({instruction.Name}), [");
 				foreach (OperandItem operand in instruction.Operands)
 				{
-					string? constructorParameter = null;
+					string constructorParameter;
 					if (knownEnumerands.ContainsKey(operand.Kind))
 					{
 						constructorParameter = $"new EnumType<{operand.Kind}, {operand.Kind}ParameterFactory>()";
 					}
 					else
 					{
-						constructorParameter = $"new {operand.Kind} ()";
+						constructorParameter = $"new {operand.Kind}()";
 					}
 					if (operand.Name == null)
 					{
@@ -273,7 +269,7 @@ namespace SpirV
 						sb.AppendLine($"new Operand({constructorParameter}, \"{operand.Name}\", OperandQuantifier.{operand.Quantifier}),");
 					}
 				}
-				sb.AppendLine("} )");
+				sb.AppendLine("] )");
 			}
 
 			sb.AppendLine("{}");
@@ -283,14 +279,13 @@ namespace SpirV
 
 		class OperatorKindEnumerant
 		{
-			public string Name;
-			public uint Value;
+			public required string Name { get; set; }
+			public required uint Value { get; set; }
 
-			public IList<string> Parameters;
+			public List<string>? Parameters { get; set; }
 		}
 
-		private static IReadOnlyDictionary<string, bool> ProcessOperandTypes(JsonElement OperandTypes,
-			SyntaxGenerator generator, IList<SyntaxNode> nodes)
+		private static IReadOnlyDictionary<string, bool> ProcessOperandTypes(JsonElement OperandTypes, IList<SyntaxNode> nodes)
 		{
 			Dictionary<string, bool> result = [];
 
@@ -302,7 +297,7 @@ namespace SpirV
 				if (n.GetProperty("category").GetString() != "ValueEnum"
 					&& n.GetProperty("category").GetString() != "BitEnum") continue;
 
-				string kind = n.GetProperty("kind").GetString();
+				string kind = n.GetProperty("kind").GetString()!;
 
 				bool hasParameters = false;
 
@@ -325,7 +320,7 @@ namespace SpirV
 				if (n.GetProperty("category").GetString() != "ValueEnum"
 					&& n.GetProperty("category").GetString() != "BitEnum") continue;
 
-				string kind = n.GetProperty("kind").GetString();
+				string kind = n.GetProperty("kind").GetString()!;
 
 				EnumType enumType = n.GetProperty("category").GetString() == "ValueEnum"
 					? EnumType.Value : EnumType.Bit;
@@ -334,9 +329,9 @@ namespace SpirV
 
 				foreach (JsonElement enumerant in n.GetProperty("enumerants").EnumerateArray())
 				{
-					OperatorKindEnumerant oke = new OperatorKindEnumerant
+					OperatorKindEnumerant oke = new()
 					{
-						Name = enumerant.GetProperty("enumerant").GetString(),
+						Name = enumerant.GetProperty("enumerant").GetString()!,
 						Value = ParseEnumValue(enumerant.GetProperty("value"))
 					};
 
@@ -348,11 +343,11 @@ namespace SpirV
 					if (enumerant.TryGetProperty("parameters", out JsonElement parameters))
 					{
 
-						oke.Parameters = new List<string>();
+						oke.Parameters = [];
 
 						foreach (JsonElement parameter in parameters.EnumerateArray())
 						{
-							oke.Parameters.Add(parameter.GetProperty("kind").GetString());
+							oke.Parameters.Add(parameter.GetProperty("kind").GetString()!);
 						}
 					}
 
@@ -381,7 +376,8 @@ namespace SpirV
 					sb.AppendLine($"public class {e.Name}Parameter : Parameter");
 					sb.AppendLine("{");
 					sb.AppendLine("public override IReadOnlyList<OperandType> OperandTypes { get => operandTypes_; }");
-					sb.AppendLine("private static readonly List<OperandType> operandTypes_ = new List<OperandType> () {");
+					sb.AppendLine("private static readonly OperandType[] operandTypes_ =");
+					sb.AppendLine("[");
 
 					foreach (string p in e.Parameters)
 					{
@@ -402,7 +398,7 @@ namespace SpirV
 						}
 					}
 
-					sb.AppendLine("};");
+					sb.AppendLine("];");
 					sb.AppendLine("}");
 				}
 
@@ -426,19 +422,17 @@ namespace SpirV
 		private static void OperandTypeCreateParameterMethod(string enumName,
 			IList<OperatorKindEnumerant> enumerants, StringBuilder sb)
 		{
-			sb.AppendLine($"public override Parameter CreateParameter (object value)");
+			sb.AppendLine($"public override Parameter? CreateParameter(object value) => ({enumName})value switch");
 			sb.AppendLine("{");
-			sb.AppendLine($"switch (({enumName})value) {{");
 			foreach (OperatorKindEnumerant e in enumerants)
 			{
 				if (e.Parameters == null)
 					continue;
 
-				sb.AppendLine($"case {enumName}.{e.Name}: return new {e.Name}Parameter ();");
+				sb.AppendLine($"{enumName}.{e.Name} => new {e.Name}Parameter(),");
 			}
-			sb.AppendLine("}");
-			sb.AppendLine("return null;");
-			sb.AppendLine("}");
+			sb.AppendLine("_ => null,");
+			sb.AppendLine("};");
 		}
 
 		private static uint ParseEnumValue(JsonElement value)
@@ -469,15 +463,16 @@ namespace SpirV
 			JsonDocument doc = System.Text.Json.JsonDocument.Parse(System.IO.File.ReadAllText(
 					"spirv.core.grammar.json"));
 
-			List<SyntaxNode> nodes = new List<SyntaxNode>();
+			List<SyntaxNode> nodes = [];
 
-			IReadOnlyDictionary<string, bool> knownEnumerands = ProcessOperandTypes(doc.RootElement.GetProperty("operand_kinds"), generator, nodes);
-			ProcessInstructions(doc.RootElement.GetProperty("instructions"), knownEnumerands, generator, nodes);
+			IReadOnlyDictionary<string, bool> knownEnumerands = ProcessOperandTypes(doc.RootElement.GetProperty("operand_kinds"), nodes);
+			ProcessInstructions(doc.RootElement.GetProperty("instructions"), knownEnumerands, nodes);
 
-			SyntaxNode cu = generator.CompilationUnit(
+			SyntaxNode cu = generator.CompilationUnit([
 				generator.NamespaceImportDeclaration("System"),
 				generator.NamespaceImportDeclaration("System.Collections.Generic"),
-				generator.NamespaceDeclaration("SpirV", nodes));
+				SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
+				..nodes]);
 
 			GenerateCode(cu, workspace, "../../../../SPIRV/SpirV.Core.Grammar.cs");
 		}
@@ -507,13 +502,13 @@ namespace SpirV
 			node = Formatter.Format(node, workspace);
 
 			System.IO.File.WriteAllText(path,
-				node.ToFullString());
+				node.ToFullString().Replace("    ", "\t"));
 		}
 
 		private static void CreateSpirvMeta(JsonElement jr,
 			XmlDocument doc, List<SyntaxNode> nodes)
 		{
-			Meta meta = new Meta(jr.GetProperty("spv").GetProperty("meta"), (XmlElement)doc.SelectSingleNode("/registry/ids")!);
+			Meta meta = new(jr.GetProperty("spv").GetProperty("meta"), (XmlElement)doc.SelectSingleNode("/registry/ids")!);
 
 			nodes.Add(meta.ToSourceFragment());
 		}
