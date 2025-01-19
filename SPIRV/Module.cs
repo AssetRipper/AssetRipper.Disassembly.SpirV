@@ -81,7 +81,7 @@ public class Module
 						Debug.Assert(t != null);
 						Debug.Assert(t is ScalarType);
 
-						object? constant = ConvertConstant(
+						object constant = ConvertConstant(
 							(ScalarType)instruction.ResultType,
 							instruction.Words.Skip(3).ToList());
 						instruction.Operands[2].Value = constant;
@@ -371,8 +371,7 @@ public class Module
 					{
 						if (i.Width == 16)
 						{
-							///TODO ToInt16?
-							return (short)BitConverter.ToInt32(bytes, 0);
+							return BitConverter.ToInt16(bytes, 0);
 						}
 						else if (i.Width == 32)
 						{
