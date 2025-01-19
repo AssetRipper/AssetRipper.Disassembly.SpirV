@@ -1,6 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.Editing;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Formatting;
 using System.Collections.Generic;
 using System.IO;
@@ -14,12 +14,8 @@ class Program
 {
 	static void Main()
 	{
-		AdhocWorkspace workspace = new();
-		SyntaxGenerator generator = SyntaxGenerator.GetGenerator(workspace,
-			LanguageNames.CSharp);
-
-		GenerateCode(Meta.Load().ToCompilationUnit(), workspace, "../../../../SPIRV/SpirV.Meta.cs");
-		ProcessGrammars(generator, workspace);
+		GenerateCode(Meta.Load().ToCompilationUnit(), "../../../../SPIRV/SpirV.Meta.cs");
+		ProcessGrammars();
 	}
 
 	private static void ProcessInstructions(IReadOnlyList<InstructionItem> instructions,
@@ -111,7 +107,8 @@ class Program
 			sb.AppendLine("{");
 			foreach (OperatorKindEnumerant e in ok.Enumerants)
 			{
-				if (e.Parameters == null) continue;
+				if (e.Parameters == null)
+					continue;
 				sb.AppendLine($"public class {e.Name}Parameter : Parameter");
 				sb.AppendLine("{");
 				sb.AppendLine("public override IReadOnlyList<OperandType> OperandTypes { get => operandTypes_; }");
@@ -157,7 +154,7 @@ class Program
 	}
 
 	private static void OperandTypeCreateParameterMethod(string enumName,
-		IList<OperatorKindEnumerant> enumerants, StringBuilder sb)
+		IReadOnlyList<OperatorKindEnumerant> enumerants, StringBuilder sb)
 	{
 		sb.AppendLine($"public override Parameter? CreateParameter(object value) => ({enumName})value switch");
 		sb.AppendLine("{");
@@ -172,9 +169,7 @@ class Program
 		sb.AppendLine("};");
 	}
 
-	private static void ProcessGrammars(
-		SyntaxGenerator generator,
-		Workspace workspace)
+	private static void ProcessGrammars()
 	{
 		JsonDocument doc = JsonDocument.Parse(File.ReadAllText("spirv.core.grammar.json"));
 
@@ -186,18 +181,24 @@ class Program
 		ProcessOperandTypes(knownEnumerands, nodes);
 		ProcessInstructions(instructions, knownEnumerands, nodes);
 
-		SyntaxNode cu = generator.CompilationUnit([
-			generator.NamespaceImportDeclaration("System"),
-			generator.NamespaceImportDeclaration("System.Collections.Generic"),
-			SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
-			..nodes]);
+		CompilationUnitSyntax cu = SyntaxFactory.CompilationUnit()
+			.WithUsings(SyntaxFactory.List(
+			[
+				SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System")),
+				SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System.Collections.Generic")),
+			]))
+			.WithMembers(SyntaxFactory.List(
+			[
+				SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
+				..nodes.Cast<MemberDeclarationSyntax>()
+			]));
 
-		GenerateCode(cu, workspace, "../../../../SPIRV/SpirV.Core.Grammar.cs");
+		GenerateCode(cu, "../../../../SPIRV/SpirV.Core.Grammar.cs");
 	}
 
-	private static void GenerateCode(SyntaxNode node, Workspace workspace, string path)
+	private static void GenerateCode(SyntaxNode node, string path)
 	{
-		SyntaxNode formatted = Formatter.Format(node, workspace);
+		SyntaxNode formatted = Formatter.Format(node, new AdhocWorkspace());
 		string formattedCode = formatted.ToFullString();
 		string code = formattedCode.Replace("    ", "\t");
 
