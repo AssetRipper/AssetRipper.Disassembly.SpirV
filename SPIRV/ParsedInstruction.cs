@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace SpirV
 {
@@ -130,13 +129,11 @@ namespace SpirV
 
 		public void Resolve (IReadOnlyDictionary<uint, ParsedInstruction> objects)
 		{
-			object_ = objects [Id];
+			Reference = objects [Id];
 		}
 
 		public uint Id { get; }
-		public ParsedInstruction Reference { get => object_; }
-
-		private ParsedInstruction object_;
+		public ParsedInstruction Reference { get; private set; }
 
 		public override string ToString ()
 		{

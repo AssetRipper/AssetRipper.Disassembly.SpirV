@@ -16,8 +16,8 @@ namespace SpirV
 			Read (instructions_, objects_);
 		}
 
-		private static HashSet<string> debugInstructions_ = new HashSet<string>
-		{
+		private static HashSet<string> debugInstructions_ =
+		[
 			"OpSourceContinued",
 			"OpSource",
 			"OpSourceExtension",
@@ -27,7 +27,7 @@ namespace SpirV
 			"OpLine",
 			"OpNoLine",
 			"OpModuleProcessed"
-		};
+		];
 
 		public static bool IsDebugInstruction (ParsedInstruction instruction)
 		{
@@ -365,6 +365,6 @@ namespace SpirV
 
 		private readonly List<ParsedInstruction> instructions_;
 
-		private readonly Dictionary<uint, ParsedInstruction> objects_ = new Dictionary<uint, ParsedInstruction> ();
+		private readonly Dictionary<uint, ParsedInstruction> objects_ = [];
 	}
 }

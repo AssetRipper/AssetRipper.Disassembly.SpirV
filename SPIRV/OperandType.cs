@@ -44,7 +44,6 @@ namespace SpirV
 	{
 		public override bool ReadValue (IList<uint> words, out object value, out int wordsUsed)
 		{
-			StringBuilder sb = new StringBuilder ();
 			// This is just a fail-safe -- the loop below must terminate
 			wordsUsed = 1;
 

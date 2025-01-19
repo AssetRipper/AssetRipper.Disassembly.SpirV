@@ -50,7 +50,7 @@ namespace SpirV
 			sb.AppendFormat ("; Bound: {0}\n", module.Header.Bound);
 			sb.AppendFormat ("; Schema: {0}\n", module.Header.Reserved);
 
-			List<string> lines = new List<string> ();
+			List<string> lines = [];
 			foreach (var i in module.Instructions) {
 				PrintInstruction (sb, i, options);
 				lines.Add (sb.ToString ());
@@ -63,7 +63,7 @@ namespace SpirV
 			}
 
 			foreach (var line in lines) {
-				if (line.StartsWith (";")) {
+				if (line.StartsWith (';')) {
 					sb.AppendLine (line);
 				} else {
 					if (line.Contains ('=')) {
@@ -95,7 +95,7 @@ namespace SpirV
 			if (instruction.Instruction.Operands[currentOperand].Type is IdResultType) {
 				if (options.HasFlag (DisassemblyOptions.ShowTypes)) { 
 					sb.Append (instruction.ResultType.ToString ());
-					sb.Append (" ");
+					sb.Append (' ');
 				}
 
 				++currentOperand;
@@ -114,11 +114,11 @@ namespace SpirV
 			}
 
 			sb.Append (instruction.Instruction.Name);
-			sb.Append (" ");
+			sb.Append (' ');
 
 			for (; currentOperand < instruction.Operands.Count; ++currentOperand) {
 				PrintOperandValue (sb, instruction.Operands[currentOperand].Value, options);
-				sb.Append (" ");
+				sb.Append (' ');
 			}
 		}
 
@@ -151,7 +151,7 @@ namespace SpirV
 				var value = enumOperandValue.Values[key] as IList<object>;
 
 				if (value.Count != 0) {
-					sb.Append (" ");
+					sb.Append (' ');
 					foreach (var v in value) {
 						PrintOperandValue (sb, v, options);
 					}
@@ -163,7 +163,7 @@ namespace SpirV
 		{
 			sb.Append (valueOperandValue.Key);
 			if (valueOperandValue.Value is IList<object> valueList && valueList.Count > 0) {
-				sb.Append (" ");
+				sb.Append (' ');
 				foreach (var v in valueList) {
 					PrintOperandValue (sb, v, options);
 				}

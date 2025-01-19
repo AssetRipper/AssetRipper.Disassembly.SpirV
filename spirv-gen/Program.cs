@@ -20,11 +20,11 @@ namespace SpirV
 		public Meta (System.Text.Json.JsonElement meta,
 			XmlElement ids)
 		{
-			MagicNumber = meta.GetProperty ("MagicNumber").GetUInt32();
-			Version = meta.GetProperty("Version").GetUInt32();
-			Revision = meta.GetProperty("Revision").GetUInt32();
-			OpCodeMask = meta.GetProperty("OpCodeMask").GetUInt32();
-			WordCountShift = meta.GetProperty("WordCountShift").GetUInt32();
+			MagicNumber = meta.GetProperty (nameof(MagicNumber)).GetUInt32();
+			Version = meta.GetProperty(nameof(Version)).GetUInt32();
+			Revision = meta.GetProperty(nameof(Revision)).GetUInt32();
+			OpCodeMask = meta.GetProperty(nameof(OpCodeMask)).GetUInt32();
+			WordCountShift = meta.GetProperty(nameof(WordCountShift)).GetUInt32();
 
 			foreach (XmlElement toolId in ids.SelectNodes ("id")) {
 				var ti = new ToolInfo
@@ -42,32 +42,34 @@ namespace SpirV
 
 		public SyntaxNode ToSourceFragment (SyntaxGenerator generator)
 		{
-			IList<SyntaxNode> members = new List<SyntaxNode>
-			{
+			IList<SyntaxNode> members =
+			[
 				CreateProperty(generator, "MagicNumber", MagicNumber),
 				CreateProperty(generator, "Version", Version),
 				CreateProperty(generator, "Revision", Revision),
 				CreateProperty(generator, "OpCodeMask", OpCodeMask),
 				CreateProperty(generator, "WordCountShift", WordCountShift)
-			};
+			];
 
 			StringBuilder sb = new StringBuilder ();
 
-			sb.Append (@"public class ToolInfo { 
-				public ToolInfo (string vendor)
-				{
-					Vendor = vendor;
-				}
+			sb.Append ("""
+				public class ToolInfo { 
+								public ToolInfo (string vendor)
+								{
+									Vendor = vendor;
+								}
 
-				public ToolInfo (string vendor, string name)
-				{
-					Vendor = vendor;
-					Name = name;
-				}
+								public ToolInfo (string vendor, string name)
+								{
+									Vendor = vendor;
+									Name = name;
+								}
 
-				public String Name {get;} 
-				public String Vendor {get;} 
-			}");
+								public String Name {get;} 
+								public String Vendor {get;} 
+							}
+				""");
 			sb.Append ("private readonly static Dictionary<int, ToolInfo> toolInfos_ = new Dictionary<int, ToolInfo> {");
 
 			foreach (var kv in toolInfos_) {
@@ -208,10 +210,12 @@ namespace SpirV
 				sb.AppendLine ($"{{ {instruction.Id}, new {instruction.Name}() }},");
 			}
 
-			sb.Append (@"};
+			sb.Append ("""
+				};
 
-			public static IReadOnlyDictionary<int, Instruction> OpcodeToInstruction { get => instructions_; }
-			}");
+							public static IReadOnlyDictionary<int, Instruction> OpcodeToInstruction { get => instructions_; }
+							}
+				""");
 
 			var s = sb.ToString ();
 
@@ -280,10 +284,10 @@ namespace SpirV
 
 				foreach (var enumerant in n.GetProperty("enumerants").EnumerateArray()) {
 					if (enumerant.TryGetProperty("parameters", out _))
-                    {
+					{
 						hasParameters = true;
 						break;
-                    }
+					}
 				}
 
 				result.Add (kind, hasParameters);
