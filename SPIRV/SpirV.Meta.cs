@@ -1,36 +1,15 @@
-using System;
 using System.Collections.Generic;
 
-namespace SpirV
+namespace SpirV;
+
+class Meta
 {
-    class Meta
-    {
-        public static uint MagicNumber => 119734787U;
-
-        public static uint Version => 66048U;
-
-        public static uint Revision => 2U;
-
-        public static uint OpCodeMask => 65535U;
-
-        public static uint WordCountShift => 16U;
-
-        public class ToolInfo
-        {
-            public ToolInfo(string vendor)
-            {
-                Vendor = vendor;
-            }
-
-            public ToolInfo(string vendor, string name)
-            {
-                Vendor = vendor;
-                Name = name;
-            }
-
-            public String Name { get; }
-            public String Vendor { get; }
-    }private readonly static Dictionary<int, ToolInfo> toolInfos_ = new Dictionary<int, ToolInfo>
+    public static uint MagicNumber => 119734787U;
+    public static uint Version => 66048U;
+    public static uint Revision => 2U;
+    public static uint OpCodeMask => 65535U;
+    public static uint WordCountShift => 16U;
+    public static IReadOnlyDictionary<int, ToolInfo> Tools { get; } = new Dictionary<int, ToolInfo>()
     {
         {
             0,
@@ -221,5 +200,22 @@ namespace SpirV
             new ToolInfo("Nintendo")
         },
     };
-            public static IReadOnlyDictionary<int, ToolInfo> Tools { get => toolInfos_; }}
+
+    public class ToolInfo
+    {
+        public ToolInfo(string vendor)
+        {
+            Vendor = vendor;
+            Name = null;
+        }
+
+        public ToolInfo(string vendor, string name)
+        {
+            Vendor = vendor;
+            Name = name;
+        }
+
+        public string? Name { get; }
+        public string Vendor { get; }
+    }
 }

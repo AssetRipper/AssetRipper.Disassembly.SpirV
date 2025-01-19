@@ -1,8 +1,8 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Editing;
 using Microsoft.CodeAnalysis.Formatting;
-using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
@@ -38,41 +38,24 @@ namespace SpirV
 					ti.name = toolId.GetAttribute("tool");
 				}
 
-				toolInfos_.Add(Int32.Parse(toolId.GetAttribute("value")), ti);
+				toolInfos_.Add(int.Parse(toolId.GetAttribute("value")), ti);
 			}
 		}
 
-		public SyntaxNode ToSourceFragment(SyntaxGenerator generator)
+		public SyntaxNode ToSourceFragment()
 		{
-			IList<SyntaxNode> members =
+			List<MemberDeclarationSyntax> members =
 			[
-				CreateProperty(generator, "MagicNumber", MagicNumber),
-				CreateProperty(generator, "Version", Version),
-				CreateProperty(generator, "Revision", Revision),
-				CreateProperty(generator, "OpCodeMask", OpCodeMask),
-				CreateProperty(generator, "WordCountShift", WordCountShift)
+				CreateProperty("MagicNumber", MagicNumber),
+				CreateProperty("Version", Version),
+				CreateProperty("Revision", Revision),
+				CreateProperty("OpCodeMask", OpCodeMask),
+				CreateProperty("WordCountShift", WordCountShift)
 			];
 
 			StringBuilder sb = new StringBuilder();
 
-			sb.Append("""
-				public class ToolInfo { 
-								public ToolInfo (string vendor)
-								{
-									Vendor = vendor;
-								}
-
-								public ToolInfo (string vendor, string name)
-								{
-									Vendor = vendor;
-									Name = name;
-								}
-
-								public String Name {get;} 
-								public String Vendor {get;} 
-							}
-				""");
-			sb.Append("private readonly static Dictionary<int, ToolInfo> toolInfos_ = new Dictionary<int, ToolInfo> {");
+			sb.Append("public static IReadOnlyDictionary<int, ToolInfo> Tools { get; } = new Dictionary<int, ToolInfo>()\n{");
 
 			foreach (KeyValuePair<int, ToolInfo> kv in toolInfos_)
 			{
@@ -88,21 +71,36 @@ namespace SpirV
 			}
 
 			sb.Append("};\n");
-			sb.Append("public static IReadOnlyDictionary<int, ToolInfo> Tools {get => toolInfos_;}\n");
+
+			sb.AppendLine("""
+				public class ToolInfo { 
+								public ToolInfo (string vendor)
+								{
+									Vendor = vendor;
+									Name = null;
+								}
+
+								public ToolInfo (string vendor, string name)
+								{
+									Vendor = vendor;
+									Name = name;
+								}
+
+								public string? Name {get;} 
+								public string Vendor {get;} 
+							}
+				""");
 
 			SyntaxTree tree = CSharpSyntaxTree.ParseText(sb.ToString());
 			foreach (SyntaxNode node in tree.GetRoot().ChildNodes())
 			{
-				members.Add(node.NormalizeWhitespace());
+				members.Add((MemberDeclarationSyntax)node);
 			}
 
-			SyntaxNode n = generator.ClassDeclaration("Meta", members: members);
-
-			return n;
+			return SyntaxFactory.ClassDeclaration("Meta").AddMembers(members.ToArray()).NormalizeWhitespace();
 		}
 
-		private static SyntaxNode CreateProperty(SyntaxGenerator generator,
-			string name, uint value)
+		private static PropertyDeclarationSyntax CreateProperty(string name, uint value)
 		{
 			return SyntaxFactory.PropertyDeclaration(SyntaxFactory.PredefinedType(SyntaxFactory.Token(SyntaxKind.UIntKeyword)), name)
 				.WithModifiers(SyntaxFactory.TokenList(SyntaxFactory.Token(SyntaxKind.PublicKeyword), SyntaxFactory.Token(SyntaxKind.StaticKeyword)))
@@ -118,8 +116,8 @@ namespace SpirV
 
 		class ToolInfo
 		{
-			public string vendor;
-			public string name;
+			public string? vendor;
+			public string? name;
 		}
 
 		Dictionary<int, ToolInfo> toolInfos_ = [];
@@ -139,14 +137,14 @@ namespace SpirV
 
 		class OperandItem
 		{
-			public string Kind;
-			public string Quantifier;
-			public string Name;
+			public string? Kind;
+			public string? Quantifier;
+			public string? Name;
 		}
 
 		class InstructionItem
 		{
-			public string Name;
+			public string? Name;
 			public int Id;
 			public IList<OperandItem> Operands;
 		}
@@ -190,7 +188,7 @@ namespace SpirV
 
 						if (operand.TryGetProperty("name", out JsonElement name))
 						{
-							string operandName = name.GetString();
+							string operandName = name.GetString()!;
 
 							if (operandName.StartsWith('\''))
 							{
@@ -209,7 +207,7 @@ namespace SpirV
 				ins.Add(i);
 			}
 
-			StringBuilder sb = new StringBuilder();
+			StringBuilder sb = new();
 
 			foreach (InstructionItem instruction in ins)
 			{
@@ -489,18 +487,17 @@ namespace SpirV
 			JsonDocument doc = System.Text.Json.JsonDocument.Parse(System.IO.File.ReadAllText(
 					"spirv.json"));
 
-			XmlDocument xmlDoc = new XmlDocument();
+			XmlDocument xmlDoc = new();
 			xmlDoc.Load("spir-v.xml");
 
-			List<SyntaxNode> nodes = new List<SyntaxNode>();
+			List<SyntaxNode> nodes = [];
 
-			CreateSpirvMeta(doc.RootElement, xmlDoc, generator, nodes);
+			CreateSpirvMeta(doc.RootElement, xmlDoc, nodes);
 
-			SyntaxNode cu = generator.CompilationUnit(
-				generator.NamespaceImportDeclaration("System"),
+			SyntaxNode cu = generator.CompilationUnit([
 				generator.NamespaceImportDeclaration("System.Collections.Generic"),
-				generator.NamespaceDeclaration("SpirV", nodes));
-
+				SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
+				..nodes]);
 			GenerateCode(cu, workspace, "../../../../SPIRV/SpirV.Meta.cs");
 		}
 
@@ -514,11 +511,11 @@ namespace SpirV
 		}
 
 		private static void CreateSpirvMeta(JsonElement jr,
-			XmlDocument doc, SyntaxGenerator generator, IList<SyntaxNode> nodes)
+			XmlDocument doc, List<SyntaxNode> nodes)
 		{
-			Meta meta = new Meta(jr.GetProperty("spv").GetProperty("meta"), doc.SelectSingleNode("/registry/ids") as XmlElement);
+			Meta meta = new Meta(jr.GetProperty("spv").GetProperty("meta"), (XmlElement)doc.SelectSingleNode("/registry/ids")!);
 
-			nodes.Add(meta.ToSourceFragment(generator));
+			nodes.Add(meta.ToSourceFragment());
 		}
 	}
 }

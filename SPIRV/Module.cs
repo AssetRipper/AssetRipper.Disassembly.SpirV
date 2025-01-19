@@ -138,7 +138,7 @@ namespace SpirV
 			int generatorToolId = (int)(generatorMagicNumber >> 16);
 
 			string generatorVendor = "unknown";
-			string generatorName = null;
+			string? generatorName = null;
 
 			if (SpirV.Meta.Tools.ContainsKey(generatorToolId))
 			{
