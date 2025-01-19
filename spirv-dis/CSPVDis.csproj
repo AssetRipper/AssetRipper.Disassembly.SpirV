@@ -4,6 +4,7 @@
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net9.0</TargetFramework>
 		<LangVersion>Latest</LangVersion>
+		<Nullable>enable</Nullable>
 		<AssemblyName>cspvdis</AssemblyName>
 		<RootNamespace>SpirV</RootNamespace>
 		<StartupObject></StartupObject>

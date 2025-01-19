@@ -3,6 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
 		<LangVersion>Latest</LangVersion>
+		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 		<Authors>Matthäus G. Chajdas</Authors>
 		<Product>CSSPV</Product>
