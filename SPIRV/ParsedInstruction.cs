@@ -18,7 +18,7 @@ public class ParsedOperand
 		Operand = operand;
 	}
 
-	public T GetSingleEnumValue<T>() where T : System.Enum
+	public T GetSingleEnumValue<T>() where T : unmanaged, System.Enum
 	{
 		IValueEnumOperandValue v = (IValueEnumOperandValue)Value;
 
@@ -41,7 +41,7 @@ public class ParsedOperand
 		return ((ObjectReference)Value).Id;
 	}
 
-	public T GetBitEnumValue<T>() where T : System.Enum
+	public T GetBitEnumValue<T>() where T : unmanaged, System.Enum
 	{
 		IBitEnumOperandValue v = (IBitEnumOperandValue)Value;
 
@@ -72,7 +72,7 @@ public class VaryingOperandValue
 
 			if (i < (Values.Count - 1))
 			{
-				sb.Append(" ");
+				sb.Append(' ');
 			}
 		}
 
@@ -178,7 +178,6 @@ public class ParsedInstruction
 		int currentOperand = 0;
 
 		List<object> varyingOperandValues = [];
-		int varyingWordStart = 0;
 		Operand? varyingOperand = null;
 
 		for (; currentWord < Words.Count;)
@@ -191,7 +190,6 @@ public class ParsedInstruction
 			if (operand.Quantifier == OperandQuantifier.Varying)
 			{
 				varyingOperandValues.Add(value);
-				varyingWordStart = currentWord;
 				varyingOperand = operand;
 			}
 			else

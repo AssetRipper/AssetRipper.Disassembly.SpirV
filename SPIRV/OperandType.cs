@@ -127,7 +127,7 @@ public class EnumType<T> : EnumType<T, ParameterFactory> where T : unmanaged, Sy
 
 public class EnumType<T, U> : OperandType where T : unmanaged, System.Enum where U : ParameterFactory, new()
 {
-	private U parameterFactory_ = new U();
+	private readonly U parameterFactory_ = new U();
 	public System.Type EnumerationType { get { return typeof(T); } }
 
 	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)

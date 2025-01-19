@@ -15,7 +15,7 @@ public class Module
 		Read(instructions_, objects_);
 	}
 
-	private static HashSet<string> debugInstructions_ =
+	private static readonly HashSet<string> debugInstructions_ =
 	[
 		"OpSourceContinued",
 		"OpSource",
@@ -78,8 +78,8 @@ public class Module
 				case OpConstant oc:
 					{
 						Type t = instruction.ResultType;
-						System.Diagnostics.Debug.Assert(t != null);
-						System.Diagnostics.Debug.Assert(t is ScalarType);
+						Debug.Assert(t != null);
+						Debug.Assert(t is ScalarType);
 
 						object? constant = ConvertConstant(
 							(ScalarType)instruction.ResultType,
@@ -100,7 +100,7 @@ public class Module
 					{
 						StructType? t = objects[instruction.Words[1]].ResultType as StructType;
 
-						System.Diagnostics.Debug.Assert(t != null);
+						Debug.Assert(t != null);
 
 						t.SetMemberName((uint)instruction.Operands[1].Value,
 							instruction.Operands[2].Value as string);
@@ -140,9 +140,9 @@ public class Module
 		string generatorVendor = "unknown";
 		string? generatorName = null;
 
-		if (SpirV.Meta.Tools.ContainsKey(generatorToolId))
+		if (Meta.Tools.ContainsKey(generatorToolId))
 		{
-			Meta.ToolInfo toolInfo = SpirV.Meta.Tools[generatorToolId];
+			Meta.ToolInfo toolInfo = Meta.Tools[generatorToolId];
 
 			generatorVendor = toolInfo.Vendor;
 
@@ -153,7 +153,7 @@ public class Module
 		}
 
 		// Read header
-		ModuleHeader header = new ModuleHeader
+		ModuleHeader header = new()
 		{
 			Version = version,
 			GeneratorName = generatorName,
@@ -235,12 +235,12 @@ public class Module
 
 					switch (constant)
 					{
-						case UInt16 u16: size = u16; break;
-						case UInt32 u32: size = (int)u32; break;
-						case UInt64 u64: size = (int)u64; break;
-						case Int16 i16: size = i16; break;
-						case Int32 i32: size = i32; break;
-						case Int64 i64: size = (int)i64; break;
+						case ushort u16: size = u16; break;
+						case uint u32: size = (int)u32; break;
+						case ulong u64: size = (int)u64; break;
+						case short i16: size = i16; break;
+						case int i32: size = i32; break;
+						case long i64: size = (int)i64; break;
 					}
 
 					i.ResultType = new ArrayType(

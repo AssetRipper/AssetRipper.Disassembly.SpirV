@@ -130,7 +130,7 @@ public class ImageType : Type
 
 	public override string ToString()
 	{
-		StringBuilder sb = new StringBuilder();
+		StringBuilder sb = new();
 		switch (AccessQualifier)
 		{
 			case AccessQualifier.ReadWrite:
@@ -227,7 +227,7 @@ public class StructType : Type
 		}
 	}
 
-	private List<string?> memberNames_;
+	private readonly List<string?> memberNames_;
 
 	public IReadOnlyList<Type> MemberTypes { get; }
 	public IReadOnlyList<string?> MemberNames { get { return memberNames_; } }
@@ -239,7 +239,7 @@ public class StructType : Type
 
 	public override string ToString()
 	{
-		StringBuilder sb = new StringBuilder();
+		StringBuilder sb = new();
 
 		sb.Append("struct {");
 		for (int i = 0; i < MemberTypes.Count; ++i)
@@ -249,17 +249,17 @@ public class StructType : Type
 
 			if (!string.IsNullOrEmpty(memberNames_[i]))
 			{
-				sb.Append(" ");
+				sb.Append(' ');
 				sb.Append(MemberNames[i]);
 			}
 
-			sb.Append(";");
+			sb.Append(';');
 			if (i < (MemberTypes.Count - 1))
 			{
-				sb.Append(" ");
+				sb.Append(' ');
 			}
 		}
-		sb.Append("}");
+		sb.Append('}');
 
 		return sb.ToString();
 	}

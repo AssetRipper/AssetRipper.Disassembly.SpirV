@@ -10,11 +10,11 @@ class Reader
 
 		uint magicNumber = reader_.ReadUInt32();
 
-		if (magicNumber == SpirV.Meta.MagicNumber)
+		if (magicNumber == Meta.MagicNumber)
 		{
 			littleEndian_ = true;
 		}
-		else if (Reverse(magicNumber) == SpirV.Meta.MagicNumber)
+		else if (Reverse(magicNumber) == Meta.MagicNumber)
 		{
 			littleEndian_ = false;
 		}
@@ -44,6 +44,6 @@ class Reader
 				(u >> 24);
 	}
 
-	private System.IO.BinaryReader reader_;
+	private readonly System.IO.BinaryReader reader_;
 	readonly bool littleEndian_;
 }
