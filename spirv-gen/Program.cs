@@ -100,15 +100,16 @@ class Program
 		public required EnumType Category { get; init; }
 		public required List<OperatorKindEnumerant> Enumerants { get; init; }
 
-		public static OperatorKind? ParseEnum(JsonElement n)
+		public static OperatorKind ParseEnum(JsonElement n)
 		{
-			string? category = n.GetProperty("category").GetString();
-			if (category is not "ValueEnum" and not "BitEnum")
-				return null;
+			EnumType enumType = n.GetProperty("category").GetString() switch
+			{
+				"ValueEnum" => EnumType.Value,
+				"BitEnum" => EnumType.Bit,
+				_ => throw new System.Exception("Unknown enum type"),
+			};
 
 			string kind = n.GetProperty("kind").GetString()!;
-
-			EnumType enumType = category is "ValueEnum" ? EnumType.Value : EnumType.Bit;
 
 			List<OperatorKindEnumerant> enumerants = [];
 
@@ -117,7 +118,7 @@ class Program
 				OperatorKindEnumerant oke = new()
 				{
 					Name = enumerant.GetProperty("enumerant").GetString()!,
-					Value = ParseEnumValue(enumerant.GetProperty("value"))
+					Value = enumerant.GetProperty("value").ParseEnumValue(),
 				};
 
 				if (char.IsDigit(oke.Name[0]))
@@ -232,10 +233,9 @@ class Program
 		// We gather all of the types up-front as we need them in the loop
 		foreach (JsonElement n in OperandTypes.EnumerateArray())
 		{
-			// We only handle the Enums here, the others are handled 
-			// manually
-			if (n.GetProperty("category").GetString() != "ValueEnum"
-				&& n.GetProperty("category").GetString() != "BitEnum") continue;
+			// We only handle the Enums here; the others are handled manually.
+			if (n.GetProperty("category").GetString() is not "ValueEnum" and not "BitEnum")
+				continue;
 
 			string kind = n.GetProperty("kind").GetString()!;
 
@@ -255,11 +255,11 @@ class Program
 
 		foreach (JsonElement n in OperandTypes.EnumerateArray())
 		{
-			OperatorKind? ok = OperatorKind.ParseEnum(n);
-
-			// We only handle the Enums here, the others are handled manually
-			if (ok is null)
+			// We only handle the Enums here; the others are handled manually.
+			if (n.GetProperty("category").GetString() is not "ValueEnum" and not "BitEnum")
 				continue;
+
+			OperatorKind ok = OperatorKind.ParseEnum(n);
 
 			StringBuilder sb = new();
 
@@ -340,27 +340,6 @@ class Program
 		}
 		sb.AppendLine("_ => null,");
 		sb.AppendLine("};");
-	}
-
-	private static uint ParseEnumValue(JsonElement value)
-	{
-		if (value.ValueKind == JsonValueKind.String)
-		{
-			string s = value.ToString();
-
-			if (s.StartsWith("0x"))
-			{
-				return uint.Parse(s[2..], System.Globalization.NumberStyles.HexNumber);
-			}
-			else
-			{
-				return uint.Parse(s);
-			}
-		}
-		else
-		{
-			return value.GetUInt32();
-		}
 	}
 
 	private static void ProcessGrammars(
