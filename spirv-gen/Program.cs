@@ -85,7 +85,7 @@ class Program
 		sb.AppendLine("}");
 	}
 
-	private static void ProcessOperandTypes(IReadOnlyDictionary<string, OperatorKind> knownEnumerands, List<SyntaxNode> nodes)
+	private static void ProcessEnumTypes(IReadOnlyDictionary<string, OperatorKind> knownEnumerands, List<SyntaxNode> nodes)
 	{
 		foreach (OperatorKind ok in knownEnumerands.Values)
 		{
@@ -102,6 +102,20 @@ class Program
 				sb.Append($"{e.Name} = {e.Value},\n");
 			}
 			sb.AppendLine("}");
+
+			SyntaxTree tree = CSharpSyntaxTree.ParseText(sb.ToString());
+			foreach (SyntaxNode node in tree.GetRoot().ChildNodes())
+			{
+				nodes.Add(node.NormalizeWhitespace());
+			}
+		}
+	}
+
+	private static void ProcessParameterTypes(IReadOnlyDictionary<string, OperatorKind> knownEnumerands, List<SyntaxNode> nodes)
+	{
+		foreach (OperatorKind ok in knownEnumerands.Values)
+		{
+			StringBuilder sb = new();
 
 			sb.AppendLine($"public class {ok.Kind}ParameterFactory : ParameterFactory");
 			sb.AppendLine("{");
@@ -173,27 +187,59 @@ class Program
 	{
 		JsonDocument doc = JsonDocument.Parse(File.ReadAllText("spirv.core.grammar.json"));
 
-		List<SyntaxNode> nodes = [];
-
 		IReadOnlyDictionary<string, OperatorKind> knownEnumerands = OperatorKind.ParseList(doc.RootElement.GetProperty("operand_kinds")).ToDictionary(a => a.Kind, a => a);
 		IReadOnlyList<InstructionItem> instructions = InstructionItem.ParseList(doc.RootElement.GetProperty("instructions"));
 
-		ProcessOperandTypes(knownEnumerands, nodes);
-		ProcessInstructions(instructions, knownEnumerands, nodes);
+		// Enums
+		{
+			List<SyntaxNode> nodes = [];
+			ProcessEnumTypes(knownEnumerands, nodes);
 
-		CompilationUnitSyntax cu = SyntaxFactory.CompilationUnit()
-			.WithUsings(SyntaxFactory.List(
-			[
-				SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System")),
-				SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System.Collections.Generic")),
-			]))
-			.WithMembers(SyntaxFactory.List(
-			[
-				SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
-				..nodes.Cast<MemberDeclarationSyntax>()
-			]));
+			CompilationUnitSyntax cu = CreateCompilationUnit(
+				[
+					SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System")),
+				],
+				[
+					SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
+					..nodes.Cast<MemberDeclarationSyntax>()
+				]);
 
-		GenerateCode(cu, "../../../../SPIRV/SpirV.Core.Grammar.cs");
+			GenerateCode(cu, "../../../../SPIRV/SpirV.Enums.cs");
+		}
+
+		// Parameters
+		{
+			List<SyntaxNode> nodes = [];
+			ProcessParameterTypes(knownEnumerands, nodes);
+
+			CompilationUnitSyntax cu = CreateCompilationUnit(
+				[
+					SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System.Collections.Generic")),
+				],
+				[
+					SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
+					..nodes.Cast<MemberDeclarationSyntax>()
+				]);
+
+			GenerateCode(cu, "../../../../SPIRV/SpirV.Parameters.cs");
+		}
+
+		// Instructions
+		{
+			List<SyntaxNode> nodes = [];
+			ProcessInstructions(instructions, knownEnumerands, nodes);
+
+			CompilationUnitSyntax cu = CreateCompilationUnit(
+				[
+					SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System.Collections.Generic")),
+				],
+				[
+					SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
+					..nodes.Cast<MemberDeclarationSyntax>()
+				]);
+
+			GenerateCode(cu, "../../../../SPIRV/SpirV.Instructions.cs");
+		}
 	}
 
 	private static void GenerateCode(SyntaxNode node, string path)
@@ -203,5 +249,12 @@ class Program
 		string code = formattedCode.Replace("    ", "\t");
 
 		File.WriteAllText(path, code);
+	}
+
+	private static CompilationUnitSyntax CreateCompilationUnit(IEnumerable<UsingDirectiveSyntax> usingDirectives, IEnumerable<MemberDeclarationSyntax> members)
+	{
+		return SyntaxFactory.CompilationUnit()
+			.WithUsings(SyntaxFactory.List(usingDirectives))
+			.WithMembers(SyntaxFactory.List(members));
 	}
 }
