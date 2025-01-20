@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System;
+using System.Text.Json;
 
 namespace SpirV;
 
@@ -10,7 +11,7 @@ internal static class JsonElementExtensions
 		{
 			string s = value.ToString();
 
-			if (s.StartsWith("0x"))
+			if (s.StartsWith("0x", StringComparison.Ordinal))
 			{
 				return uint.Parse(s[2..], System.Globalization.NumberStyles.HexNumber);
 			}

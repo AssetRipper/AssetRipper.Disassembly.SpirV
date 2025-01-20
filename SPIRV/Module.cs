@@ -60,7 +60,7 @@ public class Module
 				continue;
 			}
 
-			if (instruction.Instruction.Name.StartsWith("OpType"))
+			if (instruction.Instruction.Name.StartsWith("OpType", StringComparison.Ordinal))
 			{
 				ProcessTypeInstruction(instruction, objects);
 			}
