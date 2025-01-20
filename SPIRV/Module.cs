@@ -126,11 +126,11 @@ public class Module
 
 	public static Module ReadFrom(System.IO.Stream stream)
 	{
-		System.IO.BinaryReader br = new System.IO.BinaryReader(stream);
-		Reader reader = new Reader(br);
+		System.IO.BinaryReader br = new(stream);
+		Reader reader = new(br);
 
 		uint versionNumber = reader.ReadWord();
-		Version version = new Version(
+		Version version = new(
 			(int)(versionNumber >> 16),
 			(int)((versionNumber >> 8) & 0xFF));
 

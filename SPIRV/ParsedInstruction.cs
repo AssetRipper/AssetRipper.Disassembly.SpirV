@@ -64,7 +64,7 @@ public class VaryingOperandValue
 
 	public override string ToString()
 	{
-		StringBuilder sb = new StringBuilder();
+		StringBuilder sb = new();
 
 		for (int i = 0; i < Values.Count; ++i)
 		{
