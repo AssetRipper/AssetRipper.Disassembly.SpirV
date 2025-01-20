@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace AssetRipper.Disassembly.SpirV;
 
@@ -18,20 +19,15 @@ public enum OperandQuantifier
 	Varying
 }
 
-public class Operand
+public record Operand(OperandType Type, string? Name, OperandQuantifier Quantifier)
 {
-	public string? Name { get; }
-	public OperandType Type { get; }
-	public OperandQuantifier Quantifier { get; }
-
-	public Operand(OperandType kind, string? name, OperandQuantifier quantifier)
+	public override string ToString()
 	{
-		Name = name;
-		Type = kind;
-		Quantifier = quantifier;
+		return Name is null ? Type.ToString() : $"{Type} {Name}";
 	}
 }
 
+[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
 public abstract class Instruction
 {
 	public abstract string Name { get; }
@@ -40,5 +36,10 @@ public abstract class Instruction
 
 	private protected Instruction()
 	{
+	}
+
+	private string GetDebuggerDisplay()
+	{
+		return Name;
 	}
 }

@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
 namespace AssetRipper.Disassembly.SpirV;
 
+[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
 public class ParsedOperand
 {
 	public IReadOnlyList<uint> Words { get; }
@@ -52,6 +54,11 @@ public class ParsedOperand
 		}
 
 		return (T)(object)result;
+	}
+
+	private string GetDebuggerDisplay()
+	{
+		return Operand.ToString();
 	}
 }
 
@@ -146,6 +153,7 @@ public class ObjectReference
 	}
 }
 
+[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
 public class ParsedInstruction
 {
 	public IReadOnlyList<uint> Words { get; } = [];
@@ -249,5 +257,10 @@ public class ParsedInstruction
 				objectReference.Resolve(objects);
 			}
 		}
+	}
+
+	private string GetDebuggerDisplay()
+	{
+		return Instruction.Name;
 	}
 }

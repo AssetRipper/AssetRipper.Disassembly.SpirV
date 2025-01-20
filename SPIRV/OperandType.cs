@@ -17,6 +17,11 @@ public class OperandType
 
 		return true;
 	}
+
+	public override string ToString()
+	{
+		return GetType().Name;
+	}
 }
 
 public class Literal : OperandType
