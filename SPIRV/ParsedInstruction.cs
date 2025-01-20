@@ -6,12 +6,12 @@ namespace SpirV;
 
 public class ParsedOperand
 {
-	public IList<uint> Words { get; }
+	public IReadOnlyList<uint> Words { get; }
 	public object Value { get; set; }
 
 	public Operand Operand { get; }
 
-	public ParsedOperand(IList<uint> words, object value, Operand operand)
+	public ParsedOperand(IReadOnlyList<uint> words, object value, Operand operand)
 	{
 		Words = words;
 		Value = value;
@@ -151,7 +151,7 @@ public class ParsedInstruction
 	public IReadOnlyList<uint> Words { get; } = [];
 
 	public Instruction Instruction { get; }
-	public IList<ParsedOperand> Operands { get; } = [];
+	public List<ParsedOperand> Operands { get; } = [];
 
 	public string? Name { get; set; }
 

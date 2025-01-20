@@ -198,7 +198,7 @@ public static class Disassembler
 	private static void PrintValueEnumValue(StringBuilder sb, IValueEnumOperandValue valueOperandValue, DisassemblyOptions options)
 	{
 		sb.Append(valueOperandValue.Key);
-		if (valueOperandValue.Value is IList<object> valueList && valueList.Count > 0)
+		if (valueOperandValue.Value is IReadOnlyList<object> valueList && valueList.Count > 0)
 		{
 			sb.Append(' ');
 			foreach (object v in valueList)

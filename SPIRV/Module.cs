@@ -33,7 +33,7 @@ public class Module
 		return debugInstructions_.Contains(instruction.Instruction.Name);
 	}
 
-	private static void Read(IList<ParsedInstruction> instructions,
+	private static void Read(IReadOnlyList<ParsedInstruction> instructions,
 		Dictionary<uint, ParsedInstruction> objects)
 	{
 		// Debug instructions can be only processed after everything

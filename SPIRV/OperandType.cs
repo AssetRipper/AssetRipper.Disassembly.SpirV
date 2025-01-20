@@ -8,7 +8,7 @@ namespace SpirV;
 
 public class OperandType
 {
-	public virtual bool ReadValue(IList<uint> words,
+	public virtual bool ReadValue(IReadOnlyList<uint> words,
 		out object value, out int wordsUsed)
 	{
 		// This returns the dynamic type
@@ -31,7 +31,7 @@ public class LiteralNumber : Literal
 // The SPIR-V JSON file uses only literal integers
 public class LiteralInteger : LiteralNumber
 {
-	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		value = words[0];
 		wordsUsed = 1;
@@ -42,7 +42,7 @@ public class LiteralInteger : LiteralNumber
 
 public class LiteralString : Literal
 {
-	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		// This is just a fail-safe -- the loop below must terminate
 		wordsUsed = 1;
@@ -87,7 +87,7 @@ public class LiteralContextDependentNumber : Literal
 
 public class LiteralExtInstInteger : Literal
 {
-	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		value = words[0];
 		wordsUsed = 1;
@@ -98,7 +98,7 @@ public class LiteralExtInstInteger : Literal
 
 public class LiteralSpecConstantOpInteger : Literal
 {
-	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		List<ObjectReference> result = [];
 		foreach (uint w in words)
@@ -130,7 +130,7 @@ public class EnumType<T, U> : OperandType where T : unmanaged, System.Enum where
 	private readonly U parameterFactory_ = new U();
 	public System.Type EnumerationType { get { return typeof(T); } }
 
-	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		int wordsUsedForParameters = 0;
 
@@ -193,7 +193,7 @@ public class EnumType<T, U> : OperandType where T : unmanaged, System.Enum where
 
 public class IdScope : OperandType
 {
-	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		value = (Scope)words[0];
 		wordsUsed = 1;
@@ -204,7 +204,7 @@ public class IdScope : OperandType
 
 public class IdMemorySemantics : OperandType
 {
-	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		value = (MemorySemantics)words[0];
 		wordsUsed = 1;
@@ -215,7 +215,7 @@ public class IdMemorySemantics : OperandType
 
 public class IdType : OperandType
 {
-	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		value = words[0];
 		wordsUsed = 1;
@@ -226,7 +226,7 @@ public class IdType : OperandType
 
 public class IdResult : IdType
 {
-	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		value = new ObjectReference(words[0]);
 		wordsUsed = 1;
@@ -241,7 +241,7 @@ public class IdResultType : IdType
 
 public class IdRef : IdType
 {
-	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		value = new ObjectReference(words[0]);
 		wordsUsed = 1;
@@ -252,7 +252,7 @@ public class IdRef : IdType
 
 public class PairIdRefIdRef : OperandType
 {
-	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		value = new { Variable = new ObjectReference(words[0]), Parent = new ObjectReference(words[1]) };
 		wordsUsed = 2;
@@ -262,7 +262,7 @@ public class PairIdRefIdRef : OperandType
 
 public class PairIdRefLiteralInteger : OperandType
 {
-	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		value = new { Type = new ObjectReference(words[0]), Member = words[1] };
 		wordsUsed = 2;
@@ -272,7 +272,7 @@ public class PairIdRefLiteralInteger : OperandType
 
 public class PairLiteralIntegerIdRef : OperandType
 {
-	public override bool ReadValue(IList<uint> words, out object value, out int wordsUsed)
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		value = new { Selector = words[0], Label = new ObjectReference(words[1]) };
 		wordsUsed = 2;
