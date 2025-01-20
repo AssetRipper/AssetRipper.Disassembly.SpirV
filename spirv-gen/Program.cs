@@ -63,12 +63,12 @@ class Program
 		sb.AppendLine($"public sealed class {instruction.Name} : Instruction");
 		sb.AppendLine("{");
 
+		sb.AppendLine($"public static {instruction.Name} Instance {{ get; }} = new();");
 		sb.AppendLine($"private {instruction.Name}() {{}}");
 
 		sb.AppendLine($"public override string Name => nameof({instruction.Name});");
 		sb.AppendLine($"public override OpCode Code => OpCode.{instruction.Name};");
 
-		sb.AppendLine($"public static {instruction.Name} Instance {{ get; }} = new();");
 
 		if (instruction.Operands != null)
 		{
