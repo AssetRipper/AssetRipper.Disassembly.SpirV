@@ -51,13 +51,11 @@ public class Module
 			if (IsDebugInstruction(instruction))
 			{
 				debugInstructions.Add(instruction);
-				continue;
 			}
 
 			if (instruction.Instruction is OpEntryPoint)
 			{
 				entryPoints.Add(instruction);
-				continue;
 			}
 
 			if (instruction.Instruction.Name.StartsWith("OpType", StringComparison.Ordinal))
