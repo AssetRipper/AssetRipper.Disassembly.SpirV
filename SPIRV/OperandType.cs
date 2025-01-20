@@ -73,8 +73,7 @@ public class LiteralString : Literal
 			}
 		}
 
-		UTF8Encoding decoder = new UTF8Encoding();
-		value = decoder.GetString(bytes.ToArray());
+		value = Encoding.UTF8.GetString(bytes.ToArray());
 
 		return true;
 	}
@@ -129,8 +128,8 @@ public class EnumType<T> : EnumType<T, ParameterFactory> where T : unmanaged, En
 
 public class EnumType<T, U> : OperandType where T : unmanaged, Enum where U : ParameterFactory, new()
 {
-	private readonly U parameterFactory_ = new U();
-	public System.Type EnumerationType { get { return typeof(T); } }
+	private readonly U parameterFactory_ = new();
+	public System.Type EnumerationType => typeof(T);
 
 	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
