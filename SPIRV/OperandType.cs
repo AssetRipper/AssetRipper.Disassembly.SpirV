@@ -123,9 +123,11 @@ public class ParameterFactory
 	public virtual Parameter? CreateParameter(object value) => null;
 }
 
-public class EnumType<T> : EnumType<T, ParameterFactory> where T : unmanaged, System.Enum { };
+public class EnumType<T> : EnumType<T, ParameterFactory> where T : unmanaged, Enum
+{
+}
 
-public class EnumType<T, U> : OperandType where T : unmanaged, System.Enum where U : ParameterFactory, new()
+public class EnumType<T, U> : OperandType where T : unmanaged, Enum where U : ParameterFactory, new()
 {
 	private readonly U parameterFactory_ = new U();
 	public System.Type EnumerationType { get { return typeof(T); } }
@@ -137,9 +139,9 @@ public class EnumType<T, U> : OperandType where T : unmanaged, System.Enum where
 		if (typeof(T).GetCustomAttributes<FlagsAttribute>().Any())
 		{
 			Dictionary<uint, List<object>> result = [];
-			foreach (object? enumValue in EnumerationType.GetEnumValues())
+			foreach (T enumValue in Enum.GetValues<T>())
 			{
-				uint bit = (uint)enumValue;
+				uint bit = enumValue.ToUInt32();
 
 				// bit == 0 and words [0] == 0 handles the 0x0 = None cases
 				if ((words[0] & bit) != 0 || (bit == 0 && words[0] == 0))

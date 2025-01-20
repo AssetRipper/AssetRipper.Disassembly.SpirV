@@ -4,6 +4,7 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<LangVersion>Latest</LangVersion>
 		<Nullable>enable</Nullable>
+		<IsAotCompatible>true</IsAotCompatible>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 		<Authors>Matthäus G. Chajdas</Authors>
 		<Product>CSSPV</Product>
