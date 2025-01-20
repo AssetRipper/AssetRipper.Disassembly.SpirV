@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Buffers.Binary;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -83,7 +84,7 @@ public class Module
 
 						object constant = ConvertConstant(
 							(ScalarType)instruction.ResultType,
-							instruction.Words.Skip(3).ToList());
+							instruction.Words.Skip(3));
 						instruction.Operands[2].Value = constant;
 						instruction.Value = constant;
 
@@ -352,13 +353,20 @@ public class Module
 		}
 	}
 
-	private static object ConvertConstant(ScalarType type, IReadOnlyList<uint> words)
+	private static object ConvertConstant(ScalarType type, IEnumerable<uint> words)
 	{
-		byte[] bytes = new byte[words.Count * 4];
+		Span<byte> buffer = stackalloc byte[sizeof(ulong)];
+		buffer.Clear();
 
-		for (int i = 0; i < words.Count; ++i)
+		int index = 0;
+		foreach (uint word in words)
 		{
-			BitConverter.GetBytes(words[i]).CopyTo(bytes, i * 4);
+			BinaryPrimitives.WriteUInt32LittleEndian(buffer[index..], word);
+			index += sizeof(uint);
+			if (index >= buffer.Length)
+			{
+				break;
+			}
 		}
 
 		switch (type)
@@ -369,30 +377,30 @@ public class Module
 					{
 						if (i.Width == 16)
 						{
-							return BitConverter.ToInt16(bytes, 0);
+							return BinaryPrimitives.ReadInt16LittleEndian(buffer);
 						}
 						else if (i.Width == 32)
 						{
-							return BitConverter.ToInt32(bytes, 0);
+							return BinaryPrimitives.ReadInt32LittleEndian(buffer);
 						}
 						else if (i.Width == 64)
 						{
-							return BitConverter.ToInt64(bytes, 0);
+							return BinaryPrimitives.ReadInt64LittleEndian(buffer);
 						}
 					}
 					else
 					{
 						if (i.Width == 16)
 						{
-							return (ushort)words[0];
+							return BinaryPrimitives.ReadUInt16LittleEndian(buffer);
 						}
 						else if (i.Width == 32)
 						{
-							return words[0];
+							return BinaryPrimitives.ReadUInt32LittleEndian(buffer);
 						}
 						else if (i.Width == 64)
 						{
-							return BitConverter.ToUInt64(bytes, 0);
+							return BinaryPrimitives.ReadUInt64LittleEndian(buffer);
 						}
 					}
 
@@ -403,11 +411,11 @@ public class Module
 				{
 					if (f.Width == 32)
 					{
-						return BitConverter.ToSingle(bytes, 0);
+						return BinaryPrimitives.ReadSingleLittleEndian(buffer);
 					}
 					else if (f.Width == 64)
 					{
-						return BitConverter.ToDouble(bytes, 0);
+						return BinaryPrimitives.ReadDoubleLittleEndian(buffer);
 					}
 					else
 					{
