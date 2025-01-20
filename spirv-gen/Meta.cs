@@ -107,7 +107,7 @@ class Meta
 			.WithUsings(SyntaxFactory.List([SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System.Collections.Generic"))]))
 			.WithMembers(SyntaxFactory.List<MemberDeclarationSyntax>(
 			[
-				SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
+				SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("AssetRipper.Disassembly.SpirV")),
 				ToClassDeclaration(),
 			]));
 	}

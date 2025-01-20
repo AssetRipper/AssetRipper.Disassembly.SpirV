@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace SpirV;
+namespace AssetRipper.Disassembly.SpirV;
 
 internal static class EnumExtensions
 {

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace SpirV;
+namespace AssetRipper.Disassembly.SpirV;
 
 public enum OpCode
 {

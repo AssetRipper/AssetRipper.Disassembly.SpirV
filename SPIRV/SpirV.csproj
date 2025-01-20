@@ -5,11 +5,26 @@
 		<LangVersion>Latest</LangVersion>
 		<Nullable>enable</Nullable>
 		<IsAotCompatible>true</IsAotCompatible>
-		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<Authors>Matthäus G. Chajdas</Authors>
-		<Product>CSSPV</Product>
-		<RepositoryUrl>https://bitbucket.org/Anteru/csspv/src/default/</RepositoryUrl>
-		<PackageProjectUrl>https://sh13.net/projects/csspv/</PackageProjectUrl>
+
+		<AssemblyName>AssetRipper.Disassembly.SpirV</AssemblyName>
+		<RootNamespace>AssetRipper.Disassembly.SpirV</RootNamespace>
+
+		<PackageId>AssetRipper.Disassembly.SpirV</PackageId>
+		<PackageTags>C# Texture</PackageTags>
+		<Version>1.0.0</Version>
+		<AssemblyVersion>$(Version)</AssemblyVersion>
+		<Copyright>Copyright © ds5678</Copyright>
+		<Authors>ds5678</Authors>
+		<Company>AssetRipper</Company>
+		<RepositoryUrl>https://github.com/AssetRipper/AssetRipper.Disassembly.SpirV</RepositoryUrl>
+		<PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+		<PackageLicenseExpression>BSD-2-Clause</PackageLicenseExpression>
+		<RepositoryType>git</RepositoryType>
+		<Description>Managed library for disassembling SpirV shaders.</Description>
+
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>1591</NoWarn>
 	</PropertyGroup>
 
 </Project>

@@ -208,7 +208,7 @@ class Program
 					SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System")),
 				],
 				[
-					SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
+					SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("AssetRipper.Disassembly.SpirV")),
 					..nodes.Cast<MemberDeclarationSyntax>()
 				]);
 
@@ -225,7 +225,7 @@ class Program
 					SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System.Collections.Generic")),
 				],
 				[
-					SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
+					SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("AssetRipper.Disassembly.SpirV")),
 					..nodes.Cast<MemberDeclarationSyntax>()
 				]);
 
@@ -243,7 +243,7 @@ class Program
 					SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System.Collections.Generic")),
 				],
 				[
-					SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("SpirV")),
+					SyntaxFactory.FileScopedNamespaceDeclaration(SyntaxFactory.ParseName("AssetRipper.Disassembly.SpirV")),
 					..nodes.Cast<MemberDeclarationSyntax>()
 				]);
 

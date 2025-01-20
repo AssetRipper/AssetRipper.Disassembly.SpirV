@@ -1,6 +1,6 @@
 using System;
 
-namespace SpirV;
+namespace AssetRipper.Disassembly.SpirV;
 
 [Flags]
 public enum ImageOperands : uint

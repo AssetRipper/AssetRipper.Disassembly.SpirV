@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace SpirV;
+namespace AssetRipper.Disassembly.SpirV;
 
 public class ParsedOperand
 {

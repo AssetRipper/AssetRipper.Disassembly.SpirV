@@ -7,12 +7,6 @@
 		<Nullable>enable</Nullable>
 		<AssemblyName>cspvdis</AssemblyName>
 		<RootNamespace>SpirV</RootNamespace>
-		<StartupObject></StartupObject>
-		<Authors>Matthäus G. Chajdas</Authors>
-		<Company>Matthäus G. Chajdas</Company>
-		<Product>CSSPV</Product>
-		<PackageProjectUrl>https://sh13.net/projects/csspv/</PackageProjectUrl>
-		<RepositoryUrl>https://bitbucket.org/Anteru/csspv/src/default/</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>

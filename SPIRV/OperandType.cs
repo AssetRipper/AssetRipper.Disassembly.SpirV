@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace SpirV;
+namespace AssetRipper.Disassembly.SpirV;
 
 public class OperandType
 {
