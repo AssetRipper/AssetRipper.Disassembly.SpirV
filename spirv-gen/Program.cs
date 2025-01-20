@@ -38,7 +38,7 @@ class Program
 		{
 			sb.AppendLine($"OpCode.{instruction.Name} => {instruction.Name}.Instance,");
 		}
-		sb.AppendLine("_ => throw new ArgumentOutOfRangeException(nameof(code)),");
+		sb.AppendLine("_ => throw new ArgumentOutOfRangeException(nameof(code), code, null),");
 		sb.AppendLine("};");
 
 		sb.AppendLine("}");

@@ -674,7 +674,7 @@ public static class Instructions
 		OpCode.OpSubgroupImageBlockWriteINTEL => OpSubgroupImageBlockWriteINTEL.Instance,
 		OpCode.OpDecorateStringGOOGLE => OpDecorateStringGOOGLE.Instance,
 		OpCode.OpMemberDecorateStringGOOGLE => OpMemberDecorateStringGOOGLE.Instance,
-		_ => throw new ArgumentOutOfRangeException(nameof(code)),
+		_ => throw new ArgumentOutOfRangeException(nameof(code), code, null),
 	};
 }
 public sealed class OpNop : Instruction
