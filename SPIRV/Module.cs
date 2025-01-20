@@ -173,14 +173,12 @@ public class Module
 				ushort wordCount = (ushort)(instructionStart >> 16);
 				int opCode = (int)(instructionStart & 0xFFFF);
 
-				List<uint> words =
-				[
-					instructionStart
-				];
+				uint[] words = new uint[wordCount];
+				words[0] = instructionStart;
 
-				for (ushort i = 0; i < wordCount - 1; ++i)
+				for (ushort i = 1; i < wordCount; ++i)
 				{
-					words.Add(reader.ReadWord());
+					words[i] = reader.ReadWord();
 				}
 
 				instructions.Add(new ParsedInstruction(opCode, words));
