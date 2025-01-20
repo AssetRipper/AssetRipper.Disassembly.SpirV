@@ -171,7 +171,7 @@ public class Module
 			{
 				uint instructionStart = reader.ReadWord();
 				ushort wordCount = (ushort)(instructionStart >> 16);
-				int opCode = (int)(instructionStart & 0xFFFF);
+				OpCode opCode = (OpCode)(int)(instructionStart & 0xFFFF);
 
 				uint[] words = new uint[wordCount];
 				words[0] = instructionStart;

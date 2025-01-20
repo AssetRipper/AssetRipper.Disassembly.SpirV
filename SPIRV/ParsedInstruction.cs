@@ -157,11 +157,11 @@ public class ParsedInstruction
 
 	public object? Value { get; set; }
 
-	public ParsedInstruction(int opCode, IReadOnlyList<uint> words)
+	public ParsedInstruction(OpCode opCode, IReadOnlyList<uint> words)
 	{
 		Words = words;
 
-		Instruction = Instructions.OpcodeToInstruction[opCode];
+		Instruction = opCode.ToInstruction();
 
 		ParseOperands();
 	}

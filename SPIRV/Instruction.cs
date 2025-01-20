@@ -26,22 +26,13 @@ public class Operand
 	}
 }
 
-public class Instruction
+public abstract class Instruction
 {
-	public string Name { get; }
+	public abstract string Name { get; }
+	public abstract OpCode Code { get; }
+	public virtual IReadOnlyList<Operand> Operands => [];
 
-	public IReadOnlyList<Operand> Operands
+	private protected Instruction()
 	{
-		get;
-	}
-
-	public Instruction(string name) : this(name, [])
-	{
-	}
-
-	public Instruction(string name, IReadOnlyList<Operand> operands)
-	{
-		Operands = operands;
-		Name = name;
 	}
 }

@@ -24,21 +24,29 @@ class Program
 	{
 		StringBuilder sb = new();
 
+		sb.AppendLine("public enum OpCode {");
+		foreach (InstructionItem instruction in instructions)
+		{
+			sb.AppendLine($"{instruction.Name} = {instruction.Id},");
+		}
+		sb.AppendLine("}");
+
+		sb.AppendLine("public static class Instructions {");
+
+		sb.Append("public static Instruction ToInstruction(this OpCode code) => code switch {");
+		foreach (InstructionItem instruction in instructions)
+		{
+			sb.AppendLine($"OpCode.{instruction.Name} => {instruction.Name}.Instance,");
+		}
+		sb.AppendLine("_ => throw new ArgumentOutOfRangeException(nameof(code)),");
+		sb.AppendLine("};");
+
+		sb.AppendLine("}");
+
 		foreach (InstructionItem instruction in instructions)
 		{
 			CreateInstructionClass(sb, instruction, knownEnumerands);
 		}
-
-		sb.AppendLine("public static class Instructions {");
-		sb.Append("public static IReadOnlyDictionary<int, Instruction> OpcodeToInstruction { get; } = new Dictionary<int, Instruction>() {");
-
-		foreach (InstructionItem instruction in instructions)
-		{
-			sb.AppendLine($"{{ {instruction.Id}, new {instruction.Name}() }},");
-		}
-
-		sb.AppendLine("};");
-		sb.AppendLine("}");
 
 		string s = sb.ToString();
 
@@ -52,18 +60,20 @@ class Program
 
 	private static void CreateInstructionClass(StringBuilder sb, InstructionItem instruction, IReadOnlyDictionary<string, OperatorKind> knownEnumerands)
 	{
-		sb.AppendLine($"public class {instruction.Name} : Instruction");
+		sb.AppendLine($"public sealed class {instruction.Name} : Instruction");
 		sb.AppendLine("{");
 
-		sb.AppendLine($"public {instruction.Name} ()");
+		sb.AppendLine($"private {instruction.Name}() {{}}");
 
-		if (instruction.Operands == null)
+		sb.AppendLine($"public override string Name => nameof({instruction.Name});");
+		sb.AppendLine($"public override OpCode Code => OpCode.{instruction.Name};");
+
+		sb.AppendLine($"public static {instruction.Name} Instance {{ get; }} = new();");
+
+		if (instruction.Operands != null)
 		{
-			sb.AppendLine($" : base(nameof({instruction.Name}))");
-		}
-		else
-		{
-			sb.AppendLine($" : base(nameof({instruction.Name}), [");
+			sb.AppendLine("public override IReadOnlyList<Operand> Operands => _operands;");
+			sb.AppendLine("private static readonly Operand[] _operands = [");
 			foreach (OperandItem operand in instruction.Operands)
 			{
 				string constructorParameter;
@@ -77,10 +87,8 @@ class Program
 				}
 				sb.AppendLine($"new Operand({constructorParameter}, {operand.GetNameLiteral()}, OperandQuantifier.{operand.Quantifier}),");
 			}
-			sb.AppendLine("] )");
+			sb.AppendLine("];");
 		}
-
-		sb.AppendLine("{}");
 
 		sb.AppendLine("}");
 	}
@@ -231,6 +239,7 @@ class Program
 
 			CompilationUnitSyntax cu = CreateCompilationUnit(
 				[
+					SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System")),
 					SyntaxFactory.UsingDirective(SyntaxFactory.ParseName("System.Collections.Generic")),
 				],
 				[
