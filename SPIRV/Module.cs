@@ -375,52 +375,37 @@ public class Module
 				{
 					if (i.Signed)
 					{
-						if (i.Width == 16)
+						return i.Width switch
 						{
-							return BinaryPrimitives.ReadInt16LittleEndian(buffer);
-						}
-						else if (i.Width == 32)
-						{
-							return BinaryPrimitives.ReadInt32LittleEndian(buffer);
-						}
-						else if (i.Width == 64)
-						{
-							return BinaryPrimitives.ReadInt64LittleEndian(buffer);
-						}
+							8 => unchecked((sbyte)buffer[0]),
+							16 => BinaryPrimitives.ReadInt16LittleEndian(buffer),
+							32 => BinaryPrimitives.ReadInt32LittleEndian(buffer),
+							64 => BinaryPrimitives.ReadInt64LittleEndian(buffer),
+							_ => throw new Exception("Cannot construct signed integer literal.")
+						};
 					}
 					else
 					{
-						if (i.Width == 16)
+						return i.Width switch
 						{
-							return BinaryPrimitives.ReadUInt16LittleEndian(buffer);
-						}
-						else if (i.Width == 32)
-						{
-							return BinaryPrimitives.ReadUInt32LittleEndian(buffer);
-						}
-						else if (i.Width == 64)
-						{
-							return BinaryPrimitives.ReadUInt64LittleEndian(buffer);
-						}
+							8 => buffer[0],
+							16 => BinaryPrimitives.ReadUInt16LittleEndian(buffer),
+							32 => BinaryPrimitives.ReadUInt32LittleEndian(buffer),
+							64 => BinaryPrimitives.ReadUInt64LittleEndian(buffer),
+							_ => throw new Exception("Cannot construct unsigned integer literal.")
+						};
 					}
-
-					throw new Exception("Cannot construct integer literal.");
 				}
 
 			case FloatingPointType f:
 				{
-					if (f.Width == 32)
+					return f.Width switch
 					{
-						return BinaryPrimitives.ReadSingleLittleEndian(buffer);
-					}
-					else if (f.Width == 64)
-					{
-						return BinaryPrimitives.ReadDoubleLittleEndian(buffer);
-					}
-					else
-					{
-						throw new Exception("Cannot construct floating point literal.");
-					}
+						16 => BinaryPrimitives.ReadHalfLittleEndian(buffer),
+						32 => BinaryPrimitives.ReadSingleLittleEndian(buffer),
+						64 => BinaryPrimitives.ReadDoubleLittleEndian(buffer),
+						_ => throw new Exception("Cannot construct floating point literal.")
+					};
 				}
 
 			default:
