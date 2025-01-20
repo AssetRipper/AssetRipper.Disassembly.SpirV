@@ -34,23 +34,18 @@ public static class Disassembler
 	{
 		StringBuilder sb = new();
 
-		sb.AppendFormat("; SPIR-V\n");
-		sb.AppendFormat("; Version: {0}\n", module.Header.Version);
+		sb.Append("; SPIR-V\n");
+		sb.Append($"; Version: {module.Header.Version}\n");
 		if (module.Header.GeneratorName == null)
 		{
-			sb.AppendFormat("; Generator: {0}; {1}\n",
-				module.Header.GeneratorName,
-				module.Header.GeneratorVersion);
+			sb.Append($"; Generator: {module.Header.GeneratorName}; {module.Header.GeneratorVersion}\n");
 		}
 		else
 		{
-			sb.AppendFormat("; Generator: {0} {1}; {2}\n",
-				module.Header.GeneratorVendor,
-				module.Header.GeneratorName,
-				module.Header.GeneratorVersion);
+			sb.Append($"; Generator: {module.Header.GeneratorVendor} {module.Header.GeneratorName}; {module.Header.GeneratorVersion}\n");
 		}
-		sb.AppendFormat("; Bound: {0}\n", module.Header.Bound);
-		sb.AppendFormat("; Schema: {0}\n", module.Header.Reserved);
+		sb.Append($"; Bound: {module.Header.Bound}\n");
+		sb.Append($"; Schema: {module.Header.Reserved}\n");
 
 		List<string> lines = [];
 		foreach (ParsedInstruction i in module.Instructions)

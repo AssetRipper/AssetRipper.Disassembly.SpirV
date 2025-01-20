@@ -4,11 +4,17 @@ namespace SpirV;
 
 public enum OperandQuantifier
 {
-	// 1
+	/// <summary>
+	/// 1
+	/// </summary>
 	Default,
-	// 0 or 1
+	/// <summary>
+	/// 0 or 1
+	/// </summary>
 	Optional,
-	// 0+
+	/// <summary>
+	/// 0+
+	/// </summary>
 	Varying
 }
 
