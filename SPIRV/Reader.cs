@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Buffers.Binary;
 
 namespace AssetRipper.Disassembly.SpirV;
 
@@ -38,10 +39,7 @@ class Reader
 
 	private static uint Reverse(uint u)
 	{
-		return (u & 0xFFU) << 24 |
-				(u & 0xFF00U) << 8 |
-				(u >> 8) & 0xFF00U |
-				(u >> 24);
+		return BinaryPrimitives.ReverseEndianness(u);
 	}
 
 	private readonly System.IO.BinaryReader reader_;
