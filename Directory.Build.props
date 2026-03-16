@@ -1,0 +1,19 @@
+<Project>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<LangVersion>Latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<IsAotCompatible>true</IsAotCompatible>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+
+		<VersionPrefix>1.0.2</VersionPrefix>
+		<Copyright>Copyright © ds5678</Copyright>
+		<Authors>ds5678</Authors>
+		<Company>AssetRipper</Company>
+		<RepositoryUrl>https://github.com/AssetRipper/AssetRipper.Disassembly.SpirV</RepositoryUrl>
+		<PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+		<PackageLicenseExpression>BSD-2-Clause</PackageLicenseExpression>
+		<RepositoryType>git</RepositoryType>
+		<Description>Managed library for disassembling SpirV shaders.</Description>
+	</PropertyGroup>
+</Project>

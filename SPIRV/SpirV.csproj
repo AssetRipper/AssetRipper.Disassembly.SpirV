@@ -1,26 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
-		<LangVersion>Latest</LangVersion>
-		<Nullable>enable</Nullable>
-		<IsAotCompatible>true</IsAotCompatible>
-
 		<AssemblyName>AssetRipper.Disassembly.SpirV</AssemblyName>
 		<RootNamespace>AssetRipper.Disassembly.SpirV</RootNamespace>
 
 		<PackageId>AssetRipper.Disassembly.SpirV</PackageId>
 		<PackageTags>C# Texture</PackageTags>
-		<Version>1.0.2</Version>
-		<AssemblyVersion>$(Version)</AssemblyVersion>
-		<Copyright>Copyright © ds5678</Copyright>
-		<Authors>ds5678</Authors>
-		<Company>AssetRipper</Company>
-		<RepositoryUrl>https://github.com/AssetRipper/AssetRipper.Disassembly.SpirV</RepositoryUrl>
-		<PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
-		<PackageLicenseExpression>BSD-2-Clause</PackageLicenseExpression>
-		<RepositoryType>git</RepositoryType>
-		<Description>Managed library for disassembling SpirV shaders.</Description>
 
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
