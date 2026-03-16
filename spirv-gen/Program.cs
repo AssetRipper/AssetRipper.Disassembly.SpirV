@@ -257,7 +257,7 @@ class Program
 		string formattedCode = formatted.ToFullString();
 		string code = formattedCode.Replace("    ", "\t");
 
-		File.WriteAllText(path, code);
+		File.WriteAllText(path, code.Replace("\r", null));
 	}
 
 	private static CompilationUnitSyntax CreateCompilationUnit(IEnumerable<UsingDirectiveSyntax> usingDirectives, IEnumerable<MemberDeclarationSyntax> members)
