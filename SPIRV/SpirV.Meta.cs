@@ -5,8 +5,8 @@ namespace AssetRipper.Disassembly.SpirV;
 class Meta
 {
 	public static uint MagicNumber => 119734787U;
-	public static uint Version => 66048U;
-	public static uint Revision => 2U;
+	public static uint Version => 67072U;
+	public static uint Revision => 1U;
 	public static uint OpCodeMask => 65535U;
 	public static uint WordCountShift => 16U;
 	public static IReadOnlyDictionary<int, ToolInfo> Tools { get; } = new Dictionary<int, ToolInfo>()
@@ -173,7 +173,7 @@ class Meta
 		},
 		{
 			40,
-			new ToolInfo("NVIDIA", "Slang Compiler")
+			new ToolInfo("Khronos", "Slang Compiler")
 		},
 		{
 			41,
@@ -198,6 +198,18 @@ class Meta
 		{
 			46,
 			new ToolInfo("Nintendo")
+		},
+		{
+			47,
+			new ToolInfo("ARM")
+		},
+		{
+			48,
+			new ToolInfo("Goopax")
+		},
+		{
+			49,
+			new ToolInfo("Icyllis Milica", "Arc3D Shader Compiler")
 		},
 	};
 

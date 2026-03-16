@@ -311,12 +311,115 @@ public enum OpCode
 	OpModuleProcessed = 330,
 	OpExecutionModeId = 331,
 	OpDecorateId = 332,
+	OpGroupNonUniformElect = 333,
+	OpGroupNonUniformAll = 334,
+	OpGroupNonUniformAny = 335,
+	OpGroupNonUniformAllEqual = 336,
+	OpGroupNonUniformBroadcast = 337,
+	OpGroupNonUniformBroadcastFirst = 338,
+	OpGroupNonUniformBallot = 339,
+	OpGroupNonUniformInverseBallot = 340,
+	OpGroupNonUniformBallotBitExtract = 341,
+	OpGroupNonUniformBallotBitCount = 342,
+	OpGroupNonUniformBallotFindLSB = 343,
+	OpGroupNonUniformBallotFindMSB = 344,
+	OpGroupNonUniformShuffle = 345,
+	OpGroupNonUniformShuffleXor = 346,
+	OpGroupNonUniformShuffleUp = 347,
+	OpGroupNonUniformShuffleDown = 348,
+	OpGroupNonUniformIAdd = 349,
+	OpGroupNonUniformFAdd = 350,
+	OpGroupNonUniformIMul = 351,
+	OpGroupNonUniformFMul = 352,
+	OpGroupNonUniformSMin = 353,
+	OpGroupNonUniformUMin = 354,
+	OpGroupNonUniformFMin = 355,
+	OpGroupNonUniformSMax = 356,
+	OpGroupNonUniformUMax = 357,
+	OpGroupNonUniformFMax = 358,
+	OpGroupNonUniformBitwiseAnd = 359,
+	OpGroupNonUniformBitwiseOr = 360,
+	OpGroupNonUniformBitwiseXor = 361,
+	OpGroupNonUniformLogicalAnd = 362,
+	OpGroupNonUniformLogicalOr = 363,
+	OpGroupNonUniformLogicalXor = 364,
+	OpGroupNonUniformQuadBroadcast = 365,
+	OpGroupNonUniformQuadSwap = 366,
+	OpCopyLogical = 400,
+	OpPtrEqual = 401,
+	OpPtrNotEqual = 402,
+	OpPtrDiff = 403,
+	OpColorAttachmentReadEXT = 4160,
+	OpDepthAttachmentReadEXT = 4161,
+	OpStencilAttachmentReadEXT = 4162,
+	OpTypeTensorARM = 4163,
+	OpTensorReadARM = 4164,
+	OpTensorWriteARM = 4165,
+	OpTensorQuerySizeARM = 4166,
+	OpGraphConstantARM = 4181,
+	OpGraphEntryPointARM = 4182,
+	OpGraphARM = 4183,
+	OpGraphInputARM = 4184,
+	OpGraphSetOutputARM = 4185,
+	OpGraphEndARM = 4186,
+	OpTypeGraphARM = 4190,
+	OpTerminateInvocation = 4416,
+	OpTypeUntypedPointerKHR = 4417,
+	OpUntypedVariableKHR = 4418,
+	OpUntypedAccessChainKHR = 4419,
+	OpUntypedInBoundsAccessChainKHR = 4420,
 	OpSubgroupBallotKHR = 4421,
 	OpSubgroupFirstInvocationKHR = 4422,
+	OpUntypedPtrAccessChainKHR = 4423,
+	OpUntypedInBoundsPtrAccessChainKHR = 4424,
+	OpUntypedArrayLengthKHR = 4425,
+	OpUntypedPrefetchKHR = 4426,
+	OpFmaKHR = 4427,
 	OpSubgroupAllKHR = 4428,
 	OpSubgroupAnyKHR = 4429,
 	OpSubgroupAllEqualKHR = 4430,
+	OpGroupNonUniformRotateKHR = 4431,
 	OpSubgroupReadInvocationKHR = 4432,
+	OpExtInstWithForwardRefsKHR = 4433,
+	OpUntypedGroupAsyncCopyKHR = 4434,
+	OpTraceRayKHR = 4445,
+	OpExecuteCallableKHR = 4446,
+	OpConvertUToAccelerationStructureKHR = 4447,
+	OpIgnoreIntersectionKHR = 4448,
+	OpTerminateRayKHR = 4449,
+	OpSDot = 4450,
+	OpUDot = 4451,
+	OpSUDot = 4452,
+	OpSDotAccSat = 4453,
+	OpUDotAccSat = 4454,
+	OpSUDotAccSat = 4455,
+	OpTypeCooperativeMatrixKHR = 4456,
+	OpCooperativeMatrixLoadKHR = 4457,
+	OpCooperativeMatrixStoreKHR = 4458,
+	OpCooperativeMatrixMulAddKHR = 4459,
+	OpCooperativeMatrixLengthKHR = 4460,
+	OpConstantCompositeReplicateEXT = 4461,
+	OpSpecConstantCompositeReplicateEXT = 4462,
+	OpCompositeConstructReplicateEXT = 4463,
+	OpTypeRayQueryKHR = 4472,
+	OpRayQueryInitializeKHR = 4473,
+	OpRayQueryTerminateKHR = 4474,
+	OpRayQueryGenerateIntersectionKHR = 4475,
+	OpRayQueryConfirmIntersectionKHR = 4476,
+	OpRayQueryProceedKHR = 4477,
+	OpRayQueryGetIntersectionTypeKHR = 4479,
+	OpImageSampleWeightedQCOM = 4480,
+	OpImageBoxFilterQCOM = 4481,
+	OpImageBlockMatchSSDQCOM = 4482,
+	OpImageBlockMatchSADQCOM = 4483,
+	OpBitCastArrayQCOM = 4497,
+	OpImageBlockMatchWindowSSDQCOM = 4500,
+	OpImageBlockMatchWindowSADQCOM = 4501,
+	OpImageBlockMatchGatherSSDQCOM = 4502,
+	OpImageBlockMatchGatherSADQCOM = 4503,
+	OpCompositeConstructCoopMatQCOM = 4540,
+	OpCompositeExtractCoopMatQCOM = 4541,
+	OpExtractSubArrayQCOM = 4542,
 	OpGroupIAddNonUniformAMD = 5000,
 	OpGroupFAddNonUniformAMD = 5001,
 	OpGroupFMinNonUniformAMD = 5002,
@@ -327,6 +430,164 @@ public enum OpCode
 	OpGroupSMaxNonUniformAMD = 5007,
 	OpFragmentMaskFetchAMD = 5011,
 	OpFragmentFetchAMD = 5012,
+	OpReadClockKHR = 5056,
+	OpAllocateNodePayloadsAMDX = 5074,
+	OpEnqueueNodePayloadsAMDX = 5075,
+	OpTypeNodePayloadArrayAMDX = 5076,
+	OpFinishWritingNodePayloadAMDX = 5078,
+	OpNodePayloadArrayLengthAMDX = 5090,
+	OpIsNodePayloadValidAMDX = 5101,
+	OpConstantStringAMDX = 5103,
+	OpSpecConstantStringAMDX = 5104,
+	OpGroupNonUniformQuadAllKHR = 5110,
+	OpGroupNonUniformQuadAnyKHR = 5111,
+	OpTypeBufferEXT = 5115,
+	OpBufferPointerEXT = 5119,
+	OpUntypedImageTexelPointerEXT = 5126,
+	OpMemberDecorateIdEXT = 5127,
+	OpConstantSizeOfEXT = 5129,
+	OpHitObjectRecordHitMotionNV = 5249,
+	OpHitObjectRecordHitWithIndexMotionNV = 5250,
+	OpHitObjectRecordMissMotionNV = 5251,
+	OpHitObjectGetWorldToObjectNV = 5252,
+	OpHitObjectGetObjectToWorldNV = 5253,
+	OpHitObjectGetObjectRayDirectionNV = 5254,
+	OpHitObjectGetObjectRayOriginNV = 5255,
+	OpHitObjectTraceRayMotionNV = 5256,
+	OpHitObjectGetShaderRecordBufferHandleNV = 5257,
+	OpHitObjectGetShaderBindingTableRecordIndexNV = 5258,
+	OpHitObjectRecordEmptyNV = 5259,
+	OpHitObjectTraceRayNV = 5260,
+	OpHitObjectRecordHitNV = 5261,
+	OpHitObjectRecordHitWithIndexNV = 5262,
+	OpHitObjectRecordMissNV = 5263,
+	OpHitObjectExecuteShaderNV = 5264,
+	OpHitObjectGetCurrentTimeNV = 5265,
+	OpHitObjectGetAttributesNV = 5266,
+	OpHitObjectGetHitKindNV = 5267,
+	OpHitObjectGetPrimitiveIndexNV = 5268,
+	OpHitObjectGetGeometryIndexNV = 5269,
+	OpHitObjectGetInstanceIdNV = 5270,
+	OpHitObjectGetInstanceCustomIndexNV = 5271,
+	OpHitObjectGetWorldRayDirectionNV = 5272,
+	OpHitObjectGetWorldRayOriginNV = 5273,
+	OpHitObjectGetRayTMaxNV = 5274,
+	OpHitObjectGetRayTMinNV = 5275,
+	OpHitObjectIsEmptyNV = 5276,
+	OpHitObjectIsHitNV = 5277,
+	OpHitObjectIsMissNV = 5278,
+	OpReorderThreadWithHitObjectNV = 5279,
+	OpReorderThreadWithHintNV = 5280,
+	OpTypeHitObjectNV = 5281,
+	OpImageSampleFootprintNV = 5283,
+	OpTypeVectorIdEXT = 5288,
+	OpCooperativeVectorMatrixMulNV = 5289,
+	OpCooperativeVectorOuterProductAccumulateNV = 5290,
+	OpCooperativeVectorReduceSumAccumulateNV = 5291,
+	OpCooperativeVectorMatrixMulAddNV = 5292,
+	OpCooperativeMatrixConvertNV = 5293,
+	OpEmitMeshTasksEXT = 5294,
+	OpSetMeshOutputsEXT = 5295,
+	OpGroupNonUniformPartitionEXT = 5296,
+	OpWritePackedPrimitiveIndices4x8NV = 5299,
+	OpFetchMicroTriangleVertexPositionNV = 5300,
+	OpFetchMicroTriangleVertexBarycentricNV = 5301,
+	OpCooperativeVectorLoadNV = 5302,
+	OpCooperativeVectorStoreNV = 5303,
+	OpHitObjectRecordFromQueryEXT = 5304,
+	OpHitObjectRecordMissEXT = 5305,
+	OpHitObjectRecordMissMotionEXT = 5306,
+	OpHitObjectGetIntersectionTriangleVertexPositionsEXT = 5307,
+	OpHitObjectGetRayFlagsEXT = 5308,
+	OpHitObjectSetShaderBindingTableRecordIndexEXT = 5309,
+	OpHitObjectReorderExecuteShaderEXT = 5310,
+	OpHitObjectTraceReorderExecuteEXT = 5311,
+	OpHitObjectTraceMotionReorderExecuteEXT = 5312,
+	OpTypeHitObjectEXT = 5313,
+	OpReorderThreadWithHintEXT = 5314,
+	OpReorderThreadWithHitObjectEXT = 5315,
+	OpHitObjectTraceRayEXT = 5316,
+	OpHitObjectTraceRayMotionEXT = 5317,
+	OpHitObjectRecordEmptyEXT = 5318,
+	OpHitObjectExecuteShaderEXT = 5319,
+	OpHitObjectGetCurrentTimeEXT = 5320,
+	OpHitObjectGetAttributesEXT = 5321,
+	OpHitObjectGetHitKindEXT = 5322,
+	OpHitObjectGetPrimitiveIndexEXT = 5323,
+	OpHitObjectGetGeometryIndexEXT = 5324,
+	OpHitObjectGetInstanceIdEXT = 5325,
+	OpHitObjectGetInstanceCustomIndexEXT = 5326,
+	OpHitObjectGetObjectRayOriginEXT = 5327,
+	OpHitObjectGetObjectRayDirectionEXT = 5328,
+	OpHitObjectGetWorldRayDirectionEXT = 5329,
+	OpHitObjectGetWorldRayOriginEXT = 5330,
+	OpHitObjectGetObjectToWorldEXT = 5331,
+	OpHitObjectGetWorldToObjectEXT = 5332,
+	OpHitObjectGetRayTMaxEXT = 5333,
+	OpReportIntersectionKHR = 5334,
+	OpIgnoreIntersectionNV = 5335,
+	OpTerminateRayNV = 5336,
+	OpTraceNV = 5337,
+	OpTraceMotionNV = 5338,
+	OpTraceRayMotionNV = 5339,
+	OpRayQueryGetIntersectionTriangleVertexPositionsKHR = 5340,
+	OpTypeAccelerationStructureKHR = 5341,
+	OpExecuteCallableNV = 5344,
+	OpRayQueryGetIntersectionClusterIdNV = 5345,
+	OpHitObjectGetClusterIdNV = 5346,
+	OpHitObjectGetRayTMinEXT = 5347,
+	OpHitObjectGetShaderBindingTableRecordIndexEXT = 5348,
+	OpHitObjectGetShaderRecordBufferHandleEXT = 5349,
+	OpHitObjectIsEmptyEXT = 5350,
+	OpHitObjectIsHitEXT = 5351,
+	OpHitObjectIsMissEXT = 5352,
+	OpTypeCooperativeMatrixNV = 5358,
+	OpCooperativeMatrixLoadNV = 5359,
+	OpCooperativeMatrixStoreNV = 5360,
+	OpCooperativeMatrixMulAddNV = 5361,
+	OpCooperativeMatrixLengthNV = 5362,
+	OpBeginInvocationInterlockEXT = 5364,
+	OpEndInvocationInterlockEXT = 5365,
+	OpCooperativeMatrixReduceNV = 5366,
+	OpCooperativeMatrixLoadTensorNV = 5367,
+	OpCooperativeMatrixStoreTensorNV = 5368,
+	OpCooperativeMatrixPerElementOpNV = 5369,
+	OpTypeTensorLayoutNV = 5370,
+	OpTypeTensorViewNV = 5371,
+	OpCreateTensorLayoutNV = 5372,
+	OpTensorLayoutSetDimensionNV = 5373,
+	OpTensorLayoutSetStrideNV = 5374,
+	OpTensorLayoutSliceNV = 5375,
+	OpTensorLayoutSetClampValueNV = 5376,
+	OpCreateTensorViewNV = 5377,
+	OpTensorViewSetDimensionNV = 5378,
+	OpTensorViewSetStrideNV = 5379,
+	OpDemoteToHelperInvocation = 5380,
+	OpIsHelperInvocationEXT = 5381,
+	OpTensorViewSetClipNV = 5382,
+	OpTensorLayoutSetBlockSizeNV = 5384,
+	OpCooperativeMatrixTransposeNV = 5390,
+	OpConvertUToImageNV = 5391,
+	OpConvertUToSamplerNV = 5392,
+	OpConvertImageToUNV = 5393,
+	OpConvertSamplerToUNV = 5394,
+	OpConvertUToSampledImageNV = 5395,
+	OpConvertSampledImageToUNV = 5396,
+	OpSamplerImageAddressingModeNV = 5397,
+	OpRawAccessChainNV = 5398,
+	OpRayQueryGetIntersectionSpherePositionNV = 5427,
+	OpRayQueryGetIntersectionSphereRadiusNV = 5428,
+	OpRayQueryGetIntersectionLSSPositionsNV = 5429,
+	OpRayQueryGetIntersectionLSSRadiiNV = 5430,
+	OpRayQueryGetIntersectionLSSHitValueNV = 5431,
+	OpHitObjectGetSpherePositionNV = 5432,
+	OpHitObjectGetSphereRadiusNV = 5433,
+	OpHitObjectGetLSSPositionsNV = 5434,
+	OpHitObjectGetLSSRadiiNV = 5435,
+	OpHitObjectIsSphereHitNV = 5436,
+	OpHitObjectIsLSSHitNV = 5437,
+	OpRayQueryIsSphereHitNV = 5438,
+	OpRayQueryIsLSSHitNV = 5439,
 	OpSubgroupShuffleINTEL = 5571,
 	OpSubgroupShuffleDownINTEL = 5572,
 	OpSubgroupShuffleUpINTEL = 5573,
@@ -335,8 +596,281 @@ public enum OpCode
 	OpSubgroupBlockWriteINTEL = 5576,
 	OpSubgroupImageBlockReadINTEL = 5577,
 	OpSubgroupImageBlockWriteINTEL = 5578,
-	OpDecorateStringGOOGLE = 5632,
-	OpMemberDecorateStringGOOGLE = 5633,
+	OpSubgroupImageMediaBlockReadINTEL = 5580,
+	OpSubgroupImageMediaBlockWriteINTEL = 5581,
+	OpUCountLeadingZerosINTEL = 5585,
+	OpUCountTrailingZerosINTEL = 5586,
+	OpAbsISubINTEL = 5587,
+	OpAbsUSubINTEL = 5588,
+	OpIAddSatINTEL = 5589,
+	OpUAddSatINTEL = 5590,
+	OpIAverageINTEL = 5591,
+	OpUAverageINTEL = 5592,
+	OpIAverageRoundedINTEL = 5593,
+	OpUAverageRoundedINTEL = 5594,
+	OpISubSatINTEL = 5595,
+	OpUSubSatINTEL = 5596,
+	OpIMul32x16INTEL = 5597,
+	OpUMul32x16INTEL = 5598,
+	OpConstantFunctionPointerINTEL = 5600,
+	OpFunctionPointerCallINTEL = 5601,
+	OpAsmTargetINTEL = 5609,
+	OpAsmINTEL = 5610,
+	OpAsmCallINTEL = 5611,
+	OpAtomicFMinEXT = 5614,
+	OpAtomicFMaxEXT = 5615,
+	OpAssumeTrueKHR = 5630,
+	OpExpectKHR = 5631,
+	OpDecorateString = 5632,
+	OpMemberDecorateString = 5633,
+	OpVmeImageINTEL = 5699,
+	OpTypeVmeImageINTEL = 5700,
+	OpTypeAvcImePayloadINTEL = 5701,
+	OpTypeAvcRefPayloadINTEL = 5702,
+	OpTypeAvcSicPayloadINTEL = 5703,
+	OpTypeAvcMcePayloadINTEL = 5704,
+	OpTypeAvcMceResultINTEL = 5705,
+	OpTypeAvcImeResultINTEL = 5706,
+	OpTypeAvcImeResultSingleReferenceStreamoutINTEL = 5707,
+	OpTypeAvcImeResultDualReferenceStreamoutINTEL = 5708,
+	OpTypeAvcImeSingleReferenceStreaminINTEL = 5709,
+	OpTypeAvcImeDualReferenceStreaminINTEL = 5710,
+	OpTypeAvcRefResultINTEL = 5711,
+	OpTypeAvcSicResultINTEL = 5712,
+	OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL = 5713,
+	OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL = 5714,
+	OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL = 5715,
+	OpSubgroupAvcMceSetInterShapePenaltyINTEL = 5716,
+	OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL = 5717,
+	OpSubgroupAvcMceSetInterDirectionPenaltyINTEL = 5718,
+	OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL = 5719,
+	OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL = 5720,
+	OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL = 5721,
+	OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL = 5722,
+	OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL = 5723,
+	OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL = 5724,
+	OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL = 5725,
+	OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL = 5726,
+	OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL = 5727,
+	OpSubgroupAvcMceSetAcOnlyHaarINTEL = 5728,
+	OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL = 5729,
+	OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL = 5730,
+	OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL = 5731,
+	OpSubgroupAvcMceConvertToImePayloadINTEL = 5732,
+	OpSubgroupAvcMceConvertToImeResultINTEL = 5733,
+	OpSubgroupAvcMceConvertToRefPayloadINTEL = 5734,
+	OpSubgroupAvcMceConvertToRefResultINTEL = 5735,
+	OpSubgroupAvcMceConvertToSicPayloadINTEL = 5736,
+	OpSubgroupAvcMceConvertToSicResultINTEL = 5737,
+	OpSubgroupAvcMceGetMotionVectorsINTEL = 5738,
+	OpSubgroupAvcMceGetInterDistortionsINTEL = 5739,
+	OpSubgroupAvcMceGetBestInterDistortionsINTEL = 5740,
+	OpSubgroupAvcMceGetInterMajorShapeINTEL = 5741,
+	OpSubgroupAvcMceGetInterMinorShapeINTEL = 5742,
+	OpSubgroupAvcMceGetInterDirectionsINTEL = 5743,
+	OpSubgroupAvcMceGetInterMotionVectorCountINTEL = 5744,
+	OpSubgroupAvcMceGetInterReferenceIdsINTEL = 5745,
+	OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL = 5746,
+	OpSubgroupAvcImeInitializeINTEL = 5747,
+	OpSubgroupAvcImeSetSingleReferenceINTEL = 5748,
+	OpSubgroupAvcImeSetDualReferenceINTEL = 5749,
+	OpSubgroupAvcImeRefWindowSizeINTEL = 5750,
+	OpSubgroupAvcImeAdjustRefOffsetINTEL = 5751,
+	OpSubgroupAvcImeConvertToMcePayloadINTEL = 5752,
+	OpSubgroupAvcImeSetMaxMotionVectorCountINTEL = 5753,
+	OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL = 5754,
+	OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL = 5755,
+	OpSubgroupAvcImeSetWeightedSadINTEL = 5756,
+	OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL = 5757,
+	OpSubgroupAvcImeEvaluateWithDualReferenceINTEL = 5758,
+	OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL = 5759,
+	OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL = 5760,
+	OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL = 5761,
+	OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL = 5762,
+	OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL = 5763,
+	OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL = 5764,
+	OpSubgroupAvcImeConvertToMceResultINTEL = 5765,
+	OpSubgroupAvcImeGetSingleReferenceStreaminINTEL = 5766,
+	OpSubgroupAvcImeGetDualReferenceStreaminINTEL = 5767,
+	OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL = 5768,
+	OpSubgroupAvcImeStripDualReferenceStreamoutINTEL = 5769,
+	OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectorsINTEL = 5770,
+	OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsINTEL = 5771,
+	OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsINTEL = 5772,
+	OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsINTEL = 5773,
+	OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTEL = 5774,
+	OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINTEL = 5775,
+	OpSubgroupAvcImeGetBorderReachedINTEL = 5776,
+	OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL = 5777,
+	OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL = 5778,
+	OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL = 5779,
+	OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL = 5780,
+	OpSubgroupAvcFmeInitializeINTEL = 5781,
+	OpSubgroupAvcBmeInitializeINTEL = 5782,
+	OpSubgroupAvcRefConvertToMcePayloadINTEL = 5783,
+	OpSubgroupAvcRefSetBidirectionalMixDisableINTEL = 5784,
+	OpSubgroupAvcRefSetBilinearFilterEnableINTEL = 5785,
+	OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL = 5786,
+	OpSubgroupAvcRefEvaluateWithDualReferenceINTEL = 5787,
+	OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL = 5788,
+	OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL = 5789,
+	OpSubgroupAvcRefConvertToMceResultINTEL = 5790,
+	OpSubgroupAvcSicInitializeINTEL = 5791,
+	OpSubgroupAvcSicConfigureSkcINTEL = 5792,
+	OpSubgroupAvcSicConfigureIpeLumaINTEL = 5793,
+	OpSubgroupAvcSicConfigureIpeLumaChromaINTEL = 5794,
+	OpSubgroupAvcSicGetMotionVectorMaskINTEL = 5795,
+	OpSubgroupAvcSicConvertToMcePayloadINTEL = 5796,
+	OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL = 5797,
+	OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL = 5798,
+	OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL = 5799,
+	OpSubgroupAvcSicSetBilinearFilterEnableINTEL = 5800,
+	OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL = 5801,
+	OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL = 5802,
+	OpSubgroupAvcSicEvaluateIpeINTEL = 5803,
+	OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL = 5804,
+	OpSubgroupAvcSicEvaluateWithDualReferenceINTEL = 5805,
+	OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL = 5806,
+	OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL = 5807,
+	OpSubgroupAvcSicConvertToMceResultINTEL = 5808,
+	OpSubgroupAvcSicGetIpeLumaShapeINTEL = 5809,
+	OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL = 5810,
+	OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL = 5811,
+	OpSubgroupAvcSicGetPackedIpeLumaModesINTEL = 5812,
+	OpSubgroupAvcSicGetIpeChromaModeINTEL = 5813,
+	OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL = 5814,
+	OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL = 5815,
+	OpSubgroupAvcSicGetInterRawSadsINTEL = 5816,
+	OpVariableLengthArrayINTEL = 5818,
+	OpSaveMemoryINTEL = 5819,
+	OpRestoreMemoryINTEL = 5820,
+	OpArbitraryFloatSinCosPiALTERA = 5840,
+	OpArbitraryFloatCastALTERA = 5841,
+	OpArbitraryFloatCastFromIntALTERA = 5842,
+	OpArbitraryFloatCastToIntALTERA = 5843,
+	OpArbitraryFloatAddALTERA = 5846,
+	OpArbitraryFloatSubALTERA = 5847,
+	OpArbitraryFloatMulALTERA = 5848,
+	OpArbitraryFloatDivALTERA = 5849,
+	OpArbitraryFloatGTALTERA = 5850,
+	OpArbitraryFloatGEALTERA = 5851,
+	OpArbitraryFloatLTALTERA = 5852,
+	OpArbitraryFloatLEALTERA = 5853,
+	OpArbitraryFloatEQALTERA = 5854,
+	OpArbitraryFloatRecipALTERA = 5855,
+	OpArbitraryFloatRSqrtALTERA = 5856,
+	OpArbitraryFloatCbrtALTERA = 5857,
+	OpArbitraryFloatHypotALTERA = 5858,
+	OpArbitraryFloatSqrtALTERA = 5859,
+	OpArbitraryFloatLogINTEL = 5860,
+	OpArbitraryFloatLog2INTEL = 5861,
+	OpArbitraryFloatLog10INTEL = 5862,
+	OpArbitraryFloatLog1pINTEL = 5863,
+	OpArbitraryFloatExpINTEL = 5864,
+	OpArbitraryFloatExp2INTEL = 5865,
+	OpArbitraryFloatExp10INTEL = 5866,
+	OpArbitraryFloatExpm1INTEL = 5867,
+	OpArbitraryFloatSinINTEL = 5868,
+	OpArbitraryFloatCosINTEL = 5869,
+	OpArbitraryFloatSinCosINTEL = 5870,
+	OpArbitraryFloatSinPiINTEL = 5871,
+	OpArbitraryFloatCosPiINTEL = 5872,
+	OpArbitraryFloatASinINTEL = 5873,
+	OpArbitraryFloatASinPiINTEL = 5874,
+	OpArbitraryFloatACosINTEL = 5875,
+	OpArbitraryFloatACosPiINTEL = 5876,
+	OpArbitraryFloatATanINTEL = 5877,
+	OpArbitraryFloatATanPiINTEL = 5878,
+	OpArbitraryFloatATan2INTEL = 5879,
+	OpArbitraryFloatPowINTEL = 5880,
+	OpArbitraryFloatPowRINTEL = 5881,
+	OpArbitraryFloatPowNINTEL = 5882,
+	OpLoopControlINTEL = 5887,
+	OpAliasDomainDeclINTEL = 5911,
+	OpAliasScopeDeclINTEL = 5912,
+	OpAliasScopeListDeclINTEL = 5913,
+	OpFixedSqrtALTERA = 5923,
+	OpFixedRecipALTERA = 5924,
+	OpFixedRsqrtALTERA = 5925,
+	OpFixedSinALTERA = 5926,
+	OpFixedCosALTERA = 5927,
+	OpFixedSinCosALTERA = 5928,
+	OpFixedSinPiALTERA = 5929,
+	OpFixedCosPiALTERA = 5930,
+	OpFixedSinCosPiALTERA = 5931,
+	OpFixedLogALTERA = 5932,
+	OpFixedExpALTERA = 5933,
+	OpPtrCastToCrossWorkgroupALTERA = 5934,
+	OpCrossWorkgroupCastToPtrALTERA = 5938,
+	OpReadPipeBlockingALTERA = 5946,
+	OpWritePipeBlockingALTERA = 5947,
+	OpFPGARegALTERA = 5949,
+	OpRayQueryGetRayTMinKHR = 6016,
+	OpRayQueryGetRayFlagsKHR = 6017,
+	OpRayQueryGetIntersectionTKHR = 6018,
+	OpRayQueryGetIntersectionInstanceCustomIndexKHR = 6019,
+	OpRayQueryGetIntersectionInstanceIdKHR = 6020,
+	OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR = 6021,
+	OpRayQueryGetIntersectionGeometryIndexKHR = 6022,
+	OpRayQueryGetIntersectionPrimitiveIndexKHR = 6023,
+	OpRayQueryGetIntersectionBarycentricsKHR = 6024,
+	OpRayQueryGetIntersectionFrontFaceKHR = 6025,
+	OpRayQueryGetIntersectionCandidateAABBOpaqueKHR = 6026,
+	OpRayQueryGetIntersectionObjectRayDirectionKHR = 6027,
+	OpRayQueryGetIntersectionObjectRayOriginKHR = 6028,
+	OpRayQueryGetWorldRayDirectionKHR = 6029,
+	OpRayQueryGetWorldRayOriginKHR = 6030,
+	OpRayQueryGetIntersectionObjectToWorldKHR = 6031,
+	OpRayQueryGetIntersectionWorldToObjectKHR = 6032,
+	OpAtomicFAddEXT = 6035,
+	OpTypeBufferSurfaceINTEL = 6086,
+	OpTypeStructContinuedINTEL = 6090,
+	OpConstantCompositeContinuedINTEL = 6091,
+	OpSpecConstantCompositeContinuedINTEL = 6092,
+	OpCompositeConstructContinuedINTEL = 6096,
+	OpConvertFToBF16INTEL = 6116,
+	OpConvertBF16ToFINTEL = 6117,
+	OpControlBarrierArriveINTEL = 6142,
+	OpControlBarrierWaitINTEL = 6143,
+	OpArithmeticFenceEXT = 6145,
+	OpTaskSequenceCreateALTERA = 6163,
+	OpTaskSequenceAsyncALTERA = 6164,
+	OpTaskSequenceGetALTERA = 6165,
+	OpTaskSequenceReleaseALTERA = 6166,
+	OpTypeTaskSequenceALTERA = 6199,
+	OpSubgroupBlockPrefetchINTEL = 6221,
+	OpSubgroup2DBlockLoadINTEL = 6231,
+	OpSubgroup2DBlockLoadTransformINTEL = 6232,
+	OpSubgroup2DBlockLoadTransposeINTEL = 6233,
+	OpSubgroup2DBlockPrefetchINTEL = 6234,
+	OpSubgroup2DBlockStoreINTEL = 6235,
+	OpSubgroupMatrixMultiplyAccumulateINTEL = 6237,
+	OpBitwiseFunctionINTEL = 6242,
+	OpUntypedVariableLengthArrayINTEL = 6244,
+	OpConditionalExtensionINTEL = 6248,
+	OpConditionalEntryPointINTEL = 6249,
+	OpConditionalCapabilityINTEL = 6250,
+	OpSpecConstantTargetINTEL = 6251,
+	OpSpecConstantArchitectureINTEL = 6252,
+	OpSpecConstantCapabilitiesINTEL = 6253,
+	OpConditionalCopyObjectINTEL = 6254,
+	OpGroupIMulKHR = 6401,
+	OpGroupFMulKHR = 6402,
+	OpGroupBitwiseAndKHR = 6403,
+	OpGroupBitwiseOrKHR = 6404,
+	OpGroupBitwiseXorKHR = 6405,
+	OpGroupLogicalAndKHR = 6406,
+	OpGroupLogicalOrKHR = 6407,
+	OpGroupLogicalXorKHR = 6408,
+	OpRoundFToTF32INTEL = 6426,
+	OpMaskedGatherINTEL = 6428,
+	OpMaskedScatterINTEL = 6429,
+	OpConvertHandleToImageINTEL = 6529,
+	OpConvertHandleToSamplerINTEL = 6530,
+	OpConvertHandleToSampledImageINTEL = 6531,
+	OpFDot2MixAcc32VALVE = 6916,
+	OpFDot2MixAcc16VALVE = 6917,
+	OpFDot4MixAcc32VALVE = 6918,
 }
 public static class Instructions
 {
@@ -648,12 +1182,115 @@ public static class Instructions
 		OpCode.OpModuleProcessed => OpModuleProcessed.Instance,
 		OpCode.OpExecutionModeId => OpExecutionModeId.Instance,
 		OpCode.OpDecorateId => OpDecorateId.Instance,
+		OpCode.OpGroupNonUniformElect => OpGroupNonUniformElect.Instance,
+		OpCode.OpGroupNonUniformAll => OpGroupNonUniformAll.Instance,
+		OpCode.OpGroupNonUniformAny => OpGroupNonUniformAny.Instance,
+		OpCode.OpGroupNonUniformAllEqual => OpGroupNonUniformAllEqual.Instance,
+		OpCode.OpGroupNonUniformBroadcast => OpGroupNonUniformBroadcast.Instance,
+		OpCode.OpGroupNonUniformBroadcastFirst => OpGroupNonUniformBroadcastFirst.Instance,
+		OpCode.OpGroupNonUniformBallot => OpGroupNonUniformBallot.Instance,
+		OpCode.OpGroupNonUniformInverseBallot => OpGroupNonUniformInverseBallot.Instance,
+		OpCode.OpGroupNonUniformBallotBitExtract => OpGroupNonUniformBallotBitExtract.Instance,
+		OpCode.OpGroupNonUniformBallotBitCount => OpGroupNonUniformBallotBitCount.Instance,
+		OpCode.OpGroupNonUniformBallotFindLSB => OpGroupNonUniformBallotFindLSB.Instance,
+		OpCode.OpGroupNonUniformBallotFindMSB => OpGroupNonUniformBallotFindMSB.Instance,
+		OpCode.OpGroupNonUniformShuffle => OpGroupNonUniformShuffle.Instance,
+		OpCode.OpGroupNonUniformShuffleXor => OpGroupNonUniformShuffleXor.Instance,
+		OpCode.OpGroupNonUniformShuffleUp => OpGroupNonUniformShuffleUp.Instance,
+		OpCode.OpGroupNonUniformShuffleDown => OpGroupNonUniformShuffleDown.Instance,
+		OpCode.OpGroupNonUniformIAdd => OpGroupNonUniformIAdd.Instance,
+		OpCode.OpGroupNonUniformFAdd => OpGroupNonUniformFAdd.Instance,
+		OpCode.OpGroupNonUniformIMul => OpGroupNonUniformIMul.Instance,
+		OpCode.OpGroupNonUniformFMul => OpGroupNonUniformFMul.Instance,
+		OpCode.OpGroupNonUniformSMin => OpGroupNonUniformSMin.Instance,
+		OpCode.OpGroupNonUniformUMin => OpGroupNonUniformUMin.Instance,
+		OpCode.OpGroupNonUniformFMin => OpGroupNonUniformFMin.Instance,
+		OpCode.OpGroupNonUniformSMax => OpGroupNonUniformSMax.Instance,
+		OpCode.OpGroupNonUniformUMax => OpGroupNonUniformUMax.Instance,
+		OpCode.OpGroupNonUniformFMax => OpGroupNonUniformFMax.Instance,
+		OpCode.OpGroupNonUniformBitwiseAnd => OpGroupNonUniformBitwiseAnd.Instance,
+		OpCode.OpGroupNonUniformBitwiseOr => OpGroupNonUniformBitwiseOr.Instance,
+		OpCode.OpGroupNonUniformBitwiseXor => OpGroupNonUniformBitwiseXor.Instance,
+		OpCode.OpGroupNonUniformLogicalAnd => OpGroupNonUniformLogicalAnd.Instance,
+		OpCode.OpGroupNonUniformLogicalOr => OpGroupNonUniformLogicalOr.Instance,
+		OpCode.OpGroupNonUniformLogicalXor => OpGroupNonUniformLogicalXor.Instance,
+		OpCode.OpGroupNonUniformQuadBroadcast => OpGroupNonUniformQuadBroadcast.Instance,
+		OpCode.OpGroupNonUniformQuadSwap => OpGroupNonUniformQuadSwap.Instance,
+		OpCode.OpCopyLogical => OpCopyLogical.Instance,
+		OpCode.OpPtrEqual => OpPtrEqual.Instance,
+		OpCode.OpPtrNotEqual => OpPtrNotEqual.Instance,
+		OpCode.OpPtrDiff => OpPtrDiff.Instance,
+		OpCode.OpColorAttachmentReadEXT => OpColorAttachmentReadEXT.Instance,
+		OpCode.OpDepthAttachmentReadEXT => OpDepthAttachmentReadEXT.Instance,
+		OpCode.OpStencilAttachmentReadEXT => OpStencilAttachmentReadEXT.Instance,
+		OpCode.OpTypeTensorARM => OpTypeTensorARM.Instance,
+		OpCode.OpTensorReadARM => OpTensorReadARM.Instance,
+		OpCode.OpTensorWriteARM => OpTensorWriteARM.Instance,
+		OpCode.OpTensorQuerySizeARM => OpTensorQuerySizeARM.Instance,
+		OpCode.OpGraphConstantARM => OpGraphConstantARM.Instance,
+		OpCode.OpGraphEntryPointARM => OpGraphEntryPointARM.Instance,
+		OpCode.OpGraphARM => OpGraphARM.Instance,
+		OpCode.OpGraphInputARM => OpGraphInputARM.Instance,
+		OpCode.OpGraphSetOutputARM => OpGraphSetOutputARM.Instance,
+		OpCode.OpGraphEndARM => OpGraphEndARM.Instance,
+		OpCode.OpTypeGraphARM => OpTypeGraphARM.Instance,
+		OpCode.OpTerminateInvocation => OpTerminateInvocation.Instance,
+		OpCode.OpTypeUntypedPointerKHR => OpTypeUntypedPointerKHR.Instance,
+		OpCode.OpUntypedVariableKHR => OpUntypedVariableKHR.Instance,
+		OpCode.OpUntypedAccessChainKHR => OpUntypedAccessChainKHR.Instance,
+		OpCode.OpUntypedInBoundsAccessChainKHR => OpUntypedInBoundsAccessChainKHR.Instance,
 		OpCode.OpSubgroupBallotKHR => OpSubgroupBallotKHR.Instance,
 		OpCode.OpSubgroupFirstInvocationKHR => OpSubgroupFirstInvocationKHR.Instance,
+		OpCode.OpUntypedPtrAccessChainKHR => OpUntypedPtrAccessChainKHR.Instance,
+		OpCode.OpUntypedInBoundsPtrAccessChainKHR => OpUntypedInBoundsPtrAccessChainKHR.Instance,
+		OpCode.OpUntypedArrayLengthKHR => OpUntypedArrayLengthKHR.Instance,
+		OpCode.OpUntypedPrefetchKHR => OpUntypedPrefetchKHR.Instance,
+		OpCode.OpFmaKHR => OpFmaKHR.Instance,
 		OpCode.OpSubgroupAllKHR => OpSubgroupAllKHR.Instance,
 		OpCode.OpSubgroupAnyKHR => OpSubgroupAnyKHR.Instance,
 		OpCode.OpSubgroupAllEqualKHR => OpSubgroupAllEqualKHR.Instance,
+		OpCode.OpGroupNonUniformRotateKHR => OpGroupNonUniformRotateKHR.Instance,
 		OpCode.OpSubgroupReadInvocationKHR => OpSubgroupReadInvocationKHR.Instance,
+		OpCode.OpExtInstWithForwardRefsKHR => OpExtInstWithForwardRefsKHR.Instance,
+		OpCode.OpUntypedGroupAsyncCopyKHR => OpUntypedGroupAsyncCopyKHR.Instance,
+		OpCode.OpTraceRayKHR => OpTraceRayKHR.Instance,
+		OpCode.OpExecuteCallableKHR => OpExecuteCallableKHR.Instance,
+		OpCode.OpConvertUToAccelerationStructureKHR => OpConvertUToAccelerationStructureKHR.Instance,
+		OpCode.OpIgnoreIntersectionKHR => OpIgnoreIntersectionKHR.Instance,
+		OpCode.OpTerminateRayKHR => OpTerminateRayKHR.Instance,
+		OpCode.OpSDot => OpSDot.Instance,
+		OpCode.OpUDot => OpUDot.Instance,
+		OpCode.OpSUDot => OpSUDot.Instance,
+		OpCode.OpSDotAccSat => OpSDotAccSat.Instance,
+		OpCode.OpUDotAccSat => OpUDotAccSat.Instance,
+		OpCode.OpSUDotAccSat => OpSUDotAccSat.Instance,
+		OpCode.OpTypeCooperativeMatrixKHR => OpTypeCooperativeMatrixKHR.Instance,
+		OpCode.OpCooperativeMatrixLoadKHR => OpCooperativeMatrixLoadKHR.Instance,
+		OpCode.OpCooperativeMatrixStoreKHR => OpCooperativeMatrixStoreKHR.Instance,
+		OpCode.OpCooperativeMatrixMulAddKHR => OpCooperativeMatrixMulAddKHR.Instance,
+		OpCode.OpCooperativeMatrixLengthKHR => OpCooperativeMatrixLengthKHR.Instance,
+		OpCode.OpConstantCompositeReplicateEXT => OpConstantCompositeReplicateEXT.Instance,
+		OpCode.OpSpecConstantCompositeReplicateEXT => OpSpecConstantCompositeReplicateEXT.Instance,
+		OpCode.OpCompositeConstructReplicateEXT => OpCompositeConstructReplicateEXT.Instance,
+		OpCode.OpTypeRayQueryKHR => OpTypeRayQueryKHR.Instance,
+		OpCode.OpRayQueryInitializeKHR => OpRayQueryInitializeKHR.Instance,
+		OpCode.OpRayQueryTerminateKHR => OpRayQueryTerminateKHR.Instance,
+		OpCode.OpRayQueryGenerateIntersectionKHR => OpRayQueryGenerateIntersectionKHR.Instance,
+		OpCode.OpRayQueryConfirmIntersectionKHR => OpRayQueryConfirmIntersectionKHR.Instance,
+		OpCode.OpRayQueryProceedKHR => OpRayQueryProceedKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionTypeKHR => OpRayQueryGetIntersectionTypeKHR.Instance,
+		OpCode.OpImageSampleWeightedQCOM => OpImageSampleWeightedQCOM.Instance,
+		OpCode.OpImageBoxFilterQCOM => OpImageBoxFilterQCOM.Instance,
+		OpCode.OpImageBlockMatchSSDQCOM => OpImageBlockMatchSSDQCOM.Instance,
+		OpCode.OpImageBlockMatchSADQCOM => OpImageBlockMatchSADQCOM.Instance,
+		OpCode.OpBitCastArrayQCOM => OpBitCastArrayQCOM.Instance,
+		OpCode.OpImageBlockMatchWindowSSDQCOM => OpImageBlockMatchWindowSSDQCOM.Instance,
+		OpCode.OpImageBlockMatchWindowSADQCOM => OpImageBlockMatchWindowSADQCOM.Instance,
+		OpCode.OpImageBlockMatchGatherSSDQCOM => OpImageBlockMatchGatherSSDQCOM.Instance,
+		OpCode.OpImageBlockMatchGatherSADQCOM => OpImageBlockMatchGatherSADQCOM.Instance,
+		OpCode.OpCompositeConstructCoopMatQCOM => OpCompositeConstructCoopMatQCOM.Instance,
+		OpCode.OpCompositeExtractCoopMatQCOM => OpCompositeExtractCoopMatQCOM.Instance,
+		OpCode.OpExtractSubArrayQCOM => OpExtractSubArrayQCOM.Instance,
 		OpCode.OpGroupIAddNonUniformAMD => OpGroupIAddNonUniformAMD.Instance,
 		OpCode.OpGroupFAddNonUniformAMD => OpGroupFAddNonUniformAMD.Instance,
 		OpCode.OpGroupFMinNonUniformAMD => OpGroupFMinNonUniformAMD.Instance,
@@ -664,6 +1301,164 @@ public static class Instructions
 		OpCode.OpGroupSMaxNonUniformAMD => OpGroupSMaxNonUniformAMD.Instance,
 		OpCode.OpFragmentMaskFetchAMD => OpFragmentMaskFetchAMD.Instance,
 		OpCode.OpFragmentFetchAMD => OpFragmentFetchAMD.Instance,
+		OpCode.OpReadClockKHR => OpReadClockKHR.Instance,
+		OpCode.OpAllocateNodePayloadsAMDX => OpAllocateNodePayloadsAMDX.Instance,
+		OpCode.OpEnqueueNodePayloadsAMDX => OpEnqueueNodePayloadsAMDX.Instance,
+		OpCode.OpTypeNodePayloadArrayAMDX => OpTypeNodePayloadArrayAMDX.Instance,
+		OpCode.OpFinishWritingNodePayloadAMDX => OpFinishWritingNodePayloadAMDX.Instance,
+		OpCode.OpNodePayloadArrayLengthAMDX => OpNodePayloadArrayLengthAMDX.Instance,
+		OpCode.OpIsNodePayloadValidAMDX => OpIsNodePayloadValidAMDX.Instance,
+		OpCode.OpConstantStringAMDX => OpConstantStringAMDX.Instance,
+		OpCode.OpSpecConstantStringAMDX => OpSpecConstantStringAMDX.Instance,
+		OpCode.OpGroupNonUniformQuadAllKHR => OpGroupNonUniformQuadAllKHR.Instance,
+		OpCode.OpGroupNonUniformQuadAnyKHR => OpGroupNonUniformQuadAnyKHR.Instance,
+		OpCode.OpTypeBufferEXT => OpTypeBufferEXT.Instance,
+		OpCode.OpBufferPointerEXT => OpBufferPointerEXT.Instance,
+		OpCode.OpUntypedImageTexelPointerEXT => OpUntypedImageTexelPointerEXT.Instance,
+		OpCode.OpMemberDecorateIdEXT => OpMemberDecorateIdEXT.Instance,
+		OpCode.OpConstantSizeOfEXT => OpConstantSizeOfEXT.Instance,
+		OpCode.OpHitObjectRecordHitMotionNV => OpHitObjectRecordHitMotionNV.Instance,
+		OpCode.OpHitObjectRecordHitWithIndexMotionNV => OpHitObjectRecordHitWithIndexMotionNV.Instance,
+		OpCode.OpHitObjectRecordMissMotionNV => OpHitObjectRecordMissMotionNV.Instance,
+		OpCode.OpHitObjectGetWorldToObjectNV => OpHitObjectGetWorldToObjectNV.Instance,
+		OpCode.OpHitObjectGetObjectToWorldNV => OpHitObjectGetObjectToWorldNV.Instance,
+		OpCode.OpHitObjectGetObjectRayDirectionNV => OpHitObjectGetObjectRayDirectionNV.Instance,
+		OpCode.OpHitObjectGetObjectRayOriginNV => OpHitObjectGetObjectRayOriginNV.Instance,
+		OpCode.OpHitObjectTraceRayMotionNV => OpHitObjectTraceRayMotionNV.Instance,
+		OpCode.OpHitObjectGetShaderRecordBufferHandleNV => OpHitObjectGetShaderRecordBufferHandleNV.Instance,
+		OpCode.OpHitObjectGetShaderBindingTableRecordIndexNV => OpHitObjectGetShaderBindingTableRecordIndexNV.Instance,
+		OpCode.OpHitObjectRecordEmptyNV => OpHitObjectRecordEmptyNV.Instance,
+		OpCode.OpHitObjectTraceRayNV => OpHitObjectTraceRayNV.Instance,
+		OpCode.OpHitObjectRecordHitNV => OpHitObjectRecordHitNV.Instance,
+		OpCode.OpHitObjectRecordHitWithIndexNV => OpHitObjectRecordHitWithIndexNV.Instance,
+		OpCode.OpHitObjectRecordMissNV => OpHitObjectRecordMissNV.Instance,
+		OpCode.OpHitObjectExecuteShaderNV => OpHitObjectExecuteShaderNV.Instance,
+		OpCode.OpHitObjectGetCurrentTimeNV => OpHitObjectGetCurrentTimeNV.Instance,
+		OpCode.OpHitObjectGetAttributesNV => OpHitObjectGetAttributesNV.Instance,
+		OpCode.OpHitObjectGetHitKindNV => OpHitObjectGetHitKindNV.Instance,
+		OpCode.OpHitObjectGetPrimitiveIndexNV => OpHitObjectGetPrimitiveIndexNV.Instance,
+		OpCode.OpHitObjectGetGeometryIndexNV => OpHitObjectGetGeometryIndexNV.Instance,
+		OpCode.OpHitObjectGetInstanceIdNV => OpHitObjectGetInstanceIdNV.Instance,
+		OpCode.OpHitObjectGetInstanceCustomIndexNV => OpHitObjectGetInstanceCustomIndexNV.Instance,
+		OpCode.OpHitObjectGetWorldRayDirectionNV => OpHitObjectGetWorldRayDirectionNV.Instance,
+		OpCode.OpHitObjectGetWorldRayOriginNV => OpHitObjectGetWorldRayOriginNV.Instance,
+		OpCode.OpHitObjectGetRayTMaxNV => OpHitObjectGetRayTMaxNV.Instance,
+		OpCode.OpHitObjectGetRayTMinNV => OpHitObjectGetRayTMinNV.Instance,
+		OpCode.OpHitObjectIsEmptyNV => OpHitObjectIsEmptyNV.Instance,
+		OpCode.OpHitObjectIsHitNV => OpHitObjectIsHitNV.Instance,
+		OpCode.OpHitObjectIsMissNV => OpHitObjectIsMissNV.Instance,
+		OpCode.OpReorderThreadWithHitObjectNV => OpReorderThreadWithHitObjectNV.Instance,
+		OpCode.OpReorderThreadWithHintNV => OpReorderThreadWithHintNV.Instance,
+		OpCode.OpTypeHitObjectNV => OpTypeHitObjectNV.Instance,
+		OpCode.OpImageSampleFootprintNV => OpImageSampleFootprintNV.Instance,
+		OpCode.OpTypeVectorIdEXT => OpTypeVectorIdEXT.Instance,
+		OpCode.OpCooperativeVectorMatrixMulNV => OpCooperativeVectorMatrixMulNV.Instance,
+		OpCode.OpCooperativeVectorOuterProductAccumulateNV => OpCooperativeVectorOuterProductAccumulateNV.Instance,
+		OpCode.OpCooperativeVectorReduceSumAccumulateNV => OpCooperativeVectorReduceSumAccumulateNV.Instance,
+		OpCode.OpCooperativeVectorMatrixMulAddNV => OpCooperativeVectorMatrixMulAddNV.Instance,
+		OpCode.OpCooperativeMatrixConvertNV => OpCooperativeMatrixConvertNV.Instance,
+		OpCode.OpEmitMeshTasksEXT => OpEmitMeshTasksEXT.Instance,
+		OpCode.OpSetMeshOutputsEXT => OpSetMeshOutputsEXT.Instance,
+		OpCode.OpGroupNonUniformPartitionEXT => OpGroupNonUniformPartitionEXT.Instance,
+		OpCode.OpWritePackedPrimitiveIndices4x8NV => OpWritePackedPrimitiveIndices4x8NV.Instance,
+		OpCode.OpFetchMicroTriangleVertexPositionNV => OpFetchMicroTriangleVertexPositionNV.Instance,
+		OpCode.OpFetchMicroTriangleVertexBarycentricNV => OpFetchMicroTriangleVertexBarycentricNV.Instance,
+		OpCode.OpCooperativeVectorLoadNV => OpCooperativeVectorLoadNV.Instance,
+		OpCode.OpCooperativeVectorStoreNV => OpCooperativeVectorStoreNV.Instance,
+		OpCode.OpHitObjectRecordFromQueryEXT => OpHitObjectRecordFromQueryEXT.Instance,
+		OpCode.OpHitObjectRecordMissEXT => OpHitObjectRecordMissEXT.Instance,
+		OpCode.OpHitObjectRecordMissMotionEXT => OpHitObjectRecordMissMotionEXT.Instance,
+		OpCode.OpHitObjectGetIntersectionTriangleVertexPositionsEXT => OpHitObjectGetIntersectionTriangleVertexPositionsEXT.Instance,
+		OpCode.OpHitObjectGetRayFlagsEXT => OpHitObjectGetRayFlagsEXT.Instance,
+		OpCode.OpHitObjectSetShaderBindingTableRecordIndexEXT => OpHitObjectSetShaderBindingTableRecordIndexEXT.Instance,
+		OpCode.OpHitObjectReorderExecuteShaderEXT => OpHitObjectReorderExecuteShaderEXT.Instance,
+		OpCode.OpHitObjectTraceReorderExecuteEXT => OpHitObjectTraceReorderExecuteEXT.Instance,
+		OpCode.OpHitObjectTraceMotionReorderExecuteEXT => OpHitObjectTraceMotionReorderExecuteEXT.Instance,
+		OpCode.OpTypeHitObjectEXT => OpTypeHitObjectEXT.Instance,
+		OpCode.OpReorderThreadWithHintEXT => OpReorderThreadWithHintEXT.Instance,
+		OpCode.OpReorderThreadWithHitObjectEXT => OpReorderThreadWithHitObjectEXT.Instance,
+		OpCode.OpHitObjectTraceRayEXT => OpHitObjectTraceRayEXT.Instance,
+		OpCode.OpHitObjectTraceRayMotionEXT => OpHitObjectTraceRayMotionEXT.Instance,
+		OpCode.OpHitObjectRecordEmptyEXT => OpHitObjectRecordEmptyEXT.Instance,
+		OpCode.OpHitObjectExecuteShaderEXT => OpHitObjectExecuteShaderEXT.Instance,
+		OpCode.OpHitObjectGetCurrentTimeEXT => OpHitObjectGetCurrentTimeEXT.Instance,
+		OpCode.OpHitObjectGetAttributesEXT => OpHitObjectGetAttributesEXT.Instance,
+		OpCode.OpHitObjectGetHitKindEXT => OpHitObjectGetHitKindEXT.Instance,
+		OpCode.OpHitObjectGetPrimitiveIndexEXT => OpHitObjectGetPrimitiveIndexEXT.Instance,
+		OpCode.OpHitObjectGetGeometryIndexEXT => OpHitObjectGetGeometryIndexEXT.Instance,
+		OpCode.OpHitObjectGetInstanceIdEXT => OpHitObjectGetInstanceIdEXT.Instance,
+		OpCode.OpHitObjectGetInstanceCustomIndexEXT => OpHitObjectGetInstanceCustomIndexEXT.Instance,
+		OpCode.OpHitObjectGetObjectRayOriginEXT => OpHitObjectGetObjectRayOriginEXT.Instance,
+		OpCode.OpHitObjectGetObjectRayDirectionEXT => OpHitObjectGetObjectRayDirectionEXT.Instance,
+		OpCode.OpHitObjectGetWorldRayDirectionEXT => OpHitObjectGetWorldRayDirectionEXT.Instance,
+		OpCode.OpHitObjectGetWorldRayOriginEXT => OpHitObjectGetWorldRayOriginEXT.Instance,
+		OpCode.OpHitObjectGetObjectToWorldEXT => OpHitObjectGetObjectToWorldEXT.Instance,
+		OpCode.OpHitObjectGetWorldToObjectEXT => OpHitObjectGetWorldToObjectEXT.Instance,
+		OpCode.OpHitObjectGetRayTMaxEXT => OpHitObjectGetRayTMaxEXT.Instance,
+		OpCode.OpReportIntersectionKHR => OpReportIntersectionKHR.Instance,
+		OpCode.OpIgnoreIntersectionNV => OpIgnoreIntersectionNV.Instance,
+		OpCode.OpTerminateRayNV => OpTerminateRayNV.Instance,
+		OpCode.OpTraceNV => OpTraceNV.Instance,
+		OpCode.OpTraceMotionNV => OpTraceMotionNV.Instance,
+		OpCode.OpTraceRayMotionNV => OpTraceRayMotionNV.Instance,
+		OpCode.OpRayQueryGetIntersectionTriangleVertexPositionsKHR => OpRayQueryGetIntersectionTriangleVertexPositionsKHR.Instance,
+		OpCode.OpTypeAccelerationStructureKHR => OpTypeAccelerationStructureKHR.Instance,
+		OpCode.OpExecuteCallableNV => OpExecuteCallableNV.Instance,
+		OpCode.OpRayQueryGetIntersectionClusterIdNV => OpRayQueryGetIntersectionClusterIdNV.Instance,
+		OpCode.OpHitObjectGetClusterIdNV => OpHitObjectGetClusterIdNV.Instance,
+		OpCode.OpHitObjectGetRayTMinEXT => OpHitObjectGetRayTMinEXT.Instance,
+		OpCode.OpHitObjectGetShaderBindingTableRecordIndexEXT => OpHitObjectGetShaderBindingTableRecordIndexEXT.Instance,
+		OpCode.OpHitObjectGetShaderRecordBufferHandleEXT => OpHitObjectGetShaderRecordBufferHandleEXT.Instance,
+		OpCode.OpHitObjectIsEmptyEXT => OpHitObjectIsEmptyEXT.Instance,
+		OpCode.OpHitObjectIsHitEXT => OpHitObjectIsHitEXT.Instance,
+		OpCode.OpHitObjectIsMissEXT => OpHitObjectIsMissEXT.Instance,
+		OpCode.OpTypeCooperativeMatrixNV => OpTypeCooperativeMatrixNV.Instance,
+		OpCode.OpCooperativeMatrixLoadNV => OpCooperativeMatrixLoadNV.Instance,
+		OpCode.OpCooperativeMatrixStoreNV => OpCooperativeMatrixStoreNV.Instance,
+		OpCode.OpCooperativeMatrixMulAddNV => OpCooperativeMatrixMulAddNV.Instance,
+		OpCode.OpCooperativeMatrixLengthNV => OpCooperativeMatrixLengthNV.Instance,
+		OpCode.OpBeginInvocationInterlockEXT => OpBeginInvocationInterlockEXT.Instance,
+		OpCode.OpEndInvocationInterlockEXT => OpEndInvocationInterlockEXT.Instance,
+		OpCode.OpCooperativeMatrixReduceNV => OpCooperativeMatrixReduceNV.Instance,
+		OpCode.OpCooperativeMatrixLoadTensorNV => OpCooperativeMatrixLoadTensorNV.Instance,
+		OpCode.OpCooperativeMatrixStoreTensorNV => OpCooperativeMatrixStoreTensorNV.Instance,
+		OpCode.OpCooperativeMatrixPerElementOpNV => OpCooperativeMatrixPerElementOpNV.Instance,
+		OpCode.OpTypeTensorLayoutNV => OpTypeTensorLayoutNV.Instance,
+		OpCode.OpTypeTensorViewNV => OpTypeTensorViewNV.Instance,
+		OpCode.OpCreateTensorLayoutNV => OpCreateTensorLayoutNV.Instance,
+		OpCode.OpTensorLayoutSetDimensionNV => OpTensorLayoutSetDimensionNV.Instance,
+		OpCode.OpTensorLayoutSetStrideNV => OpTensorLayoutSetStrideNV.Instance,
+		OpCode.OpTensorLayoutSliceNV => OpTensorLayoutSliceNV.Instance,
+		OpCode.OpTensorLayoutSetClampValueNV => OpTensorLayoutSetClampValueNV.Instance,
+		OpCode.OpCreateTensorViewNV => OpCreateTensorViewNV.Instance,
+		OpCode.OpTensorViewSetDimensionNV => OpTensorViewSetDimensionNV.Instance,
+		OpCode.OpTensorViewSetStrideNV => OpTensorViewSetStrideNV.Instance,
+		OpCode.OpDemoteToHelperInvocation => OpDemoteToHelperInvocation.Instance,
+		OpCode.OpIsHelperInvocationEXT => OpIsHelperInvocationEXT.Instance,
+		OpCode.OpTensorViewSetClipNV => OpTensorViewSetClipNV.Instance,
+		OpCode.OpTensorLayoutSetBlockSizeNV => OpTensorLayoutSetBlockSizeNV.Instance,
+		OpCode.OpCooperativeMatrixTransposeNV => OpCooperativeMatrixTransposeNV.Instance,
+		OpCode.OpConvertUToImageNV => OpConvertUToImageNV.Instance,
+		OpCode.OpConvertUToSamplerNV => OpConvertUToSamplerNV.Instance,
+		OpCode.OpConvertImageToUNV => OpConvertImageToUNV.Instance,
+		OpCode.OpConvertSamplerToUNV => OpConvertSamplerToUNV.Instance,
+		OpCode.OpConvertUToSampledImageNV => OpConvertUToSampledImageNV.Instance,
+		OpCode.OpConvertSampledImageToUNV => OpConvertSampledImageToUNV.Instance,
+		OpCode.OpSamplerImageAddressingModeNV => OpSamplerImageAddressingModeNV.Instance,
+		OpCode.OpRawAccessChainNV => OpRawAccessChainNV.Instance,
+		OpCode.OpRayQueryGetIntersectionSpherePositionNV => OpRayQueryGetIntersectionSpherePositionNV.Instance,
+		OpCode.OpRayQueryGetIntersectionSphereRadiusNV => OpRayQueryGetIntersectionSphereRadiusNV.Instance,
+		OpCode.OpRayQueryGetIntersectionLSSPositionsNV => OpRayQueryGetIntersectionLSSPositionsNV.Instance,
+		OpCode.OpRayQueryGetIntersectionLSSRadiiNV => OpRayQueryGetIntersectionLSSRadiiNV.Instance,
+		OpCode.OpRayQueryGetIntersectionLSSHitValueNV => OpRayQueryGetIntersectionLSSHitValueNV.Instance,
+		OpCode.OpHitObjectGetSpherePositionNV => OpHitObjectGetSpherePositionNV.Instance,
+		OpCode.OpHitObjectGetSphereRadiusNV => OpHitObjectGetSphereRadiusNV.Instance,
+		OpCode.OpHitObjectGetLSSPositionsNV => OpHitObjectGetLSSPositionsNV.Instance,
+		OpCode.OpHitObjectGetLSSRadiiNV => OpHitObjectGetLSSRadiiNV.Instance,
+		OpCode.OpHitObjectIsSphereHitNV => OpHitObjectIsSphereHitNV.Instance,
+		OpCode.OpHitObjectIsLSSHitNV => OpHitObjectIsLSSHitNV.Instance,
+		OpCode.OpRayQueryIsSphereHitNV => OpRayQueryIsSphereHitNV.Instance,
+		OpCode.OpRayQueryIsLSSHitNV => OpRayQueryIsLSSHitNV.Instance,
 		OpCode.OpSubgroupShuffleINTEL => OpSubgroupShuffleINTEL.Instance,
 		OpCode.OpSubgroupShuffleDownINTEL => OpSubgroupShuffleDownINTEL.Instance,
 		OpCode.OpSubgroupShuffleUpINTEL => OpSubgroupShuffleUpINTEL.Instance,
@@ -672,8 +1467,281 @@ public static class Instructions
 		OpCode.OpSubgroupBlockWriteINTEL => OpSubgroupBlockWriteINTEL.Instance,
 		OpCode.OpSubgroupImageBlockReadINTEL => OpSubgroupImageBlockReadINTEL.Instance,
 		OpCode.OpSubgroupImageBlockWriteINTEL => OpSubgroupImageBlockWriteINTEL.Instance,
-		OpCode.OpDecorateStringGOOGLE => OpDecorateStringGOOGLE.Instance,
-		OpCode.OpMemberDecorateStringGOOGLE => OpMemberDecorateStringGOOGLE.Instance,
+		OpCode.OpSubgroupImageMediaBlockReadINTEL => OpSubgroupImageMediaBlockReadINTEL.Instance,
+		OpCode.OpSubgroupImageMediaBlockWriteINTEL => OpSubgroupImageMediaBlockWriteINTEL.Instance,
+		OpCode.OpUCountLeadingZerosINTEL => OpUCountLeadingZerosINTEL.Instance,
+		OpCode.OpUCountTrailingZerosINTEL => OpUCountTrailingZerosINTEL.Instance,
+		OpCode.OpAbsISubINTEL => OpAbsISubINTEL.Instance,
+		OpCode.OpAbsUSubINTEL => OpAbsUSubINTEL.Instance,
+		OpCode.OpIAddSatINTEL => OpIAddSatINTEL.Instance,
+		OpCode.OpUAddSatINTEL => OpUAddSatINTEL.Instance,
+		OpCode.OpIAverageINTEL => OpIAverageINTEL.Instance,
+		OpCode.OpUAverageINTEL => OpUAverageINTEL.Instance,
+		OpCode.OpIAverageRoundedINTEL => OpIAverageRoundedINTEL.Instance,
+		OpCode.OpUAverageRoundedINTEL => OpUAverageRoundedINTEL.Instance,
+		OpCode.OpISubSatINTEL => OpISubSatINTEL.Instance,
+		OpCode.OpUSubSatINTEL => OpUSubSatINTEL.Instance,
+		OpCode.OpIMul32x16INTEL => OpIMul32x16INTEL.Instance,
+		OpCode.OpUMul32x16INTEL => OpUMul32x16INTEL.Instance,
+		OpCode.OpConstantFunctionPointerINTEL => OpConstantFunctionPointerINTEL.Instance,
+		OpCode.OpFunctionPointerCallINTEL => OpFunctionPointerCallINTEL.Instance,
+		OpCode.OpAsmTargetINTEL => OpAsmTargetINTEL.Instance,
+		OpCode.OpAsmINTEL => OpAsmINTEL.Instance,
+		OpCode.OpAsmCallINTEL => OpAsmCallINTEL.Instance,
+		OpCode.OpAtomicFMinEXT => OpAtomicFMinEXT.Instance,
+		OpCode.OpAtomicFMaxEXT => OpAtomicFMaxEXT.Instance,
+		OpCode.OpAssumeTrueKHR => OpAssumeTrueKHR.Instance,
+		OpCode.OpExpectKHR => OpExpectKHR.Instance,
+		OpCode.OpDecorateString => OpDecorateString.Instance,
+		OpCode.OpMemberDecorateString => OpMemberDecorateString.Instance,
+		OpCode.OpVmeImageINTEL => OpVmeImageINTEL.Instance,
+		OpCode.OpTypeVmeImageINTEL => OpTypeVmeImageINTEL.Instance,
+		OpCode.OpTypeAvcImePayloadINTEL => OpTypeAvcImePayloadINTEL.Instance,
+		OpCode.OpTypeAvcRefPayloadINTEL => OpTypeAvcRefPayloadINTEL.Instance,
+		OpCode.OpTypeAvcSicPayloadINTEL => OpTypeAvcSicPayloadINTEL.Instance,
+		OpCode.OpTypeAvcMcePayloadINTEL => OpTypeAvcMcePayloadINTEL.Instance,
+		OpCode.OpTypeAvcMceResultINTEL => OpTypeAvcMceResultINTEL.Instance,
+		OpCode.OpTypeAvcImeResultINTEL => OpTypeAvcImeResultINTEL.Instance,
+		OpCode.OpTypeAvcImeResultSingleReferenceStreamoutINTEL => OpTypeAvcImeResultSingleReferenceStreamoutINTEL.Instance,
+		OpCode.OpTypeAvcImeResultDualReferenceStreamoutINTEL => OpTypeAvcImeResultDualReferenceStreamoutINTEL.Instance,
+		OpCode.OpTypeAvcImeSingleReferenceStreaminINTEL => OpTypeAvcImeSingleReferenceStreaminINTEL.Instance,
+		OpCode.OpTypeAvcImeDualReferenceStreaminINTEL => OpTypeAvcImeDualReferenceStreaminINTEL.Instance,
+		OpCode.OpTypeAvcRefResultINTEL => OpTypeAvcRefResultINTEL.Instance,
+		OpCode.OpTypeAvcSicResultINTEL => OpTypeAvcSicResultINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL => OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL.Instance,
+		OpCode.OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL => OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL => OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL.Instance,
+		OpCode.OpSubgroupAvcMceSetInterShapePenaltyINTEL => OpSubgroupAvcMceSetInterShapePenaltyINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL => OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL.Instance,
+		OpCode.OpSubgroupAvcMceSetInterDirectionPenaltyINTEL => OpSubgroupAvcMceSetInterDirectionPenaltyINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL => OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL => OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL => OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL => OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL => OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL.Instance,
+		OpCode.OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL => OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL => OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL => OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL => OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL.Instance,
+		OpCode.OpSubgroupAvcMceSetAcOnlyHaarINTEL => OpSubgroupAvcMceSetAcOnlyHaarINTEL.Instance,
+		OpCode.OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL => OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL.Instance,
+		OpCode.OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL => OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL.Instance,
+		OpCode.OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL => OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL.Instance,
+		OpCode.OpSubgroupAvcMceConvertToImePayloadINTEL => OpSubgroupAvcMceConvertToImePayloadINTEL.Instance,
+		OpCode.OpSubgroupAvcMceConvertToImeResultINTEL => OpSubgroupAvcMceConvertToImeResultINTEL.Instance,
+		OpCode.OpSubgroupAvcMceConvertToRefPayloadINTEL => OpSubgroupAvcMceConvertToRefPayloadINTEL.Instance,
+		OpCode.OpSubgroupAvcMceConvertToRefResultINTEL => OpSubgroupAvcMceConvertToRefResultINTEL.Instance,
+		OpCode.OpSubgroupAvcMceConvertToSicPayloadINTEL => OpSubgroupAvcMceConvertToSicPayloadINTEL.Instance,
+		OpCode.OpSubgroupAvcMceConvertToSicResultINTEL => OpSubgroupAvcMceConvertToSicResultINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetMotionVectorsINTEL => OpSubgroupAvcMceGetMotionVectorsINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetInterDistortionsINTEL => OpSubgroupAvcMceGetInterDistortionsINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetBestInterDistortionsINTEL => OpSubgroupAvcMceGetBestInterDistortionsINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetInterMajorShapeINTEL => OpSubgroupAvcMceGetInterMajorShapeINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetInterMinorShapeINTEL => OpSubgroupAvcMceGetInterMinorShapeINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetInterDirectionsINTEL => OpSubgroupAvcMceGetInterDirectionsINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetInterMotionVectorCountINTEL => OpSubgroupAvcMceGetInterMotionVectorCountINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetInterReferenceIdsINTEL => OpSubgroupAvcMceGetInterReferenceIdsINTEL.Instance,
+		OpCode.OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL => OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL.Instance,
+		OpCode.OpSubgroupAvcImeInitializeINTEL => OpSubgroupAvcImeInitializeINTEL.Instance,
+		OpCode.OpSubgroupAvcImeSetSingleReferenceINTEL => OpSubgroupAvcImeSetSingleReferenceINTEL.Instance,
+		OpCode.OpSubgroupAvcImeSetDualReferenceINTEL => OpSubgroupAvcImeSetDualReferenceINTEL.Instance,
+		OpCode.OpSubgroupAvcImeRefWindowSizeINTEL => OpSubgroupAvcImeRefWindowSizeINTEL.Instance,
+		OpCode.OpSubgroupAvcImeAdjustRefOffsetINTEL => OpSubgroupAvcImeAdjustRefOffsetINTEL.Instance,
+		OpCode.OpSubgroupAvcImeConvertToMcePayloadINTEL => OpSubgroupAvcImeConvertToMcePayloadINTEL.Instance,
+		OpCode.OpSubgroupAvcImeSetMaxMotionVectorCountINTEL => OpSubgroupAvcImeSetMaxMotionVectorCountINTEL.Instance,
+		OpCode.OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL => OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL.Instance,
+		OpCode.OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL => OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL.Instance,
+		OpCode.OpSubgroupAvcImeSetWeightedSadINTEL => OpSubgroupAvcImeSetWeightedSadINTEL.Instance,
+		OpCode.OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL => OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL.Instance,
+		OpCode.OpSubgroupAvcImeEvaluateWithDualReferenceINTEL => OpSubgroupAvcImeEvaluateWithDualReferenceINTEL.Instance,
+		OpCode.OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL => OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL.Instance,
+		OpCode.OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL => OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL.Instance,
+		OpCode.OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL => OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL.Instance,
+		OpCode.OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL => OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL.Instance,
+		OpCode.OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL => OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL.Instance,
+		OpCode.OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL => OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL.Instance,
+		OpCode.OpSubgroupAvcImeConvertToMceResultINTEL => OpSubgroupAvcImeConvertToMceResultINTEL.Instance,
+		OpCode.OpSubgroupAvcImeGetSingleReferenceStreaminINTEL => OpSubgroupAvcImeGetSingleReferenceStreaminINTEL.Instance,
+		OpCode.OpSubgroupAvcImeGetDualReferenceStreaminINTEL => OpSubgroupAvcImeGetDualReferenceStreaminINTEL.Instance,
+		OpCode.OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL => OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL.Instance,
+		OpCode.OpSubgroupAvcImeStripDualReferenceStreamoutINTEL => OpSubgroupAvcImeStripDualReferenceStreamoutINTEL.Instance,
+		OpCode.OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectorsINTEL => OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectorsINTEL.Instance,
+		OpCode.OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsINTEL => OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsINTEL.Instance,
+		OpCode.OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsINTEL => OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsINTEL.Instance,
+		OpCode.OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsINTEL => OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsINTEL.Instance,
+		OpCode.OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTEL => OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTEL.Instance,
+		OpCode.OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINTEL => OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINTEL.Instance,
+		OpCode.OpSubgroupAvcImeGetBorderReachedINTEL => OpSubgroupAvcImeGetBorderReachedINTEL.Instance,
+		OpCode.OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL => OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL.Instance,
+		OpCode.OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL => OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL.Instance,
+		OpCode.OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL => OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL.Instance,
+		OpCode.OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL => OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL.Instance,
+		OpCode.OpSubgroupAvcFmeInitializeINTEL => OpSubgroupAvcFmeInitializeINTEL.Instance,
+		OpCode.OpSubgroupAvcBmeInitializeINTEL => OpSubgroupAvcBmeInitializeINTEL.Instance,
+		OpCode.OpSubgroupAvcRefConvertToMcePayloadINTEL => OpSubgroupAvcRefConvertToMcePayloadINTEL.Instance,
+		OpCode.OpSubgroupAvcRefSetBidirectionalMixDisableINTEL => OpSubgroupAvcRefSetBidirectionalMixDisableINTEL.Instance,
+		OpCode.OpSubgroupAvcRefSetBilinearFilterEnableINTEL => OpSubgroupAvcRefSetBilinearFilterEnableINTEL.Instance,
+		OpCode.OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL => OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL.Instance,
+		OpCode.OpSubgroupAvcRefEvaluateWithDualReferenceINTEL => OpSubgroupAvcRefEvaluateWithDualReferenceINTEL.Instance,
+		OpCode.OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL => OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL.Instance,
+		OpCode.OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL => OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL.Instance,
+		OpCode.OpSubgroupAvcRefConvertToMceResultINTEL => OpSubgroupAvcRefConvertToMceResultINTEL.Instance,
+		OpCode.OpSubgroupAvcSicInitializeINTEL => OpSubgroupAvcSicInitializeINTEL.Instance,
+		OpCode.OpSubgroupAvcSicConfigureSkcINTEL => OpSubgroupAvcSicConfigureSkcINTEL.Instance,
+		OpCode.OpSubgroupAvcSicConfigureIpeLumaINTEL => OpSubgroupAvcSicConfigureIpeLumaINTEL.Instance,
+		OpCode.OpSubgroupAvcSicConfigureIpeLumaChromaINTEL => OpSubgroupAvcSicConfigureIpeLumaChromaINTEL.Instance,
+		OpCode.OpSubgroupAvcSicGetMotionVectorMaskINTEL => OpSubgroupAvcSicGetMotionVectorMaskINTEL.Instance,
+		OpCode.OpSubgroupAvcSicConvertToMcePayloadINTEL => OpSubgroupAvcSicConvertToMcePayloadINTEL.Instance,
+		OpCode.OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL => OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL.Instance,
+		OpCode.OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL => OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL.Instance,
+		OpCode.OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL => OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL.Instance,
+		OpCode.OpSubgroupAvcSicSetBilinearFilterEnableINTEL => OpSubgroupAvcSicSetBilinearFilterEnableINTEL.Instance,
+		OpCode.OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL => OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL.Instance,
+		OpCode.OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL => OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL.Instance,
+		OpCode.OpSubgroupAvcSicEvaluateIpeINTEL => OpSubgroupAvcSicEvaluateIpeINTEL.Instance,
+		OpCode.OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL => OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL.Instance,
+		OpCode.OpSubgroupAvcSicEvaluateWithDualReferenceINTEL => OpSubgroupAvcSicEvaluateWithDualReferenceINTEL.Instance,
+		OpCode.OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL => OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL.Instance,
+		OpCode.OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL => OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL.Instance,
+		OpCode.OpSubgroupAvcSicConvertToMceResultINTEL => OpSubgroupAvcSicConvertToMceResultINTEL.Instance,
+		OpCode.OpSubgroupAvcSicGetIpeLumaShapeINTEL => OpSubgroupAvcSicGetIpeLumaShapeINTEL.Instance,
+		OpCode.OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL => OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL.Instance,
+		OpCode.OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL => OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL.Instance,
+		OpCode.OpSubgroupAvcSicGetPackedIpeLumaModesINTEL => OpSubgroupAvcSicGetPackedIpeLumaModesINTEL.Instance,
+		OpCode.OpSubgroupAvcSicGetIpeChromaModeINTEL => OpSubgroupAvcSicGetIpeChromaModeINTEL.Instance,
+		OpCode.OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL => OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL.Instance,
+		OpCode.OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL => OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL.Instance,
+		OpCode.OpSubgroupAvcSicGetInterRawSadsINTEL => OpSubgroupAvcSicGetInterRawSadsINTEL.Instance,
+		OpCode.OpVariableLengthArrayINTEL => OpVariableLengthArrayINTEL.Instance,
+		OpCode.OpSaveMemoryINTEL => OpSaveMemoryINTEL.Instance,
+		OpCode.OpRestoreMemoryINTEL => OpRestoreMemoryINTEL.Instance,
+		OpCode.OpArbitraryFloatSinCosPiALTERA => OpArbitraryFloatSinCosPiALTERA.Instance,
+		OpCode.OpArbitraryFloatCastALTERA => OpArbitraryFloatCastALTERA.Instance,
+		OpCode.OpArbitraryFloatCastFromIntALTERA => OpArbitraryFloatCastFromIntALTERA.Instance,
+		OpCode.OpArbitraryFloatCastToIntALTERA => OpArbitraryFloatCastToIntALTERA.Instance,
+		OpCode.OpArbitraryFloatAddALTERA => OpArbitraryFloatAddALTERA.Instance,
+		OpCode.OpArbitraryFloatSubALTERA => OpArbitraryFloatSubALTERA.Instance,
+		OpCode.OpArbitraryFloatMulALTERA => OpArbitraryFloatMulALTERA.Instance,
+		OpCode.OpArbitraryFloatDivALTERA => OpArbitraryFloatDivALTERA.Instance,
+		OpCode.OpArbitraryFloatGTALTERA => OpArbitraryFloatGTALTERA.Instance,
+		OpCode.OpArbitraryFloatGEALTERA => OpArbitraryFloatGEALTERA.Instance,
+		OpCode.OpArbitraryFloatLTALTERA => OpArbitraryFloatLTALTERA.Instance,
+		OpCode.OpArbitraryFloatLEALTERA => OpArbitraryFloatLEALTERA.Instance,
+		OpCode.OpArbitraryFloatEQALTERA => OpArbitraryFloatEQALTERA.Instance,
+		OpCode.OpArbitraryFloatRecipALTERA => OpArbitraryFloatRecipALTERA.Instance,
+		OpCode.OpArbitraryFloatRSqrtALTERA => OpArbitraryFloatRSqrtALTERA.Instance,
+		OpCode.OpArbitraryFloatCbrtALTERA => OpArbitraryFloatCbrtALTERA.Instance,
+		OpCode.OpArbitraryFloatHypotALTERA => OpArbitraryFloatHypotALTERA.Instance,
+		OpCode.OpArbitraryFloatSqrtALTERA => OpArbitraryFloatSqrtALTERA.Instance,
+		OpCode.OpArbitraryFloatLogINTEL => OpArbitraryFloatLogINTEL.Instance,
+		OpCode.OpArbitraryFloatLog2INTEL => OpArbitraryFloatLog2INTEL.Instance,
+		OpCode.OpArbitraryFloatLog10INTEL => OpArbitraryFloatLog10INTEL.Instance,
+		OpCode.OpArbitraryFloatLog1pINTEL => OpArbitraryFloatLog1pINTEL.Instance,
+		OpCode.OpArbitraryFloatExpINTEL => OpArbitraryFloatExpINTEL.Instance,
+		OpCode.OpArbitraryFloatExp2INTEL => OpArbitraryFloatExp2INTEL.Instance,
+		OpCode.OpArbitraryFloatExp10INTEL => OpArbitraryFloatExp10INTEL.Instance,
+		OpCode.OpArbitraryFloatExpm1INTEL => OpArbitraryFloatExpm1INTEL.Instance,
+		OpCode.OpArbitraryFloatSinINTEL => OpArbitraryFloatSinINTEL.Instance,
+		OpCode.OpArbitraryFloatCosINTEL => OpArbitraryFloatCosINTEL.Instance,
+		OpCode.OpArbitraryFloatSinCosINTEL => OpArbitraryFloatSinCosINTEL.Instance,
+		OpCode.OpArbitraryFloatSinPiINTEL => OpArbitraryFloatSinPiINTEL.Instance,
+		OpCode.OpArbitraryFloatCosPiINTEL => OpArbitraryFloatCosPiINTEL.Instance,
+		OpCode.OpArbitraryFloatASinINTEL => OpArbitraryFloatASinINTEL.Instance,
+		OpCode.OpArbitraryFloatASinPiINTEL => OpArbitraryFloatASinPiINTEL.Instance,
+		OpCode.OpArbitraryFloatACosINTEL => OpArbitraryFloatACosINTEL.Instance,
+		OpCode.OpArbitraryFloatACosPiINTEL => OpArbitraryFloatACosPiINTEL.Instance,
+		OpCode.OpArbitraryFloatATanINTEL => OpArbitraryFloatATanINTEL.Instance,
+		OpCode.OpArbitraryFloatATanPiINTEL => OpArbitraryFloatATanPiINTEL.Instance,
+		OpCode.OpArbitraryFloatATan2INTEL => OpArbitraryFloatATan2INTEL.Instance,
+		OpCode.OpArbitraryFloatPowINTEL => OpArbitraryFloatPowINTEL.Instance,
+		OpCode.OpArbitraryFloatPowRINTEL => OpArbitraryFloatPowRINTEL.Instance,
+		OpCode.OpArbitraryFloatPowNINTEL => OpArbitraryFloatPowNINTEL.Instance,
+		OpCode.OpLoopControlINTEL => OpLoopControlINTEL.Instance,
+		OpCode.OpAliasDomainDeclINTEL => OpAliasDomainDeclINTEL.Instance,
+		OpCode.OpAliasScopeDeclINTEL => OpAliasScopeDeclINTEL.Instance,
+		OpCode.OpAliasScopeListDeclINTEL => OpAliasScopeListDeclINTEL.Instance,
+		OpCode.OpFixedSqrtALTERA => OpFixedSqrtALTERA.Instance,
+		OpCode.OpFixedRecipALTERA => OpFixedRecipALTERA.Instance,
+		OpCode.OpFixedRsqrtALTERA => OpFixedRsqrtALTERA.Instance,
+		OpCode.OpFixedSinALTERA => OpFixedSinALTERA.Instance,
+		OpCode.OpFixedCosALTERA => OpFixedCosALTERA.Instance,
+		OpCode.OpFixedSinCosALTERA => OpFixedSinCosALTERA.Instance,
+		OpCode.OpFixedSinPiALTERA => OpFixedSinPiALTERA.Instance,
+		OpCode.OpFixedCosPiALTERA => OpFixedCosPiALTERA.Instance,
+		OpCode.OpFixedSinCosPiALTERA => OpFixedSinCosPiALTERA.Instance,
+		OpCode.OpFixedLogALTERA => OpFixedLogALTERA.Instance,
+		OpCode.OpFixedExpALTERA => OpFixedExpALTERA.Instance,
+		OpCode.OpPtrCastToCrossWorkgroupALTERA => OpPtrCastToCrossWorkgroupALTERA.Instance,
+		OpCode.OpCrossWorkgroupCastToPtrALTERA => OpCrossWorkgroupCastToPtrALTERA.Instance,
+		OpCode.OpReadPipeBlockingALTERA => OpReadPipeBlockingALTERA.Instance,
+		OpCode.OpWritePipeBlockingALTERA => OpWritePipeBlockingALTERA.Instance,
+		OpCode.OpFPGARegALTERA => OpFPGARegALTERA.Instance,
+		OpCode.OpRayQueryGetRayTMinKHR => OpRayQueryGetRayTMinKHR.Instance,
+		OpCode.OpRayQueryGetRayFlagsKHR => OpRayQueryGetRayFlagsKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionTKHR => OpRayQueryGetIntersectionTKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionInstanceCustomIndexKHR => OpRayQueryGetIntersectionInstanceCustomIndexKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionInstanceIdKHR => OpRayQueryGetIntersectionInstanceIdKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR => OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionGeometryIndexKHR => OpRayQueryGetIntersectionGeometryIndexKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionPrimitiveIndexKHR => OpRayQueryGetIntersectionPrimitiveIndexKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionBarycentricsKHR => OpRayQueryGetIntersectionBarycentricsKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionFrontFaceKHR => OpRayQueryGetIntersectionFrontFaceKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionCandidateAABBOpaqueKHR => OpRayQueryGetIntersectionCandidateAABBOpaqueKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionObjectRayDirectionKHR => OpRayQueryGetIntersectionObjectRayDirectionKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionObjectRayOriginKHR => OpRayQueryGetIntersectionObjectRayOriginKHR.Instance,
+		OpCode.OpRayQueryGetWorldRayDirectionKHR => OpRayQueryGetWorldRayDirectionKHR.Instance,
+		OpCode.OpRayQueryGetWorldRayOriginKHR => OpRayQueryGetWorldRayOriginKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionObjectToWorldKHR => OpRayQueryGetIntersectionObjectToWorldKHR.Instance,
+		OpCode.OpRayQueryGetIntersectionWorldToObjectKHR => OpRayQueryGetIntersectionWorldToObjectKHR.Instance,
+		OpCode.OpAtomicFAddEXT => OpAtomicFAddEXT.Instance,
+		OpCode.OpTypeBufferSurfaceINTEL => OpTypeBufferSurfaceINTEL.Instance,
+		OpCode.OpTypeStructContinuedINTEL => OpTypeStructContinuedINTEL.Instance,
+		OpCode.OpConstantCompositeContinuedINTEL => OpConstantCompositeContinuedINTEL.Instance,
+		OpCode.OpSpecConstantCompositeContinuedINTEL => OpSpecConstantCompositeContinuedINTEL.Instance,
+		OpCode.OpCompositeConstructContinuedINTEL => OpCompositeConstructContinuedINTEL.Instance,
+		OpCode.OpConvertFToBF16INTEL => OpConvertFToBF16INTEL.Instance,
+		OpCode.OpConvertBF16ToFINTEL => OpConvertBF16ToFINTEL.Instance,
+		OpCode.OpControlBarrierArriveINTEL => OpControlBarrierArriveINTEL.Instance,
+		OpCode.OpControlBarrierWaitINTEL => OpControlBarrierWaitINTEL.Instance,
+		OpCode.OpArithmeticFenceEXT => OpArithmeticFenceEXT.Instance,
+		OpCode.OpTaskSequenceCreateALTERA => OpTaskSequenceCreateALTERA.Instance,
+		OpCode.OpTaskSequenceAsyncALTERA => OpTaskSequenceAsyncALTERA.Instance,
+		OpCode.OpTaskSequenceGetALTERA => OpTaskSequenceGetALTERA.Instance,
+		OpCode.OpTaskSequenceReleaseALTERA => OpTaskSequenceReleaseALTERA.Instance,
+		OpCode.OpTypeTaskSequenceALTERA => OpTypeTaskSequenceALTERA.Instance,
+		OpCode.OpSubgroupBlockPrefetchINTEL => OpSubgroupBlockPrefetchINTEL.Instance,
+		OpCode.OpSubgroup2DBlockLoadINTEL => OpSubgroup2DBlockLoadINTEL.Instance,
+		OpCode.OpSubgroup2DBlockLoadTransformINTEL => OpSubgroup2DBlockLoadTransformINTEL.Instance,
+		OpCode.OpSubgroup2DBlockLoadTransposeINTEL => OpSubgroup2DBlockLoadTransposeINTEL.Instance,
+		OpCode.OpSubgroup2DBlockPrefetchINTEL => OpSubgroup2DBlockPrefetchINTEL.Instance,
+		OpCode.OpSubgroup2DBlockStoreINTEL => OpSubgroup2DBlockStoreINTEL.Instance,
+		OpCode.OpSubgroupMatrixMultiplyAccumulateINTEL => OpSubgroupMatrixMultiplyAccumulateINTEL.Instance,
+		OpCode.OpBitwiseFunctionINTEL => OpBitwiseFunctionINTEL.Instance,
+		OpCode.OpUntypedVariableLengthArrayINTEL => OpUntypedVariableLengthArrayINTEL.Instance,
+		OpCode.OpConditionalExtensionINTEL => OpConditionalExtensionINTEL.Instance,
+		OpCode.OpConditionalEntryPointINTEL => OpConditionalEntryPointINTEL.Instance,
+		OpCode.OpConditionalCapabilityINTEL => OpConditionalCapabilityINTEL.Instance,
+		OpCode.OpSpecConstantTargetINTEL => OpSpecConstantTargetINTEL.Instance,
+		OpCode.OpSpecConstantArchitectureINTEL => OpSpecConstantArchitectureINTEL.Instance,
+		OpCode.OpSpecConstantCapabilitiesINTEL => OpSpecConstantCapabilitiesINTEL.Instance,
+		OpCode.OpConditionalCopyObjectINTEL => OpConditionalCopyObjectINTEL.Instance,
+		OpCode.OpGroupIMulKHR => OpGroupIMulKHR.Instance,
+		OpCode.OpGroupFMulKHR => OpGroupFMulKHR.Instance,
+		OpCode.OpGroupBitwiseAndKHR => OpGroupBitwiseAndKHR.Instance,
+		OpCode.OpGroupBitwiseOrKHR => OpGroupBitwiseOrKHR.Instance,
+		OpCode.OpGroupBitwiseXorKHR => OpGroupBitwiseXorKHR.Instance,
+		OpCode.OpGroupLogicalAndKHR => OpGroupLogicalAndKHR.Instance,
+		OpCode.OpGroupLogicalOrKHR => OpGroupLogicalOrKHR.Instance,
+		OpCode.OpGroupLogicalXorKHR => OpGroupLogicalXorKHR.Instance,
+		OpCode.OpRoundFToTF32INTEL => OpRoundFToTF32INTEL.Instance,
+		OpCode.OpMaskedGatherINTEL => OpMaskedGatherINTEL.Instance,
+		OpCode.OpMaskedScatterINTEL => OpMaskedScatterINTEL.Instance,
+		OpCode.OpConvertHandleToImageINTEL => OpConvertHandleToImageINTEL.Instance,
+		OpCode.OpConvertHandleToSamplerINTEL => OpConvertHandleToSamplerINTEL.Instance,
+		OpCode.OpConvertHandleToSampledImageINTEL => OpConvertHandleToSampledImageINTEL.Instance,
+		OpCode.OpFDot2MixAcc32VALVE => OpFDot2MixAcc32VALVE.Instance,
+		OpCode.OpFDot2MixAcc16VALVE => OpFDot2MixAcc16VALVE.Instance,
+		OpCode.OpFDot4MixAcc32VALVE => OpFDot4MixAcc32VALVE.Instance,
 		_ => throw new ArgumentOutOfRangeException(nameof(code), code, null),
 	};
 }
@@ -840,7 +1908,7 @@ public sealed class OpExtInst : Instruction
 	public override OpCode Code => OpCode.OpExtInst;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Set", OperandQuantifier.Default), new Operand(new LiteralExtInstInteger(), "Instruction", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1, +Operand 2, +...", OperandQuantifier.Varying),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Set", OperandQuantifier.Default), new Operand(new LiteralExtInstInteger(), "Instruction", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1, Operand 2, ...", OperandQuantifier.Varying),];
 }
 public sealed class OpMemoryModel : Instruction
 {
@@ -952,7 +2020,7 @@ public sealed class OpTypeFloat : Instruction
 	public override OpCode Code => OpCode.OpTypeFloat;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new LiteralInteger(), "Width", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new LiteralInteger(), "Width", OperandQuantifier.Default), new Operand(new EnumType<FPEncoding, FPEncodingParameterFactory>(), "Floating Point Encoding", OperandQuantifier.Optional),];
 }
 public sealed class OpTypeVector : Instruction
 {
@@ -1064,7 +2132,7 @@ public sealed class OpTypeStruct : Instruction
 	public override OpCode Code => OpCode.OpTypeStruct;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Member 0 type, +member 1 type, +...", OperandQuantifier.Varying),];
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Member 0 type, member 1 type, ...", OperandQuantifier.Varying),];
 }
 public sealed class OpTypeOpaque : Instruction
 {
@@ -1106,7 +2174,7 @@ public sealed class OpTypeFunction : Instruction
 	public override OpCode Code => OpCode.OpTypeFunction;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Return Type", OperandQuantifier.Default), new Operand(new IdRef(), "Parameter 0 Type, +Parameter 1 Type, +...", OperandQuantifier.Varying),];
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Return Type", OperandQuantifier.Default), new Operand(new IdRef(), "Parameter 0 Type, Parameter 1 Type, ...", OperandQuantifier.Varying),];
 }
 public sealed class OpTypeEvent : Instruction
 {
@@ -1397,7 +2465,7 @@ public sealed class OpFunctionCall : Instruction
 	public override OpCode Code => OpCode.OpFunctionCall;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Function", OperandQuantifier.Default), new Operand(new IdRef(), "Argument 0, +Argument 1, +...", OperandQuantifier.Varying),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Function", OperandQuantifier.Default), new Operand(new IdRef(), "Argument 0, Argument 1, ...", OperandQuantifier.Varying),];
 }
 public sealed class OpVariable : Instruction
 {
@@ -1467,7 +2535,7 @@ public sealed class OpCopyMemory : Instruction
 	public override OpCode Code => OpCode.OpCopyMemory;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Target", OperandQuantifier.Default), new Operand(new IdRef(), "Source", OperandQuantifier.Default), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), null, OperandQuantifier.Optional),];
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Target", OperandQuantifier.Default), new Operand(new IdRef(), "Source", OperandQuantifier.Default), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), null, OperandQuantifier.Optional), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), null, OperandQuantifier.Optional),];
 }
 public sealed class OpCopyMemorySized : Instruction
 {
@@ -1481,7 +2549,7 @@ public sealed class OpCopyMemorySized : Instruction
 	public override OpCode Code => OpCode.OpCopyMemorySized;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Target", OperandQuantifier.Default), new Operand(new IdRef(), "Source", OperandQuantifier.Default), new Operand(new IdRef(), "Size", OperandQuantifier.Default), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), null, OperandQuantifier.Optional),];
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Target", OperandQuantifier.Default), new Operand(new IdRef(), "Source", OperandQuantifier.Default), new Operand(new IdRef(), "Size", OperandQuantifier.Default), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), null, OperandQuantifier.Optional), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), null, OperandQuantifier.Optional),];
 }
 public sealed class OpAccessChain : Instruction
 {
@@ -3575,7 +4643,7 @@ public sealed class OpAtomicLoad : Instruction
 	public override OpCode Code => OpCode.OpAtomicLoad;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicStore : Instruction
 {
@@ -3589,7 +4657,7 @@ public sealed class OpAtomicStore : Instruction
 	public override OpCode Code => OpCode.OpAtomicStore;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicExchange : Instruction
 {
@@ -3603,7 +4671,7 @@ public sealed class OpAtomicExchange : Instruction
 	public override OpCode Code => OpCode.OpAtomicExchange;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicCompareExchange : Instruction
 {
@@ -3617,7 +4685,7 @@ public sealed class OpAtomicCompareExchange : Instruction
 	public override OpCode Code => OpCode.OpAtomicCompareExchange;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Equal", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Unequal", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Comparator", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Equal", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Unequal", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Comparator", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicCompareExchangeWeak : Instruction
 {
@@ -3631,7 +4699,7 @@ public sealed class OpAtomicCompareExchangeWeak : Instruction
 	public override OpCode Code => OpCode.OpAtomicCompareExchangeWeak;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Equal", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Unequal", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Comparator", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Equal", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Unequal", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Comparator", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicIIncrement : Instruction
 {
@@ -3645,7 +4713,7 @@ public sealed class OpAtomicIIncrement : Instruction
 	public override OpCode Code => OpCode.OpAtomicIIncrement;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicIDecrement : Instruction
 {
@@ -3659,7 +4727,7 @@ public sealed class OpAtomicIDecrement : Instruction
 	public override OpCode Code => OpCode.OpAtomicIDecrement;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicIAdd : Instruction
 {
@@ -3673,7 +4741,7 @@ public sealed class OpAtomicIAdd : Instruction
 	public override OpCode Code => OpCode.OpAtomicIAdd;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicISub : Instruction
 {
@@ -3687,7 +4755,7 @@ public sealed class OpAtomicISub : Instruction
 	public override OpCode Code => OpCode.OpAtomicISub;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicSMin : Instruction
 {
@@ -3701,7 +4769,7 @@ public sealed class OpAtomicSMin : Instruction
 	public override OpCode Code => OpCode.OpAtomicSMin;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicUMin : Instruction
 {
@@ -3715,7 +4783,7 @@ public sealed class OpAtomicUMin : Instruction
 	public override OpCode Code => OpCode.OpAtomicUMin;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicSMax : Instruction
 {
@@ -3729,7 +4797,7 @@ public sealed class OpAtomicSMax : Instruction
 	public override OpCode Code => OpCode.OpAtomicSMax;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicUMax : Instruction
 {
@@ -3743,7 +4811,7 @@ public sealed class OpAtomicUMax : Instruction
 	public override OpCode Code => OpCode.OpAtomicUMax;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicAnd : Instruction
 {
@@ -3757,7 +4825,7 @@ public sealed class OpAtomicAnd : Instruction
 	public override OpCode Code => OpCode.OpAtomicAnd;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicOr : Instruction
 {
@@ -3771,7 +4839,7 @@ public sealed class OpAtomicOr : Instruction
 	public override OpCode Code => OpCode.OpAtomicOr;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicXor : Instruction
 {
@@ -3785,7 +4853,7 @@ public sealed class OpAtomicXor : Instruction
 	public override OpCode Code => OpCode.OpAtomicXor;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
 }
 public sealed class OpPhi : Instruction
 {
@@ -4739,7 +5807,7 @@ public sealed class OpAtomicFlagTestAndSet : Instruction
 	public override OpCode Code => OpCode.OpAtomicFlagTestAndSet;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default),];
 }
 public sealed class OpAtomicFlagClear : Instruction
 {
@@ -4753,7 +5821,7 @@ public sealed class OpAtomicFlagClear : Instruction
 	public override OpCode Code => OpCode.OpAtomicFlagClear;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
-	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default),];
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default),];
 }
 public sealed class OpImageSparseRead : Instruction
 {
@@ -4937,6 +6005,798 @@ public sealed class OpDecorateId : Instruction
 
 	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Target", OperandQuantifier.Default), new Operand(new EnumType<Decoration, DecorationParameterFactory>(), null, OperandQuantifier.Default),];
 }
+public sealed class OpGroupNonUniformElect : Instruction
+{
+	public static OpGroupNonUniformElect Instance { get; } = new();
+
+	private OpGroupNonUniformElect()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformElect);
+	public override OpCode Code => OpCode.OpGroupNonUniformElect;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformAll : Instruction
+{
+	public static OpGroupNonUniformAll Instance { get; } = new();
+
+	private OpGroupNonUniformAll()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformAll);
+	public override OpCode Code => OpCode.OpGroupNonUniformAll;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Predicate", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformAny : Instruction
+{
+	public static OpGroupNonUniformAny Instance { get; } = new();
+
+	private OpGroupNonUniformAny()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformAny);
+	public override OpCode Code => OpCode.OpGroupNonUniformAny;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Predicate", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformAllEqual : Instruction
+{
+	public static OpGroupNonUniformAllEqual Instance { get; } = new();
+
+	private OpGroupNonUniformAllEqual()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformAllEqual);
+	public override OpCode Code => OpCode.OpGroupNonUniformAllEqual;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformBroadcast : Instruction
+{
+	public static OpGroupNonUniformBroadcast Instance { get; } = new();
+
+	private OpGroupNonUniformBroadcast()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformBroadcast);
+	public override OpCode Code => OpCode.OpGroupNonUniformBroadcast;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Invocation Id", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformBroadcastFirst : Instruction
+{
+	public static OpGroupNonUniformBroadcastFirst Instance { get; } = new();
+
+	private OpGroupNonUniformBroadcastFirst()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformBroadcastFirst);
+	public override OpCode Code => OpCode.OpGroupNonUniformBroadcastFirst;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformBallot : Instruction
+{
+	public static OpGroupNonUniformBallot Instance { get; } = new();
+
+	private OpGroupNonUniformBallot()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformBallot);
+	public override OpCode Code => OpCode.OpGroupNonUniformBallot;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Predicate", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformInverseBallot : Instruction
+{
+	public static OpGroupNonUniformInverseBallot Instance { get; } = new();
+
+	private OpGroupNonUniformInverseBallot()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformInverseBallot);
+	public override OpCode Code => OpCode.OpGroupNonUniformInverseBallot;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformBallotBitExtract : Instruction
+{
+	public static OpGroupNonUniformBallotBitExtract Instance { get; } = new();
+
+	private OpGroupNonUniformBallotBitExtract()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformBallotBitExtract);
+	public override OpCode Code => OpCode.OpGroupNonUniformBallotBitExtract;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Index", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformBallotBitCount : Instruction
+{
+	public static OpGroupNonUniformBallotBitCount Instance { get; } = new();
+
+	private OpGroupNonUniformBallotBitCount()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformBallotBitCount);
+	public override OpCode Code => OpCode.OpGroupNonUniformBallotBitCount;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformBallotFindLSB : Instruction
+{
+	public static OpGroupNonUniformBallotFindLSB Instance { get; } = new();
+
+	private OpGroupNonUniformBallotFindLSB()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformBallotFindLSB);
+	public override OpCode Code => OpCode.OpGroupNonUniformBallotFindLSB;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformBallotFindMSB : Instruction
+{
+	public static OpGroupNonUniformBallotFindMSB Instance { get; } = new();
+
+	private OpGroupNonUniformBallotFindMSB()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformBallotFindMSB);
+	public override OpCode Code => OpCode.OpGroupNonUniformBallotFindMSB;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformShuffle : Instruction
+{
+	public static OpGroupNonUniformShuffle Instance { get; } = new();
+
+	private OpGroupNonUniformShuffle()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformShuffle);
+	public override OpCode Code => OpCode.OpGroupNonUniformShuffle;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Invocation Id", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformShuffleXor : Instruction
+{
+	public static OpGroupNonUniformShuffleXor Instance { get; } = new();
+
+	private OpGroupNonUniformShuffleXor()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformShuffleXor);
+	public override OpCode Code => OpCode.OpGroupNonUniformShuffleXor;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Mask", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformShuffleUp : Instruction
+{
+	public static OpGroupNonUniformShuffleUp Instance { get; } = new();
+
+	private OpGroupNonUniformShuffleUp()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformShuffleUp);
+	public override OpCode Code => OpCode.OpGroupNonUniformShuffleUp;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Delta", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformShuffleDown : Instruction
+{
+	public static OpGroupNonUniformShuffleDown Instance { get; } = new();
+
+	private OpGroupNonUniformShuffleDown()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformShuffleDown);
+	public override OpCode Code => OpCode.OpGroupNonUniformShuffleDown;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Delta", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformIAdd : Instruction
+{
+	public static OpGroupNonUniformIAdd Instance { get; } = new();
+
+	private OpGroupNonUniformIAdd()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformIAdd);
+	public override OpCode Code => OpCode.OpGroupNonUniformIAdd;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformFAdd : Instruction
+{
+	public static OpGroupNonUniformFAdd Instance { get; } = new();
+
+	private OpGroupNonUniformFAdd()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformFAdd);
+	public override OpCode Code => OpCode.OpGroupNonUniformFAdd;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformIMul : Instruction
+{
+	public static OpGroupNonUniformIMul Instance { get; } = new();
+
+	private OpGroupNonUniformIMul()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformIMul);
+	public override OpCode Code => OpCode.OpGroupNonUniformIMul;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformFMul : Instruction
+{
+	public static OpGroupNonUniformFMul Instance { get; } = new();
+
+	private OpGroupNonUniformFMul()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformFMul);
+	public override OpCode Code => OpCode.OpGroupNonUniformFMul;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformSMin : Instruction
+{
+	public static OpGroupNonUniformSMin Instance { get; } = new();
+
+	private OpGroupNonUniformSMin()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformSMin);
+	public override OpCode Code => OpCode.OpGroupNonUniformSMin;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformUMin : Instruction
+{
+	public static OpGroupNonUniformUMin Instance { get; } = new();
+
+	private OpGroupNonUniformUMin()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformUMin);
+	public override OpCode Code => OpCode.OpGroupNonUniformUMin;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformFMin : Instruction
+{
+	public static OpGroupNonUniformFMin Instance { get; } = new();
+
+	private OpGroupNonUniformFMin()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformFMin);
+	public override OpCode Code => OpCode.OpGroupNonUniformFMin;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformSMax : Instruction
+{
+	public static OpGroupNonUniformSMax Instance { get; } = new();
+
+	private OpGroupNonUniformSMax()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformSMax);
+	public override OpCode Code => OpCode.OpGroupNonUniformSMax;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformUMax : Instruction
+{
+	public static OpGroupNonUniformUMax Instance { get; } = new();
+
+	private OpGroupNonUniformUMax()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformUMax);
+	public override OpCode Code => OpCode.OpGroupNonUniformUMax;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformFMax : Instruction
+{
+	public static OpGroupNonUniformFMax Instance { get; } = new();
+
+	private OpGroupNonUniformFMax()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformFMax);
+	public override OpCode Code => OpCode.OpGroupNonUniformFMax;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformBitwiseAnd : Instruction
+{
+	public static OpGroupNonUniformBitwiseAnd Instance { get; } = new();
+
+	private OpGroupNonUniformBitwiseAnd()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformBitwiseAnd);
+	public override OpCode Code => OpCode.OpGroupNonUniformBitwiseAnd;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformBitwiseOr : Instruction
+{
+	public static OpGroupNonUniformBitwiseOr Instance { get; } = new();
+
+	private OpGroupNonUniformBitwiseOr()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformBitwiseOr);
+	public override OpCode Code => OpCode.OpGroupNonUniformBitwiseOr;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformBitwiseXor : Instruction
+{
+	public static OpGroupNonUniformBitwiseXor Instance { get; } = new();
+
+	private OpGroupNonUniformBitwiseXor()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformBitwiseXor);
+	public override OpCode Code => OpCode.OpGroupNonUniformBitwiseXor;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformLogicalAnd : Instruction
+{
+	public static OpGroupNonUniformLogicalAnd Instance { get; } = new();
+
+	private OpGroupNonUniformLogicalAnd()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformLogicalAnd);
+	public override OpCode Code => OpCode.OpGroupNonUniformLogicalAnd;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformLogicalOr : Instruction
+{
+	public static OpGroupNonUniformLogicalOr Instance { get; } = new();
+
+	private OpGroupNonUniformLogicalOr()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformLogicalOr);
+	public override OpCode Code => OpCode.OpGroupNonUniformLogicalOr;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformLogicalXor : Instruction
+{
+	public static OpGroupNonUniformLogicalXor Instance { get; } = new();
+
+	private OpGroupNonUniformLogicalXor()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformLogicalXor);
+	public override OpCode Code => OpCode.OpGroupNonUniformLogicalXor;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
+public sealed class OpGroupNonUniformQuadBroadcast : Instruction
+{
+	public static OpGroupNonUniformQuadBroadcast Instance { get; } = new();
+
+	private OpGroupNonUniformQuadBroadcast()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformQuadBroadcast);
+	public override OpCode Code => OpCode.OpGroupNonUniformQuadBroadcast;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Index", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformQuadSwap : Instruction
+{
+	public static OpGroupNonUniformQuadSwap Instance { get; } = new();
+
+	private OpGroupNonUniformQuadSwap()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformQuadSwap);
+	public override OpCode Code => OpCode.OpGroupNonUniformQuadSwap;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default),];
+}
+public sealed class OpCopyLogical : Instruction
+{
+	public static OpCopyLogical Instance { get; } = new();
+
+	private OpCopyLogical()
+	{
+	}
+
+	public override string Name => nameof(OpCopyLogical);
+	public override OpCode Code => OpCode.OpCopyLogical;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand", OperandQuantifier.Default),];
+}
+public sealed class OpPtrEqual : Instruction
+{
+	public static OpPtrEqual Instance { get; } = new();
+
+	private OpPtrEqual()
+	{
+	}
+
+	public override string Name => nameof(OpPtrEqual);
+	public override OpCode Code => OpCode.OpPtrEqual;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpPtrNotEqual : Instruction
+{
+	public static OpPtrNotEqual Instance { get; } = new();
+
+	private OpPtrNotEqual()
+	{
+	}
+
+	public override string Name => nameof(OpPtrNotEqual);
+	public override OpCode Code => OpCode.OpPtrNotEqual;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpPtrDiff : Instruction
+{
+	public static OpPtrDiff Instance { get; } = new();
+
+	private OpPtrDiff()
+	{
+	}
+
+	public override string Name => nameof(OpPtrDiff);
+	public override OpCode Code => OpCode.OpPtrDiff;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpColorAttachmentReadEXT : Instruction
+{
+	public static OpColorAttachmentReadEXT Instance { get; } = new();
+
+	private OpColorAttachmentReadEXT()
+	{
+	}
+
+	public override string Name => nameof(OpColorAttachmentReadEXT);
+	public override OpCode Code => OpCode.OpColorAttachmentReadEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Attachment", OperandQuantifier.Default), new Operand(new IdRef(), "Sample", OperandQuantifier.Optional),];
+}
+public sealed class OpDepthAttachmentReadEXT : Instruction
+{
+	public static OpDepthAttachmentReadEXT Instance { get; } = new();
+
+	private OpDepthAttachmentReadEXT()
+	{
+	}
+
+	public override string Name => nameof(OpDepthAttachmentReadEXT);
+	public override OpCode Code => OpCode.OpDepthAttachmentReadEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Sample", OperandQuantifier.Optional),];
+}
+public sealed class OpStencilAttachmentReadEXT : Instruction
+{
+	public static OpStencilAttachmentReadEXT Instance { get; } = new();
+
+	private OpStencilAttachmentReadEXT()
+	{
+	}
+
+	public override string Name => nameof(OpStencilAttachmentReadEXT);
+	public override OpCode Code => OpCode.OpStencilAttachmentReadEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Sample", OperandQuantifier.Optional),];
+}
+public sealed class OpTypeTensorARM : Instruction
+{
+	public static OpTypeTensorARM Instance { get; } = new();
+
+	private OpTypeTensorARM()
+	{
+	}
+
+	public override string Name => nameof(OpTypeTensorARM);
+	public override OpCode Code => OpCode.OpTypeTensorARM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Element Type", OperandQuantifier.Default), new Operand(new IdRef(), "Rank", OperandQuantifier.Optional), new Operand(new IdRef(), "Shape", OperandQuantifier.Optional),];
+}
+public sealed class OpTensorReadARM : Instruction
+{
+	public static OpTensorReadARM Instance { get; } = new();
+
+	private OpTensorReadARM()
+	{
+	}
+
+	public override string Name => nameof(OpTensorReadARM);
+	public override OpCode Code => OpCode.OpTensorReadARM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Tensor", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinates", OperandQuantifier.Default), new Operand(new EnumType<TensorOperands, TensorOperandsParameterFactory>(), null, OperandQuantifier.Optional),];
+}
+public sealed class OpTensorWriteARM : Instruction
+{
+	public static OpTensorWriteARM Instance { get; } = new();
+
+	private OpTensorWriteARM()
+	{
+	}
+
+	public override string Name => nameof(OpTensorWriteARM);
+	public override OpCode Code => OpCode.OpTensorWriteARM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Tensor", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Object", OperandQuantifier.Default), new Operand(new EnumType<TensorOperands, TensorOperandsParameterFactory>(), null, OperandQuantifier.Optional),];
+}
+public sealed class OpTensorQuerySizeARM : Instruction
+{
+	public static OpTensorQuerySizeARM Instance { get; } = new();
+
+	private OpTensorQuerySizeARM()
+	{
+	}
+
+	public override string Name => nameof(OpTensorQuerySizeARM);
+	public override OpCode Code => OpCode.OpTensorQuerySizeARM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Tensor", OperandQuantifier.Default), new Operand(new IdRef(), "Dimension", OperandQuantifier.Default),];
+}
+public sealed class OpGraphConstantARM : Instruction
+{
+	public static OpGraphConstantARM Instance { get; } = new();
+
+	private OpGraphConstantARM()
+	{
+	}
+
+	public override string Name => nameof(OpGraphConstantARM);
+	public override OpCode Code => OpCode.OpGraphConstantARM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new LiteralInteger(), "GraphConstantID", OperandQuantifier.Default),];
+}
+public sealed class OpGraphEntryPointARM : Instruction
+{
+	public static OpGraphEntryPointARM Instance { get; } = new();
+
+	private OpGraphEntryPointARM()
+	{
+	}
+
+	public override string Name => nameof(OpGraphEntryPointARM);
+	public override OpCode Code => OpCode.OpGraphEntryPointARM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Graph", OperandQuantifier.Default), new Operand(new LiteralString(), "Name", OperandQuantifier.Default), new Operand(new IdRef(), "Interface", OperandQuantifier.Varying),];
+}
+public sealed class OpGraphARM : Instruction
+{
+	public static OpGraphARM Instance { get; } = new();
+
+	private OpGraphARM()
+	{
+	}
+
+	public override string Name => nameof(OpGraphARM);
+	public override OpCode Code => OpCode.OpGraphARM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpGraphInputARM : Instruction
+{
+	public static OpGraphInputARM Instance { get; } = new();
+
+	private OpGraphInputARM()
+	{
+	}
+
+	public override string Name => nameof(OpGraphInputARM);
+	public override OpCode Code => OpCode.OpGraphInputARM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "InputIndex", OperandQuantifier.Default), new Operand(new IdRef(), "ElementIndex", OperandQuantifier.Varying),];
+}
+public sealed class OpGraphSetOutputARM : Instruction
+{
+	public static OpGraphSetOutputARM Instance { get; } = new();
+
+	private OpGraphSetOutputARM()
+	{
+	}
+
+	public override string Name => nameof(OpGraphSetOutputARM);
+	public override OpCode Code => OpCode.OpGraphSetOutputARM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "OutputIndex", OperandQuantifier.Default), new Operand(new IdRef(), "ElementIndex", OperandQuantifier.Varying),];
+}
+public sealed class OpGraphEndARM : Instruction
+{
+	public static OpGraphEndARM Instance { get; } = new();
+
+	private OpGraphEndARM()
+	{
+	}
+
+	public override string Name => nameof(OpGraphEndARM);
+	public override OpCode Code => OpCode.OpGraphEndARM;
+}
+public sealed class OpTypeGraphARM : Instruction
+{
+	public static OpTypeGraphARM Instance { get; } = new();
+
+	private OpTypeGraphARM()
+	{
+	}
+
+	public override string Name => nameof(OpTypeGraphARM);
+	public override OpCode Code => OpCode.OpTypeGraphARM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new LiteralInteger(), "NumInputs", OperandQuantifier.Default), new Operand(new IdRef(), "InOutTypes", OperandQuantifier.Varying),];
+}
+public sealed class OpTerminateInvocation : Instruction
+{
+	public static OpTerminateInvocation Instance { get; } = new();
+
+	private OpTerminateInvocation()
+	{
+	}
+
+	public override string Name => nameof(OpTerminateInvocation);
+	public override OpCode Code => OpCode.OpTerminateInvocation;
+}
+public sealed class OpTypeUntypedPointerKHR : Instruction
+{
+	public static OpTypeUntypedPointerKHR Instance { get; } = new();
+
+	private OpTypeUntypedPointerKHR()
+	{
+	}
+
+	public override string Name => nameof(OpTypeUntypedPointerKHR);
+	public override OpCode Code => OpCode.OpTypeUntypedPointerKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new EnumType<StorageClass, StorageClassParameterFactory>(), null, OperandQuantifier.Default),];
+}
+public sealed class OpUntypedVariableKHR : Instruction
+{
+	public static OpUntypedVariableKHR Instance { get; } = new();
+
+	private OpUntypedVariableKHR()
+	{
+	}
+
+	public override string Name => nameof(OpUntypedVariableKHR);
+	public override OpCode Code => OpCode.OpUntypedVariableKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new EnumType<StorageClass, StorageClassParameterFactory>(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Data Type", OperandQuantifier.Optional), new Operand(new IdRef(), "Initializer", OperandQuantifier.Optional),];
+}
+public sealed class OpUntypedAccessChainKHR : Instruction
+{
+	public static OpUntypedAccessChainKHR Instance { get; } = new();
+
+	private OpUntypedAccessChainKHR()
+	{
+	}
+
+	public override string Name => nameof(OpUntypedAccessChainKHR);
+	public override OpCode Code => OpCode.OpUntypedAccessChainKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Base Type", OperandQuantifier.Default), new Operand(new IdRef(), "Base", OperandQuantifier.Default), new Operand(new IdRef(), "Indexes", OperandQuantifier.Varying),];
+}
+public sealed class OpUntypedInBoundsAccessChainKHR : Instruction
+{
+	public static OpUntypedInBoundsAccessChainKHR Instance { get; } = new();
+
+	private OpUntypedInBoundsAccessChainKHR()
+	{
+	}
+
+	public override string Name => nameof(OpUntypedInBoundsAccessChainKHR);
+	public override OpCode Code => OpCode.OpUntypedInBoundsAccessChainKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Base Type", OperandQuantifier.Default), new Operand(new IdRef(), "Base", OperandQuantifier.Default), new Operand(new IdRef(), "Indexes", OperandQuantifier.Varying),];
+}
 public sealed class OpSubgroupBallotKHR : Instruction
 {
 	public static OpSubgroupBallotKHR Instance { get; } = new();
@@ -4964,6 +6824,76 @@ public sealed class OpSubgroupFirstInvocationKHR : Instruction
 	public override IReadOnlyList<Operand> Operands => _operands;
 
 	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpUntypedPtrAccessChainKHR : Instruction
+{
+	public static OpUntypedPtrAccessChainKHR Instance { get; } = new();
+
+	private OpUntypedPtrAccessChainKHR()
+	{
+	}
+
+	public override string Name => nameof(OpUntypedPtrAccessChainKHR);
+	public override OpCode Code => OpCode.OpUntypedPtrAccessChainKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Base Type", OperandQuantifier.Default), new Operand(new IdRef(), "Base", OperandQuantifier.Default), new Operand(new IdRef(), "Element", OperandQuantifier.Default), new Operand(new IdRef(), "Indexes", OperandQuantifier.Varying),];
+}
+public sealed class OpUntypedInBoundsPtrAccessChainKHR : Instruction
+{
+	public static OpUntypedInBoundsPtrAccessChainKHR Instance { get; } = new();
+
+	private OpUntypedInBoundsPtrAccessChainKHR()
+	{
+	}
+
+	public override string Name => nameof(OpUntypedInBoundsPtrAccessChainKHR);
+	public override OpCode Code => OpCode.OpUntypedInBoundsPtrAccessChainKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Base Type", OperandQuantifier.Default), new Operand(new IdRef(), "Base", OperandQuantifier.Default), new Operand(new IdRef(), "Element", OperandQuantifier.Default), new Operand(new IdRef(), "Indexes", OperandQuantifier.Varying),];
+}
+public sealed class OpUntypedArrayLengthKHR : Instruction
+{
+	public static OpUntypedArrayLengthKHR Instance { get; } = new();
+
+	private OpUntypedArrayLengthKHR()
+	{
+	}
+
+	public override string Name => nameof(OpUntypedArrayLengthKHR);
+	public override OpCode Code => OpCode.OpUntypedArrayLengthKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Structure", OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Array member", OperandQuantifier.Default),];
+}
+public sealed class OpUntypedPrefetchKHR : Instruction
+{
+	public static OpUntypedPrefetchKHR Instance { get; } = new();
+
+	private OpUntypedPrefetchKHR()
+	{
+	}
+
+	public override string Name => nameof(OpUntypedPrefetchKHR);
+	public override OpCode Code => OpCode.OpUntypedPrefetchKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Pointer Type", OperandQuantifier.Default), new Operand(new IdRef(), "Num Bytes", OperandQuantifier.Default), new Operand(new IdRef(), "RW", OperandQuantifier.Optional), new Operand(new IdRef(), "Locality", OperandQuantifier.Optional), new Operand(new IdRef(), "Cache Type", OperandQuantifier.Optional),];
+}
+public sealed class OpFmaKHR : Instruction
+{
+	public static OpFmaKHR Instance { get; } = new();
+
+	private OpFmaKHR()
+	{
+	}
+
+	public override string Name => nameof(OpFmaKHR);
+	public override OpCode Code => OpCode.OpFmaKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 3", OperandQuantifier.Default),];
 }
 public sealed class OpSubgroupAllKHR : Instruction
 {
@@ -5007,6 +6937,20 @@ public sealed class OpSubgroupAllEqualKHR : Instruction
 
 	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Predicate", OperandQuantifier.Default),];
 }
+public sealed class OpGroupNonUniformRotateKHR : Instruction
+{
+	public static OpGroupNonUniformRotateKHR Instance { get; } = new();
+
+	private OpGroupNonUniformRotateKHR()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformRotateKHR);
+	public override OpCode Code => OpCode.OpGroupNonUniformRotateKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Delta", OperandQuantifier.Default), new Operand(new IdRef(), "ClusterSize", OperandQuantifier.Optional),];
+}
 public sealed class OpSubgroupReadInvocationKHR : Instruction
 {
 	public static OpSubgroupReadInvocationKHR Instance { get; } = new();
@@ -5020,6 +6964,560 @@ public sealed class OpSubgroupReadInvocationKHR : Instruction
 	public override IReadOnlyList<Operand> Operands => _operands;
 
 	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "Index", OperandQuantifier.Default),];
+}
+public sealed class OpExtInstWithForwardRefsKHR : Instruction
+{
+	public static OpExtInstWithForwardRefsKHR Instance { get; } = new();
+
+	private OpExtInstWithForwardRefsKHR()
+	{
+	}
+
+	public override string Name => nameof(OpExtInstWithForwardRefsKHR);
+	public override OpCode Code => OpCode.OpExtInstWithForwardRefsKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Set", OperandQuantifier.Default), new Operand(new LiteralExtInstInteger(), "Instruction", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1, Operand 2, ...", OperandQuantifier.Varying),];
+}
+public sealed class OpUntypedGroupAsyncCopyKHR : Instruction
+{
+	public static OpUntypedGroupAsyncCopyKHR Instance { get; } = new();
+
+	private OpUntypedGroupAsyncCopyKHR()
+	{
+	}
+
+	public override string Name => nameof(OpUntypedGroupAsyncCopyKHR);
+	public override OpCode Code => OpCode.OpUntypedGroupAsyncCopyKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Destination", OperandQuantifier.Default), new Operand(new IdRef(), "Source", OperandQuantifier.Default), new Operand(new IdRef(), "Element Num Bytes", OperandQuantifier.Default), new Operand(new IdRef(), "Num Elements", OperandQuantifier.Default), new Operand(new IdRef(), "Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Event", OperandQuantifier.Default), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), "Destination Memory Operands", OperandQuantifier.Optional), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), "Source Memory Operands", OperandQuantifier.Optional),];
+}
+public sealed class OpTraceRayKHR : Instruction
+{
+	public static OpTraceRayKHR Instance { get; } = new();
+
+	private OpTraceRayKHR()
+	{
+	}
+
+	public override string Name => nameof(OpTraceRayKHR);
+	public override OpCode Code => OpCode.OpTraceRayKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Accel", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Flags", OperandQuantifier.Default), new Operand(new IdRef(), "Cull Mask", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Offset", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Miss Index", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Origin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Direction", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmax", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpExecuteCallableKHR : Instruction
+{
+	public static OpExecuteCallableKHR Instance { get; } = new();
+
+	private OpExecuteCallableKHR()
+	{
+	}
+
+	public override string Name => nameof(OpExecuteCallableKHR);
+	public override OpCode Code => OpCode.OpExecuteCallableKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "SBT Index", OperandQuantifier.Default), new Operand(new IdRef(), "Callable Data", OperandQuantifier.Default),];
+}
+public sealed class OpConvertUToAccelerationStructureKHR : Instruction
+{
+	public static OpConvertUToAccelerationStructureKHR Instance { get; } = new();
+
+	private OpConvertUToAccelerationStructureKHR()
+	{
+	}
+
+	public override string Name => nameof(OpConvertUToAccelerationStructureKHR);
+	public override OpCode Code => OpCode.OpConvertUToAccelerationStructureKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Accel", OperandQuantifier.Default),];
+}
+public sealed class OpIgnoreIntersectionKHR : Instruction
+{
+	public static OpIgnoreIntersectionKHR Instance { get; } = new();
+
+	private OpIgnoreIntersectionKHR()
+	{
+	}
+
+	public override string Name => nameof(OpIgnoreIntersectionKHR);
+	public override OpCode Code => OpCode.OpIgnoreIntersectionKHR;
+}
+public sealed class OpTerminateRayKHR : Instruction
+{
+	public static OpTerminateRayKHR Instance { get; } = new();
+
+	private OpTerminateRayKHR()
+	{
+	}
+
+	public override string Name => nameof(OpTerminateRayKHR);
+	public override OpCode Code => OpCode.OpTerminateRayKHR;
+}
+public sealed class OpSDot : Instruction
+{
+	public static OpSDot Instance { get; } = new();
+
+	private OpSDot()
+	{
+	}
+
+	public override string Name => nameof(OpSDot);
+	public override OpCode Code => OpCode.OpSDot;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Vector 1", OperandQuantifier.Default), new Operand(new IdRef(), "Vector 2", OperandQuantifier.Default), new Operand(new EnumType<PackedVectorFormat, PackedVectorFormatParameterFactory>(), "Packed Vector Format", OperandQuantifier.Optional),];
+}
+public sealed class OpUDot : Instruction
+{
+	public static OpUDot Instance { get; } = new();
+
+	private OpUDot()
+	{
+	}
+
+	public override string Name => nameof(OpUDot);
+	public override OpCode Code => OpCode.OpUDot;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Vector 1", OperandQuantifier.Default), new Operand(new IdRef(), "Vector 2", OperandQuantifier.Default), new Operand(new EnumType<PackedVectorFormat, PackedVectorFormatParameterFactory>(), "Packed Vector Format", OperandQuantifier.Optional),];
+}
+public sealed class OpSUDot : Instruction
+{
+	public static OpSUDot Instance { get; } = new();
+
+	private OpSUDot()
+	{
+	}
+
+	public override string Name => nameof(OpSUDot);
+	public override OpCode Code => OpCode.OpSUDot;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Vector 1", OperandQuantifier.Default), new Operand(new IdRef(), "Vector 2", OperandQuantifier.Default), new Operand(new EnumType<PackedVectorFormat, PackedVectorFormatParameterFactory>(), "Packed Vector Format", OperandQuantifier.Optional),];
+}
+public sealed class OpSDotAccSat : Instruction
+{
+	public static OpSDotAccSat Instance { get; } = new();
+
+	private OpSDotAccSat()
+	{
+	}
+
+	public override string Name => nameof(OpSDotAccSat);
+	public override OpCode Code => OpCode.OpSDotAccSat;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Vector 1", OperandQuantifier.Default), new Operand(new IdRef(), "Vector 2", OperandQuantifier.Default), new Operand(new IdRef(), "Accumulator", OperandQuantifier.Default), new Operand(new EnumType<PackedVectorFormat, PackedVectorFormatParameterFactory>(), "Packed Vector Format", OperandQuantifier.Optional),];
+}
+public sealed class OpUDotAccSat : Instruction
+{
+	public static OpUDotAccSat Instance { get; } = new();
+
+	private OpUDotAccSat()
+	{
+	}
+
+	public override string Name => nameof(OpUDotAccSat);
+	public override OpCode Code => OpCode.OpUDotAccSat;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Vector 1", OperandQuantifier.Default), new Operand(new IdRef(), "Vector 2", OperandQuantifier.Default), new Operand(new IdRef(), "Accumulator", OperandQuantifier.Default), new Operand(new EnumType<PackedVectorFormat, PackedVectorFormatParameterFactory>(), "Packed Vector Format", OperandQuantifier.Optional),];
+}
+public sealed class OpSUDotAccSat : Instruction
+{
+	public static OpSUDotAccSat Instance { get; } = new();
+
+	private OpSUDotAccSat()
+	{
+	}
+
+	public override string Name => nameof(OpSUDotAccSat);
+	public override OpCode Code => OpCode.OpSUDotAccSat;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Vector 1", OperandQuantifier.Default), new Operand(new IdRef(), "Vector 2", OperandQuantifier.Default), new Operand(new IdRef(), "Accumulator", OperandQuantifier.Default), new Operand(new EnumType<PackedVectorFormat, PackedVectorFormatParameterFactory>(), "Packed Vector Format", OperandQuantifier.Optional),];
+}
+public sealed class OpTypeCooperativeMatrixKHR : Instruction
+{
+	public static OpTypeCooperativeMatrixKHR Instance { get; } = new();
+
+	private OpTypeCooperativeMatrixKHR()
+	{
+	}
+
+	public override string Name => nameof(OpTypeCooperativeMatrixKHR);
+	public override OpCode Code => OpCode.OpTypeCooperativeMatrixKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Component Type", OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default), new Operand(new IdRef(), "Rows", OperandQuantifier.Default), new Operand(new IdRef(), "Columns", OperandQuantifier.Default), new Operand(new IdRef(), "Use", OperandQuantifier.Default),];
+}
+public sealed class OpCooperativeMatrixLoadKHR : Instruction
+{
+	public static OpCooperativeMatrixLoadKHR Instance { get; } = new();
+
+	private OpCooperativeMatrixLoadKHR()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixLoadKHR);
+	public override OpCode Code => OpCode.OpCooperativeMatrixLoadKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "MemoryLayout", OperandQuantifier.Default), new Operand(new IdRef(), "Stride", OperandQuantifier.Optional), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), "Memory Operand", OperandQuantifier.Optional),];
+}
+public sealed class OpCooperativeMatrixStoreKHR : Instruction
+{
+	public static OpCooperativeMatrixStoreKHR Instance { get; } = new();
+
+	private OpCooperativeMatrixStoreKHR()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixStoreKHR);
+	public override OpCode Code => OpCode.OpCooperativeMatrixStoreKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Object", OperandQuantifier.Default), new Operand(new IdRef(), "MemoryLayout", OperandQuantifier.Default), new Operand(new IdRef(), "Stride", OperandQuantifier.Optional), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), "Memory Operand", OperandQuantifier.Optional),];
+}
+public sealed class OpCooperativeMatrixMulAddKHR : Instruction
+{
+	public static OpCooperativeMatrixMulAddKHR Instance { get; } = new();
+
+	private OpCooperativeMatrixMulAddKHR()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixMulAddKHR);
+	public override OpCode Code => OpCode.OpCooperativeMatrixMulAddKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new IdRef(), "C", OperandQuantifier.Default), new Operand(new EnumType<CooperativeMatrixOperands, CooperativeMatrixOperandsParameterFactory>(), "Cooperative Matrix Operands", OperandQuantifier.Optional),];
+}
+public sealed class OpCooperativeMatrixLengthKHR : Instruction
+{
+	public static OpCooperativeMatrixLengthKHR Instance { get; } = new();
+
+	private OpCooperativeMatrixLengthKHR()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixLengthKHR);
+	public override OpCode Code => OpCode.OpCooperativeMatrixLengthKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Type", OperandQuantifier.Default),];
+}
+public sealed class OpConstantCompositeReplicateEXT : Instruction
+{
+	public static OpConstantCompositeReplicateEXT Instance { get; } = new();
+
+	private OpConstantCompositeReplicateEXT()
+	{
+	}
+
+	public override string Name => nameof(OpConstantCompositeReplicateEXT);
+	public override OpCode Code => OpCode.OpConstantCompositeReplicateEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpSpecConstantCompositeReplicateEXT : Instruction
+{
+	public static OpSpecConstantCompositeReplicateEXT Instance { get; } = new();
+
+	private OpSpecConstantCompositeReplicateEXT()
+	{
+	}
+
+	public override string Name => nameof(OpSpecConstantCompositeReplicateEXT);
+	public override OpCode Code => OpCode.OpSpecConstantCompositeReplicateEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpCompositeConstructReplicateEXT : Instruction
+{
+	public static OpCompositeConstructReplicateEXT Instance { get; } = new();
+
+	private OpCompositeConstructReplicateEXT()
+	{
+	}
+
+	public override string Name => nameof(OpCompositeConstructReplicateEXT);
+	public override OpCode Code => OpCode.OpCompositeConstructReplicateEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpTypeRayQueryKHR : Instruction
+{
+	public static OpTypeRayQueryKHR Instance { get; } = new();
+
+	private OpTypeRayQueryKHR()
+	{
+	}
+
+	public override string Name => nameof(OpTypeRayQueryKHR);
+	public override OpCode Code => OpCode.OpTypeRayQueryKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryInitializeKHR : Instruction
+{
+	public static OpRayQueryInitializeKHR Instance { get; } = new();
+
+	private OpRayQueryInitializeKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryInitializeKHR);
+	public override OpCode Code => OpCode.OpRayQueryInitializeKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Accel", OperandQuantifier.Default), new Operand(new IdRef(), "RayFlags", OperandQuantifier.Default), new Operand(new IdRef(), "CullMask", OperandQuantifier.Default), new Operand(new IdRef(), "RayOrigin", OperandQuantifier.Default), new Operand(new IdRef(), "RayTMin", OperandQuantifier.Default), new Operand(new IdRef(), "RayDirection", OperandQuantifier.Default), new Operand(new IdRef(), "RayTMax", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryTerminateKHR : Instruction
+{
+	public static OpRayQueryTerminateKHR Instance { get; } = new();
+
+	private OpRayQueryTerminateKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryTerminateKHR);
+	public override OpCode Code => OpCode.OpRayQueryTerminateKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGenerateIntersectionKHR : Instruction
+{
+	public static OpRayQueryGenerateIntersectionKHR Instance { get; } = new();
+
+	private OpRayQueryGenerateIntersectionKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGenerateIntersectionKHR);
+	public override OpCode Code => OpCode.OpRayQueryGenerateIntersectionKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "HitT", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryConfirmIntersectionKHR : Instruction
+{
+	public static OpRayQueryConfirmIntersectionKHR Instance { get; } = new();
+
+	private OpRayQueryConfirmIntersectionKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryConfirmIntersectionKHR);
+	public override OpCode Code => OpCode.OpRayQueryConfirmIntersectionKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryProceedKHR : Instruction
+{
+	public static OpRayQueryProceedKHR Instance { get; } = new();
+
+	private OpRayQueryProceedKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryProceedKHR);
+	public override OpCode Code => OpCode.OpRayQueryProceedKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionTypeKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionTypeKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionTypeKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionTypeKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionTypeKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpImageSampleWeightedQCOM : Instruction
+{
+	public static OpImageSampleWeightedQCOM Instance { get; } = new();
+
+	private OpImageSampleWeightedQCOM()
+	{
+	}
+
+	public override string Name => nameof(OpImageSampleWeightedQCOM);
+	public override OpCode Code => OpCode.OpImageSampleWeightedQCOM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Texture", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Weights", OperandQuantifier.Default),];
+}
+public sealed class OpImageBoxFilterQCOM : Instruction
+{
+	public static OpImageBoxFilterQCOM Instance { get; } = new();
+
+	private OpImageBoxFilterQCOM()
+	{
+	}
+
+	public override string Name => nameof(OpImageBoxFilterQCOM);
+	public override OpCode Code => OpCode.OpImageBoxFilterQCOM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Texture", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Box Size", OperandQuantifier.Default),];
+}
+public sealed class OpImageBlockMatchSSDQCOM : Instruction
+{
+	public static OpImageBlockMatchSSDQCOM Instance { get; } = new();
+
+	private OpImageBlockMatchSSDQCOM()
+	{
+	}
+
+	public override string Name => nameof(OpImageBlockMatchSSDQCOM);
+	public override OpCode Code => OpCode.OpImageBlockMatchSSDQCOM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Target", OperandQuantifier.Default), new Operand(new IdRef(), "Target Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Reference", OperandQuantifier.Default), new Operand(new IdRef(), "Reference Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Block Size", OperandQuantifier.Default),];
+}
+public sealed class OpImageBlockMatchSADQCOM : Instruction
+{
+	public static OpImageBlockMatchSADQCOM Instance { get; } = new();
+
+	private OpImageBlockMatchSADQCOM()
+	{
+	}
+
+	public override string Name => nameof(OpImageBlockMatchSADQCOM);
+	public override OpCode Code => OpCode.OpImageBlockMatchSADQCOM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Target", OperandQuantifier.Default), new Operand(new IdRef(), "Target Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Reference", OperandQuantifier.Default), new Operand(new IdRef(), "Reference Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Block Size", OperandQuantifier.Default),];
+}
+public sealed class OpBitCastArrayQCOM : Instruction
+{
+	public static OpBitCastArrayQCOM Instance { get; } = new();
+
+	private OpBitCastArrayQCOM()
+	{
+	}
+
+	public override string Name => nameof(OpBitCastArrayQCOM);
+	public override OpCode Code => OpCode.OpBitCastArrayQCOM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Source Array", OperandQuantifier.Default),];
+}
+public sealed class OpImageBlockMatchWindowSSDQCOM : Instruction
+{
+	public static OpImageBlockMatchWindowSSDQCOM Instance { get; } = new();
+
+	private OpImageBlockMatchWindowSSDQCOM()
+	{
+	}
+
+	public override string Name => nameof(OpImageBlockMatchWindowSSDQCOM);
+	public override OpCode Code => OpCode.OpImageBlockMatchWindowSSDQCOM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Target Sampled Image", OperandQuantifier.Default), new Operand(new IdRef(), "Target Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Reference Sampled Image", OperandQuantifier.Default), new Operand(new IdRef(), "Reference Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Block Size", OperandQuantifier.Default),];
+}
+public sealed class OpImageBlockMatchWindowSADQCOM : Instruction
+{
+	public static OpImageBlockMatchWindowSADQCOM Instance { get; } = new();
+
+	private OpImageBlockMatchWindowSADQCOM()
+	{
+	}
+
+	public override string Name => nameof(OpImageBlockMatchWindowSADQCOM);
+	public override OpCode Code => OpCode.OpImageBlockMatchWindowSADQCOM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Target Sampled Image", OperandQuantifier.Default), new Operand(new IdRef(), "Target Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Reference Sampled Image", OperandQuantifier.Default), new Operand(new IdRef(), "Reference Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Block Size", OperandQuantifier.Default),];
+}
+public sealed class OpImageBlockMatchGatherSSDQCOM : Instruction
+{
+	public static OpImageBlockMatchGatherSSDQCOM Instance { get; } = new();
+
+	private OpImageBlockMatchGatherSSDQCOM()
+	{
+	}
+
+	public override string Name => nameof(OpImageBlockMatchGatherSSDQCOM);
+	public override OpCode Code => OpCode.OpImageBlockMatchGatherSSDQCOM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Target Sampled Image", OperandQuantifier.Default), new Operand(new IdRef(), "Target Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Reference Sampled Image", OperandQuantifier.Default), new Operand(new IdRef(), "Reference Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Block Size", OperandQuantifier.Default),];
+}
+public sealed class OpImageBlockMatchGatherSADQCOM : Instruction
+{
+	public static OpImageBlockMatchGatherSADQCOM Instance { get; } = new();
+
+	private OpImageBlockMatchGatherSADQCOM()
+	{
+	}
+
+	public override string Name => nameof(OpImageBlockMatchGatherSADQCOM);
+	public override OpCode Code => OpCode.OpImageBlockMatchGatherSADQCOM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Target Sampled Image", OperandQuantifier.Default), new Operand(new IdRef(), "Target Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Reference Sampled Image", OperandQuantifier.Default), new Operand(new IdRef(), "Reference Coordinates", OperandQuantifier.Default), new Operand(new IdRef(), "Block Size", OperandQuantifier.Default),];
+}
+public sealed class OpCompositeConstructCoopMatQCOM : Instruction
+{
+	public static OpCompositeConstructCoopMatQCOM Instance { get; } = new();
+
+	private OpCompositeConstructCoopMatQCOM()
+	{
+	}
+
+	public override string Name => nameof(OpCompositeConstructCoopMatQCOM);
+	public override OpCode Code => OpCode.OpCompositeConstructCoopMatQCOM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Source Array", OperandQuantifier.Default),];
+}
+public sealed class OpCompositeExtractCoopMatQCOM : Instruction
+{
+	public static OpCompositeExtractCoopMatQCOM Instance { get; } = new();
+
+	private OpCompositeExtractCoopMatQCOM()
+	{
+	}
+
+	public override string Name => nameof(OpCompositeExtractCoopMatQCOM);
+	public override OpCode Code => OpCode.OpCompositeExtractCoopMatQCOM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Source Cooperative Matrix", OperandQuantifier.Default),];
+}
+public sealed class OpExtractSubArrayQCOM : Instruction
+{
+	public static OpExtractSubArrayQCOM Instance { get; } = new();
+
+	private OpExtractSubArrayQCOM()
+	{
+	}
+
+	public override string Name => nameof(OpExtractSubArrayQCOM);
+	public override OpCode Code => OpCode.OpExtractSubArrayQCOM;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Source Array", OperandQuantifier.Default), new Operand(new IdRef(), "index", OperandQuantifier.Default),];
 }
 public sealed class OpGroupIAddNonUniformAMD : Instruction
 {
@@ -5161,6 +7659,2203 @@ public sealed class OpFragmentFetchAMD : Instruction
 
 	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Image", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinate", OperandQuantifier.Default), new Operand(new IdRef(), "Fragment Index", OperandQuantifier.Default),];
 }
+public sealed class OpReadClockKHR : Instruction
+{
+	public static OpReadClockKHR Instance { get; } = new();
+
+	private OpReadClockKHR()
+	{
+	}
+
+	public override string Name => nameof(OpReadClockKHR);
+	public override OpCode Code => OpCode.OpReadClockKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Scope", OperandQuantifier.Default),];
+}
+public sealed class OpAllocateNodePayloadsAMDX : Instruction
+{
+	public static OpAllocateNodePayloadsAMDX Instance { get; } = new();
+
+	private OpAllocateNodePayloadsAMDX()
+	{
+	}
+
+	public override string Name => nameof(OpAllocateNodePayloadsAMDX);
+	public override OpCode Code => OpCode.OpAllocateNodePayloadsAMDX;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Visibility", OperandQuantifier.Default), new Operand(new IdRef(), "Payload Count", OperandQuantifier.Default), new Operand(new IdRef(), "Node Index", OperandQuantifier.Default),];
+}
+public sealed class OpEnqueueNodePayloadsAMDX : Instruction
+{
+	public static OpEnqueueNodePayloadsAMDX Instance { get; } = new();
+
+	private OpEnqueueNodePayloadsAMDX()
+	{
+	}
+
+	public override string Name => nameof(OpEnqueueNodePayloadsAMDX);
+	public override OpCode Code => OpCode.OpEnqueueNodePayloadsAMDX;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Payload Array", OperandQuantifier.Default),];
+}
+public sealed class OpTypeNodePayloadArrayAMDX : Instruction
+{
+	public static OpTypeNodePayloadArrayAMDX Instance { get; } = new();
+
+	private OpTypeNodePayloadArrayAMDX()
+	{
+	}
+
+	public override string Name => nameof(OpTypeNodePayloadArrayAMDX);
+	public override OpCode Code => OpCode.OpTypeNodePayloadArrayAMDX;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload Type", OperandQuantifier.Default),];
+}
+public sealed class OpFinishWritingNodePayloadAMDX : Instruction
+{
+	public static OpFinishWritingNodePayloadAMDX Instance { get; } = new();
+
+	private OpFinishWritingNodePayloadAMDX()
+	{
+	}
+
+	public override string Name => nameof(OpFinishWritingNodePayloadAMDX);
+	public override OpCode Code => OpCode.OpFinishWritingNodePayloadAMDX;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpNodePayloadArrayLengthAMDX : Instruction
+{
+	public static OpNodePayloadArrayLengthAMDX Instance { get; } = new();
+
+	private OpNodePayloadArrayLengthAMDX()
+	{
+	}
+
+	public override string Name => nameof(OpNodePayloadArrayLengthAMDX);
+	public override OpCode Code => OpCode.OpNodePayloadArrayLengthAMDX;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload Array", OperandQuantifier.Default),];
+}
+public sealed class OpIsNodePayloadValidAMDX : Instruction
+{
+	public static OpIsNodePayloadValidAMDX Instance { get; } = new();
+
+	private OpIsNodePayloadValidAMDX()
+	{
+	}
+
+	public override string Name => nameof(OpIsNodePayloadValidAMDX);
+	public override OpCode Code => OpCode.OpIsNodePayloadValidAMDX;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload Type", OperandQuantifier.Default), new Operand(new IdRef(), "Node Index", OperandQuantifier.Default),];
+}
+public sealed class OpConstantStringAMDX : Instruction
+{
+	public static OpConstantStringAMDX Instance { get; } = new();
+
+	private OpConstantStringAMDX()
+	{
+	}
+
+	public override string Name => nameof(OpConstantStringAMDX);
+	public override OpCode Code => OpCode.OpConstantStringAMDX;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new LiteralString(), "Literal String", OperandQuantifier.Default),];
+}
+public sealed class OpSpecConstantStringAMDX : Instruction
+{
+	public static OpSpecConstantStringAMDX Instance { get; } = new();
+
+	private OpSpecConstantStringAMDX()
+	{
+	}
+
+	public override string Name => nameof(OpSpecConstantStringAMDX);
+	public override OpCode Code => OpCode.OpSpecConstantStringAMDX;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new LiteralString(), "Literal String", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformQuadAllKHR : Instruction
+{
+	public static OpGroupNonUniformQuadAllKHR Instance { get; } = new();
+
+	private OpGroupNonUniformQuadAllKHR()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformQuadAllKHR);
+	public override OpCode Code => OpCode.OpGroupNonUniformQuadAllKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Predicate", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformQuadAnyKHR : Instruction
+{
+	public static OpGroupNonUniformQuadAnyKHR Instance { get; } = new();
+
+	private OpGroupNonUniformQuadAnyKHR()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformQuadAnyKHR);
+	public override OpCode Code => OpCode.OpGroupNonUniformQuadAnyKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Predicate", OperandQuantifier.Default),];
+}
+public sealed class OpTypeBufferEXT : Instruction
+{
+	public static OpTypeBufferEXT Instance { get; } = new();
+
+	private OpTypeBufferEXT()
+	{
+	}
+
+	public override string Name => nameof(OpTypeBufferEXT);
+	public override OpCode Code => OpCode.OpTypeBufferEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new EnumType<StorageClass, StorageClassParameterFactory>(), null, OperandQuantifier.Default),];
+}
+public sealed class OpBufferPointerEXT : Instruction
+{
+	public static OpBufferPointerEXT Instance { get; } = new();
+
+	private OpBufferPointerEXT()
+	{
+	}
+
+	public override string Name => nameof(OpBufferPointerEXT);
+	public override OpCode Code => OpCode.OpBufferPointerEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Buffer", OperandQuantifier.Default),];
+}
+public sealed class OpUntypedImageTexelPointerEXT : Instruction
+{
+	public static OpUntypedImageTexelPointerEXT Instance { get; } = new();
+
+	private OpUntypedImageTexelPointerEXT()
+	{
+	}
+
+	public override string Name => nameof(OpUntypedImageTexelPointerEXT);
+	public override OpCode Code => OpCode.OpUntypedImageTexelPointerEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "ImageType", OperandQuantifier.Default), new Operand(new IdRef(), "Image", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinate", OperandQuantifier.Default), new Operand(new IdRef(), "Sample", OperandQuantifier.Default),];
+}
+public sealed class OpMemberDecorateIdEXT : Instruction
+{
+	public static OpMemberDecorateIdEXT Instance { get; } = new();
+
+	private OpMemberDecorateIdEXT()
+	{
+	}
+
+	public override string Name => nameof(OpMemberDecorateIdEXT);
+	public override OpCode Code => OpCode.OpMemberDecorateIdEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Structure Type", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Member", OperandQuantifier.Default), new Operand(new EnumType<Decoration, DecorationParameterFactory>(), null, OperandQuantifier.Default),];
+}
+public sealed class OpConstantSizeOfEXT : Instruction
+{
+	public static OpConstantSizeOfEXT Instance { get; } = new();
+
+	private OpConstantSizeOfEXT()
+	{
+	}
+
+	public override string Name => nameof(OpConstantSizeOfEXT);
+	public override OpCode Code => OpCode.OpConstantSizeOfEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Type", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectRecordHitMotionNV : Instruction
+{
+	public static OpHitObjectRecordHitMotionNV Instance { get; } = new();
+
+	private OpHitObjectRecordHitMotionNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectRecordHitMotionNV);
+	public override OpCode Code => OpCode.OpHitObjectRecordHitMotionNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Acceleration Structure", OperandQuantifier.Default), new Operand(new IdRef(), "InstanceId", OperandQuantifier.Default), new Operand(new IdRef(), "PrimitiveId", OperandQuantifier.Default), new Operand(new IdRef(), "GeometryIndex", OperandQuantifier.Default), new Operand(new IdRef(), "Hit Kind", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Record Offset", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Record Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Origin", OperandQuantifier.Default), new Operand(new IdRef(), "TMin", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default), new Operand(new IdRef(), "TMax", OperandQuantifier.Default), new Operand(new IdRef(), "Current Time", OperandQuantifier.Default), new Operand(new IdRef(), "HitObject Attributes", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectRecordHitWithIndexMotionNV : Instruction
+{
+	public static OpHitObjectRecordHitWithIndexMotionNV Instance { get; } = new();
+
+	private OpHitObjectRecordHitWithIndexMotionNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectRecordHitWithIndexMotionNV);
+	public override OpCode Code => OpCode.OpHitObjectRecordHitWithIndexMotionNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Acceleration Structure", OperandQuantifier.Default), new Operand(new IdRef(), "InstanceId", OperandQuantifier.Default), new Operand(new IdRef(), "PrimitiveId", OperandQuantifier.Default), new Operand(new IdRef(), "GeometryIndex", OperandQuantifier.Default), new Operand(new IdRef(), "Hit Kind", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Record Index", OperandQuantifier.Default), new Operand(new IdRef(), "Origin", OperandQuantifier.Default), new Operand(new IdRef(), "TMin", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default), new Operand(new IdRef(), "TMax", OperandQuantifier.Default), new Operand(new IdRef(), "Current Time", OperandQuantifier.Default), new Operand(new IdRef(), "HitObject Attributes", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectRecordMissMotionNV : Instruction
+{
+	public static OpHitObjectRecordMissMotionNV Instance { get; } = new();
+
+	private OpHitObjectRecordMissMotionNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectRecordMissMotionNV);
+	public override OpCode Code => OpCode.OpHitObjectRecordMissMotionNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Index", OperandQuantifier.Default), new Operand(new IdRef(), "Origin", OperandQuantifier.Default), new Operand(new IdRef(), "TMin", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default), new Operand(new IdRef(), "TMax", OperandQuantifier.Default), new Operand(new IdRef(), "Current Time", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetWorldToObjectNV : Instruction
+{
+	public static OpHitObjectGetWorldToObjectNV Instance { get; } = new();
+
+	private OpHitObjectGetWorldToObjectNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetWorldToObjectNV);
+	public override OpCode Code => OpCode.OpHitObjectGetWorldToObjectNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetObjectToWorldNV : Instruction
+{
+	public static OpHitObjectGetObjectToWorldNV Instance { get; } = new();
+
+	private OpHitObjectGetObjectToWorldNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetObjectToWorldNV);
+	public override OpCode Code => OpCode.OpHitObjectGetObjectToWorldNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetObjectRayDirectionNV : Instruction
+{
+	public static OpHitObjectGetObjectRayDirectionNV Instance { get; } = new();
+
+	private OpHitObjectGetObjectRayDirectionNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetObjectRayDirectionNV);
+	public override OpCode Code => OpCode.OpHitObjectGetObjectRayDirectionNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetObjectRayOriginNV : Instruction
+{
+	public static OpHitObjectGetObjectRayOriginNV Instance { get; } = new();
+
+	private OpHitObjectGetObjectRayOriginNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetObjectRayOriginNV);
+	public override OpCode Code => OpCode.OpHitObjectGetObjectRayOriginNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectTraceRayMotionNV : Instruction
+{
+	public static OpHitObjectTraceRayMotionNV Instance { get; } = new();
+
+	private OpHitObjectTraceRayMotionNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectTraceRayMotionNV);
+	public override OpCode Code => OpCode.OpHitObjectTraceRayMotionNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Acceleration Structure", OperandQuantifier.Default), new Operand(new IdRef(), "RayFlags", OperandQuantifier.Default), new Operand(new IdRef(), "Cullmask", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Record Offset", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Record Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Miss Index", OperandQuantifier.Default), new Operand(new IdRef(), "Origin", OperandQuantifier.Default), new Operand(new IdRef(), "TMin", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default), new Operand(new IdRef(), "TMax", OperandQuantifier.Default), new Operand(new IdRef(), "Time", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetShaderRecordBufferHandleNV : Instruction
+{
+	public static OpHitObjectGetShaderRecordBufferHandleNV Instance { get; } = new();
+
+	private OpHitObjectGetShaderRecordBufferHandleNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetShaderRecordBufferHandleNV);
+	public override OpCode Code => OpCode.OpHitObjectGetShaderRecordBufferHandleNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetShaderBindingTableRecordIndexNV : Instruction
+{
+	public static OpHitObjectGetShaderBindingTableRecordIndexNV Instance { get; } = new();
+
+	private OpHitObjectGetShaderBindingTableRecordIndexNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetShaderBindingTableRecordIndexNV);
+	public override OpCode Code => OpCode.OpHitObjectGetShaderBindingTableRecordIndexNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectRecordEmptyNV : Instruction
+{
+	public static OpHitObjectRecordEmptyNV Instance { get; } = new();
+
+	private OpHitObjectRecordEmptyNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectRecordEmptyNV);
+	public override OpCode Code => OpCode.OpHitObjectRecordEmptyNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectTraceRayNV : Instruction
+{
+	public static OpHitObjectTraceRayNV Instance { get; } = new();
+
+	private OpHitObjectTraceRayNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectTraceRayNV);
+	public override OpCode Code => OpCode.OpHitObjectTraceRayNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Acceleration Structure", OperandQuantifier.Default), new Operand(new IdRef(), "RayFlags", OperandQuantifier.Default), new Operand(new IdRef(), "Cullmask", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Record Offset", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Record Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Miss Index", OperandQuantifier.Default), new Operand(new IdRef(), "Origin", OperandQuantifier.Default), new Operand(new IdRef(), "TMin", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default), new Operand(new IdRef(), "TMax", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectRecordHitNV : Instruction
+{
+	public static OpHitObjectRecordHitNV Instance { get; } = new();
+
+	private OpHitObjectRecordHitNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectRecordHitNV);
+	public override OpCode Code => OpCode.OpHitObjectRecordHitNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Acceleration Structure", OperandQuantifier.Default), new Operand(new IdRef(), "InstanceId", OperandQuantifier.Default), new Operand(new IdRef(), "PrimitiveId", OperandQuantifier.Default), new Operand(new IdRef(), "GeometryIndex", OperandQuantifier.Default), new Operand(new IdRef(), "Hit Kind", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Record Offset", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Record Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Origin", OperandQuantifier.Default), new Operand(new IdRef(), "TMin", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default), new Operand(new IdRef(), "TMax", OperandQuantifier.Default), new Operand(new IdRef(), "HitObject Attributes", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectRecordHitWithIndexNV : Instruction
+{
+	public static OpHitObjectRecordHitWithIndexNV Instance { get; } = new();
+
+	private OpHitObjectRecordHitWithIndexNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectRecordHitWithIndexNV);
+	public override OpCode Code => OpCode.OpHitObjectRecordHitWithIndexNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Acceleration Structure", OperandQuantifier.Default), new Operand(new IdRef(), "InstanceId", OperandQuantifier.Default), new Operand(new IdRef(), "PrimitiveId", OperandQuantifier.Default), new Operand(new IdRef(), "GeometryIndex", OperandQuantifier.Default), new Operand(new IdRef(), "Hit Kind", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Record Index", OperandQuantifier.Default), new Operand(new IdRef(), "Origin", OperandQuantifier.Default), new Operand(new IdRef(), "TMin", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default), new Operand(new IdRef(), "TMax", OperandQuantifier.Default), new Operand(new IdRef(), "HitObject Attributes", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectRecordMissNV : Instruction
+{
+	public static OpHitObjectRecordMissNV Instance { get; } = new();
+
+	private OpHitObjectRecordMissNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectRecordMissNV);
+	public override OpCode Code => OpCode.OpHitObjectRecordMissNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Index", OperandQuantifier.Default), new Operand(new IdRef(), "Origin", OperandQuantifier.Default), new Operand(new IdRef(), "TMin", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default), new Operand(new IdRef(), "TMax", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectExecuteShaderNV : Instruction
+{
+	public static OpHitObjectExecuteShaderNV Instance { get; } = new();
+
+	private OpHitObjectExecuteShaderNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectExecuteShaderNV);
+	public override OpCode Code => OpCode.OpHitObjectExecuteShaderNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetCurrentTimeNV : Instruction
+{
+	public static OpHitObjectGetCurrentTimeNV Instance { get; } = new();
+
+	private OpHitObjectGetCurrentTimeNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetCurrentTimeNV);
+	public override OpCode Code => OpCode.OpHitObjectGetCurrentTimeNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetAttributesNV : Instruction
+{
+	public static OpHitObjectGetAttributesNV Instance { get; } = new();
+
+	private OpHitObjectGetAttributesNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetAttributesNV);
+	public override OpCode Code => OpCode.OpHitObjectGetAttributesNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object Attribute", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetHitKindNV : Instruction
+{
+	public static OpHitObjectGetHitKindNV Instance { get; } = new();
+
+	private OpHitObjectGetHitKindNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetHitKindNV);
+	public override OpCode Code => OpCode.OpHitObjectGetHitKindNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetPrimitiveIndexNV : Instruction
+{
+	public static OpHitObjectGetPrimitiveIndexNV Instance { get; } = new();
+
+	private OpHitObjectGetPrimitiveIndexNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetPrimitiveIndexNV);
+	public override OpCode Code => OpCode.OpHitObjectGetPrimitiveIndexNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetGeometryIndexNV : Instruction
+{
+	public static OpHitObjectGetGeometryIndexNV Instance { get; } = new();
+
+	private OpHitObjectGetGeometryIndexNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetGeometryIndexNV);
+	public override OpCode Code => OpCode.OpHitObjectGetGeometryIndexNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetInstanceIdNV : Instruction
+{
+	public static OpHitObjectGetInstanceIdNV Instance { get; } = new();
+
+	private OpHitObjectGetInstanceIdNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetInstanceIdNV);
+	public override OpCode Code => OpCode.OpHitObjectGetInstanceIdNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetInstanceCustomIndexNV : Instruction
+{
+	public static OpHitObjectGetInstanceCustomIndexNV Instance { get; } = new();
+
+	private OpHitObjectGetInstanceCustomIndexNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetInstanceCustomIndexNV);
+	public override OpCode Code => OpCode.OpHitObjectGetInstanceCustomIndexNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetWorldRayDirectionNV : Instruction
+{
+	public static OpHitObjectGetWorldRayDirectionNV Instance { get; } = new();
+
+	private OpHitObjectGetWorldRayDirectionNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetWorldRayDirectionNV);
+	public override OpCode Code => OpCode.OpHitObjectGetWorldRayDirectionNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetWorldRayOriginNV : Instruction
+{
+	public static OpHitObjectGetWorldRayOriginNV Instance { get; } = new();
+
+	private OpHitObjectGetWorldRayOriginNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetWorldRayOriginNV);
+	public override OpCode Code => OpCode.OpHitObjectGetWorldRayOriginNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetRayTMaxNV : Instruction
+{
+	public static OpHitObjectGetRayTMaxNV Instance { get; } = new();
+
+	private OpHitObjectGetRayTMaxNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetRayTMaxNV);
+	public override OpCode Code => OpCode.OpHitObjectGetRayTMaxNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetRayTMinNV : Instruction
+{
+	public static OpHitObjectGetRayTMinNV Instance { get; } = new();
+
+	private OpHitObjectGetRayTMinNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetRayTMinNV);
+	public override OpCode Code => OpCode.OpHitObjectGetRayTMinNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectIsEmptyNV : Instruction
+{
+	public static OpHitObjectIsEmptyNV Instance { get; } = new();
+
+	private OpHitObjectIsEmptyNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectIsEmptyNV);
+	public override OpCode Code => OpCode.OpHitObjectIsEmptyNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectIsHitNV : Instruction
+{
+	public static OpHitObjectIsHitNV Instance { get; } = new();
+
+	private OpHitObjectIsHitNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectIsHitNV);
+	public override OpCode Code => OpCode.OpHitObjectIsHitNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectIsMissNV : Instruction
+{
+	public static OpHitObjectIsMissNV Instance { get; } = new();
+
+	private OpHitObjectIsMissNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectIsMissNV);
+	public override OpCode Code => OpCode.OpHitObjectIsMissNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpReorderThreadWithHitObjectNV : Instruction
+{
+	public static OpReorderThreadWithHitObjectNV Instance { get; } = new();
+
+	private OpReorderThreadWithHitObjectNV()
+	{
+	}
+
+	public override string Name => nameof(OpReorderThreadWithHitObjectNV);
+	public override OpCode Code => OpCode.OpReorderThreadWithHitObjectNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Hint", OperandQuantifier.Optional), new Operand(new IdRef(), "Bits", OperandQuantifier.Optional),];
+}
+public sealed class OpReorderThreadWithHintNV : Instruction
+{
+	public static OpReorderThreadWithHintNV Instance { get; } = new();
+
+	private OpReorderThreadWithHintNV()
+	{
+	}
+
+	public override string Name => nameof(OpReorderThreadWithHintNV);
+	public override OpCode Code => OpCode.OpReorderThreadWithHintNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hint", OperandQuantifier.Default), new Operand(new IdRef(), "Bits", OperandQuantifier.Default),];
+}
+public sealed class OpTypeHitObjectNV : Instruction
+{
+	public static OpTypeHitObjectNV Instance { get; } = new();
+
+	private OpTypeHitObjectNV()
+	{
+	}
+
+	public override string Name => nameof(OpTypeHitObjectNV);
+	public override OpCode Code => OpCode.OpTypeHitObjectNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpImageSampleFootprintNV : Instruction
+{
+	public static OpImageSampleFootprintNV Instance { get; } = new();
+
+	private OpImageSampleFootprintNV()
+	{
+	}
+
+	public override string Name => nameof(OpImageSampleFootprintNV);
+	public override OpCode Code => OpCode.OpImageSampleFootprintNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Sampled Image", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinate", OperandQuantifier.Default), new Operand(new IdRef(), "Granularity", OperandQuantifier.Default), new Operand(new IdRef(), "Coarse", OperandQuantifier.Default), new Operand(new EnumType<ImageOperands, ImageOperandsParameterFactory>(), null, OperandQuantifier.Optional),];
+}
+public sealed class OpTypeVectorIdEXT : Instruction
+{
+	public static OpTypeVectorIdEXT Instance { get; } = new();
+
+	private OpTypeVectorIdEXT()
+	{
+	}
+
+	public override string Name => nameof(OpTypeVectorIdEXT);
+	public override OpCode Code => OpCode.OpTypeVectorIdEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Component Type", OperandQuantifier.Default), new Operand(new IdRef(), "Component Count", OperandQuantifier.Default),];
+}
+public sealed class OpCooperativeVectorMatrixMulNV : Instruction
+{
+	public static OpCooperativeVectorMatrixMulNV Instance { get; } = new();
+
+	private OpCooperativeVectorMatrixMulNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeVectorMatrixMulNV);
+	public override OpCode Code => OpCode.OpCooperativeVectorMatrixMulNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default), new Operand(new IdRef(), "InputInterpretation", OperandQuantifier.Default), new Operand(new IdRef(), "Matrix", OperandQuantifier.Default), new Operand(new IdRef(), "MatrixOffset", OperandQuantifier.Default), new Operand(new IdRef(), "MatrixInterpretation", OperandQuantifier.Default), new Operand(new IdRef(), "M", OperandQuantifier.Default), new Operand(new IdRef(), "K", OperandQuantifier.Default), new Operand(new IdRef(), "MemoryLayout", OperandQuantifier.Default), new Operand(new IdRef(), "Transpose", OperandQuantifier.Default), new Operand(new IdRef(), "MatrixStride", OperandQuantifier.Optional), new Operand(new EnumType<CooperativeMatrixOperands, CooperativeMatrixOperandsParameterFactory>(), null, OperandQuantifier.Optional),];
+}
+public sealed class OpCooperativeVectorOuterProductAccumulateNV : Instruction
+{
+	public static OpCooperativeVectorOuterProductAccumulateNV Instance { get; } = new();
+
+	private OpCooperativeVectorOuterProductAccumulateNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeVectorOuterProductAccumulateNV);
+	public override OpCode Code => OpCode.OpCooperativeVectorOuterProductAccumulateNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Offset", OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new IdRef(), "MemoryLayout", OperandQuantifier.Default), new Operand(new IdRef(), "MatrixInterpretation", OperandQuantifier.Default), new Operand(new IdRef(), "MatrixStride", OperandQuantifier.Optional),];
+}
+public sealed class OpCooperativeVectorReduceSumAccumulateNV : Instruction
+{
+	public static OpCooperativeVectorReduceSumAccumulateNV Instance { get; } = new();
+
+	private OpCooperativeVectorReduceSumAccumulateNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeVectorReduceSumAccumulateNV);
+	public override OpCode Code => OpCode.OpCooperativeVectorReduceSumAccumulateNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Offset", OperandQuantifier.Default), new Operand(new IdRef(), "V", OperandQuantifier.Default),];
+}
+public sealed class OpCooperativeVectorMatrixMulAddNV : Instruction
+{
+	public static OpCooperativeVectorMatrixMulAddNV Instance { get; } = new();
+
+	private OpCooperativeVectorMatrixMulAddNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeVectorMatrixMulAddNV);
+	public override OpCode Code => OpCode.OpCooperativeVectorMatrixMulAddNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default), new Operand(new IdRef(), "InputInterpretation", OperandQuantifier.Default), new Operand(new IdRef(), "Matrix", OperandQuantifier.Default), new Operand(new IdRef(), "MatrixOffset", OperandQuantifier.Default), new Operand(new IdRef(), "MatrixInterpretation", OperandQuantifier.Default), new Operand(new IdRef(), "Bias", OperandQuantifier.Default), new Operand(new IdRef(), "BiasOffset", OperandQuantifier.Default), new Operand(new IdRef(), "BiasInterpretation", OperandQuantifier.Default), new Operand(new IdRef(), "M", OperandQuantifier.Default), new Operand(new IdRef(), "K", OperandQuantifier.Default), new Operand(new IdRef(), "MemoryLayout", OperandQuantifier.Default), new Operand(new IdRef(), "Transpose", OperandQuantifier.Default), new Operand(new IdRef(), "MatrixStride", OperandQuantifier.Optional), new Operand(new EnumType<CooperativeMatrixOperands, CooperativeMatrixOperandsParameterFactory>(), null, OperandQuantifier.Optional),];
+}
+public sealed class OpCooperativeMatrixConvertNV : Instruction
+{
+	public static OpCooperativeMatrixConvertNV Instance { get; } = new();
+
+	private OpCooperativeMatrixConvertNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixConvertNV);
+	public override OpCode Code => OpCode.OpCooperativeMatrixConvertNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Matrix", OperandQuantifier.Default),];
+}
+public sealed class OpEmitMeshTasksEXT : Instruction
+{
+	public static OpEmitMeshTasksEXT Instance { get; } = new();
+
+	private OpEmitMeshTasksEXT()
+	{
+	}
+
+	public override string Name => nameof(OpEmitMeshTasksEXT);
+	public override OpCode Code => OpCode.OpEmitMeshTasksEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Group Count X", OperandQuantifier.Default), new Operand(new IdRef(), "Group Count Y", OperandQuantifier.Default), new Operand(new IdRef(), "Group Count Z", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Optional),];
+}
+public sealed class OpSetMeshOutputsEXT : Instruction
+{
+	public static OpSetMeshOutputsEXT Instance { get; } = new();
+
+	private OpSetMeshOutputsEXT()
+	{
+	}
+
+	public override string Name => nameof(OpSetMeshOutputsEXT);
+	public override OpCode Code => OpCode.OpSetMeshOutputsEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Vertex Count", OperandQuantifier.Default), new Operand(new IdRef(), "Primitive Count", OperandQuantifier.Default),];
+}
+public sealed class OpGroupNonUniformPartitionEXT : Instruction
+{
+	public static OpGroupNonUniformPartitionEXT Instance { get; } = new();
+
+	private OpGroupNonUniformPartitionEXT()
+	{
+	}
+
+	public override string Name => nameof(OpGroupNonUniformPartitionEXT);
+	public override OpCode Code => OpCode.OpGroupNonUniformPartitionEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpWritePackedPrimitiveIndices4x8NV : Instruction
+{
+	public static OpWritePackedPrimitiveIndices4x8NV Instance { get; } = new();
+
+	private OpWritePackedPrimitiveIndices4x8NV()
+	{
+	}
+
+	public override string Name => nameof(OpWritePackedPrimitiveIndices4x8NV);
+	public override OpCode Code => OpCode.OpWritePackedPrimitiveIndices4x8NV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Index Offset", OperandQuantifier.Default), new Operand(new IdRef(), "Packed Indices", OperandQuantifier.Default),];
+}
+public sealed class OpFetchMicroTriangleVertexPositionNV : Instruction
+{
+	public static OpFetchMicroTriangleVertexPositionNV Instance { get; } = new();
+
+	private OpFetchMicroTriangleVertexPositionNV()
+	{
+	}
+
+	public override string Name => nameof(OpFetchMicroTriangleVertexPositionNV);
+	public override OpCode Code => OpCode.OpFetchMicroTriangleVertexPositionNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Accel", OperandQuantifier.Default), new Operand(new IdRef(), "Instance Id", OperandQuantifier.Default), new Operand(new IdRef(), "Geometry Index", OperandQuantifier.Default), new Operand(new IdRef(), "Primitive Index", OperandQuantifier.Default), new Operand(new IdRef(), "Barycentric", OperandQuantifier.Default),];
+}
+public sealed class OpFetchMicroTriangleVertexBarycentricNV : Instruction
+{
+	public static OpFetchMicroTriangleVertexBarycentricNV Instance { get; } = new();
+
+	private OpFetchMicroTriangleVertexBarycentricNV()
+	{
+	}
+
+	public override string Name => nameof(OpFetchMicroTriangleVertexBarycentricNV);
+	public override OpCode Code => OpCode.OpFetchMicroTriangleVertexBarycentricNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Accel", OperandQuantifier.Default), new Operand(new IdRef(), "Instance Id", OperandQuantifier.Default), new Operand(new IdRef(), "Geometry Index", OperandQuantifier.Default), new Operand(new IdRef(), "Primitive Index", OperandQuantifier.Default), new Operand(new IdRef(), "Barycentric", OperandQuantifier.Default),];
+}
+public sealed class OpCooperativeVectorLoadNV : Instruction
+{
+	public static OpCooperativeVectorLoadNV Instance { get; } = new();
+
+	private OpCooperativeVectorLoadNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeVectorLoadNV);
+	public override OpCode Code => OpCode.OpCooperativeVectorLoadNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Offset", OperandQuantifier.Default), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), null, OperandQuantifier.Optional),];
+}
+public sealed class OpCooperativeVectorStoreNV : Instruction
+{
+	public static OpCooperativeVectorStoreNV Instance { get; } = new();
+
+	private OpCooperativeVectorStoreNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeVectorStoreNV);
+	public override OpCode Code => OpCode.OpCooperativeVectorStoreNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Offset", OperandQuantifier.Default), new Operand(new IdRef(), "Object", OperandQuantifier.Default), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), null, OperandQuantifier.Optional),];
+}
+public sealed class OpHitObjectRecordFromQueryEXT : Instruction
+{
+	public static OpHitObjectRecordFromQueryEXT Instance { get; } = new();
+
+	private OpHitObjectRecordFromQueryEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectRecordFromQueryEXT);
+	public override OpCode Code => OpCode.OpHitObjectRecordFromQueryEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Query", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Record Index", OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object Attributes", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectRecordMissEXT : Instruction
+{
+	public static OpHitObjectRecordMissEXT Instance { get; } = new();
+
+	private OpHitObjectRecordMissEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectRecordMissEXT);
+	public override OpCode Code => OpCode.OpHitObjectRecordMissEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Flags", OperandQuantifier.Default), new Operand(new IdRef(), "Miss Index", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Origin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Direction", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmax", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectRecordMissMotionEXT : Instruction
+{
+	public static OpHitObjectRecordMissMotionEXT Instance { get; } = new();
+
+	private OpHitObjectRecordMissMotionEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectRecordMissMotionEXT);
+	public override OpCode Code => OpCode.OpHitObjectRecordMissMotionEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Flags", OperandQuantifier.Default), new Operand(new IdRef(), "Miss Index", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Origin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Direction", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmax", OperandQuantifier.Default), new Operand(new IdRef(), "Current Time", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetIntersectionTriangleVertexPositionsEXT : Instruction
+{
+	public static OpHitObjectGetIntersectionTriangleVertexPositionsEXT Instance { get; } = new();
+
+	private OpHitObjectGetIntersectionTriangleVertexPositionsEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetIntersectionTriangleVertexPositionsEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetIntersectionTriangleVertexPositionsEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetRayFlagsEXT : Instruction
+{
+	public static OpHitObjectGetRayFlagsEXT Instance { get; } = new();
+
+	private OpHitObjectGetRayFlagsEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetRayFlagsEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetRayFlagsEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectSetShaderBindingTableRecordIndexEXT : Instruction
+{
+	public static OpHitObjectSetShaderBindingTableRecordIndexEXT Instance { get; } = new();
+
+	private OpHitObjectSetShaderBindingTableRecordIndexEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectSetShaderBindingTableRecordIndexEXT);
+	public override OpCode Code => OpCode.OpHitObjectSetShaderBindingTableRecordIndexEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Record Index", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectReorderExecuteShaderEXT : Instruction
+{
+	public static OpHitObjectReorderExecuteShaderEXT Instance { get; } = new();
+
+	private OpHitObjectReorderExecuteShaderEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectReorderExecuteShaderEXT);
+	public override OpCode Code => OpCode.OpHitObjectReorderExecuteShaderEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default), new Operand(new IdRef(), "Hint", OperandQuantifier.Optional), new Operand(new IdRef(), "Bits", OperandQuantifier.Optional),];
+}
+public sealed class OpHitObjectTraceReorderExecuteEXT : Instruction
+{
+	public static OpHitObjectTraceReorderExecuteEXT Instance { get; } = new();
+
+	private OpHitObjectTraceReorderExecuteEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectTraceReorderExecuteEXT);
+	public override OpCode Code => OpCode.OpHitObjectTraceReorderExecuteEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Acceleration Structure", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Flags", OperandQuantifier.Default), new Operand(new IdRef(), "Cull Mask", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Offset", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Miss Index", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Origin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Direction", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmax", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default), new Operand(new IdRef(), "Hint", OperandQuantifier.Optional), new Operand(new IdRef(), "Bits", OperandQuantifier.Optional),];
+}
+public sealed class OpHitObjectTraceMotionReorderExecuteEXT : Instruction
+{
+	public static OpHitObjectTraceMotionReorderExecuteEXT Instance { get; } = new();
+
+	private OpHitObjectTraceMotionReorderExecuteEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectTraceMotionReorderExecuteEXT);
+	public override OpCode Code => OpCode.OpHitObjectTraceMotionReorderExecuteEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Acceleration Structure", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Flags", OperandQuantifier.Default), new Operand(new IdRef(), "Cull Mask", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Offset", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Miss Index", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Origin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Direction", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmax", OperandQuantifier.Default), new Operand(new IdRef(), "Current Time", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default), new Operand(new IdRef(), "Hint", OperandQuantifier.Optional), new Operand(new IdRef(), "Bits", OperandQuantifier.Optional),];
+}
+public sealed class OpTypeHitObjectEXT : Instruction
+{
+	public static OpTypeHitObjectEXT Instance { get; } = new();
+
+	private OpTypeHitObjectEXT()
+	{
+	}
+
+	public override string Name => nameof(OpTypeHitObjectEXT);
+	public override OpCode Code => OpCode.OpTypeHitObjectEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpReorderThreadWithHintEXT : Instruction
+{
+	public static OpReorderThreadWithHintEXT Instance { get; } = new();
+
+	private OpReorderThreadWithHintEXT()
+	{
+	}
+
+	public override string Name => nameof(OpReorderThreadWithHintEXT);
+	public override OpCode Code => OpCode.OpReorderThreadWithHintEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hint", OperandQuantifier.Default), new Operand(new IdRef(), "Bits", OperandQuantifier.Default),];
+}
+public sealed class OpReorderThreadWithHitObjectEXT : Instruction
+{
+	public static OpReorderThreadWithHitObjectEXT Instance { get; } = new();
+
+	private OpReorderThreadWithHitObjectEXT()
+	{
+	}
+
+	public override string Name => nameof(OpReorderThreadWithHitObjectEXT);
+	public override OpCode Code => OpCode.OpReorderThreadWithHitObjectEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Hint", OperandQuantifier.Optional), new Operand(new IdRef(), "Bits", OperandQuantifier.Optional),];
+}
+public sealed class OpHitObjectTraceRayEXT : Instruction
+{
+	public static OpHitObjectTraceRayEXT Instance { get; } = new();
+
+	private OpHitObjectTraceRayEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectTraceRayEXT);
+	public override OpCode Code => OpCode.OpHitObjectTraceRayEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Acceleration Structure", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Flags", OperandQuantifier.Default), new Operand(new IdRef(), "Cull Mask", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Offset", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Miss Index", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Origin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Direction", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmax", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectTraceRayMotionEXT : Instruction
+{
+	public static OpHitObjectTraceRayMotionEXT Instance { get; } = new();
+
+	private OpHitObjectTraceRayMotionEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectTraceRayMotionEXT);
+	public override OpCode Code => OpCode.OpHitObjectTraceRayMotionEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Acceleration Structure", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Flags", OperandQuantifier.Default), new Operand(new IdRef(), "Cull Mask", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Offset", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Miss Index", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Origin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Direction", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmax", OperandQuantifier.Default), new Operand(new IdRef(), "Current Time", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectRecordEmptyEXT : Instruction
+{
+	public static OpHitObjectRecordEmptyEXT Instance { get; } = new();
+
+	private OpHitObjectRecordEmptyEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectRecordEmptyEXT);
+	public override OpCode Code => OpCode.OpHitObjectRecordEmptyEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectExecuteShaderEXT : Instruction
+{
+	public static OpHitObjectExecuteShaderEXT Instance { get; } = new();
+
+	private OpHitObjectExecuteShaderEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectExecuteShaderEXT);
+	public override OpCode Code => OpCode.OpHitObjectExecuteShaderEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetCurrentTimeEXT : Instruction
+{
+	public static OpHitObjectGetCurrentTimeEXT Instance { get; } = new();
+
+	private OpHitObjectGetCurrentTimeEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetCurrentTimeEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetCurrentTimeEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetAttributesEXT : Instruction
+{
+	public static OpHitObjectGetAttributesEXT Instance { get; } = new();
+
+	private OpHitObjectGetAttributesEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetAttributesEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetAttributesEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object Attribute", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetHitKindEXT : Instruction
+{
+	public static OpHitObjectGetHitKindEXT Instance { get; } = new();
+
+	private OpHitObjectGetHitKindEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetHitKindEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetHitKindEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetPrimitiveIndexEXT : Instruction
+{
+	public static OpHitObjectGetPrimitiveIndexEXT Instance { get; } = new();
+
+	private OpHitObjectGetPrimitiveIndexEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetPrimitiveIndexEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetPrimitiveIndexEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetGeometryIndexEXT : Instruction
+{
+	public static OpHitObjectGetGeometryIndexEXT Instance { get; } = new();
+
+	private OpHitObjectGetGeometryIndexEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetGeometryIndexEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetGeometryIndexEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetInstanceIdEXT : Instruction
+{
+	public static OpHitObjectGetInstanceIdEXT Instance { get; } = new();
+
+	private OpHitObjectGetInstanceIdEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetInstanceIdEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetInstanceIdEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetInstanceCustomIndexEXT : Instruction
+{
+	public static OpHitObjectGetInstanceCustomIndexEXT Instance { get; } = new();
+
+	private OpHitObjectGetInstanceCustomIndexEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetInstanceCustomIndexEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetInstanceCustomIndexEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetObjectRayOriginEXT : Instruction
+{
+	public static OpHitObjectGetObjectRayOriginEXT Instance { get; } = new();
+
+	private OpHitObjectGetObjectRayOriginEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetObjectRayOriginEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetObjectRayOriginEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetObjectRayDirectionEXT : Instruction
+{
+	public static OpHitObjectGetObjectRayDirectionEXT Instance { get; } = new();
+
+	private OpHitObjectGetObjectRayDirectionEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetObjectRayDirectionEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetObjectRayDirectionEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetWorldRayDirectionEXT : Instruction
+{
+	public static OpHitObjectGetWorldRayDirectionEXT Instance { get; } = new();
+
+	private OpHitObjectGetWorldRayDirectionEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetWorldRayDirectionEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetWorldRayDirectionEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetWorldRayOriginEXT : Instruction
+{
+	public static OpHitObjectGetWorldRayOriginEXT Instance { get; } = new();
+
+	private OpHitObjectGetWorldRayOriginEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetWorldRayOriginEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetWorldRayOriginEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetObjectToWorldEXT : Instruction
+{
+	public static OpHitObjectGetObjectToWorldEXT Instance { get; } = new();
+
+	private OpHitObjectGetObjectToWorldEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetObjectToWorldEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetObjectToWorldEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetWorldToObjectEXT : Instruction
+{
+	public static OpHitObjectGetWorldToObjectEXT Instance { get; } = new();
+
+	private OpHitObjectGetWorldToObjectEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetWorldToObjectEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetWorldToObjectEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetRayTMaxEXT : Instruction
+{
+	public static OpHitObjectGetRayTMaxEXT Instance { get; } = new();
+
+	private OpHitObjectGetRayTMaxEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetRayTMaxEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetRayTMaxEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpReportIntersectionKHR : Instruction
+{
+	public static OpReportIntersectionKHR Instance { get; } = new();
+
+	private OpReportIntersectionKHR()
+	{
+	}
+
+	public override string Name => nameof(OpReportIntersectionKHR);
+	public override OpCode Code => OpCode.OpReportIntersectionKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit", OperandQuantifier.Default), new Operand(new IdRef(), "HitKind", OperandQuantifier.Default),];
+}
+public sealed class OpIgnoreIntersectionNV : Instruction
+{
+	public static OpIgnoreIntersectionNV Instance { get; } = new();
+
+	private OpIgnoreIntersectionNV()
+	{
+	}
+
+	public override string Name => nameof(OpIgnoreIntersectionNV);
+	public override OpCode Code => OpCode.OpIgnoreIntersectionNV;
+}
+public sealed class OpTerminateRayNV : Instruction
+{
+	public static OpTerminateRayNV Instance { get; } = new();
+
+	private OpTerminateRayNV()
+	{
+	}
+
+	public override string Name => nameof(OpTerminateRayNV);
+	public override OpCode Code => OpCode.OpTerminateRayNV;
+}
+public sealed class OpTraceNV : Instruction
+{
+	public static OpTraceNV Instance { get; } = new();
+
+	private OpTraceNV()
+	{
+	}
+
+	public override string Name => nameof(OpTraceNV);
+	public override OpCode Code => OpCode.OpTraceNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Accel", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Flags", OperandQuantifier.Default), new Operand(new IdRef(), "Cull Mask", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Offset", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Miss Index", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Origin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Direction", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmax", OperandQuantifier.Default), new Operand(new IdRef(), "PayloadId", OperandQuantifier.Default),];
+}
+public sealed class OpTraceMotionNV : Instruction
+{
+	public static OpTraceMotionNV Instance { get; } = new();
+
+	private OpTraceMotionNV()
+	{
+	}
+
+	public override string Name => nameof(OpTraceMotionNV);
+	public override OpCode Code => OpCode.OpTraceMotionNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Accel", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Flags", OperandQuantifier.Default), new Operand(new IdRef(), "Cull Mask", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Offset", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Miss Index", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Origin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Direction", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmax", OperandQuantifier.Default), new Operand(new IdRef(), "Time", OperandQuantifier.Default), new Operand(new IdRef(), "PayloadId", OperandQuantifier.Default),];
+}
+public sealed class OpTraceRayMotionNV : Instruction
+{
+	public static OpTraceRayMotionNV Instance { get; } = new();
+
+	private OpTraceRayMotionNV()
+	{
+	}
+
+	public override string Name => nameof(OpTraceRayMotionNV);
+	public override OpCode Code => OpCode.OpTraceRayMotionNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Accel", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Flags", OperandQuantifier.Default), new Operand(new IdRef(), "Cull Mask", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Offset", OperandQuantifier.Default), new Operand(new IdRef(), "SBT Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Miss Index", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Origin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmin", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Direction", OperandQuantifier.Default), new Operand(new IdRef(), "Ray Tmax", OperandQuantifier.Default), new Operand(new IdRef(), "Time", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionTriangleVertexPositionsKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionTriangleVertexPositionsKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionTriangleVertexPositionsKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionTriangleVertexPositionsKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionTriangleVertexPositionsKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpTypeAccelerationStructureKHR : Instruction
+{
+	public static OpTypeAccelerationStructureKHR Instance { get; } = new();
+
+	private OpTypeAccelerationStructureKHR()
+	{
+	}
+
+	public override string Name => nameof(OpTypeAccelerationStructureKHR);
+	public override OpCode Code => OpCode.OpTypeAccelerationStructureKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpExecuteCallableNV : Instruction
+{
+	public static OpExecuteCallableNV Instance { get; } = new();
+
+	private OpExecuteCallableNV()
+	{
+	}
+
+	public override string Name => nameof(OpExecuteCallableNV);
+	public override OpCode Code => OpCode.OpExecuteCallableNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "SBT Index", OperandQuantifier.Default), new Operand(new IdRef(), "Callable DataId", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionClusterIdNV : Instruction
+{
+	public static OpRayQueryGetIntersectionClusterIdNV Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionClusterIdNV()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionClusterIdNV);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionClusterIdNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetClusterIdNV : Instruction
+{
+	public static OpHitObjectGetClusterIdNV Instance { get; } = new();
+
+	private OpHitObjectGetClusterIdNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetClusterIdNV);
+	public override OpCode Code => OpCode.OpHitObjectGetClusterIdNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetRayTMinEXT : Instruction
+{
+	public static OpHitObjectGetRayTMinEXT Instance { get; } = new();
+
+	private OpHitObjectGetRayTMinEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetRayTMinEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetRayTMinEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetShaderBindingTableRecordIndexEXT : Instruction
+{
+	public static OpHitObjectGetShaderBindingTableRecordIndexEXT Instance { get; } = new();
+
+	private OpHitObjectGetShaderBindingTableRecordIndexEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetShaderBindingTableRecordIndexEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetShaderBindingTableRecordIndexEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetShaderRecordBufferHandleEXT : Instruction
+{
+	public static OpHitObjectGetShaderRecordBufferHandleEXT Instance { get; } = new();
+
+	private OpHitObjectGetShaderRecordBufferHandleEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetShaderRecordBufferHandleEXT);
+	public override OpCode Code => OpCode.OpHitObjectGetShaderRecordBufferHandleEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectIsEmptyEXT : Instruction
+{
+	public static OpHitObjectIsEmptyEXT Instance { get; } = new();
+
+	private OpHitObjectIsEmptyEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectIsEmptyEXT);
+	public override OpCode Code => OpCode.OpHitObjectIsEmptyEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectIsHitEXT : Instruction
+{
+	public static OpHitObjectIsHitEXT Instance { get; } = new();
+
+	private OpHitObjectIsHitEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectIsHitEXT);
+	public override OpCode Code => OpCode.OpHitObjectIsHitEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectIsMissEXT : Instruction
+{
+	public static OpHitObjectIsMissEXT Instance { get; } = new();
+
+	private OpHitObjectIsMissEXT()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectIsMissEXT);
+	public override OpCode Code => OpCode.OpHitObjectIsMissEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpTypeCooperativeMatrixNV : Instruction
+{
+	public static OpTypeCooperativeMatrixNV Instance { get; } = new();
+
+	private OpTypeCooperativeMatrixNV()
+	{
+	}
+
+	public override string Name => nameof(OpTypeCooperativeMatrixNV);
+	public override OpCode Code => OpCode.OpTypeCooperativeMatrixNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Component Type", OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdRef(), "Rows", OperandQuantifier.Default), new Operand(new IdRef(), "Columns", OperandQuantifier.Default),];
+}
+public sealed class OpCooperativeMatrixLoadNV : Instruction
+{
+	public static OpCooperativeMatrixLoadNV Instance { get; } = new();
+
+	private OpCooperativeMatrixLoadNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixLoadNV);
+	public override OpCode Code => OpCode.OpCooperativeMatrixLoadNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Column Major", OperandQuantifier.Default), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), null, OperandQuantifier.Optional),];
+}
+public sealed class OpCooperativeMatrixStoreNV : Instruction
+{
+	public static OpCooperativeMatrixStoreNV Instance { get; } = new();
+
+	private OpCooperativeMatrixStoreNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixStoreNV);
+	public override OpCode Code => OpCode.OpCooperativeMatrixStoreNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Object", OperandQuantifier.Default), new Operand(new IdRef(), "Stride", OperandQuantifier.Default), new Operand(new IdRef(), "Column Major", OperandQuantifier.Default), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), null, OperandQuantifier.Optional),];
+}
+public sealed class OpCooperativeMatrixMulAddNV : Instruction
+{
+	public static OpCooperativeMatrixMulAddNV Instance { get; } = new();
+
+	private OpCooperativeMatrixMulAddNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixMulAddNV);
+	public override OpCode Code => OpCode.OpCooperativeMatrixMulAddNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new IdRef(), "C", OperandQuantifier.Default),];
+}
+public sealed class OpCooperativeMatrixLengthNV : Instruction
+{
+	public static OpCooperativeMatrixLengthNV Instance { get; } = new();
+
+	private OpCooperativeMatrixLengthNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixLengthNV);
+	public override OpCode Code => OpCode.OpCooperativeMatrixLengthNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Type", OperandQuantifier.Default),];
+}
+public sealed class OpBeginInvocationInterlockEXT : Instruction
+{
+	public static OpBeginInvocationInterlockEXT Instance { get; } = new();
+
+	private OpBeginInvocationInterlockEXT()
+	{
+	}
+
+	public override string Name => nameof(OpBeginInvocationInterlockEXT);
+	public override OpCode Code => OpCode.OpBeginInvocationInterlockEXT;
+}
+public sealed class OpEndInvocationInterlockEXT : Instruction
+{
+	public static OpEndInvocationInterlockEXT Instance { get; } = new();
+
+	private OpEndInvocationInterlockEXT()
+	{
+	}
+
+	public override string Name => nameof(OpEndInvocationInterlockEXT);
+	public override OpCode Code => OpCode.OpEndInvocationInterlockEXT;
+}
+public sealed class OpCooperativeMatrixReduceNV : Instruction
+{
+	public static OpCooperativeMatrixReduceNV Instance { get; } = new();
+
+	private OpCooperativeMatrixReduceNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixReduceNV);
+	public override OpCode Code => OpCode.OpCooperativeMatrixReduceNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Matrix", OperandQuantifier.Default), new Operand(new EnumType<CooperativeMatrixReduce, CooperativeMatrixReduceParameterFactory>(), "Reduce", OperandQuantifier.Default), new Operand(new IdRef(), "CombineFunc", OperandQuantifier.Default),];
+}
+public sealed class OpCooperativeMatrixLoadTensorNV : Instruction
+{
+	public static OpCooperativeMatrixLoadTensorNV Instance { get; } = new();
+
+	private OpCooperativeMatrixLoadTensorNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixLoadTensorNV);
+	public override OpCode Code => OpCode.OpCooperativeMatrixLoadTensorNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Object", OperandQuantifier.Default), new Operand(new IdRef(), "TensorLayout", OperandQuantifier.Default), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), "Memory Operand", OperandQuantifier.Default), new Operand(new EnumType<TensorAddressingOperands, TensorAddressingOperandsParameterFactory>(), "Tensor Addressing Operands", OperandQuantifier.Default),];
+}
+public sealed class OpCooperativeMatrixStoreTensorNV : Instruction
+{
+	public static OpCooperativeMatrixStoreTensorNV Instance { get; } = new();
+
+	private OpCooperativeMatrixStoreTensorNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixStoreTensorNV);
+	public override OpCode Code => OpCode.OpCooperativeMatrixStoreTensorNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Object", OperandQuantifier.Default), new Operand(new IdRef(), "TensorLayout", OperandQuantifier.Default), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), "Memory Operand", OperandQuantifier.Default), new Operand(new EnumType<TensorAddressingOperands, TensorAddressingOperandsParameterFactory>(), "Tensor Addressing Operands", OperandQuantifier.Default),];
+}
+public sealed class OpCooperativeMatrixPerElementOpNV : Instruction
+{
+	public static OpCooperativeMatrixPerElementOpNV Instance { get; } = new();
+
+	private OpCooperativeMatrixPerElementOpNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixPerElementOpNV);
+	public override OpCode Code => OpCode.OpCooperativeMatrixPerElementOpNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Matrix", OperandQuantifier.Default), new Operand(new IdRef(), "Func", OperandQuantifier.Default), new Operand(new IdRef(), "Operands", OperandQuantifier.Varying),];
+}
+public sealed class OpTypeTensorLayoutNV : Instruction
+{
+	public static OpTypeTensorLayoutNV Instance { get; } = new();
+
+	private OpTypeTensorLayoutNV()
+	{
+	}
+
+	public override string Name => nameof(OpTypeTensorLayoutNV);
+	public override OpCode Code => OpCode.OpTypeTensorLayoutNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Dim", OperandQuantifier.Default), new Operand(new IdRef(), "ClampMode", OperandQuantifier.Default),];
+}
+public sealed class OpTypeTensorViewNV : Instruction
+{
+	public static OpTypeTensorViewNV Instance { get; } = new();
+
+	private OpTypeTensorViewNV()
+	{
+	}
+
+	public override string Name => nameof(OpTypeTensorViewNV);
+	public override OpCode Code => OpCode.OpTypeTensorViewNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Dim", OperandQuantifier.Default), new Operand(new IdRef(), "HasDimensions", OperandQuantifier.Default), new Operand(new IdRef(), "p", OperandQuantifier.Varying),];
+}
+public sealed class OpCreateTensorLayoutNV : Instruction
+{
+	public static OpCreateTensorLayoutNV Instance { get; } = new();
+
+	private OpCreateTensorLayoutNV()
+	{
+	}
+
+	public override string Name => nameof(OpCreateTensorLayoutNV);
+	public override OpCode Code => OpCode.OpCreateTensorLayoutNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTensorLayoutSetDimensionNV : Instruction
+{
+	public static OpTensorLayoutSetDimensionNV Instance { get; } = new();
+
+	private OpTensorLayoutSetDimensionNV()
+	{
+	}
+
+	public override string Name => nameof(OpTensorLayoutSetDimensionNV);
+	public override OpCode Code => OpCode.OpTensorLayoutSetDimensionNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "TensorLayout", OperandQuantifier.Default), new Operand(new IdRef(), "Dim", OperandQuantifier.Varying),];
+}
+public sealed class OpTensorLayoutSetStrideNV : Instruction
+{
+	public static OpTensorLayoutSetStrideNV Instance { get; } = new();
+
+	private OpTensorLayoutSetStrideNV()
+	{
+	}
+
+	public override string Name => nameof(OpTensorLayoutSetStrideNV);
+	public override OpCode Code => OpCode.OpTensorLayoutSetStrideNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "TensorLayout", OperandQuantifier.Default), new Operand(new IdRef(), "Stride", OperandQuantifier.Varying),];
+}
+public sealed class OpTensorLayoutSliceNV : Instruction
+{
+	public static OpTensorLayoutSliceNV Instance { get; } = new();
+
+	private OpTensorLayoutSliceNV()
+	{
+	}
+
+	public override string Name => nameof(OpTensorLayoutSliceNV);
+	public override OpCode Code => OpCode.OpTensorLayoutSliceNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "TensorLayout", OperandQuantifier.Default), new Operand(new IdRef(), "Operands", OperandQuantifier.Varying),];
+}
+public sealed class OpTensorLayoutSetClampValueNV : Instruction
+{
+	public static OpTensorLayoutSetClampValueNV Instance { get; } = new();
+
+	private OpTensorLayoutSetClampValueNV()
+	{
+	}
+
+	public override string Name => nameof(OpTensorLayoutSetClampValueNV);
+	public override OpCode Code => OpCode.OpTensorLayoutSetClampValueNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "TensorLayout", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpCreateTensorViewNV : Instruction
+{
+	public static OpCreateTensorViewNV Instance { get; } = new();
+
+	private OpCreateTensorViewNV()
+	{
+	}
+
+	public override string Name => nameof(OpCreateTensorViewNV);
+	public override OpCode Code => OpCode.OpCreateTensorViewNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTensorViewSetDimensionNV : Instruction
+{
+	public static OpTensorViewSetDimensionNV Instance { get; } = new();
+
+	private OpTensorViewSetDimensionNV()
+	{
+	}
+
+	public override string Name => nameof(OpTensorViewSetDimensionNV);
+	public override OpCode Code => OpCode.OpTensorViewSetDimensionNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "TensorView", OperandQuantifier.Default), new Operand(new IdRef(), "Dim", OperandQuantifier.Varying),];
+}
+public sealed class OpTensorViewSetStrideNV : Instruction
+{
+	public static OpTensorViewSetStrideNV Instance { get; } = new();
+
+	private OpTensorViewSetStrideNV()
+	{
+	}
+
+	public override string Name => nameof(OpTensorViewSetStrideNV);
+	public override OpCode Code => OpCode.OpTensorViewSetStrideNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "TensorView", OperandQuantifier.Default), new Operand(new IdRef(), "Stride", OperandQuantifier.Varying),];
+}
+public sealed class OpDemoteToHelperInvocation : Instruction
+{
+	public static OpDemoteToHelperInvocation Instance { get; } = new();
+
+	private OpDemoteToHelperInvocation()
+	{
+	}
+
+	public override string Name => nameof(OpDemoteToHelperInvocation);
+	public override OpCode Code => OpCode.OpDemoteToHelperInvocation;
+}
+public sealed class OpIsHelperInvocationEXT : Instruction
+{
+	public static OpIsHelperInvocationEXT Instance { get; } = new();
+
+	private OpIsHelperInvocationEXT()
+	{
+	}
+
+	public override string Name => nameof(OpIsHelperInvocationEXT);
+	public override OpCode Code => OpCode.OpIsHelperInvocationEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTensorViewSetClipNV : Instruction
+{
+	public static OpTensorViewSetClipNV Instance { get; } = new();
+
+	private OpTensorViewSetClipNV()
+	{
+	}
+
+	public override string Name => nameof(OpTensorViewSetClipNV);
+	public override OpCode Code => OpCode.OpTensorViewSetClipNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "TensorView", OperandQuantifier.Default), new Operand(new IdRef(), "ClipRowOffset", OperandQuantifier.Default), new Operand(new IdRef(), "ClipRowSpan", OperandQuantifier.Default), new Operand(new IdRef(), "ClipColOffset", OperandQuantifier.Default), new Operand(new IdRef(), "ClipColSpan", OperandQuantifier.Default),];
+}
+public sealed class OpTensorLayoutSetBlockSizeNV : Instruction
+{
+	public static OpTensorLayoutSetBlockSizeNV Instance { get; } = new();
+
+	private OpTensorLayoutSetBlockSizeNV()
+	{
+	}
+
+	public override string Name => nameof(OpTensorLayoutSetBlockSizeNV);
+	public override OpCode Code => OpCode.OpTensorLayoutSetBlockSizeNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "TensorLayout", OperandQuantifier.Default), new Operand(new IdRef(), "BlockSize", OperandQuantifier.Varying),];
+}
+public sealed class OpCooperativeMatrixTransposeNV : Instruction
+{
+	public static OpCooperativeMatrixTransposeNV Instance { get; } = new();
+
+	private OpCooperativeMatrixTransposeNV()
+	{
+	}
+
+	public override string Name => nameof(OpCooperativeMatrixTransposeNV);
+	public override OpCode Code => OpCode.OpCooperativeMatrixTransposeNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Matrix", OperandQuantifier.Default),];
+}
+public sealed class OpConvertUToImageNV : Instruction
+{
+	public static OpConvertUToImageNV Instance { get; } = new();
+
+	private OpConvertUToImageNV()
+	{
+	}
+
+	public override string Name => nameof(OpConvertUToImageNV);
+	public override OpCode Code => OpCode.OpConvertUToImageNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand", OperandQuantifier.Default),];
+}
+public sealed class OpConvertUToSamplerNV : Instruction
+{
+	public static OpConvertUToSamplerNV Instance { get; } = new();
+
+	private OpConvertUToSamplerNV()
+	{
+	}
+
+	public override string Name => nameof(OpConvertUToSamplerNV);
+	public override OpCode Code => OpCode.OpConvertUToSamplerNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand", OperandQuantifier.Default),];
+}
+public sealed class OpConvertImageToUNV : Instruction
+{
+	public static OpConvertImageToUNV Instance { get; } = new();
+
+	private OpConvertImageToUNV()
+	{
+	}
+
+	public override string Name => nameof(OpConvertImageToUNV);
+	public override OpCode Code => OpCode.OpConvertImageToUNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand", OperandQuantifier.Default),];
+}
+public sealed class OpConvertSamplerToUNV : Instruction
+{
+	public static OpConvertSamplerToUNV Instance { get; } = new();
+
+	private OpConvertSamplerToUNV()
+	{
+	}
+
+	public override string Name => nameof(OpConvertSamplerToUNV);
+	public override OpCode Code => OpCode.OpConvertSamplerToUNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand", OperandQuantifier.Default),];
+}
+public sealed class OpConvertUToSampledImageNV : Instruction
+{
+	public static OpConvertUToSampledImageNV Instance { get; } = new();
+
+	private OpConvertUToSampledImageNV()
+	{
+	}
+
+	public override string Name => nameof(OpConvertUToSampledImageNV);
+	public override OpCode Code => OpCode.OpConvertUToSampledImageNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand", OperandQuantifier.Default),];
+}
+public sealed class OpConvertSampledImageToUNV : Instruction
+{
+	public static OpConvertSampledImageToUNV Instance { get; } = new();
+
+	private OpConvertSampledImageToUNV()
+	{
+	}
+
+	public override string Name => nameof(OpConvertSampledImageToUNV);
+	public override OpCode Code => OpCode.OpConvertSampledImageToUNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand", OperandQuantifier.Default),];
+}
+public sealed class OpSamplerImageAddressingModeNV : Instruction
+{
+	public static OpSamplerImageAddressingModeNV Instance { get; } = new();
+
+	private OpSamplerImageAddressingModeNV()
+	{
+	}
+
+	public override string Name => nameof(OpSamplerImageAddressingModeNV);
+	public override OpCode Code => OpCode.OpSamplerImageAddressingModeNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new LiteralInteger(), "Bit Width", OperandQuantifier.Default),];
+}
+public sealed class OpRawAccessChainNV : Instruction
+{
+	public static OpRawAccessChainNV Instance { get; } = new();
+
+	private OpRawAccessChainNV()
+	{
+	}
+
+	public override string Name => nameof(OpRawAccessChainNV);
+	public override OpCode Code => OpCode.OpRawAccessChainNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Base", OperandQuantifier.Default), new Operand(new IdRef(), "Byte stride", OperandQuantifier.Default), new Operand(new IdRef(), "Element index", OperandQuantifier.Default), new Operand(new IdRef(), "Byte offset", OperandQuantifier.Default), new Operand(new EnumType<RawAccessChainOperands, RawAccessChainOperandsParameterFactory>(), null, OperandQuantifier.Optional),];
+}
+public sealed class OpRayQueryGetIntersectionSpherePositionNV : Instruction
+{
+	public static OpRayQueryGetIntersectionSpherePositionNV Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionSpherePositionNV()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionSpherePositionNV);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionSpherePositionNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionSphereRadiusNV : Instruction
+{
+	public static OpRayQueryGetIntersectionSphereRadiusNV Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionSphereRadiusNV()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionSphereRadiusNV);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionSphereRadiusNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionLSSPositionsNV : Instruction
+{
+	public static OpRayQueryGetIntersectionLSSPositionsNV Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionLSSPositionsNV()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionLSSPositionsNV);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionLSSPositionsNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionLSSRadiiNV : Instruction
+{
+	public static OpRayQueryGetIntersectionLSSRadiiNV Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionLSSRadiiNV()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionLSSRadiiNV);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionLSSRadiiNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionLSSHitValueNV : Instruction
+{
+	public static OpRayQueryGetIntersectionLSSHitValueNV Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionLSSHitValueNV()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionLSSHitValueNV);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionLSSHitValueNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetSpherePositionNV : Instruction
+{
+	public static OpHitObjectGetSpherePositionNV Instance { get; } = new();
+
+	private OpHitObjectGetSpherePositionNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetSpherePositionNV);
+	public override OpCode Code => OpCode.OpHitObjectGetSpherePositionNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetSphereRadiusNV : Instruction
+{
+	public static OpHitObjectGetSphereRadiusNV Instance { get; } = new();
+
+	private OpHitObjectGetSphereRadiusNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetSphereRadiusNV);
+	public override OpCode Code => OpCode.OpHitObjectGetSphereRadiusNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetLSSPositionsNV : Instruction
+{
+	public static OpHitObjectGetLSSPositionsNV Instance { get; } = new();
+
+	private OpHitObjectGetLSSPositionsNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetLSSPositionsNV);
+	public override OpCode Code => OpCode.OpHitObjectGetLSSPositionsNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectGetLSSRadiiNV : Instruction
+{
+	public static OpHitObjectGetLSSRadiiNV Instance { get; } = new();
+
+	private OpHitObjectGetLSSRadiiNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectGetLSSRadiiNV);
+	public override OpCode Code => OpCode.OpHitObjectGetLSSRadiiNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectIsSphereHitNV : Instruction
+{
+	public static OpHitObjectIsSphereHitNV Instance { get; } = new();
+
+	private OpHitObjectIsSphereHitNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectIsSphereHitNV);
+	public override OpCode Code => OpCode.OpHitObjectIsSphereHitNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpHitObjectIsLSSHitNV : Instruction
+{
+	public static OpHitObjectIsLSSHitNV Instance { get; } = new();
+
+	private OpHitObjectIsLSSHitNV()
+	{
+	}
+
+	public override string Name => nameof(OpHitObjectIsLSSHitNV);
+	public override OpCode Code => OpCode.OpHitObjectIsLSSHitNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Hit Object", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryIsSphereHitNV : Instruction
+{
+	public static OpRayQueryIsSphereHitNV Instance { get; } = new();
+
+	private OpRayQueryIsSphereHitNV()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryIsSphereHitNV);
+	public override OpCode Code => OpCode.OpRayQueryIsSphereHitNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryIsLSSHitNV : Instruction
+{
+	public static OpRayQueryIsLSSHitNV Instance { get; } = new();
+
+	private OpRayQueryIsLSSHitNV()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryIsLSSHitNV);
+	public override OpCode Code => OpCode.OpRayQueryIsLSSHitNV;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
 public sealed class OpSubgroupShuffleINTEL : Instruction
 {
 	public static OpSubgroupShuffleINTEL Instance { get; } = new();
@@ -5273,31 +9968,3853 @@ public sealed class OpSubgroupImageBlockWriteINTEL : Instruction
 
 	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Image", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinate", OperandQuantifier.Default), new Operand(new IdRef(), "Data", OperandQuantifier.Default),];
 }
-public sealed class OpDecorateStringGOOGLE : Instruction
+public sealed class OpSubgroupImageMediaBlockReadINTEL : Instruction
 {
-	public static OpDecorateStringGOOGLE Instance { get; } = new();
+	public static OpSubgroupImageMediaBlockReadINTEL Instance { get; } = new();
 
-	private OpDecorateStringGOOGLE()
+	private OpSubgroupImageMediaBlockReadINTEL()
 	{
 	}
 
-	public override string Name => nameof(OpDecorateStringGOOGLE);
-	public override OpCode Code => OpCode.OpDecorateStringGOOGLE;
+	public override string Name => nameof(OpSubgroupImageMediaBlockReadINTEL);
+	public override OpCode Code => OpCode.OpSubgroupImageMediaBlockReadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Image", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinate", OperandQuantifier.Default), new Operand(new IdRef(), "Width", OperandQuantifier.Default), new Operand(new IdRef(), "Height", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupImageMediaBlockWriteINTEL : Instruction
+{
+	public static OpSubgroupImageMediaBlockWriteINTEL Instance { get; } = new();
+
+	private OpSubgroupImageMediaBlockWriteINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupImageMediaBlockWriteINTEL);
+	public override OpCode Code => OpCode.OpSubgroupImageMediaBlockWriteINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Image", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinate", OperandQuantifier.Default), new Operand(new IdRef(), "Width", OperandQuantifier.Default), new Operand(new IdRef(), "Height", OperandQuantifier.Default), new Operand(new IdRef(), "Data", OperandQuantifier.Default),];
+}
+public sealed class OpUCountLeadingZerosINTEL : Instruction
+{
+	public static OpUCountLeadingZerosINTEL Instance { get; } = new();
+
+	private OpUCountLeadingZerosINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpUCountLeadingZerosINTEL);
+	public override OpCode Code => OpCode.OpUCountLeadingZerosINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand", OperandQuantifier.Default),];
+}
+public sealed class OpUCountTrailingZerosINTEL : Instruction
+{
+	public static OpUCountTrailingZerosINTEL Instance { get; } = new();
+
+	private OpUCountTrailingZerosINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpUCountTrailingZerosINTEL);
+	public override OpCode Code => OpCode.OpUCountTrailingZerosINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand", OperandQuantifier.Default),];
+}
+public sealed class OpAbsISubINTEL : Instruction
+{
+	public static OpAbsISubINTEL Instance { get; } = new();
+
+	private OpAbsISubINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpAbsISubINTEL);
+	public override OpCode Code => OpCode.OpAbsISubINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpAbsUSubINTEL : Instruction
+{
+	public static OpAbsUSubINTEL Instance { get; } = new();
+
+	private OpAbsUSubINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpAbsUSubINTEL);
+	public override OpCode Code => OpCode.OpAbsUSubINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpIAddSatINTEL : Instruction
+{
+	public static OpIAddSatINTEL Instance { get; } = new();
+
+	private OpIAddSatINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpIAddSatINTEL);
+	public override OpCode Code => OpCode.OpIAddSatINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpUAddSatINTEL : Instruction
+{
+	public static OpUAddSatINTEL Instance { get; } = new();
+
+	private OpUAddSatINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpUAddSatINTEL);
+	public override OpCode Code => OpCode.OpUAddSatINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpIAverageINTEL : Instruction
+{
+	public static OpIAverageINTEL Instance { get; } = new();
+
+	private OpIAverageINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpIAverageINTEL);
+	public override OpCode Code => OpCode.OpIAverageINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpUAverageINTEL : Instruction
+{
+	public static OpUAverageINTEL Instance { get; } = new();
+
+	private OpUAverageINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpUAverageINTEL);
+	public override OpCode Code => OpCode.OpUAverageINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpIAverageRoundedINTEL : Instruction
+{
+	public static OpIAverageRoundedINTEL Instance { get; } = new();
+
+	private OpIAverageRoundedINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpIAverageRoundedINTEL);
+	public override OpCode Code => OpCode.OpIAverageRoundedINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpUAverageRoundedINTEL : Instruction
+{
+	public static OpUAverageRoundedINTEL Instance { get; } = new();
+
+	private OpUAverageRoundedINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpUAverageRoundedINTEL);
+	public override OpCode Code => OpCode.OpUAverageRoundedINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpISubSatINTEL : Instruction
+{
+	public static OpISubSatINTEL Instance { get; } = new();
+
+	private OpISubSatINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpISubSatINTEL);
+	public override OpCode Code => OpCode.OpISubSatINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpUSubSatINTEL : Instruction
+{
+	public static OpUSubSatINTEL Instance { get; } = new();
+
+	private OpUSubSatINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpUSubSatINTEL);
+	public override OpCode Code => OpCode.OpUSubSatINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpIMul32x16INTEL : Instruction
+{
+	public static OpIMul32x16INTEL Instance { get; } = new();
+
+	private OpIMul32x16INTEL()
+	{
+	}
+
+	public override string Name => nameof(OpIMul32x16INTEL);
+	public override OpCode Code => OpCode.OpIMul32x16INTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpUMul32x16INTEL : Instruction
+{
+	public static OpUMul32x16INTEL Instance { get; } = new();
+
+	private OpUMul32x16INTEL()
+	{
+	}
+
+	public override string Name => nameof(OpUMul32x16INTEL);
+	public override OpCode Code => OpCode.OpUMul32x16INTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Default), new Operand(new IdRef(), "Operand 2", OperandQuantifier.Default),];
+}
+public sealed class OpConstantFunctionPointerINTEL : Instruction
+{
+	public static OpConstantFunctionPointerINTEL Instance { get; } = new();
+
+	private OpConstantFunctionPointerINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpConstantFunctionPointerINTEL);
+	public override OpCode Code => OpCode.OpConstantFunctionPointerINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Function", OperandQuantifier.Default),];
+}
+public sealed class OpFunctionPointerCallINTEL : Instruction
+{
+	public static OpFunctionPointerCallINTEL Instance { get; } = new();
+
+	private OpFunctionPointerCallINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpFunctionPointerCallINTEL);
+	public override OpCode Code => OpCode.OpFunctionPointerCallINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand 1", OperandQuantifier.Varying),];
+}
+public sealed class OpAsmTargetINTEL : Instruction
+{
+	public static OpAsmTargetINTEL Instance { get; } = new();
+
+	private OpAsmTargetINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpAsmTargetINTEL);
+	public override OpCode Code => OpCode.OpAsmTargetINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new LiteralString(), "Asm target", OperandQuantifier.Default),];
+}
+public sealed class OpAsmINTEL : Instruction
+{
+	public static OpAsmINTEL Instance { get; } = new();
+
+	private OpAsmINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpAsmINTEL);
+	public override OpCode Code => OpCode.OpAsmINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Asm type", OperandQuantifier.Default), new Operand(new IdRef(), "Target", OperandQuantifier.Default), new Operand(new LiteralString(), "Asm instructions", OperandQuantifier.Default), new Operand(new LiteralString(), "Constraints", OperandQuantifier.Default),];
+}
+public sealed class OpAsmCallINTEL : Instruction
+{
+	public static OpAsmCallINTEL Instance { get; } = new();
+
+	private OpAsmCallINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpAsmCallINTEL);
+	public override OpCode Code => OpCode.OpAsmCallINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Asm", OperandQuantifier.Default), new Operand(new IdRef(), "Argument", OperandQuantifier.Varying),];
+}
+public sealed class OpAtomicFMinEXT : Instruction
+{
+	public static OpAtomicFMinEXT Instance { get; } = new();
+
+	private OpAtomicFMinEXT()
+	{
+	}
+
+	public override string Name => nameof(OpAtomicFMinEXT);
+	public override OpCode Code => OpCode.OpAtomicFMinEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpAtomicFMaxEXT : Instruction
+{
+	public static OpAtomicFMaxEXT Instance { get; } = new();
+
+	private OpAtomicFMaxEXT()
+	{
+	}
+
+	public override string Name => nameof(OpAtomicFMaxEXT);
+	public override OpCode Code => OpCode.OpAtomicFMaxEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpAssumeTrueKHR : Instruction
+{
+	public static OpAssumeTrueKHR Instance { get; } = new();
+
+	private OpAssumeTrueKHR()
+	{
+	}
+
+	public override string Name => nameof(OpAssumeTrueKHR);
+	public override OpCode Code => OpCode.OpAssumeTrueKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Condition", OperandQuantifier.Default),];
+}
+public sealed class OpExpectKHR : Instruction
+{
+	public static OpExpectKHR Instance { get; } = new();
+
+	private OpExpectKHR()
+	{
+	}
+
+	public override string Name => nameof(OpExpectKHR);
+	public override OpCode Code => OpCode.OpExpectKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default), new Operand(new IdRef(), "ExpectedValue", OperandQuantifier.Default),];
+}
+public sealed class OpDecorateString : Instruction
+{
+	public static OpDecorateString Instance { get; } = new();
+
+	private OpDecorateString()
+	{
+	}
+
+	public override string Name => nameof(OpDecorateString);
+	public override OpCode Code => OpCode.OpDecorateString;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
 	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Target", OperandQuantifier.Default), new Operand(new EnumType<Decoration, DecorationParameterFactory>(), null, OperandQuantifier.Default),];
 }
-public sealed class OpMemberDecorateStringGOOGLE : Instruction
+public sealed class OpMemberDecorateString : Instruction
 {
-	public static OpMemberDecorateStringGOOGLE Instance { get; } = new();
+	public static OpMemberDecorateString Instance { get; } = new();
 
-	private OpMemberDecorateStringGOOGLE()
+	private OpMemberDecorateString()
 	{
 	}
 
-	public override string Name => nameof(OpMemberDecorateStringGOOGLE);
-	public override OpCode Code => OpCode.OpMemberDecorateStringGOOGLE;
+	public override string Name => nameof(OpMemberDecorateString);
+	public override OpCode Code => OpCode.OpMemberDecorateString;
 	public override IReadOnlyList<Operand> Operands => _operands;
 
 	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Struct Type", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Member", OperandQuantifier.Default), new Operand(new EnumType<Decoration, DecorationParameterFactory>(), null, OperandQuantifier.Default),];
+}
+public sealed class OpVmeImageINTEL : Instruction
+{
+	public static OpVmeImageINTEL Instance { get; } = new();
+
+	private OpVmeImageINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpVmeImageINTEL);
+	public override OpCode Code => OpCode.OpVmeImageINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Image Type", OperandQuantifier.Default), new Operand(new IdRef(), "Sampler", OperandQuantifier.Default),];
+}
+public sealed class OpTypeVmeImageINTEL : Instruction
+{
+	public static OpTypeVmeImageINTEL Instance { get; } = new();
+
+	private OpTypeVmeImageINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeVmeImageINTEL);
+	public override OpCode Code => OpCode.OpTypeVmeImageINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Image Type", OperandQuantifier.Default),];
+}
+public sealed class OpTypeAvcImePayloadINTEL : Instruction
+{
+	public static OpTypeAvcImePayloadINTEL Instance { get; } = new();
+
+	private OpTypeAvcImePayloadINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeAvcImePayloadINTEL);
+	public override OpCode Code => OpCode.OpTypeAvcImePayloadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTypeAvcRefPayloadINTEL : Instruction
+{
+	public static OpTypeAvcRefPayloadINTEL Instance { get; } = new();
+
+	private OpTypeAvcRefPayloadINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeAvcRefPayloadINTEL);
+	public override OpCode Code => OpCode.OpTypeAvcRefPayloadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTypeAvcSicPayloadINTEL : Instruction
+{
+	public static OpTypeAvcSicPayloadINTEL Instance { get; } = new();
+
+	private OpTypeAvcSicPayloadINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeAvcSicPayloadINTEL);
+	public override OpCode Code => OpCode.OpTypeAvcSicPayloadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTypeAvcMcePayloadINTEL : Instruction
+{
+	public static OpTypeAvcMcePayloadINTEL Instance { get; } = new();
+
+	private OpTypeAvcMcePayloadINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeAvcMcePayloadINTEL);
+	public override OpCode Code => OpCode.OpTypeAvcMcePayloadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTypeAvcMceResultINTEL : Instruction
+{
+	public static OpTypeAvcMceResultINTEL Instance { get; } = new();
+
+	private OpTypeAvcMceResultINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeAvcMceResultINTEL);
+	public override OpCode Code => OpCode.OpTypeAvcMceResultINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTypeAvcImeResultINTEL : Instruction
+{
+	public static OpTypeAvcImeResultINTEL Instance { get; } = new();
+
+	private OpTypeAvcImeResultINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeAvcImeResultINTEL);
+	public override OpCode Code => OpCode.OpTypeAvcImeResultINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTypeAvcImeResultSingleReferenceStreamoutINTEL : Instruction
+{
+	public static OpTypeAvcImeResultSingleReferenceStreamoutINTEL Instance { get; } = new();
+
+	private OpTypeAvcImeResultSingleReferenceStreamoutINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeAvcImeResultSingleReferenceStreamoutINTEL);
+	public override OpCode Code => OpCode.OpTypeAvcImeResultSingleReferenceStreamoutINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTypeAvcImeResultDualReferenceStreamoutINTEL : Instruction
+{
+	public static OpTypeAvcImeResultDualReferenceStreamoutINTEL Instance { get; } = new();
+
+	private OpTypeAvcImeResultDualReferenceStreamoutINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeAvcImeResultDualReferenceStreamoutINTEL);
+	public override OpCode Code => OpCode.OpTypeAvcImeResultDualReferenceStreamoutINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTypeAvcImeSingleReferenceStreaminINTEL : Instruction
+{
+	public static OpTypeAvcImeSingleReferenceStreaminINTEL Instance { get; } = new();
+
+	private OpTypeAvcImeSingleReferenceStreaminINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeAvcImeSingleReferenceStreaminINTEL);
+	public override OpCode Code => OpCode.OpTypeAvcImeSingleReferenceStreaminINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTypeAvcImeDualReferenceStreaminINTEL : Instruction
+{
+	public static OpTypeAvcImeDualReferenceStreaminINTEL Instance { get; } = new();
+
+	private OpTypeAvcImeDualReferenceStreaminINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeAvcImeDualReferenceStreaminINTEL);
+	public override OpCode Code => OpCode.OpTypeAvcImeDualReferenceStreaminINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTypeAvcRefResultINTEL : Instruction
+{
+	public static OpTypeAvcRefResultINTEL Instance { get; } = new();
+
+	private OpTypeAvcRefResultINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeAvcRefResultINTEL);
+	public override OpCode Code => OpCode.OpTypeAvcRefResultINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpTypeAvcSicResultINTEL : Instruction
+{
+	public static OpTypeAvcSicResultINTEL Instance { get; } = new();
+
+	private OpTypeAvcSicResultINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeAvcSicResultINTEL);
+	public override OpCode Code => OpCode.OpTypeAvcSicResultINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Slice Type", OperandQuantifier.Default), new Operand(new IdRef(), "Qp", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL : Instruction
+{
+	public static OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Reference Base Penalty", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Slice Type", OperandQuantifier.Default), new Operand(new IdRef(), "Qp", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceSetInterShapePenaltyINTEL : Instruction
+{
+	public static OpSubgroupAvcMceSetInterShapePenaltyINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceSetInterShapePenaltyINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceSetInterShapePenaltyINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceSetInterShapePenaltyINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Packed Shape Penalty", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Slice Type", OperandQuantifier.Default), new Operand(new IdRef(), "Qp", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceSetInterDirectionPenaltyINTEL : Instruction
+{
+	public static OpSubgroupAvcMceSetInterDirectionPenaltyINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceSetInterDirectionPenaltyINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceSetInterDirectionPenaltyINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceSetInterDirectionPenaltyINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Direction Cost", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Slice Type", OperandQuantifier.Default), new Operand(new IdRef(), "Qp", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Slice Type", OperandQuantifier.Default), new Operand(new IdRef(), "Qp", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL : Instruction
+{
+	public static OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Packed Cost Center Delta", OperandQuantifier.Default), new Operand(new IdRef(), "Packed Cost Table", OperandQuantifier.Default), new Operand(new IdRef(), "Cost Precision", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Slice Type", OperandQuantifier.Default), new Operand(new IdRef(), "Qp", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceSetAcOnlyHaarINTEL : Instruction
+{
+	public static OpSubgroupAvcMceSetAcOnlyHaarINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceSetAcOnlyHaarINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceSetAcOnlyHaarINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceSetAcOnlyHaarINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL : Instruction
+{
+	public static OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Source Field Polarity", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL : Instruction
+{
+	public static OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Reference Field Polarity", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL : Instruction
+{
+	public static OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Forward Reference Field Polarity", OperandQuantifier.Default), new Operand(new IdRef(), "Backward Reference Field Polarity", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceConvertToImePayloadINTEL : Instruction
+{
+	public static OpSubgroupAvcMceConvertToImePayloadINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceConvertToImePayloadINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceConvertToImePayloadINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceConvertToImePayloadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceConvertToImeResultINTEL : Instruction
+{
+	public static OpSubgroupAvcMceConvertToImeResultINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceConvertToImeResultINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceConvertToImeResultINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceConvertToImeResultINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceConvertToRefPayloadINTEL : Instruction
+{
+	public static OpSubgroupAvcMceConvertToRefPayloadINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceConvertToRefPayloadINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceConvertToRefPayloadINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceConvertToRefPayloadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceConvertToRefResultINTEL : Instruction
+{
+	public static OpSubgroupAvcMceConvertToRefResultINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceConvertToRefResultINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceConvertToRefResultINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceConvertToRefResultINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceConvertToSicPayloadINTEL : Instruction
+{
+	public static OpSubgroupAvcMceConvertToSicPayloadINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceConvertToSicPayloadINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceConvertToSicPayloadINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceConvertToSicPayloadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceConvertToSicResultINTEL : Instruction
+{
+	public static OpSubgroupAvcMceConvertToSicResultINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceConvertToSicResultINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceConvertToSicResultINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceConvertToSicResultINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetMotionVectorsINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetMotionVectorsINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetMotionVectorsINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetMotionVectorsINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetMotionVectorsINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetInterDistortionsINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetInterDistortionsINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetInterDistortionsINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetInterDistortionsINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetInterDistortionsINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetBestInterDistortionsINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetBestInterDistortionsINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetBestInterDistortionsINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetBestInterDistortionsINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetBestInterDistortionsINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetInterMajorShapeINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetInterMajorShapeINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetInterMajorShapeINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetInterMajorShapeINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetInterMajorShapeINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetInterMinorShapeINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetInterMinorShapeINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetInterMinorShapeINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetInterMinorShapeINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetInterMinorShapeINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetInterDirectionsINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetInterDirectionsINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetInterDirectionsINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetInterDirectionsINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetInterDirectionsINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetInterMotionVectorCountINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetInterMotionVectorCountINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetInterMotionVectorCountINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetInterMotionVectorCountINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetInterMotionVectorCountINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetInterReferenceIdsINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetInterReferenceIdsINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetInterReferenceIdsINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetInterReferenceIdsINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetInterReferenceIdsINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL : Instruction
+{
+	public static OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Packed Reference Ids", OperandQuantifier.Default), new Operand(new IdRef(), "Packed Reference Parameter Field Polarities", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeInitializeINTEL : Instruction
+{
+	public static OpSubgroupAvcImeInitializeINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeInitializeINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeInitializeINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeInitializeINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Coord", OperandQuantifier.Default), new Operand(new IdRef(), "Partition Mask", OperandQuantifier.Default), new Operand(new IdRef(), "SAD Adjustment", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeSetSingleReferenceINTEL : Instruction
+{
+	public static OpSubgroupAvcImeSetSingleReferenceINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeSetSingleReferenceINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeSetSingleReferenceINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeSetSingleReferenceINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Ref Offset", OperandQuantifier.Default), new Operand(new IdRef(), "Search Window Config", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeSetDualReferenceINTEL : Instruction
+{
+	public static OpSubgroupAvcImeSetDualReferenceINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeSetDualReferenceINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeSetDualReferenceINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeSetDualReferenceINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Fwd Ref Offset", OperandQuantifier.Default), new Operand(new IdRef(), "Bwd Ref Offset", OperandQuantifier.Default), new Operand(new IdRef(), "Search Window Config", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeRefWindowSizeINTEL : Instruction
+{
+	public static OpSubgroupAvcImeRefWindowSizeINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeRefWindowSizeINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeRefWindowSizeINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeRefWindowSizeINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Search Window Config", OperandQuantifier.Default), new Operand(new IdRef(), "Dual Ref", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeAdjustRefOffsetINTEL : Instruction
+{
+	public static OpSubgroupAvcImeAdjustRefOffsetINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeAdjustRefOffsetINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeAdjustRefOffsetINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeAdjustRefOffsetINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Ref Offset", OperandQuantifier.Default), new Operand(new IdRef(), "Src Coord", OperandQuantifier.Default), new Operand(new IdRef(), "Ref Window Size", OperandQuantifier.Default), new Operand(new IdRef(), "Image Size", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeConvertToMcePayloadINTEL : Instruction
+{
+	public static OpSubgroupAvcImeConvertToMcePayloadINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeConvertToMcePayloadINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeConvertToMcePayloadINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeConvertToMcePayloadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeSetMaxMotionVectorCountINTEL : Instruction
+{
+	public static OpSubgroupAvcImeSetMaxMotionVectorCountINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeSetMaxMotionVectorCountINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeSetMaxMotionVectorCountINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeSetMaxMotionVectorCountINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Max Motion Vector Count", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL : Instruction
+{
+	public static OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL : Instruction
+{
+	public static OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Threshold", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeSetWeightedSadINTEL : Instruction
+{
+	public static OpSubgroupAvcImeSetWeightedSadINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeSetWeightedSadINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeSetWeightedSadINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeSetWeightedSadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Packed Sad Weights", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL : Instruction
+{
+	public static OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeEvaluateWithDualReferenceINTEL : Instruction
+{
+	public static OpSubgroupAvcImeEvaluateWithDualReferenceINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeEvaluateWithDualReferenceINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeEvaluateWithDualReferenceINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeEvaluateWithDualReferenceINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Fwd Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Bwd Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL : Instruction
+{
+	public static OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default), new Operand(new IdRef(), "Streamin Components", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL : Instruction
+{
+	public static OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Fwd Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Bwd Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default), new Operand(new IdRef(), "Streamin Components", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL : Instruction
+{
+	public static OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL : Instruction
+{
+	public static OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Fwd Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Bwd Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL : Instruction
+{
+	public static OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default), new Operand(new IdRef(), "Streamin Components", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL : Instruction
+{
+	public static OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Fwd Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Bwd Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default), new Operand(new IdRef(), "Streamin Components", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeConvertToMceResultINTEL : Instruction
+{
+	public static OpSubgroupAvcImeConvertToMceResultINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeConvertToMceResultINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeConvertToMceResultINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeConvertToMceResultINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeGetSingleReferenceStreaminINTEL : Instruction
+{
+	public static OpSubgroupAvcImeGetSingleReferenceStreaminINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeGetSingleReferenceStreaminINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeGetSingleReferenceStreaminINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeGetSingleReferenceStreaminINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeGetDualReferenceStreaminINTEL : Instruction
+{
+	public static OpSubgroupAvcImeGetDualReferenceStreaminINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeGetDualReferenceStreaminINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeGetDualReferenceStreaminINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeGetDualReferenceStreaminINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL : Instruction
+{
+	public static OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeStripDualReferenceStreamoutINTEL : Instruction
+{
+	public static OpSubgroupAvcImeStripDualReferenceStreamoutINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeStripDualReferenceStreamoutINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeStripDualReferenceStreamoutINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeStripDualReferenceStreamoutINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectorsINTEL : Instruction
+{
+	public static OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectorsINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectorsINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectorsINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectorsINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default), new Operand(new IdRef(), "Major Shape", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsINTEL : Instruction
+{
+	public static OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default), new Operand(new IdRef(), "Major Shape", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsINTEL : Instruction
+{
+	public static OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default), new Operand(new IdRef(), "Major Shape", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsINTEL : Instruction
+{
+	public static OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default), new Operand(new IdRef(), "Major Shape", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTEL : Instruction
+{
+	public static OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default), new Operand(new IdRef(), "Major Shape", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINTEL : Instruction
+{
+	public static OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default), new Operand(new IdRef(), "Major Shape", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeGetBorderReachedINTEL : Instruction
+{
+	public static OpSubgroupAvcImeGetBorderReachedINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeGetBorderReachedINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeGetBorderReachedINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeGetBorderReachedINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Image Select", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL : Instruction
+{
+	public static OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL : Instruction
+{
+	public static OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL : Instruction
+{
+	public static OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL : Instruction
+{
+	public static OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcFmeInitializeINTEL : Instruction
+{
+	public static OpSubgroupAvcFmeInitializeINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcFmeInitializeINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcFmeInitializeINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcFmeInitializeINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Coord", OperandQuantifier.Default), new Operand(new IdRef(), "Motion Vectors", OperandQuantifier.Default), new Operand(new IdRef(), "Major Shapes", OperandQuantifier.Default), new Operand(new IdRef(), "Minor Shapes", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default), new Operand(new IdRef(), "Pixel Resolution", OperandQuantifier.Default), new Operand(new IdRef(), "Sad Adjustment", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcBmeInitializeINTEL : Instruction
+{
+	public static OpSubgroupAvcBmeInitializeINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcBmeInitializeINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcBmeInitializeINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcBmeInitializeINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Coord", OperandQuantifier.Default), new Operand(new IdRef(), "Motion Vectors", OperandQuantifier.Default), new Operand(new IdRef(), "Major Shapes", OperandQuantifier.Default), new Operand(new IdRef(), "Minor Shapes", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default), new Operand(new IdRef(), "Pixel Resolution", OperandQuantifier.Default), new Operand(new IdRef(), "Bidirectional Weight", OperandQuantifier.Default), new Operand(new IdRef(), "Sad Adjustment", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcRefConvertToMcePayloadINTEL : Instruction
+{
+	public static OpSubgroupAvcRefConvertToMcePayloadINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcRefConvertToMcePayloadINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcRefConvertToMcePayloadINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcRefConvertToMcePayloadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcRefSetBidirectionalMixDisableINTEL : Instruction
+{
+	public static OpSubgroupAvcRefSetBidirectionalMixDisableINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcRefSetBidirectionalMixDisableINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcRefSetBidirectionalMixDisableINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcRefSetBidirectionalMixDisableINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcRefSetBilinearFilterEnableINTEL : Instruction
+{
+	public static OpSubgroupAvcRefSetBilinearFilterEnableINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcRefSetBilinearFilterEnableINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcRefSetBilinearFilterEnableINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcRefSetBilinearFilterEnableINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL : Instruction
+{
+	public static OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcRefEvaluateWithDualReferenceINTEL : Instruction
+{
+	public static OpSubgroupAvcRefEvaluateWithDualReferenceINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcRefEvaluateWithDualReferenceINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcRefEvaluateWithDualReferenceINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcRefEvaluateWithDualReferenceINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Fwd Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Bwd Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL : Instruction
+{
+	public static OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Packed Reference Ids", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL : Instruction
+{
+	public static OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Packed Reference Ids", OperandQuantifier.Default), new Operand(new IdRef(), "Packed Reference Field Polarities", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcRefConvertToMceResultINTEL : Instruction
+{
+	public static OpSubgroupAvcRefConvertToMceResultINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcRefConvertToMceResultINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcRefConvertToMceResultINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcRefConvertToMceResultINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicInitializeINTEL : Instruction
+{
+	public static OpSubgroupAvcSicInitializeINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicInitializeINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicInitializeINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicInitializeINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Coord", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicConfigureSkcINTEL : Instruction
+{
+	public static OpSubgroupAvcSicConfigureSkcINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicConfigureSkcINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicConfigureSkcINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicConfigureSkcINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Skip Block Partition Type", OperandQuantifier.Default), new Operand(new IdRef(), "Skip Motion Vector Mask", OperandQuantifier.Default), new Operand(new IdRef(), "Motion Vectors", OperandQuantifier.Default), new Operand(new IdRef(), "Bidirectional Weight", OperandQuantifier.Default), new Operand(new IdRef(), "Sad Adjustment", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicConfigureIpeLumaINTEL : Instruction
+{
+	public static OpSubgroupAvcSicConfigureIpeLumaINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicConfigureIpeLumaINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicConfigureIpeLumaINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicConfigureIpeLumaINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Luma Intra Partition Mask", OperandQuantifier.Default), new Operand(new IdRef(), "Intra Neighbour Availabilty", OperandQuantifier.Default), new Operand(new IdRef(), "Left Edge Luma Pixels", OperandQuantifier.Default), new Operand(new IdRef(), "Upper Left Corner Luma Pixel", OperandQuantifier.Default), new Operand(new IdRef(), "Upper Edge Luma Pixels", OperandQuantifier.Default), new Operand(new IdRef(), "Upper Right Edge Luma Pixels", OperandQuantifier.Default), new Operand(new IdRef(), "Sad Adjustment", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicConfigureIpeLumaChromaINTEL : Instruction
+{
+	public static OpSubgroupAvcSicConfigureIpeLumaChromaINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicConfigureIpeLumaChromaINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicConfigureIpeLumaChromaINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicConfigureIpeLumaChromaINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Luma Intra Partition Mask", OperandQuantifier.Default), new Operand(new IdRef(), "Intra Neighbour Availabilty", OperandQuantifier.Default), new Operand(new IdRef(), "Left Edge Luma Pixels", OperandQuantifier.Default), new Operand(new IdRef(), "Upper Left Corner Luma Pixel", OperandQuantifier.Default), new Operand(new IdRef(), "Upper Edge Luma Pixels", OperandQuantifier.Default), new Operand(new IdRef(), "Upper Right Edge Luma Pixels", OperandQuantifier.Default), new Operand(new IdRef(), "Left Edge Chroma Pixels", OperandQuantifier.Default), new Operand(new IdRef(), "Upper Left Corner Chroma Pixel", OperandQuantifier.Default), new Operand(new IdRef(), "Upper Edge Chroma Pixels", OperandQuantifier.Default), new Operand(new IdRef(), "Sad Adjustment", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicGetMotionVectorMaskINTEL : Instruction
+{
+	public static OpSubgroupAvcSicGetMotionVectorMaskINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicGetMotionVectorMaskINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicGetMotionVectorMaskINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicGetMotionVectorMaskINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Skip Block Partition Type", OperandQuantifier.Default), new Operand(new IdRef(), "Direction", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicConvertToMcePayloadINTEL : Instruction
+{
+	public static OpSubgroupAvcSicConvertToMcePayloadINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicConvertToMcePayloadINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicConvertToMcePayloadINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicConvertToMcePayloadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL : Instruction
+{
+	public static OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Packed Shape Penalty", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL : Instruction
+{
+	public static OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Luma Mode Penalty", OperandQuantifier.Default), new Operand(new IdRef(), "Luma Packed Neighbor Modes", OperandQuantifier.Default), new Operand(new IdRef(), "Luma Packed Non Dc Penalty", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL : Instruction
+{
+	public static OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Chroma Mode Base Penalty", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicSetBilinearFilterEnableINTEL : Instruction
+{
+	public static OpSubgroupAvcSicSetBilinearFilterEnableINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicSetBilinearFilterEnableINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicSetBilinearFilterEnableINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicSetBilinearFilterEnableINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL : Instruction
+{
+	public static OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Packed Sad Coefficients", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL : Instruction
+{
+	public static OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Block Based Skip Type", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicEvaluateIpeINTEL : Instruction
+{
+	public static OpSubgroupAvcSicEvaluateIpeINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicEvaluateIpeINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicEvaluateIpeINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicEvaluateIpeINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL : Instruction
+{
+	public static OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicEvaluateWithDualReferenceINTEL : Instruction
+{
+	public static OpSubgroupAvcSicEvaluateWithDualReferenceINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicEvaluateWithDualReferenceINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicEvaluateWithDualReferenceINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicEvaluateWithDualReferenceINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Fwd Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Bwd Ref Image", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL : Instruction
+{
+	public static OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Packed Reference Ids", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL : Instruction
+{
+	public static OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Src Image", OperandQuantifier.Default), new Operand(new IdRef(), "Packed Reference Ids", OperandQuantifier.Default), new Operand(new IdRef(), "Packed Reference Field Polarities", OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicConvertToMceResultINTEL : Instruction
+{
+	public static OpSubgroupAvcSicConvertToMceResultINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicConvertToMceResultINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicConvertToMceResultINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicConvertToMceResultINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicGetIpeLumaShapeINTEL : Instruction
+{
+	public static OpSubgroupAvcSicGetIpeLumaShapeINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicGetIpeLumaShapeINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicGetIpeLumaShapeINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicGetIpeLumaShapeINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL : Instruction
+{
+	public static OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL : Instruction
+{
+	public static OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicGetPackedIpeLumaModesINTEL : Instruction
+{
+	public static OpSubgroupAvcSicGetPackedIpeLumaModesINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicGetPackedIpeLumaModesINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicGetPackedIpeLumaModesINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicGetPackedIpeLumaModesINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicGetIpeChromaModeINTEL : Instruction
+{
+	public static OpSubgroupAvcSicGetIpeChromaModeINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicGetIpeChromaModeINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicGetIpeChromaModeINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicGetIpeChromaModeINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL : Instruction
+{
+	public static OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL : Instruction
+{
+	public static OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupAvcSicGetInterRawSadsINTEL : Instruction
+{
+	public static OpSubgroupAvcSicGetInterRawSadsINTEL Instance { get; } = new();
+
+	private OpSubgroupAvcSicGetInterRawSadsINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupAvcSicGetInterRawSadsINTEL);
+	public override OpCode Code => OpCode.OpSubgroupAvcSicGetInterRawSadsINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Payload", OperandQuantifier.Default),];
+}
+public sealed class OpVariableLengthArrayINTEL : Instruction
+{
+	public static OpVariableLengthArrayINTEL Instance { get; } = new();
+
+	private OpVariableLengthArrayINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpVariableLengthArrayINTEL);
+	public override OpCode Code => OpCode.OpVariableLengthArrayINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Length", OperandQuantifier.Default),];
+}
+public sealed class OpSaveMemoryINTEL : Instruction
+{
+	public static OpSaveMemoryINTEL Instance { get; } = new();
+
+	private OpSaveMemoryINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSaveMemoryINTEL);
+	public override OpCode Code => OpCode.OpSaveMemoryINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpRestoreMemoryINTEL : Instruction
+{
+	public static OpRestoreMemoryINTEL Instance { get; } = new();
+
+	private OpRestoreMemoryINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpRestoreMemoryINTEL);
+	public override OpCode Code => OpCode.OpRestoreMemoryINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Ptr", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatSinCosPiALTERA : Instruction
+{
+	public static OpArbitraryFloatSinCosPiALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatSinCosPiALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatSinCosPiALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatSinCosPiALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "MResult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "RoundingAccuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatCastALTERA : Instruction
+{
+	public static OpArbitraryFloatCastALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatCastALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatCastALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatCastALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatCastFromIntALTERA : Instruction
+{
+	public static OpArbitraryFloatCastFromIntALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatCastFromIntALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatCastFromIntALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatCastFromIntALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "FromSign", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatCastToIntALTERA : Instruction
+{
+	public static OpArbitraryFloatCastToIntALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatCastToIntALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatCastToIntALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatCastToIntALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "ToSign", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatAddALTERA : Instruction
+{
+	public static OpArbitraryFloatAddALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatAddALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatAddALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatAddALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mb", OperandQuantifier.Default), new Operand(new LiteralInteger(), "MResult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatSubALTERA : Instruction
+{
+	public static OpArbitraryFloatSubALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatSubALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatSubALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatSubALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mb", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatMulALTERA : Instruction
+{
+	public static OpArbitraryFloatMulALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatMulALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatMulALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatMulALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mb", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatDivALTERA : Instruction
+{
+	public static OpArbitraryFloatDivALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatDivALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatDivALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatDivALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mb", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatGTALTERA : Instruction
+{
+	public static OpArbitraryFloatGTALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatGTALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatGTALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatGTALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mb", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatGEALTERA : Instruction
+{
+	public static OpArbitraryFloatGEALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatGEALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatGEALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatGEALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mb", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatLTALTERA : Instruction
+{
+	public static OpArbitraryFloatLTALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatLTALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatLTALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatLTALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mb", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatLEALTERA : Instruction
+{
+	public static OpArbitraryFloatLEALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatLEALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatLEALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatLEALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mb", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatEQALTERA : Instruction
+{
+	public static OpArbitraryFloatEQALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatEQALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatEQALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatEQALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mb", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatRecipALTERA : Instruction
+{
+	public static OpArbitraryFloatRecipALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatRecipALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatRecipALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatRecipALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatRSqrtALTERA : Instruction
+{
+	public static OpArbitraryFloatRSqrtALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatRSqrtALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatRSqrtALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatRSqrtALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatCbrtALTERA : Instruction
+{
+	public static OpArbitraryFloatCbrtALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatCbrtALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatCbrtALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatCbrtALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatHypotALTERA : Instruction
+{
+	public static OpArbitraryFloatHypotALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatHypotALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatHypotALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatHypotALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mb", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatSqrtALTERA : Instruction
+{
+	public static OpArbitraryFloatSqrtALTERA Instance { get; } = new();
+
+	private OpArbitraryFloatSqrtALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatSqrtALTERA);
+	public override OpCode Code => OpCode.OpArbitraryFloatSqrtALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatLogINTEL : Instruction
+{
+	public static OpArbitraryFloatLogINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatLogINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatLogINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatLogINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatLog2INTEL : Instruction
+{
+	public static OpArbitraryFloatLog2INTEL Instance { get; } = new();
+
+	private OpArbitraryFloatLog2INTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatLog2INTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatLog2INTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatLog10INTEL : Instruction
+{
+	public static OpArbitraryFloatLog10INTEL Instance { get; } = new();
+
+	private OpArbitraryFloatLog10INTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatLog10INTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatLog10INTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatLog1pINTEL : Instruction
+{
+	public static OpArbitraryFloatLog1pINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatLog1pINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatLog1pINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatLog1pINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatExpINTEL : Instruction
+{
+	public static OpArbitraryFloatExpINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatExpINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatExpINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatExpINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatExp2INTEL : Instruction
+{
+	public static OpArbitraryFloatExp2INTEL Instance { get; } = new();
+
+	private OpArbitraryFloatExp2INTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatExp2INTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatExp2INTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatExp10INTEL : Instruction
+{
+	public static OpArbitraryFloatExp10INTEL Instance { get; } = new();
+
+	private OpArbitraryFloatExp10INTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatExp10INTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatExp10INTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatExpm1INTEL : Instruction
+{
+	public static OpArbitraryFloatExpm1INTEL Instance { get; } = new();
+
+	private OpArbitraryFloatExpm1INTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatExpm1INTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatExpm1INTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatSinINTEL : Instruction
+{
+	public static OpArbitraryFloatSinINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatSinINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatSinINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatSinINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatCosINTEL : Instruction
+{
+	public static OpArbitraryFloatCosINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatCosINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatCosINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatCosINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatSinCosINTEL : Instruction
+{
+	public static OpArbitraryFloatSinCosINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatSinCosINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatSinCosINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatSinCosINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatSinPiINTEL : Instruction
+{
+	public static OpArbitraryFloatSinPiINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatSinPiINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatSinPiINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatSinPiINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatCosPiINTEL : Instruction
+{
+	public static OpArbitraryFloatCosPiINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatCosPiINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatCosPiINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatCosPiINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatASinINTEL : Instruction
+{
+	public static OpArbitraryFloatASinINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatASinINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatASinINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatASinINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatASinPiINTEL : Instruction
+{
+	public static OpArbitraryFloatASinPiINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatASinPiINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatASinPiINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatASinPiINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatACosINTEL : Instruction
+{
+	public static OpArbitraryFloatACosINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatACosINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatACosINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatACosINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "M1", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mout", OperandQuantifier.Default), new Operand(new LiteralInteger(), "EnableSubnormals", OperandQuantifier.Default), new Operand(new LiteralInteger(), "RoundingMode", OperandQuantifier.Default), new Operand(new LiteralInteger(), "RoundingAccuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatACosPiINTEL : Instruction
+{
+	public static OpArbitraryFloatACosPiINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatACosPiINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatACosPiINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatACosPiINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatATanINTEL : Instruction
+{
+	public static OpArbitraryFloatATanINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatATanINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatATanINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatATanINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatATanPiINTEL : Instruction
+{
+	public static OpArbitraryFloatATanPiINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatATanPiINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatATanPiINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatATanPiINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatATan2INTEL : Instruction
+{
+	public static OpArbitraryFloatATan2INTEL Instance { get; } = new();
+
+	private OpArbitraryFloatATan2INTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatATan2INTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatATan2INTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mb", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatPowINTEL : Instruction
+{
+	public static OpArbitraryFloatPowINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatPowINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatPowINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatPowINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mb", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatPowRINTEL : Instruction
+{
+	public static OpArbitraryFloatPowRINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatPowRINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatPowRINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatPowRINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mb", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpArbitraryFloatPowNINTEL : Instruction
+{
+	public static OpArbitraryFloatPowNINTEL Instance { get; } = new();
+
+	private OpArbitraryFloatPowNINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpArbitraryFloatPowNINTEL);
+	public override OpCode Code => OpCode.OpArbitraryFloatPowNINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Ma", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new LiteralInteger(), "SignOfB", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Mresult", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Subnormal", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Rounding", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Accuracy", OperandQuantifier.Default),];
+}
+public sealed class OpLoopControlINTEL : Instruction
+{
+	public static OpLoopControlINTEL Instance { get; } = new();
+
+	private OpLoopControlINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpLoopControlINTEL);
+	public override OpCode Code => OpCode.OpLoopControlINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new LiteralInteger(), "Loop Control Parameters", OperandQuantifier.Varying),];
+}
+public sealed class OpAliasDomainDeclINTEL : Instruction
+{
+	public static OpAliasDomainDeclINTEL Instance { get; } = new();
+
+	private OpAliasDomainDeclINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpAliasDomainDeclINTEL);
+	public override OpCode Code => OpCode.OpAliasDomainDeclINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Name", OperandQuantifier.Optional),];
+}
+public sealed class OpAliasScopeDeclINTEL : Instruction
+{
+	public static OpAliasScopeDeclINTEL Instance { get; } = new();
+
+	private OpAliasScopeDeclINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpAliasScopeDeclINTEL);
+	public override OpCode Code => OpCode.OpAliasScopeDeclINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Alias Domain", OperandQuantifier.Default), new Operand(new IdRef(), "Name", OperandQuantifier.Optional),];
+}
+public sealed class OpAliasScopeListDeclINTEL : Instruction
+{
+	public static OpAliasScopeListDeclINTEL Instance { get; } = new();
+
+	private OpAliasScopeListDeclINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpAliasScopeListDeclINTEL);
+	public override OpCode Code => OpCode.OpAliasScopeListDeclINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "AliasScope 1, AliasScope 2, ...", OperandQuantifier.Varying),];
+}
+public sealed class OpFixedSqrtALTERA : Instruction
+{
+	public static OpFixedSqrtALTERA Instance { get; } = new();
+
+	private OpFixedSqrtALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpFixedSqrtALTERA);
+	public override OpCode Code => OpCode.OpFixedSqrtALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default), new Operand(new LiteralInteger(), "S", OperandQuantifier.Default), new Operand(new LiteralInteger(), "I", OperandQuantifier.Default), new Operand(new LiteralInteger(), "rI", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Q", OperandQuantifier.Default), new Operand(new LiteralInteger(), "O", OperandQuantifier.Default),];
+}
+public sealed class OpFixedRecipALTERA : Instruction
+{
+	public static OpFixedRecipALTERA Instance { get; } = new();
+
+	private OpFixedRecipALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpFixedRecipALTERA);
+	public override OpCode Code => OpCode.OpFixedRecipALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default), new Operand(new LiteralInteger(), "S", OperandQuantifier.Default), new Operand(new LiteralInteger(), "I", OperandQuantifier.Default), new Operand(new LiteralInteger(), "rI", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Q", OperandQuantifier.Default), new Operand(new LiteralInteger(), "O", OperandQuantifier.Default),];
+}
+public sealed class OpFixedRsqrtALTERA : Instruction
+{
+	public static OpFixedRsqrtALTERA Instance { get; } = new();
+
+	private OpFixedRsqrtALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpFixedRsqrtALTERA);
+	public override OpCode Code => OpCode.OpFixedRsqrtALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default), new Operand(new LiteralInteger(), "S", OperandQuantifier.Default), new Operand(new LiteralInteger(), "I", OperandQuantifier.Default), new Operand(new LiteralInteger(), "rI", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Q", OperandQuantifier.Default), new Operand(new LiteralInteger(), "O", OperandQuantifier.Default),];
+}
+public sealed class OpFixedSinALTERA : Instruction
+{
+	public static OpFixedSinALTERA Instance { get; } = new();
+
+	private OpFixedSinALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpFixedSinALTERA);
+	public override OpCode Code => OpCode.OpFixedSinALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default), new Operand(new LiteralInteger(), "S", OperandQuantifier.Default), new Operand(new LiteralInteger(), "I", OperandQuantifier.Default), new Operand(new LiteralInteger(), "rI", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Q", OperandQuantifier.Default), new Operand(new LiteralInteger(), "O", OperandQuantifier.Default),];
+}
+public sealed class OpFixedCosALTERA : Instruction
+{
+	public static OpFixedCosALTERA Instance { get; } = new();
+
+	private OpFixedCosALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpFixedCosALTERA);
+	public override OpCode Code => OpCode.OpFixedCosALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default), new Operand(new LiteralInteger(), "S", OperandQuantifier.Default), new Operand(new LiteralInteger(), "I", OperandQuantifier.Default), new Operand(new LiteralInteger(), "rI", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Q", OperandQuantifier.Default), new Operand(new LiteralInteger(), "O", OperandQuantifier.Default),];
+}
+public sealed class OpFixedSinCosALTERA : Instruction
+{
+	public static OpFixedSinCosALTERA Instance { get; } = new();
+
+	private OpFixedSinCosALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpFixedSinCosALTERA);
+	public override OpCode Code => OpCode.OpFixedSinCosALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default), new Operand(new LiteralInteger(), "S", OperandQuantifier.Default), new Operand(new LiteralInteger(), "I", OperandQuantifier.Default), new Operand(new LiteralInteger(), "rI", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Q", OperandQuantifier.Default), new Operand(new LiteralInteger(), "O", OperandQuantifier.Default),];
+}
+public sealed class OpFixedSinPiALTERA : Instruction
+{
+	public static OpFixedSinPiALTERA Instance { get; } = new();
+
+	private OpFixedSinPiALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpFixedSinPiALTERA);
+	public override OpCode Code => OpCode.OpFixedSinPiALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default), new Operand(new LiteralInteger(), "S", OperandQuantifier.Default), new Operand(new LiteralInteger(), "I", OperandQuantifier.Default), new Operand(new LiteralInteger(), "rI", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Q", OperandQuantifier.Default), new Operand(new LiteralInteger(), "O", OperandQuantifier.Default),];
+}
+public sealed class OpFixedCosPiALTERA : Instruction
+{
+	public static OpFixedCosPiALTERA Instance { get; } = new();
+
+	private OpFixedCosPiALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpFixedCosPiALTERA);
+	public override OpCode Code => OpCode.OpFixedCosPiALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default), new Operand(new LiteralInteger(), "S", OperandQuantifier.Default), new Operand(new LiteralInteger(), "I", OperandQuantifier.Default), new Operand(new LiteralInteger(), "rI", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Q", OperandQuantifier.Default), new Operand(new LiteralInteger(), "O", OperandQuantifier.Default),];
+}
+public sealed class OpFixedSinCosPiALTERA : Instruction
+{
+	public static OpFixedSinCosPiALTERA Instance { get; } = new();
+
+	private OpFixedSinCosPiALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpFixedSinCosPiALTERA);
+	public override OpCode Code => OpCode.OpFixedSinCosPiALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default), new Operand(new LiteralInteger(), "S", OperandQuantifier.Default), new Operand(new LiteralInteger(), "I", OperandQuantifier.Default), new Operand(new LiteralInteger(), "rI", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Q", OperandQuantifier.Default), new Operand(new LiteralInteger(), "O", OperandQuantifier.Default),];
+}
+public sealed class OpFixedLogALTERA : Instruction
+{
+	public static OpFixedLogALTERA Instance { get; } = new();
+
+	private OpFixedLogALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpFixedLogALTERA);
+	public override OpCode Code => OpCode.OpFixedLogALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default), new Operand(new LiteralInteger(), "S", OperandQuantifier.Default), new Operand(new LiteralInteger(), "I", OperandQuantifier.Default), new Operand(new LiteralInteger(), "rI", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Q", OperandQuantifier.Default), new Operand(new LiteralInteger(), "O", OperandQuantifier.Default),];
+}
+public sealed class OpFixedExpALTERA : Instruction
+{
+	public static OpFixedExpALTERA Instance { get; } = new();
+
+	private OpFixedExpALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpFixedExpALTERA);
+	public override OpCode Code => OpCode.OpFixedExpALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default), new Operand(new LiteralInteger(), "S", OperandQuantifier.Default), new Operand(new LiteralInteger(), "I", OperandQuantifier.Default), new Operand(new LiteralInteger(), "rI", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Q", OperandQuantifier.Default), new Operand(new LiteralInteger(), "O", OperandQuantifier.Default),];
+}
+public sealed class OpPtrCastToCrossWorkgroupALTERA : Instruction
+{
+	public static OpPtrCastToCrossWorkgroupALTERA Instance { get; } = new();
+
+	private OpPtrCastToCrossWorkgroupALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpPtrCastToCrossWorkgroupALTERA);
+	public override OpCode Code => OpCode.OpPtrCastToCrossWorkgroupALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default),];
+}
+public sealed class OpCrossWorkgroupCastToPtrALTERA : Instruction
+{
+	public static OpCrossWorkgroupCastToPtrALTERA Instance { get; } = new();
+
+	private OpCrossWorkgroupCastToPtrALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpCrossWorkgroupCastToPtrALTERA);
+	public override OpCode Code => OpCode.OpCrossWorkgroupCastToPtrALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default),];
+}
+public sealed class OpReadPipeBlockingALTERA : Instruction
+{
+	public static OpReadPipeBlockingALTERA Instance { get; } = new();
+
+	private OpReadPipeBlockingALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpReadPipeBlockingALTERA);
+	public override OpCode Code => OpCode.OpReadPipeBlockingALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Packet Size", OperandQuantifier.Default), new Operand(new IdRef(), "Packet Alignment", OperandQuantifier.Default),];
+}
+public sealed class OpWritePipeBlockingALTERA : Instruction
+{
+	public static OpWritePipeBlockingALTERA Instance { get; } = new();
+
+	private OpWritePipeBlockingALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpWritePipeBlockingALTERA);
+	public override OpCode Code => OpCode.OpWritePipeBlockingALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Packet Size", OperandQuantifier.Default), new Operand(new IdRef(), "Packet Alignment", OperandQuantifier.Default),];
+}
+public sealed class OpFPGARegALTERA : Instruction
+{
+	public static OpFPGARegALTERA Instance { get; } = new();
+
+	private OpFPGARegALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpFPGARegALTERA);
+	public override OpCode Code => OpCode.OpFPGARegALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Input", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetRayTMinKHR : Instruction
+{
+	public static OpRayQueryGetRayTMinKHR Instance { get; } = new();
+
+	private OpRayQueryGetRayTMinKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetRayTMinKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetRayTMinKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetRayFlagsKHR : Instruction
+{
+	public static OpRayQueryGetRayFlagsKHR Instance { get; } = new();
+
+	private OpRayQueryGetRayFlagsKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetRayFlagsKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetRayFlagsKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionTKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionTKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionTKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionTKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionTKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionInstanceCustomIndexKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionInstanceCustomIndexKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionInstanceCustomIndexKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionInstanceCustomIndexKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionInstanceCustomIndexKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionInstanceIdKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionInstanceIdKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionInstanceIdKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionInstanceIdKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionInstanceIdKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionGeometryIndexKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionGeometryIndexKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionGeometryIndexKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionGeometryIndexKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionGeometryIndexKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionPrimitiveIndexKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionPrimitiveIndexKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionPrimitiveIndexKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionPrimitiveIndexKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionPrimitiveIndexKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionBarycentricsKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionBarycentricsKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionBarycentricsKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionBarycentricsKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionBarycentricsKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionFrontFaceKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionFrontFaceKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionFrontFaceKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionFrontFaceKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionFrontFaceKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionCandidateAABBOpaqueKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionCandidateAABBOpaqueKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionCandidateAABBOpaqueKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionCandidateAABBOpaqueKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionCandidateAABBOpaqueKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionObjectRayDirectionKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionObjectRayDirectionKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionObjectRayDirectionKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionObjectRayDirectionKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionObjectRayDirectionKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionObjectRayOriginKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionObjectRayOriginKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionObjectRayOriginKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionObjectRayOriginKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionObjectRayOriginKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetWorldRayDirectionKHR : Instruction
+{
+	public static OpRayQueryGetWorldRayDirectionKHR Instance { get; } = new();
+
+	private OpRayQueryGetWorldRayDirectionKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetWorldRayDirectionKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetWorldRayDirectionKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetWorldRayOriginKHR : Instruction
+{
+	public static OpRayQueryGetWorldRayOriginKHR Instance { get; } = new();
+
+	private OpRayQueryGetWorldRayOriginKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetWorldRayOriginKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetWorldRayOriginKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionObjectToWorldKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionObjectToWorldKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionObjectToWorldKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionObjectToWorldKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionObjectToWorldKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpRayQueryGetIntersectionWorldToObjectKHR : Instruction
+{
+	public static OpRayQueryGetIntersectionWorldToObjectKHR Instance { get; } = new();
+
+	private OpRayQueryGetIntersectionWorldToObjectKHR()
+	{
+	}
+
+	public override string Name => nameof(OpRayQueryGetIntersectionWorldToObjectKHR);
+	public override OpCode Code => OpCode.OpRayQueryGetIntersectionWorldToObjectKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "RayQuery", OperandQuantifier.Default), new Operand(new IdRef(), "Intersection", OperandQuantifier.Default),];
+}
+public sealed class OpAtomicFAddEXT : Instruction
+{
+	public static OpAtomicFAddEXT Instance { get; } = new();
+
+	private OpAtomicFAddEXT()
+	{
+	}
+
+	public override string Name => nameof(OpAtomicFAddEXT);
+	public override OpCode Code => OpCode.OpAtomicFAddEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Pointer", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default), new Operand(new IdRef(), "Value", OperandQuantifier.Default),];
+}
+public sealed class OpTypeBufferSurfaceINTEL : Instruction
+{
+	public static OpTypeBufferSurfaceINTEL Instance { get; } = new();
+
+	private OpTypeBufferSurfaceINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeBufferSurfaceINTEL);
+	public override OpCode Code => OpCode.OpTypeBufferSurfaceINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new EnumType<AccessQualifier, AccessQualifierParameterFactory>(), "AccessQualifier", OperandQuantifier.Default),];
+}
+public sealed class OpTypeStructContinuedINTEL : Instruction
+{
+	public static OpTypeStructContinuedINTEL Instance { get; } = new();
+
+	private OpTypeStructContinuedINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpTypeStructContinuedINTEL);
+	public override OpCode Code => OpCode.OpTypeStructContinuedINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Member 0 type, member 1 type, ...", OperandQuantifier.Varying),];
+}
+public sealed class OpConstantCompositeContinuedINTEL : Instruction
+{
+	public static OpConstantCompositeContinuedINTEL Instance { get; } = new();
+
+	private OpConstantCompositeContinuedINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpConstantCompositeContinuedINTEL);
+	public override OpCode Code => OpCode.OpConstantCompositeContinuedINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Constituents", OperandQuantifier.Varying),];
+}
+public sealed class OpSpecConstantCompositeContinuedINTEL : Instruction
+{
+	public static OpSpecConstantCompositeContinuedINTEL Instance { get; } = new();
+
+	private OpSpecConstantCompositeContinuedINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSpecConstantCompositeContinuedINTEL);
+	public override OpCode Code => OpCode.OpSpecConstantCompositeContinuedINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Constituents", OperandQuantifier.Varying),];
+}
+public sealed class OpCompositeConstructContinuedINTEL : Instruction
+{
+	public static OpCompositeConstructContinuedINTEL Instance { get; } = new();
+
+	private OpCompositeConstructContinuedINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpCompositeConstructContinuedINTEL);
+	public override OpCode Code => OpCode.OpCompositeConstructContinuedINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Constituents", OperandQuantifier.Varying),];
+}
+public sealed class OpConvertFToBF16INTEL : Instruction
+{
+	public static OpConvertFToBF16INTEL Instance { get; } = new();
+
+	private OpConvertFToBF16INTEL()
+	{
+	}
+
+	public override string Name => nameof(OpConvertFToBF16INTEL);
+	public override OpCode Code => OpCode.OpConvertFToBF16INTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Float Value", OperandQuantifier.Default),];
+}
+public sealed class OpConvertBF16ToFINTEL : Instruction
+{
+	public static OpConvertBF16ToFINTEL Instance { get; } = new();
+
+	private OpConvertBF16ToFINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpConvertBF16ToFINTEL);
+	public override OpCode Code => OpCode.OpConvertBF16ToFINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "BFloat16 Value", OperandQuantifier.Default),];
+}
+public sealed class OpControlBarrierArriveINTEL : Instruction
+{
+	public static OpControlBarrierArriveINTEL Instance { get; } = new();
+
+	private OpControlBarrierArriveINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpControlBarrierArriveINTEL);
+	public override OpCode Code => OpCode.OpControlBarrierArriveINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default),];
+}
+public sealed class OpControlBarrierWaitINTEL : Instruction
+{
+	public static OpControlBarrierWaitINTEL Instance { get; } = new();
+
+	private OpControlBarrierWaitINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpControlBarrierWaitINTEL);
+	public override OpCode Code => OpCode.OpControlBarrierWaitINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new IdScope(), "Memory", OperandQuantifier.Default), new Operand(new IdMemorySemantics(), "Semantics", OperandQuantifier.Default),];
+}
+public sealed class OpArithmeticFenceEXT : Instruction
+{
+	public static OpArithmeticFenceEXT Instance { get; } = new();
+
+	private OpArithmeticFenceEXT()
+	{
+	}
+
+	public override string Name => nameof(OpArithmeticFenceEXT);
+	public override OpCode Code => OpCode.OpArithmeticFenceEXT;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Target", OperandQuantifier.Default),];
+}
+public sealed class OpTaskSequenceCreateALTERA : Instruction
+{
+	public static OpTaskSequenceCreateALTERA Instance { get; } = new();
+
+	private OpTaskSequenceCreateALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpTaskSequenceCreateALTERA);
+	public override OpCode Code => OpCode.OpTaskSequenceCreateALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Function", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Pipelined", OperandQuantifier.Default), new Operand(new LiteralInteger(), "UseStallEnableClusters", OperandQuantifier.Default), new Operand(new LiteralInteger(), "GetCapacity", OperandQuantifier.Default), new Operand(new LiteralInteger(), "AsyncCapacity", OperandQuantifier.Default),];
+}
+public sealed class OpTaskSequenceAsyncALTERA : Instruction
+{
+	public static OpTaskSequenceAsyncALTERA Instance { get; } = new();
+
+	private OpTaskSequenceAsyncALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpTaskSequenceAsyncALTERA);
+	public override OpCode Code => OpCode.OpTaskSequenceAsyncALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Sequence", OperandQuantifier.Default), new Operand(new IdRef(), "Arguments", OperandQuantifier.Varying),];
+}
+public sealed class OpTaskSequenceGetALTERA : Instruction
+{
+	public static OpTaskSequenceGetALTERA Instance { get; } = new();
+
+	private OpTaskSequenceGetALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpTaskSequenceGetALTERA);
+	public override OpCode Code => OpCode.OpTaskSequenceGetALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Sequence", OperandQuantifier.Default),];
+}
+public sealed class OpTaskSequenceReleaseALTERA : Instruction
+{
+	public static OpTaskSequenceReleaseALTERA Instance { get; } = new();
+
+	private OpTaskSequenceReleaseALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpTaskSequenceReleaseALTERA);
+	public override OpCode Code => OpCode.OpTaskSequenceReleaseALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Sequence", OperandQuantifier.Default),];
+}
+public sealed class OpTypeTaskSequenceALTERA : Instruction
+{
+	public static OpTypeTaskSequenceALTERA Instance { get; } = new();
+
+	private OpTypeTaskSequenceALTERA()
+	{
+	}
+
+	public override string Name => nameof(OpTypeTaskSequenceALTERA);
+	public override OpCode Code => OpCode.OpTypeTaskSequenceALTERA;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResult(), null, OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupBlockPrefetchINTEL : Instruction
+{
+	public static OpSubgroupBlockPrefetchINTEL Instance { get; } = new();
+
+	private OpSubgroupBlockPrefetchINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupBlockPrefetchINTEL);
+	public override OpCode Code => OpCode.OpSubgroupBlockPrefetchINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Ptr", OperandQuantifier.Default), new Operand(new IdRef(), "NumBytes", OperandQuantifier.Default), new Operand(new EnumType<MemoryAccess, MemoryAccessParameterFactory>(), null, OperandQuantifier.Optional),];
+}
+public sealed class OpSubgroup2DBlockLoadINTEL : Instruction
+{
+	public static OpSubgroup2DBlockLoadINTEL Instance { get; } = new();
+
+	private OpSubgroup2DBlockLoadINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroup2DBlockLoadINTEL);
+	public override OpCode Code => OpCode.OpSubgroup2DBlockLoadINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Element Size", OperandQuantifier.Default), new Operand(new IdRef(), "Block Width", OperandQuantifier.Default), new Operand(new IdRef(), "Block Height", OperandQuantifier.Default), new Operand(new IdRef(), "Block Count", OperandQuantifier.Default), new Operand(new IdRef(), "Src Base Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Width", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Height", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Pitch", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinate", OperandQuantifier.Default), new Operand(new IdRef(), "Dst Pointer", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroup2DBlockLoadTransformINTEL : Instruction
+{
+	public static OpSubgroup2DBlockLoadTransformINTEL Instance { get; } = new();
+
+	private OpSubgroup2DBlockLoadTransformINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroup2DBlockLoadTransformINTEL);
+	public override OpCode Code => OpCode.OpSubgroup2DBlockLoadTransformINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Element Size", OperandQuantifier.Default), new Operand(new IdRef(), "Block Width", OperandQuantifier.Default), new Operand(new IdRef(), "Block Height", OperandQuantifier.Default), new Operand(new IdRef(), "Block Count", OperandQuantifier.Default), new Operand(new IdRef(), "Src Base Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Width", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Height", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Pitch", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinate", OperandQuantifier.Default), new Operand(new IdRef(), "Dst Pointer", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroup2DBlockLoadTransposeINTEL : Instruction
+{
+	public static OpSubgroup2DBlockLoadTransposeINTEL Instance { get; } = new();
+
+	private OpSubgroup2DBlockLoadTransposeINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroup2DBlockLoadTransposeINTEL);
+	public override OpCode Code => OpCode.OpSubgroup2DBlockLoadTransposeINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Element Size", OperandQuantifier.Default), new Operand(new IdRef(), "Block Width", OperandQuantifier.Default), new Operand(new IdRef(), "Block Height", OperandQuantifier.Default), new Operand(new IdRef(), "Block Count", OperandQuantifier.Default), new Operand(new IdRef(), "Src Base Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Width", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Height", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Pitch", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinate", OperandQuantifier.Default), new Operand(new IdRef(), "Dst Pointer", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroup2DBlockPrefetchINTEL : Instruction
+{
+	public static OpSubgroup2DBlockPrefetchINTEL Instance { get; } = new();
+
+	private OpSubgroup2DBlockPrefetchINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroup2DBlockPrefetchINTEL);
+	public override OpCode Code => OpCode.OpSubgroup2DBlockPrefetchINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Element Size", OperandQuantifier.Default), new Operand(new IdRef(), "Block Width", OperandQuantifier.Default), new Operand(new IdRef(), "Block Height", OperandQuantifier.Default), new Operand(new IdRef(), "Block Count", OperandQuantifier.Default), new Operand(new IdRef(), "Src Base Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Width", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Height", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Pitch", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinate", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroup2DBlockStoreINTEL : Instruction
+{
+	public static OpSubgroup2DBlockStoreINTEL Instance { get; } = new();
+
+	private OpSubgroup2DBlockStoreINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroup2DBlockStoreINTEL);
+	public override OpCode Code => OpCode.OpSubgroup2DBlockStoreINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Element Size", OperandQuantifier.Default), new Operand(new IdRef(), "Block Width", OperandQuantifier.Default), new Operand(new IdRef(), "Block Height", OperandQuantifier.Default), new Operand(new IdRef(), "Block Count", OperandQuantifier.Default), new Operand(new IdRef(), "Src Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Dst Base Pointer", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Width", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Height", OperandQuantifier.Default), new Operand(new IdRef(), "Memory Pitch", OperandQuantifier.Default), new Operand(new IdRef(), "Coordinate", OperandQuantifier.Default),];
+}
+public sealed class OpSubgroupMatrixMultiplyAccumulateINTEL : Instruction
+{
+	public static OpSubgroupMatrixMultiplyAccumulateINTEL Instance { get; } = new();
+
+	private OpSubgroupMatrixMultiplyAccumulateINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSubgroupMatrixMultiplyAccumulateINTEL);
+	public override OpCode Code => OpCode.OpSubgroupMatrixMultiplyAccumulateINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "K Dim", OperandQuantifier.Default), new Operand(new IdRef(), "Matrix A", OperandQuantifier.Default), new Operand(new IdRef(), "Matrix B", OperandQuantifier.Default), new Operand(new IdRef(), "Matrix C", OperandQuantifier.Default), new Operand(new EnumType<MatrixMultiplyAccumulateOperands, MatrixMultiplyAccumulateOperandsParameterFactory>(), null, OperandQuantifier.Optional),];
+}
+public sealed class OpBitwiseFunctionINTEL : Instruction
+{
+	public static OpBitwiseFunctionINTEL Instance { get; } = new();
+
+	private OpBitwiseFunctionINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpBitwiseFunctionINTEL);
+	public override OpCode Code => OpCode.OpBitwiseFunctionINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "A", OperandQuantifier.Default), new Operand(new IdRef(), "B", OperandQuantifier.Default), new Operand(new IdRef(), "C", OperandQuantifier.Default), new Operand(new IdRef(), "LUTIndex", OperandQuantifier.Default),];
+}
+public sealed class OpUntypedVariableLengthArrayINTEL : Instruction
+{
+	public static OpUntypedVariableLengthArrayINTEL Instance { get; } = new();
+
+	private OpUntypedVariableLengthArrayINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpUntypedVariableLengthArrayINTEL);
+	public override OpCode Code => OpCode.OpUntypedVariableLengthArrayINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Element Type", OperandQuantifier.Default), new Operand(new IdRef(), "Length", OperandQuantifier.Default),];
+}
+public sealed class OpConditionalExtensionINTEL : Instruction
+{
+	public static OpConditionalExtensionINTEL Instance { get; } = new();
+
+	private OpConditionalExtensionINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpConditionalExtensionINTEL);
+	public override OpCode Code => OpCode.OpConditionalExtensionINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Condition", OperandQuantifier.Default), new Operand(new LiteralString(), "Name", OperandQuantifier.Default),];
+}
+public sealed class OpConditionalEntryPointINTEL : Instruction
+{
+	public static OpConditionalEntryPointINTEL Instance { get; } = new();
+
+	private OpConditionalEntryPointINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpConditionalEntryPointINTEL);
+	public override OpCode Code => OpCode.OpConditionalEntryPointINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Condition", OperandQuantifier.Default), new Operand(new EnumType<ExecutionModel, ExecutionModelParameterFactory>(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Entry Point", OperandQuantifier.Default), new Operand(new LiteralString(), "Name", OperandQuantifier.Default), new Operand(new IdRef(), "Interface", OperandQuantifier.Varying),];
+}
+public sealed class OpConditionalCapabilityINTEL : Instruction
+{
+	public static OpConditionalCapabilityINTEL Instance { get; } = new();
+
+	private OpConditionalCapabilityINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpConditionalCapabilityINTEL);
+	public override OpCode Code => OpCode.OpConditionalCapabilityINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "Condition", OperandQuantifier.Default), new Operand(new EnumType<Capability, CapabilityParameterFactory>(), "Capability", OperandQuantifier.Default),];
+}
+public sealed class OpSpecConstantTargetINTEL : Instruction
+{
+	public static OpSpecConstantTargetINTEL Instance { get; } = new();
+
+	private OpSpecConstantTargetINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSpecConstantTargetINTEL);
+	public override OpCode Code => OpCode.OpSpecConstantTargetINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new LiteralInteger(), "Target", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Features", OperandQuantifier.Varying),];
+}
+public sealed class OpSpecConstantArchitectureINTEL : Instruction
+{
+	public static OpSpecConstantArchitectureINTEL Instance { get; } = new();
+
+	private OpSpecConstantArchitectureINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSpecConstantArchitectureINTEL);
+	public override OpCode Code => OpCode.OpSpecConstantArchitectureINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new LiteralInteger(), "Category", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Family", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Opcode", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Architecture", OperandQuantifier.Default),];
+}
+public sealed class OpSpecConstantCapabilitiesINTEL : Instruction
+{
+	public static OpSpecConstantCapabilitiesINTEL Instance { get; } = new();
+
+	private OpSpecConstantCapabilitiesINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpSpecConstantCapabilitiesINTEL);
+	public override OpCode Code => OpCode.OpSpecConstantCapabilitiesINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new EnumType<Capability, CapabilityParameterFactory>(), "Capabilities", OperandQuantifier.Varying),];
+}
+public sealed class OpConditionalCopyObjectINTEL : Instruction
+{
+	public static OpConditionalCopyObjectINTEL Instance { get; } = new();
+
+	private OpConditionalCopyObjectINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpConditionalCopyObjectINTEL);
+	public override OpCode Code => OpCode.OpConditionalCopyObjectINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Condition 0, Operand 0, +Condition 1, Operand 1, +...", OperandQuantifier.Varying),];
+}
+public sealed class OpGroupIMulKHR : Instruction
+{
+	public static OpGroupIMulKHR Instance { get; } = new();
+
+	private OpGroupIMulKHR()
+	{
+	}
+
+	public override string Name => nameof(OpGroupIMulKHR);
+	public override OpCode Code => OpCode.OpGroupIMulKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "X", OperandQuantifier.Default),];
+}
+public sealed class OpGroupFMulKHR : Instruction
+{
+	public static OpGroupFMulKHR Instance { get; } = new();
+
+	private OpGroupFMulKHR()
+	{
+	}
+
+	public override string Name => nameof(OpGroupFMulKHR);
+	public override OpCode Code => OpCode.OpGroupFMulKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "X", OperandQuantifier.Default),];
+}
+public sealed class OpGroupBitwiseAndKHR : Instruction
+{
+	public static OpGroupBitwiseAndKHR Instance { get; } = new();
+
+	private OpGroupBitwiseAndKHR()
+	{
+	}
+
+	public override string Name => nameof(OpGroupBitwiseAndKHR);
+	public override OpCode Code => OpCode.OpGroupBitwiseAndKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "X", OperandQuantifier.Default),];
+}
+public sealed class OpGroupBitwiseOrKHR : Instruction
+{
+	public static OpGroupBitwiseOrKHR Instance { get; } = new();
+
+	private OpGroupBitwiseOrKHR()
+	{
+	}
+
+	public override string Name => nameof(OpGroupBitwiseOrKHR);
+	public override OpCode Code => OpCode.OpGroupBitwiseOrKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "X", OperandQuantifier.Default),];
+}
+public sealed class OpGroupBitwiseXorKHR : Instruction
+{
+	public static OpGroupBitwiseXorKHR Instance { get; } = new();
+
+	private OpGroupBitwiseXorKHR()
+	{
+	}
+
+	public override string Name => nameof(OpGroupBitwiseXorKHR);
+	public override OpCode Code => OpCode.OpGroupBitwiseXorKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "X", OperandQuantifier.Default),];
+}
+public sealed class OpGroupLogicalAndKHR : Instruction
+{
+	public static OpGroupLogicalAndKHR Instance { get; } = new();
+
+	private OpGroupLogicalAndKHR()
+	{
+	}
+
+	public override string Name => nameof(OpGroupLogicalAndKHR);
+	public override OpCode Code => OpCode.OpGroupLogicalAndKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "X", OperandQuantifier.Default),];
+}
+public sealed class OpGroupLogicalOrKHR : Instruction
+{
+	public static OpGroupLogicalOrKHR Instance { get; } = new();
+
+	private OpGroupLogicalOrKHR()
+	{
+	}
+
+	public override string Name => nameof(OpGroupLogicalOrKHR);
+	public override OpCode Code => OpCode.OpGroupLogicalOrKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "X", OperandQuantifier.Default),];
+}
+public sealed class OpGroupLogicalXorKHR : Instruction
+{
+	public static OpGroupLogicalXorKHR Instance { get; } = new();
+
+	private OpGroupLogicalXorKHR()
+	{
+	}
+
+	public override string Name => nameof(OpGroupLogicalXorKHR);
+	public override OpCode Code => OpCode.OpGroupLogicalXorKHR;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdScope(), "Execution", OperandQuantifier.Default), new Operand(new EnumType<GroupOperation, GroupOperationParameterFactory>(), "Operation", OperandQuantifier.Default), new Operand(new IdRef(), "X", OperandQuantifier.Default),];
+}
+public sealed class OpRoundFToTF32INTEL : Instruction
+{
+	public static OpRoundFToTF32INTEL Instance { get; } = new();
+
+	private OpRoundFToTF32INTEL()
+	{
+	}
+
+	public override string Name => nameof(OpRoundFToTF32INTEL);
+	public override OpCode Code => OpCode.OpRoundFToTF32INTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Float Value", OperandQuantifier.Default),];
+}
+public sealed class OpMaskedGatherINTEL : Instruction
+{
+	public static OpMaskedGatherINTEL Instance { get; } = new();
+
+	private OpMaskedGatherINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpMaskedGatherINTEL);
+	public override OpCode Code => OpCode.OpMaskedGatherINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "PtrVector", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Alignment", OperandQuantifier.Default), new Operand(new IdRef(), "Mask", OperandQuantifier.Default), new Operand(new IdRef(), "FillEmpty", OperandQuantifier.Default),];
+}
+public sealed class OpMaskedScatterINTEL : Instruction
+{
+	public static OpMaskedScatterINTEL Instance { get; } = new();
+
+	private OpMaskedScatterINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpMaskedScatterINTEL);
+	public override OpCode Code => OpCode.OpMaskedScatterINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdRef(), "InputVector", OperandQuantifier.Default), new Operand(new IdRef(), "PtrVector", OperandQuantifier.Default), new Operand(new LiteralInteger(), "Alignment", OperandQuantifier.Default), new Operand(new IdRef(), "Mask", OperandQuantifier.Default),];
+}
+public sealed class OpConvertHandleToImageINTEL : Instruction
+{
+	public static OpConvertHandleToImageINTEL Instance { get; } = new();
+
+	private OpConvertHandleToImageINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpConvertHandleToImageINTEL);
+	public override OpCode Code => OpCode.OpConvertHandleToImageINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand", OperandQuantifier.Default),];
+}
+public sealed class OpConvertHandleToSamplerINTEL : Instruction
+{
+	public static OpConvertHandleToSamplerINTEL Instance { get; } = new();
+
+	private OpConvertHandleToSamplerINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpConvertHandleToSamplerINTEL);
+	public override OpCode Code => OpCode.OpConvertHandleToSamplerINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand", OperandQuantifier.Default),];
+}
+public sealed class OpConvertHandleToSampledImageINTEL : Instruction
+{
+	public static OpConvertHandleToSampledImageINTEL Instance { get; } = new();
+
+	private OpConvertHandleToSampledImageINTEL()
+	{
+	}
+
+	public override string Name => nameof(OpConvertHandleToSampledImageINTEL);
+	public override OpCode Code => OpCode.OpConvertHandleToSampledImageINTEL;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Operand", OperandQuantifier.Default),];
+}
+public sealed class OpFDot2MixAcc32VALVE : Instruction
+{
+	public static OpFDot2MixAcc32VALVE Instance { get; } = new();
+
+	private OpFDot2MixAcc32VALVE()
+	{
+	}
+
+	public override string Name => nameof(OpFDot2MixAcc32VALVE);
+	public override OpCode Code => OpCode.OpFDot2MixAcc32VALVE;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Vector 1", OperandQuantifier.Default), new Operand(new IdRef(), "Vector 2", OperandQuantifier.Default), new Operand(new IdRef(), "Accumulator", OperandQuantifier.Default),];
+}
+public sealed class OpFDot2MixAcc16VALVE : Instruction
+{
+	public static OpFDot2MixAcc16VALVE Instance { get; } = new();
+
+	private OpFDot2MixAcc16VALVE()
+	{
+	}
+
+	public override string Name => nameof(OpFDot2MixAcc16VALVE);
+	public override OpCode Code => OpCode.OpFDot2MixAcc16VALVE;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Vector 1", OperandQuantifier.Default), new Operand(new IdRef(), "Vector 2", OperandQuantifier.Default), new Operand(new IdRef(), "Accumulator", OperandQuantifier.Default),];
+}
+public sealed class OpFDot4MixAcc32VALVE : Instruction
+{
+	public static OpFDot4MixAcc32VALVE Instance { get; } = new();
+
+	private OpFDot4MixAcc32VALVE()
+	{
+	}
+
+	public override string Name => nameof(OpFDot4MixAcc32VALVE);
+	public override OpCode Code => OpCode.OpFDot4MixAcc32VALVE;
+	public override IReadOnlyList<Operand> Operands => _operands;
+
+	private static readonly Operand[] _operands = [new Operand(new IdResultType(), null, OperandQuantifier.Default), new Operand(new IdResult(), null, OperandQuantifier.Default), new Operand(new IdRef(), "Vector 1", OperandQuantifier.Default), new Operand(new IdRef(), "Vector 2", OperandQuantifier.Default), new Operand(new IdRef(), "Accumulator", OperandQuantifier.Default),];
 }

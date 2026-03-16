@@ -33,12 +33,22 @@ public class LiteralNumber : Literal
 {
 }
 
-// The SPIR-V JSON file uses only literal integers
 public class LiteralInteger : LiteralNumber
 {
 	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
 	{
 		value = words[0];
+		wordsUsed = 1;
+
+		return true;
+	}
+}
+
+public class LiteralFloat : LiteralNumber
+{
+	public override bool ReadValue(IReadOnlyList<uint> words, out object value, out int wordsUsed)
+	{
+		value = BitConverter.UInt32BitsToSingle(words[0]);
 		wordsUsed = 1;
 
 		return true;
