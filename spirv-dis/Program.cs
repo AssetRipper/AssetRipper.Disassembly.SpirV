@@ -1,26 +1,37 @@
 ﻿using AssetRipper.Disassembly.SpirV;
-using CommandLine;
+using Ookii.CommandLine;
 using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace SpirV;
 
-class Options
+[GeneratedParser]
+[ParseOptions(IsPosix = true)]
+partial class Options
 {
-	[Option('t', HelpText = "Show types")]
+	[CommandLineArgument(ShortName = 't')]
+	[Description("Show types")]
 	public bool ShowTypes { get; set; } = false;
 
-	[Option('n', HelpText = "Show object names if possible")]
+	[CommandLineArgument(ShortName = 'n')]
+	[Description("Show object names if possible")]
 	public bool ShowNames { get; set; } = false;
 
-	[Value(0, MetaName = "Input", HelpText = "Binary SPIR-V file to disassemble", Required = true)]
+	[CommandLineArgument("input", IsPositional = true, IsRequired = true)]
+	[Description("Binary SPIR-V file to disassemble")]
 	public string InputFile { get; set; } = "";
 }
 
-class Program
+static class Program
 {
-	static int Run(Options options)
+	static void Main(string[] args)
 	{
+		Options? options = Options.Parse(args);
+		if (options is null)
+		{
+			return;
+		}
+
 		Module module = Module.ReadFrom(System.IO.File.OpenRead(options.InputFile));
 
 		DisassemblyOptions settings = DisassemblyOptions.None;
@@ -36,19 +47,5 @@ class Program
 		}
 
 		Console.Write(Disassembler.Disassemble(module, settings));
-
-		return 0;
-	}
-
-	private static int HandleError(IEnumerable<Error> errs)
-	{
-		return 1;
-	}
-
-	static void Main(string[] args)
-	{
-		Parser.Default.ParseArguments<Options>(args)
-			.WithParsed(opts => Run(opts))
-			.WithNotParsed((errs) => HandleError(errs));
 	}
 }
